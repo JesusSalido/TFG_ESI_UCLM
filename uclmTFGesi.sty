@@ -1,0 +1,700 @@
+%%%%%%%%%%%%%%
+% Fichero: uclmTFGesy.sty
+% Autor: Jesús Salido Tercero (http://www.uclm.es/profesorado/jsalido)
+% Fecha (creación): Febrero 2018 
+% Descripción: Paquete para el TFG de la ESI-UCLM
+% (Escuela Sup. de Informática, UCLM). Creada para el curso 
+% “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
+% académicos” (Esc. Sup. Informática-UCLM)
+%%%%%%%%%%%%%%%% -------------------------
+
+% -------------------------
+% Ajustes definidos por el usuario
+% OJO: No cambiar a menos que sepa qué está haciendo exactamente.
+% -------------------------
+
+
+% -------------------------
+% LISTA DE COMANDOS PROPORCIONADOS:
+% OB-Obligatorio
+% OP-Opcional
+% RE-Recomendado
+%
+% Comandos para definir variables con los datos del documento.
+%
+% OB-\portadaTFG				: Genera pág. de portada (usa variables definidas)
+% OB-\portadillaTFG			: Genera pág. de portada interna
+% OB-\tribunalTFG				: Genera pág. tribunal
+% RE-\dedicado{texto}			: Genera pág. de dedicatoria con texto
+% RE-\creditos{texto}{imagen}	: Añade pág. de créditos con el texto y la imagen
+% OB-\abstract{texto}			: Añade abstract (no definido en clase book)
+% OP-\tecla{texto}				: Genera un borde de tecla en torno al texto		
+% OP-\nodivide[penalty]		: Penaliza la división de palabras. Máx. (n=10000) sin arg.
+% OP-\nowidowandorphan[penalty]: Penaliza las viudas y huérfanas. (sólo si necesario)
+% OP-\nodividenotes[]penalty]	: Penaliza la división de notas al pié entre págs.	(sólo si necesario)	
+% OP-\savepagecnt				: Salva en un contador interno el nº de pág. actual
+% OP-\contpagination			: Recupera el valor de pág. previamente salvado en el cont. interno.
+% RE-\cleanhdfirst				: Elimina la cabecera en la primera página de capítulo.
+%
+% -------------------------
+
+
+\ProvidesPackage{uclmTFGesi}
+\RequirePackage{
+	fancyhdr,	% Ajuste de cabeceras young pies
+	titlesec,	% Ajustes de títulos de secciones
+	sectsty,	% Ajustes de títulos
+	tikz		% Gráficos avanzados en LeTeX
+}
+
+
+
+% -------------------------
+% CONTROL DE ESPACIADO ENTRE PÁRRAFOS E INDENTACIÓN
+% -------------------------
+%\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex} % Espacio entre párrafos (más versatil cuando se fija como una rubber length (longitud elástica)
+\setlength{\parskip}{1ex plus 0.2ex minus 0.2ex} % Espacio entre párrafos (más versatil cuando se fija como una rubber length (longitud elástica)
+%\setlength{\parindent}{8ex} % Valor por defecto de la indentación en español. 
+%Sólo es preciso activar para modificar el valor por defecto (indicar valor cero para anular)
+% -------------------------
+
+
+
+
+% -------------------------
+% AJUSTE DE CABECERA Y PIE DE PÁGINA (paquete fancyhdr)
+% -------------------------
+\fancyhf{} % Reset de la cabecera y pie
+% En las páginas impares, parte izquierda del encabezado, aparecerá el nombre de capítulo
+\fancyhead[LO]{\sffamily\leftmark} 
+% En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
+\fancyhead[RE]{\sffamily\rightmark} 
+% Números de página en las esquinas de los encabezados
+\fancyhead[RO,LE]{\sffamily\thepage}
+
+% Formato para el capítulo: N. Nombre
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter.#1}}{}}
+% Formato para la sección: N.M. Nombre
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}} 
+
+% Ancho de la línea horizontal bajo el encabezado
+\renewcommand{\headrulewidth}{0.6pt} 
+% Ancho de la línea horizontal sobre el pie (en este ejemplo está vacío)
+%\renewcommand{\footrulewidth}{0.6pt} 
+
+%\setlength{\headheight}{16pt} % Por defecto \headheight 12pt, pero se agranda al emplear fancyhdr
+\setlength{\headheight}{1.5\headheight} % Aumenta la altura del encabezado en una vez y media
+
+% Evita que la última página de cap. tenga cabecera y pie 
+% si dicha página está en blanco (para clase book)
+%\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside
+\ifodd\c@page
+\else\hbox{}\thispagestyle{empty}\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+%\makeatother
+% -------------------------
+
+
+
+
+
+
+
+
+
+
+% -------------------------
+% CONFIGURACIÓN INICIO CAPÍTULOS (paquete titlesec)
+% -------------------------
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+
+\titleformat{\chapter}[display] % cambiamos el formato de los capítulos
+{\bfseries\Huge\sffamily} % por defecto se usarán caracteres de tamaño \Huge en negrita y familia sans serif
+{% contenido de la etiqueta
+\titlerule % línea horizontal
+\filleft % texto alineado a la derecha
+\Large{\MakeUppercase\chaptertitlename}\ % "Capítulo" o "Apéndice" en tamaño \Large en lugar de \Huge
+\Large\thechapter} % número de capítulo en tamaño \Large
+{0mm} % espacio mínimo entre etiqueta y cuerpo
+{\filleft\MakeUppercase} % texto del cuerpo alineado a la derecha
+[\vspace{0.5mm} \bigrule] % después del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
+% -------------------------
+
+
+
+
+
+% -------------------------
+% TIPO DE LETRA EMPLEADO EN TÍTULOS DE SECCIONES (paquete sectsty)
+% -------------------------
+\sectionfont{\sffamily\bfseries\MakeUppercase}
+\subsectionfont{\sffamily\bfseries}
+\subsubsectionfont{\sffamily\bfseries}
+% -------------------------
+
+
+
+
+
+% -------------------------
+% AJUSTES DE COLOR 
+% -------------------------
+\definecolor{gris97}{gray}{.97}
+\definecolor{gris95}{gray}{.95}
+\definecolor{gris75}{gray}{.75}
+\definecolor{gris45}{gray}{.45}
+\definecolor{sombra}{gray}{.70}
+% -------------------------
+
+
+
+
+
+
+
+
+% -------------------------
+% AJUSTES PARA LISTADOS DE CÓDIGO (paquete listings)
+% -------------------------
+% Definición incluida para que puedan interprestarse correctamente los caracteres unicode incluidos en las porciones de código. El problema deriva de que el paquete listings sólo reconoce la codificación de caracteres con 1 byte.
+% -------------------------
+\lstset{inputencoding=utf8,
+	extendedchars=true,
+	literate=%
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+	{¡}{{\textexclamdown}}1
+}
+
+% Las opciones aquí incluidas deben servir de ejemplo, ya que para una lista exhaustiva se debe consultar la documentación del paquete.
+\lstset{ % Estilo por defecto
+	belowcaptionskip=5pt, % Espacio bajo el título
+	basicstyle={\footnotesize\ttfamily}, % Estilo básico para el texto
+	%stringstyle=\textsl,        % Estilo para las cadenas
+	stringstyle={\color{Red1}\ttfamily\bfseries},
+	commentstyle={\color{Green4}\sffamily\bfseries},% Estilo para los comentarios
+	keywordstyle={\color{Blue1}\bfseries},% Estilo para las palabras clave
+	%	keywordstyle=[1]\textbf,    % Posibilidad de particularizar el estilo 
+	%	keywordstyle=[2]\textbf,    %
+	%	keywordstyle=[3]\textbf,    %
+	%	keywordstyle=[4]\textbf,    %
+	%	deletekeywords={}, 			% Quita keywords separadas por comas
+	captionpos=t,               % Ajusta la posición de títulos 
+	numbers=left,               % Posición de números de línea
+	numberstyle={\color{DarkSlateGray}\tiny\sffamily\bfseries},          % Tamaño del número de línea
+	numberfirstline=false,
+	firstnumber=1, 				%  Nº de la primera línea
+	stepnumber=1,               % Paso de línea numerada
+	numbersep=10pt,             % Separación del texto al número de línea
+	tabsize=2,                  % Tamaño del tabulador
+	extendedchars=true,         % Gestiona en empleo de caracteres 	
+	%	extendedchars=\true,        % Gestiona en empleo de caracteres extendidos utf8 % Hack-
+	texcl=true,				    % Necesario para unicode en los comentarios
+	breaklines=true,            % Ajusta división automática de líneas
+	breakatwhitespace=true,     % Indica si la división automática sólo ocurre en los espacios en blanco
+	frame=single,               % none, leftline, topline, bottomline, lines, single, shadowbox 
+	frameround=tttt, 			% Redondea los bordes del frame
+	rulecolor={\color{DarkSlateGray}},    % Color del frame
+	showspaces=false,           % Muestra espacios en blanco
+	showtabs=false,             % Muestra tabuladores
+	showstringspaces=true,      % Muestra espacios en blanco en las cadenas        
+	xleftmargin=1cm,xrightmargin=1cm,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Flecha al saltar de linea
+	prebreak=\mbox{\textcolor{red}{$\hookleftarrow$}\space}, % Flecha al saltar de linea	%	framexleftmargin=17pt
+	%	framexrightmargin=5pt,
+	%	framexbottommargin=4pt,
+%	backgroundcolor={\color{Lavender}} % Color del fondo
+	backgroundcolor={\color{FloralWhite}} % Color del fondo
+}
+
+% Algunos ejemplos de definiciones de estilos.
+% Para ajustar los colores se recomienda echar un vistazo al manual de xcolor donde están todos los colores predefinidos con sus nombres.
+% OJO: Algunos de los ejemplos suministrados no han sido depurados por ellos pueden presentar algún error.
+
+\lstdefinestyle{consola}{%
+	basicstyle={\color{White}\scriptsize\bf\ttfamily},
+	backgroundcolor={\color{Black}},
+	frame=none,
+	showspaces=true
+}
+
+%\lstdefinestyle{consola}{%
+%	basicstyle=\scriptsize\bf\ttfamily
+%}
+  
+ 
+\lstdefinestyle{C-ruled}{%
+	language=C,
+	frame=L,
+	rulesep=.1pt,
+	rulecolor=\color{black}
+}
+
+
+\lstdefinestyle{C-color}{%
+  	breaklines=true,
+  	language=C,
+  	basicstyle=\scriptsize,
+  	keywordstyle=\bfseries\color{green!40!black},
+  	commentstyle=\itshape\color{purple!40!black},
+  	identifierstyle=\color{blue},
+  	stringstyle=\color{orange}
+}
+
+\lstdefinestyle{Java-color}{%
+	basicstyle=\scriptsize,
+	language=Java,
+  	keywordstyle=\color{blue},
+  	commentstyle=\color{DarkGreen},
+  	stringstyle=\color{DarkOrchid}
+}
+
+
+\lstdefinestyle{Python-color}{%
+	language=Python,
+	basicstyle=\scriptsize,
+	otherkeywords={self},          
+	keywordstyle=\bfseries\color{NavyBlue},
+	emphstyle=\bfseries\color{DarkRed},    
+	stringstyle=\color{ForestGreen}
+}
+
+%\lstdefinestyle{CSharp}{%
+%	basicstyle=\scriptsize
+%	language=[Sharp]C,
+%	escapeinside={(*@}{@*)},
+%	keywordstyle=\bfseries
+%}
+	
+
+%\lstdefinestyle{C++-color}{%
+%  	breaklines=true,
+%  	language=C++,
+%  	basicstyle=\scriptsize,
+%  	keywordstyle=\bfseries\color{green!40!black},
+%  	commentstyle=\itshape\color{purple!40!black},
+%  	identifierstyle=\color{blue},
+%  	stringstyle=\color{orange}
+%}
+    
+	
+%\lstdefinestyle{PHP-color}{%
+%	basicstyle=\scriptsize,
+%	language=PHP,
+%	keywordstyle    = \color{DarkBlue},
+%  	stringstyle     = \color{red},
+%  	identifierstyle = \color{DarkGreen},
+%  	commentstyle    = \color{gray},
+%  	emph            =[1]{php},
+%  	emphstyle       =[1]\color{black},
+%  	emph            =[2]{if,and,or,else},
+%  	emphstyle       =[2]\color{Gold}
+%}
+  
+	
+%\lstdefinestyle{Latex-color}{%
+%	language=[LaTeX]{Tex},
+%    basicstyle=\scriptsize,
+%    commentstyle=\color{DarkGreen},
+%    identifierstyle=\color{black},
+%    literate={\$}{{{\bfseries\color{Dandelion}\$}}}1, % Colorea el simbolo dollar
+%    alsoletter={\\,*,\&},
+%    emph =[1]{\\begin,\\end,\\caption,\\label,\\centering,\\FloatBarrier,
+%              \\lstinputlisting,\\scalefont,\\addplot,\\input,
+%              \\legend,\\item,\\subitem,\\includegraphics,\\textwidth,
+%              \\section,\\subsection,\\subsubsection,\\paragraph,
+%              \\cite,\\citet,\\citep,\\gls,\\bibliographystyle,\\url,
+%              \\citet*,\\citep*,\\todo,\\missingfigure,\\footnote},
+%  	emphstyle =[1]\bfseries\color{RoyalBlue},
+%  	emph = [2]{equation,subequations,eqnarray,figure,subfigure,
+%  			   condiciones,flalign,tikzpicture,axis,lstlisting,
+%  			   itemize,description
+%  			   },
+%  	emphstyle =[2]\bfseries,
+%    numbers=none
+%}
+
+
+%\lstdefinestyle{R-color}{%
+%	language=R,                     
+%  	basicstyle=\scriptsize,
+%  	keywordstyle=\bfseries\color{RoyalBlue}, 
+%  	commentstyle=\color{YellowGreen},
+%  	stringstyle=\color{ForestGreen}  
+%}
+% -------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMANDOS DE USUARIO
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% -------------------------
+% DEFINICIÓN DE DATOS DEL DOCUMENTO
+%\makeatletter % Estas declaraciones son precisas fuera del paquete
+\newcommand{\tituloPrimera}[1]{\newcommand{\@tituloPrimera}{#1}}
+\newcommand{\tituloSegunda}[1]{\newcommand{\@tituloSegunda}{#1}}
+\newcommand{\titulo}[1]{\newcommand{\@titulo}{#1}\renewcommand{\@title}{#1}}
+\newcommand{\tipoDoc}[1]{\newcommand{\@tipoDoc}{#1}}
+\newcommand{\autor}[1]{\newcommand{\@autor}{#1}\renewcommand{\@author}{#1}}
+\newcommand{\email}[1]{\newcommand{\@email}{\url{#1}}}
+\newcommand{\director}[1]{\newcommand{\@director}{#1}}
+\newcommand{\codirector}[1]{\newcommand{\@codirector}{#1}}
+\newcommand{\tutor}[1]{\newcommand{\@tutor}{#1}}
+\newcommand{\instEdu}[1]{\newcommand{\@instEdu}{#1}}
+\newcommand{\centroEdu}[1]{\newcommand{\@centroEdu}{#1}}
+\newcommand{\deptoEduPrimera}[1]{\newcommand{\@deptoEduPrimera}{#1}}
+\newcommand{\deptoEduSegunda}[1]{\newcommand{\@deptoEduSegunda}{#1}}
+\newcommand{\escudo}[1]{\newcommand{\@escudo}{#1}}
+\newcommand{\titulacion}[1]{\newcommand{\@titulacion}{#1}}
+\newcommand{\especialidad}[1]{\newcommand{\@especialidad}{#1}}
+\newcommand{\fechaDef}[1]{\newcommand{\@fechaDef}{#1}}
+\newcommand{\mesDef}[1]{\newcommand{\@mesDef}{#1}}
+\newcommand{\yearDef}[1]{\newcommand{\@yearDef}{#1}}
+\newcommand{\lugarDef}[1]{\newcommand{\@lugarDef}{#1}}
+%\makeatother
+% -------------------------
+
+
+
+
+
+
+% -------------------------
+% PORTADA (TFG)
+% -------------------------
+%\makeatletter
+\newcommand{\portadaTFG}{%
+	\begin{titlepage}
+		\begin{center}
+			\includegraphics[width=3.5cm]{\@escudo}\vspace{1cm}
+			
+			{\LARGE \textbf{\@instEdu\\[1.5\parskip]
+					\@centroEdu\\[2cm]
+					\@titulacion}}\\[0.5cm]
+			{\large \textbf{\@especialidad}}\\[1.5cm]
+			{\LARGE \textbf{\@tipoDoc}}\\[1cm]
+			
+			{\LARGE \@tituloPrimera}\\ \smallskip%			
+			\ifdefined\@tituloSegunda{\LARGE	\@tituloSegunda}\\[3cm]
+			\else \vspace{3cm}
+			\fi
+			
+			{\Large \@autor}\vfill%
+		\end{center}
+		
+		\begin{flushright}
+			{\Large \@fechaDef}
+		\end{flushright}
+		
+		\cleardoublepage
+\end{titlepage}}
+%\makeatother
+% -------------------------
+
+
+
+
+% -------------------------
+% PÁGINA INICIAL (TFG, es como la portada, añade Director/es o Tutor)
+% -------------------------
+%\makeatletter
+\newcommand{\portadillaTFG}{%
+	\begin{center}
+		\includegraphics[width=3.5cm]{\@escudo}\\[1.5cm]
+		
+		{\LARGE \textbf{\@instEdu \\[1.5\parskip]
+				\@centroEdu}}\\[0.5cm]
+		{\Large \textbf{\@deptoEduPrimera}}\\ \smallskip%
+		\ifdefined\@deptoEduSegunda{\Large \textbf{\@deptoEduSegunda}}\\[0.5cm]
+		\else \vspace{0.5cm}
+		\fi
+		{\large \textbf{\@especialidad}}\\[1.5cm]
+		
+		{\LARGE \textbf{\@tipoDoc}}\\[1cm]
+		
+		
+		{\LARGE \textbf{\@tituloPrimera}}\\ \smallskip%		
+		\ifdefined\@tituloSegunda{\LARGE \textbf{\@tituloSegunda}}\\[3cm]
+		\else \vspace{3cm}
+		\fi
+	\end{center}
+	
+	\begin{flushleft}
+		{\Large Autor(a): \@autor} \\ \bigskip%
+		{\Large Director(a): \@director} \\ \bigskip%
+		% Si hay definido un codirector se añade automáticamente la línea siguiente
+		\ifdefined\@codirector {\Large Director(a): \@codirector} \fi 
+	\end{flushleft}
+	\vfill%
+	
+	\begin{flushright}
+		{\Large \@fechaDef}
+	\end{flushright}
+	
+	\newpage}
+%\makeatother
+% -------------------------
+
+
+
+
+
+
+
+
+% -------------------------
+% PÁGINA TRIBUNAL (TFG)
+% -------------------------
+%\makeatletter
+\newcommand{\tribunalTFG}{
+	{\flushright \LARGE \textsc{Tribunal:}}
+	
+	\vspace*{\stretch{0.5}}
+	\hspace*{1cm}{\Large Presidente: \hrulefill}
+	
+	\vspace*{\stretch{0.5}}
+	\hspace*{1cm}{\Large Vocal: \hrulefill}
+	
+	\vspace*{\stretch{0.5}}
+	\hspace*{1cm}{\Large Secretario: \hrulefill}
+	
+	\vspace*{\stretch{0.5}}
+	{\flushright \LARGE \textsc{Fecha de defensa:} \hrulefill}
+	
+	\vspace*{\stretch{1.5}}
+	{\flushright \LARGE \textsc{Calificación:} \hrulefill}
+	
+	\vspace*{\stretch{2.5}}
+	\begin{center}
+		\begin{tabularx}{\linewidth}{X X X}
+			{\large \textsc{Presidente}} & {\large \textsc{Vocal}} & {\large \textsc{Secretario}}\\[2.5cm]
+			Fdo.: & Fdo.: & Fdo.:		
+		\end{tabularx}
+	\end{center}
+	\cleardoublepage}
+%\makeatother
+% -------------------------
+
+
+
+
+
+
+% -------------------------
+% INCLUSIÓN DE DEDICATORIA
+% -------------------------
+% Con la opción stretch se puede colocar verticalmente la dedicatoria de forma relativa para que quede el doble de espacio por debajo que por encima
+\newcommand{\dedicado}[1]{ % Dedicatoria
+	\null\vspace{\stretch{1}}
+	\begin{flushright}
+	\emph{#1}
+	\end{flushright}
+	\vspace{\stretch{2}}\null
+	\cleardoublepage
+}
+% -------------------------
+
+
+
+
+
+
+
+
+
+% -------------------------
+% CRÉDITOS Y LICENCIA (opcional, 1 pág.)
+% -------------------------
+% Todas las obras en gral. deberían presentar información relativa a la propiedad intelectual del contenido y condiciones bajo las cuales se puede distribuir y reproducir
+%\makeatletter
+\newcommand{\creditos}[2]{%
+	\null\vspace{6cm}
+	{\small \noindent \@titulo\\
+	\textcopyright{} \@autor, \@yearDef\\[1cm]
+	#1}\\
+	\includegraphics[width=0.15\linewidth]{#2}
+	
+	\clearpage
+}
+%\makeatother
+% -------------------------
+
+
+
+
+
+
+
+% -------------------------
+% COMANDO \tecla
+% -------------------------
+% (Nota: Sustituido en la última versión por paquete "menukeys")
+%
+% Para crear indicaciones de pulsación de teclas
+%\usetikzlibrary{shadows} % Necesario para poder crear nuevo comando de indicación de pulsación de tecla.
+%\newcommand*\tecla[1]{%   
+%  \tikz[baseline=(key.base)]
+%    \node[%
+%      draw,
+%      fill=white,
+%      drop shadow={%
+%	      shadow xshift=0.25ex,
+%	      shadow yshift=-0.25ex,
+%	      fill=black,
+%	      opacity=0.75
+%      },
+%      rectangle,
+%      rounded corners=2pt,
+%      inner sep=1pt,
+%      line width=0.5pt,
+%      font=\scriptsize\sffamily
+%    ](key) {#1\strut}
+%  ;
+%}
+% -------------------------
+
+
+
+
+
+
+% -------------------------
+% DESACTIVACIÓN DE DIVISIÓN DE PALABRAS 
+% -------------------------
+% Uso: \nodivide o \nodivide[<n>]
+\newcommand{\nodivide}[1][10000]{%
+	\hyphenpenalty=#1 % Valor típico: hasta 10000
+	\exhyphenpenalty=#1 % Valor típico: hasta 10000
+	\sloppy
+}
+% -------------------------
+
+
+
+
+
+
+
+
+
+% -------------------------
+% EVITACIÓN DE VIUDAS Y HUÉRFANAS
+% -------------------------
+% Uso: \nowidowandorphan o \nowidowandorphan[<n>]
+\newcommand{\nowidowandorphan}[1][10000]{%
+	\clubpenalty=#1  % % Valor típico: hasta 10000
+	\widowpenalty=#1 % % Valor típico: hasta 10000
+}
+% -------------------------
+
+
+
+
+
+
+
+
+% -------------------------
+% EVITACIÓN DE DIVISIÓN DE NOTAS AL PIE
+% -------------------------
+% Código para evitar la división de notas al pie en págs. diferentes
+% Uso: \nodividenotas o \nodividenotas[<n>]
+\newcommand{\nodividenotes}[1][10000]{%
+	\interfootnotelinepenalty=#1 % Valor típico: hasta 10000
+}
+% -------------------------
+
+
+
+
+
+
+
+
+% -------------------------
+% Creación de un contador nuevo para almacenar el nº de páginas actual
+% -------------------------
+% OJO: Debe ir antes de \mainmatter (antes de que se reinicie en cnt page)
+\newcommand{\savepagecnt}{%
+	\newcounter{totpages}
+	\setcounter{totpages}{\value{page}}
+	\addtocounter{totpages}{1}
+}
+% -------------------------
+
+% Continuación de la paginación desde el valor almacenado en \totpages
+\newcommand{\contpagination}{%
+	\setcounter{page}{\value{totpages}}
+}
+% -------------------------
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------
+% LIMPIA LAS CABECERAS DE LA PRIMERA PÁGINA DE CAPÍTULO
+% -------------------------
+\newcommand{\cleanhdfirst}{%
+	\fancypagestyle{plain}{%
+		\fancyhf{}%
+		\renewcommand{\headrulewidth}{0pt}
+		\renewcommand{\footrulewidth}{0pt}
+	}
+}
+% -------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------
+% AÑADIDO DE ENTORNO ABSTRACT EN CLASE BOOK
+% -------------------------
+\newenvironment{abstract}%
+{\cleardoublepage\null \vfill\begin{center}%
+\bfseries \sffamily \abstractname \end{center}}%
+{\vfill \null}
+
+
+
+

@@ -1,0 +1,686 @@
+%%%%%%%%%%%%%%
+% Fichero: uclmTFGesi.tex
+% Autor: Jesús Salido Tercero (http://www.uclm.es/profesorado/jsalido)
+% Fecha (creación): Febrero 2010 
+% Rev. : Febrero 2019
+% Descripción: Plantilla para memoria de TFG 
+% (Escuela Sup. de Informática, UCLM). Creada para el curso 
+% “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
+% académicos” (Esc. Sup. Informática-UCLM)
+%
+% Comentarios: Preparada para `pdflatex' y `biblatex' (con `biber'). 
+% Documento editado con TeXstudio. 
+% Para su compilación se aconseja utilizar latexmk y biber (requiere perl):
+% $latexmk -pdf -silent -synctex=1 --enable-write18 % (última opción innecesaria en Unix)
+% En sistemas Unix: latexmk y biber deben ser instalados por separado.
+%
+% Una versión actualizada de esta plantilla está disponible en overleaf.
+% Puede crearse un proyecto propio para escribir un TFG directamente en overleaf,
+% o bien descargarla como un archivo .zip para su utilización en modo local.
+%%%%%%%%%%%%%%
+
+
+% -------------------------
+%
+% PREÁMBULO del documento
+% (Editar sólo en caso de cambio del idioma pral. del documento u
+%  opciones de los paquetes incluidos).
+%
+% -------------------------
+% EDITAR: Idioma pral. \spanishtrue (Español), \spanishfalse (Inglés)
+%Comentar opción no deseada
+\newif\ifspanish%Definición de un condicional (spanish)
+
+\spanishtrue 			% Idioma pral.: español (spanish=true)
+%\spanishfalse			% Idioma pral.: inglés (spanish=false)
+	
+\documentclass[ 		% Clase del documento
+	11pt,				% Tamaño de letra
+	a4paper,			% Tamaño de papel
+	twoside,			% Impresión a doble cara
+	openright,			% La apertura de cap. a la dcha.
+	final       		% Versión final
+]{book}
+
+\usepackage[utf8]{inputenx} % Codificación de entrada
+\usepackage[english,spanish,es-tabla,es-noindentfirst]{babel} % Internacionalización
+%\usepackage{indentfirst} % Para asegurar sangrado en 1ª línea tras sección (necesario con varios idiomas)
+
+%--- Geometría de las páginas del documento
+\usepackage[			% Márgenes del documento
+	top=2.5cm,			% Margen superior
+	bottom=2.5cm,		% Margen inferior
+	inner=3.5cm,		% Margen al interior
+	outer=2cm			% Margen al exterior
+]{geometry}
+
+
+%--- Tipografía
+\usepackage{textcomp,marvosym,pifont} % Generación de símbolos especiales
+\usepackage{ccicons} % Iconos de licencia Creative Commons
+\usepackage{amsmath,amsthm,amssymb}	% Mejoras cuando hay matemáticas
+
+
+%--- Tipografía (Opción 1)
+\usepackage[tt=false]{libertine}	% Libertine
+\usepackage[libertine]{newtxmath}	% Times
+%---
+
+
+%--- Tipografía (Opción 2)
+%\usepackage{newpxtext}				% Palatino: La opción osf proporciona números en old style.
+%\usepackage{newpxmath}				% Palatino
+%---
+
+
+\usepackage[T1]{fontenc}% Codificación de salida    
+\usepackage{microtype}	% Mejoras de microtipografía en la obtención de PDF (sólo para pdflatex)
+
+
+\usepackage{url} 		% Para escritura de URL
+\urlstyle{sf}			% Estilo sans serif para URLs
+
+
+%--- Definición de colores
+% Este paquete debe cargarse antes de ctable.
+% Revisar la documentación del paquete para ver los nombres de colores predefinidos.
+\usepackage[%
+	usenames,
+	dvipsnames,
+	svgnames,
+	x11names,
+	table
+]{xcolor}
+
+
+%--- Color especial definido para los hiperenlaces
+\definecolor{palered}{rgb}{.8,0,0}
+
+
+%--- Generación de hiperenlaces
+\usepackage[
+	pdftex,
+	breaklinks,			% Permite que los links ocupen más de una línea
+%	hidelinks,			% Oculta el color y borde de los links
+% OJO: La opción colorlinks se comenta para evitar un error con el paquete menukeys. 
+%	colorlinks=true,	% Pone color en los link o un borde
+	linkcolor=palered,	% Color de los links
+	anchorcolor=palered, 
+	citecolor=palered, 
+	filecolor=palered, 
+	menucolor=palered, 
+	urlcolor=palered,
+	bookmarksnumbered=true % Incluye números en bookmarks
+]{hyperref}
+
+
+\usepackage{pdfpages}  % Permite inclusión de páginas de un PDF
+
+
+%--- Paquetes para listas y organización de texto
+\usepackage{paralist}	% Mayor control de listas
+\usepackage{multicol}	% Texto en varias columnas
+
+
+%--- Gráficos y tablas
+\usepackage{graphicx}	% Inclusión de figuras
+\usepackage{subfigure}	% Inclusión de subfiguras
+% EDITAR: Si es necesario cambiar el path para los directorios de figuras.
+\graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
+\usepackage{rotating}	% Giro de cajas (texto, figuras, tablas) (No DVI)
+\usepackage{tabularx,booktabs}	% Ajustes para tablas
+
+
+%--- Paquetes especiales para Informática
+\usepackage{listings}	% Inclusión de listados de código
+
+% Inclusión de algoritmos
+\usepackage[
+	lined,
+	boxruled,
+	algochapter,
+	commentsnumbered,
+\ifspanish
+	spanish
+\else
+	english
+\fi
+]{algorithm2e}
+
+
+
+%--- Personalización de títulos de figuras y tablas
+\usepackage[%
+	margin=10pt,		% Margen
+	font=small,			% Tamaño de tipografía
+	labelfont=bf,		% Prefijo-Etiqueta en negrita
+	format=hang			%
+]{caption}
+\captionsetup[table]{skip=4pt} 	% Separación del caption en las tablas
+
+
+%--- Bibliografía: Biblatex con biber.
+% OJO: Para bib multilingüe añadir campos language y langid en registros bib.
+\usepackage[
+	backend=biber, 		% Backend
+	sortcites,
+	defernumbers=true, 	% Para numerar al final
+	style=numeric-comp, % Estilo numérico condensado
+	% Descomentar las opciones siguientes para bibliografía multilingüe
+%	autolang=other, 	% Requerido para opción multilingüe
+%	language=auto   	% Requerido para opción multilingüe
+]{biblatex}
+
+
+% Línea añadida para eliminar el idioma de la fuente bibliográfica.
+\AtEveryBibitem{\clearfield{note} \clearlist{language}}
+% OJO: Editar si se cambia el fichero de bibliografía. 
+\addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
+\usepackage[autostyle]{csquotes}
+%---
+
+
+
+%--- Paquete con personalización local para el TFG (ESI-UCLM)
+\usepackage{uclmTFGesi}
+% -------------------------
+% PAQUETES QUE USA: 
+% 	fancyhdr,titlesec,sectsty,tikz
+% -------------------------
+% LISTA DE COMANDOS PROPORCIONADOS:
+% OB-Obligatorio
+% OP-Opcional
+% RE-Recomendado
+%
+% Comandos para definir variables con los datos del documento.
+%
+% OB-\portadaTFG				: Pág. de portada (usa variables definidas)
+% OB-\portadillaTFG				: Pág. de portada interna
+% OB-\tribunalTFG				: Pág. tribunal
+% RE-\dedicado{texto}			: Pág. de dedicatoria con texto
+% RE-\creditos{texto}{imagen}	: Pág. de créditos con el texto y la imagen
+% OB-\abstract{texto}			: Añade abstract (no definido en clase book)
+% OP-\tecla{texto}				: Borde de tecla en torno al texto (sustituir por menukeys)		
+% OP-\nodivide[penalty]			: Penaliza la división de palabras. 
+%								  Máx. (n=10000) sin arg.
+% OP-\nowidowandorphan[penalty]: Penaliza las viudas y huérfanas.
+%								(sólo si necesario)
+% OP-\nodividenotes[penalty]	: Penaliza la división de notas al pié 
+%								entre págs.	(sólo si necesario)	
+% OP-\savepagecnt				: Crea contador interno con el nº de pág. actual
+% OP-\contpagination			: Recupera el valor de pág. previamente
+%								 salvado en el cont. interno.
+% RE-\cleanhdfirst				: Elimina la cabecera en la primera 
+%								página de capítulo.
+%
+% -------------------------
+
+
+
+
+%--- Paquete para índice temático
+\usepackage{makeidx}
+\makeindex
+
+
+%--- Paquete para incluir menús, paths y teclas de modo "elegante"
+% OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el último y exige la desactivación de la opción colorlinks y la inclusión en este paquete de la opción hyperrefcolorlinks.
+% Este paquete presenta alguna incompatibilidades por lo que cambiarlo de ubicación puede generar algún error (manejar con cuidado).
+\usepackage[os=win,hyperrefcolorlinks]{menukeys}
+
+% Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
+\renewmenumacro{\menu}[>]{menus} % default: menus
+\renewmenumacro{\directory}[/]{pathswithblackfolder} % default: paths
+\renewmenumacro{\keys}[+]{shadowedroundedkeys} % default: roundedkeys
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+% -------------------------
+%
+% DATOS DEL DOCUMENTO 
+% Definición de variables empleadas en el documento por lo que no son
+% traducidos. Cuando algún campo puede tener varias líneas aparecen dos
+% campos señalados como <campo>Primera y <campo>Segunda.
+% Si no se desea emplear un campo este debe comentarse.
+%
+% -------------------------
+% EDITAR: Datos del documento
+\tituloPrimera{Plantilla de TFG para ESI-UCLM}	% 1ª Línea
+\tituloSegunda{Curso de {\LaTeX{}} esencial}			% 2ª Línea  % Comentar si no existe
+\titulo{Plantilla TFG}							% Título corto
+\autor{Jesús Salido Tercero}
+\email{jesus.salido@uclm.es}					
+\director{<director (nombre apellidos)>}
+\codirector{<codirector (nombre apellidos)>}	% Comentar si no existe
+\instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
+% Fichero con escudo de la institución
+% Poner el logo del centro que corresponda
+%\escudo{esi} 								
+%\escudo{esicolor} 
+%\escudo{logo_ESI} 							
+\escudo{escudoInf} 	% Nucleo de ferrita						
+%\escudo{uclm} 
+%\escudo{etsii} 
+
+\centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
+\deptoEduPrimera{<Primera línea Depto. Director>}% 1ª Línea
+\deptoEduSegunda{<Segunda línea Depto. Director>}% 2ª Línea  % Comentar si no existe
+\titulacion{GRADO EN INGENIERÍA INFORMÁTICA}
+\especialidad{<Tecnología Específica>} 			% Tecnología específica, ...
+\tipoDoc{TRABAJO FIN DE GRADO}
+% Si las fechas se desean en inglés hay que ponerlas explícitamente.
+\fechaDef{<mes, año>} 							% Fecha de defensa
+\mesDef{<mes>}        							% Mes de defensa
+\yearDef{<año>}        							% Año de defensa
+\lugarDef{Ciudad Real}							% Lugar de defensa
+
+
+% --- Propiedades para el documento PDF
+\hypersetup{%
+% EDITAR: Valores para el PDF.	
+	pdftitle={Plantilla TFG}, 	% Título
+	pdfauthor={J. Salido},	% Autor
+	pdfsubject={Plantilla LaTeX},	% Tema
+	pdftoolbar=true,		% Muestra la toolbar de Acrobat
+	pdfmenubar=true			% Muestra la menubar de Acrobat
+}
+% -------------------------
+
+
+
+
+% -------------------------
+%
+% CUERPO DEL DOCUMENTO
+%
+% -------------------------
+\begin{document}
+	
+%--- Ajustes del documento (en páginas iniciales).
+\ifspanish
+	\selectlanguage{spanish}% Emplea idioma español
+\else
+	\selectlanguage{english}% Emplea idioma inglés
+\fi
+
+\frontmatter
+% Cambia la numeración de páginas a números romanos y las secciones no están numeradas aunque si aparecen en el índice de contenidos.
+\pagestyle{empty}  % Páginas sin cabecera ni pies
+%---
+
+
+
+% -------------------------
+%
+% PORTADAS
+%
+% -------------------------
+\portadaTFG		% Portada pral.
+
+\portadillaTFG	% Portada interior (añade tutores)
+%---
+
+
+
+
+
+
+% -------------------------
+%
+% CRÉDITOS
+%
+% -------------------------
+% EDITAR (opcional): Licencia (si se desea modificar).
+% Este comando permite una gran flexibilidad y la ventaja de no depender de paquetes externos.
+% Esta es una página reservada para señalar información relativa a los derechos de autor y la licencia de distribución y uso del documento. Esta página debería ser aprovechada también para informar de cualquier tipo de cesión de los derechos anteriormente citados. El autor del TFG debe tener presente que el incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es de su exclusiva responsabilidad independientemente de la cesión de derechos que este haya convenido para su obra ya que no son objeto de cesión aquellos derechos de los que no se es poseedor.
+
+\creditos{Este documento se distribuye con licencia Creative Commons Atribución Compartir Igual 4.0. El texto completo de la licencia puede obtenerse en \url{https://creativecommons.org/licenses/by-sa/4.0/}. 
+% El escudo de Informática basado en el nuclo de ferrita que acompaña la distribución de esta plantilla ha sido realizado por P.~Moya, D.~Villa e I. Díez, su inclusión debe respetar los derechos de autor y las licencias a las que se vea sometido. 
+
+La copia y distribución de esta obra está permitida en todo el mundo, sin regalías y por cualquier medio, siempre que esta nota sea preservada. Se concede permiso para copiar y distribuir traducciones de este libro desde el español original a otro idioma, siempre que la traducción sea aprobada por el autor del libro y tanto el aviso de copyright como esta nota de permiso, sean preservados en todas las copias.}{cclicense}
+%---
+
+
+
+
+% -------------------------
+%
+% TRIBUNAL
+%
+% -------------------------
+\tribunalTFG % Página para calificaciones del tribunal
+%---
+
+
+
+
+
+% -------------------------
+%
+% DEDICATORIA (opcional, 1 pág. máximo)
+% Aunque opcional, no se debería perder la oportunidad de poder 
+% dedicar el trabajo a alguien MUY especial.
+%
+% -------------------------
+% EDITAR: Dedicatoria (comentar si no se desea incluir).
+\dedicado{A mis alumnos ... \\ % A alguien muy especial
+(para siempre)} % Como mucho dos líneas (no confundir con los agradecimientos).
+%---
+
+
+
+
+
+
+
+
+
+%--- Ajustes del documento.
+\pagestyle{plain}	% Páginas sólo con numeración inferior al pie
+
+% -------------------------
+%
+% RESUMEN:
+% OJO: Si es preciso cambiar orden manualmente
+%
+% -------------------------
+%--- Resumen en español
+\selectlanguage{spanish} % Selección de idioma del resumen.
+\cleardoublepage % Se incluye para modificar el contador de página antes de añadir bookmark
+\phantomsection  % OJO: Necesario con hyperref
+\pdfbookmark[0]{Resumen}{idx_resumen}% idx_resumen.0 % Bookmark en PDF
+
+
+\begin{abstract}
+% EDITAR: Resumen (máx. 1 pág.)
+\begin{center}
+\emph{(... versión del resumen en español ...)}
+\end{center}
+El resumen debe ocupar como máximo una página y en dicho espacio proporcionará información crucial sobre el \emph{`qué'} (problemática que trata de resolver el TFG), el \emph{`cómo'} (metodología para llegar a los resultados) y los objetivos alcanzados.
+\end{abstract}
+%---
+
+
+
+
+
+
+
+
+
+
+%--- Resumen en inglés
+% Abstract
+\selectlanguage{english} % Selección de idioma del resumen.
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\pdfbookmark[0]{Abstract}{idx_abstract}% idx_abstract.0 % Bookmark en PDF
+
+\begin{abstract}
+% EDITAR: Abstract (máx. 1 pág.)
+
+\begin{center}
+\emph{(... english version of the abstract ...)}
+\end{center}
+Versión del resumen en inglés. En los trabajos cuyo idioma principal sea el inglés, el orden de \textsf{Resumen} y \textsf{Abstract} se invertirá.	
+\end{abstract}
+%---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Selección de idioma para el resto del documento y adaptación de títulos de sección.
+% EDITAR: Sólo si es necesario.
+% NOTA: Al cambiar de idioma las def. de títulos se reinician.
+\ifspanish
+	\selectlanguage{spanish}% Para el resto del documento el idioma es español.
+	%--- No necesarios al añadir la opción es-tabla para babel.
+	%\renewcommand{\tablename}{Tabla} % Se sustituye 'Cuadro' por 'Tabla'
+	%\renewcommand{\listtablename}{Índice de tablas}
+	%---
+	\renewcommand{\lstlistingname}{Listado}
+	\renewcommand{\lstlistlistingname}{Índice de listados}
+	\SetAlgorithmName{Algoritmo}{Alg}{Índice de algoritmos}
+	% Modififica las macros \algorithmcfname y \listalgoritmcfname
+	\renewcommand{\appendixname}{Anexo}
+	\renewcommand{\bibname}{Bibliografía}
+	\renewcommand{\indexname}{Índice temático}
+\else
+	\selectlanguage{english}
+\fi
+
+% -------------------------
+%
+% AGRADECIMIENTOS (recomendable máx. 1 pág.)
+%
+% -------------------------
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\pdfbookmark[0]{Agradecimientos}{idx_agrad}% idx_agrad.0 % Bookmark en PDF
+
+\include{./Agradecimientos} % Agradecimientos etc.
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------
+%
+% ÍNDICES
+%
+% -------------------------
+\pagestyle{fancy} % Estilo de página ajustado por fancyhdr
+
+% EDITAR: Si alguno de los índices no existe, su inclusión se puede comentar.
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\pdfbookmark[0]{Índice general}{idx_toc}% idx_toc.0 % Bookmark en PDF
+
+\tableofcontents  % Índice general
+
+% Todos los listados se han incluido en el índice de contenidos. De modo automático también quedan añadidos a los bookmarks del PDF. Si se desean eliminiar del TOC se pueden comentar el comando \addcontensline.
+
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\listfigurename} % Añade la lista de figuras al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\listfigurename}{idx_lof}% idx_lof.0 % Bookmark en PDF
+\listoffigures    % Índice de figuras (opcional)
+
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\listtablename} % Añade la lista de tablas al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\listtablename}{idx_lot}% idx_lot.0 % Bookmark en PDF
+\listoftables % Índice de tablas (opcional)
+
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\lstlistlistingname} % Añade la lista de listados al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\lstlistlistingname}{idx_lol}% idx_lol.0 % Bookmark en PDF
+\lstlistoflistings % Índice de listados creados con listings (opcional)
+
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\listalgorithmcfname} % Añade la lista de algoritmos al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\listalgorithmcfname}{idx_loa}% idx_loa.0 % Bookmark en PDF
+\listofalgorithms % Índice de algoritmos creados con algortihm2e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%--- MAINMATTER
+% Capítulos del documento
+% Salva en un contador interno el nº de páginas actual
+% Debe ir antes de \mainmatter (antes de que se reinicie el cnt page)
+\savepagecnt
+\mainmatter
+% Justo antes del primer capítulo del libro. Activa la numeración con números arábigos y reinicia el contador de páginas.
+
+% OJO: No cambiar de ubicación. Elimina cabecera y pie en pág. inicial de cap.
+\cleanhdfirst
+
+% Reajuste del número de página consecutivo para no reiniciar paginación en Cáp. 1
+%\contpagination % Comentado para reiniciar paginación (pag. 1)
+
+
+
+
+% -------------------------
+%
+% CAPÍTULOS
+%
+% -------------------------
+% Se incluye un fichero para cada capítulo. Se emplea la instrucción \include porque en los libros lo más habitual es que cada cápítulo comience en una nueva página.
+\include{./Introduccion}
+\include{./Objetivo}
+\include{./Metodologia}
+\include{./Resultados}
+\include{./Conclusiones}
+% -------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------
+%
+% ANEXOS
+%
+% -------------------------
+\appendix
+
+% Tras este punto los capítulos se numeran con letras.
+% Aquí todos los apéndices necesarios
+\include{./AnexoA} % Apéndice A (opcionales)
+
+%---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%--- BACKMATTER
+\backmatter
+% -------------------------
+%
+% BIBLIOGRAFÍA
+%
+% -------------------------
+% OJO: Todas las referencias deben estar citadas en el texto)
+% EDITAR: Comentar línea siguiente
+\nocite{*} % INCLUIDO para ver cómo queda, pero comentar en versión final.
+
+\phantomsection  % OJO: Ojo necesario con hyperref.
+\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos.
+%---
+% Opción 1: Bibliografía con todas las fuentes en un apartado.
+%---
+\printbibliography
+%---
+
+%---
+% Opción 2: Bibliografía con secciones separadas.
+%---
+%\printbibheading
+%\printbibliography[heading=subbibliography,type=online,title={Fuentes online}]
+%\printbibliography[heading=subbibliography,nottype=online,title={Fuentes no online}]
+% -------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% -------------------------
+%
+% ÍNDICE TEMÁTICO (opcional)
+%
+% -------------------------
+% CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
+\cleardoublepage
+\phantomsection % OJO: Ojo necesario con hyperref.
+\addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
+
+%---
+% Impresión de Índice Temático (comentar para eliminar)
+%---
+\printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
+
+\end{document}
