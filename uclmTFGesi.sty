@@ -366,6 +366,7 @@
 \newcommand{\director}[1]{\newcommand{\@director}{#1}}
 \newcommand{\codirector}[1]{\newcommand{\@codirector}{#1}}
 \newcommand{\tutor}[1]{\newcommand{\@tutor}{#1}}
+\newcommand{\cotutor}[1]{\newcommand{\@cotutor}{#1}}
 \newcommand{\instEdu}[1]{\newcommand{\@instEdu}{#1}}
 \newcommand{\centroEdu}[1]{\newcommand{\@centroEdu}{#1}}
 \newcommand{\deptoEduPrimera}[1]{\newcommand{\@deptoEduPrimera}{#1}}
@@ -424,7 +425,7 @@
 % PÁGINA INICIAL (TFG, es como la portada, añade Director/es o Tutor)
 % -------------------------
 %\makeatletter
-\newcommand{\portadillaTFG}{%
+\newcommand{\portadillaTFG}[3]{%
 	\begin{center}
 		\includegraphics[width=3.5cm]{\@escudo}\\[1.5cm]
 		
@@ -446,10 +447,10 @@
 	\end{center}
 	
 	\begin{flushleft}
-		{\Large Autor(a): \@autor} \\ \bigskip%
-		{\Large Director(a): \@director} \\ \bigskip%
-		% Si hay definido un codirector se añade automáticamente la línea siguiente
-		\ifdefined\@codirector {\Large Director(a): \@codirector} \fi 
+		{\Large #1: \@autor} \\ \bigskip%
+		{\Large #2: \@tutor} \\ \bigskip%
+		% Si hay definido un co-tutor se añade automáticamente la línea siguiente
+		\ifdefined\@cotutor {\Large #3: \@cotutor} \fi 
 	\end{flushleft}
 	\vfill%
 	

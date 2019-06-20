@@ -257,8 +257,8 @@
 \titulo{Plantilla TFG}							% Título corto
 \autor{Jesús Salido Tercero}
 \email{jesus.salido@uclm.es}					
-\director{<director (nombre apellidos)>}
-\codirector{<codirector (nombre apellidos)>}	% Comentar si no existe
+\tutor{<tutor(a) (nombre apellidos)>}
+\cotutor{<co-tutor(a) (nombre apellidos)>}	% Comentar si no existe
 \instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
 % Fichero con escudo de la institución
 % Poner el logo del centro que corresponda
@@ -324,7 +324,11 @@
 % -------------------------
 \portadaTFG		% Portada pral.
 
-\portadillaTFG	% Portada interior (añade tutores)
+\portadillaTFG{Autor}{Tutor}{Co-tutor}	% Portada interior (con tutor y co-tutor)
+%--- Ejemplos de uso
+%\portadillaTFG{Autora}{Tutor}	% Portada interior (sin co-tutor)
+%\portadillaTFG{Autor}{Tutor}{Co-tutora} % Portada interior (con tutor y co-tutora)
+% Se añaden los elementos mencionados
 %---
 
 
