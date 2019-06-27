@@ -8,7 +8,7 @@ _IMPORTANTE: Aunque la plantilla se ajusta a las necesidades y reglamentación d
 
 El proyecto está constituido por:
   - Varios ficheros LaTeX (``*.tex``) correspondientes a los principales capítulos de un TFG. 
-  - Un fichero de estilo ``*.sty`` en el que se han agrupado los aspectos de formato. _Se remienda evitar su modificación si se carece de conocimientos avanzados de LaTeX._
+  - Un fichero de estilo ``*.sty`` en el que se han agrupado los aspectos de formato. _Se recomienda evitar su modificación si se carece de conocimientos avanzados de LaTeX._
   - Un fichero de bibliografía (``*.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
   - Directorio (``./figs``) de figuras contenidas en el documento final.
   - Directorio de porciones de código fuente (``./code``) incluido como parte de los documentos finales.
