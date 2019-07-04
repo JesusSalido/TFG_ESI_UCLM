@@ -17,6 +17,9 @@
 % Una versión actualizada de esta plantilla está disponible en overleaf.
 % Puede crearse un proyecto propio para escribir un TFG directamente en overleaf,
 % o bien descargarla como un archivo .zip para su utilización en modo local.
+%
+% Si deseas acceder a la versión de desarrollo puedes encontrarla en GitHub:
+%	https://github.com/JesusSalido/TFG_ESI_UCLM
 %%%%%%%%%%%%%%
 
 
@@ -45,6 +48,7 @@
 \usepackage[utf8]{inputenx} % Codificación de entrada
 \usepackage[english,spanish,es-tabla,es-noindentfirst]{babel} % Internacionalización
 %\usepackage{indentfirst} % Para asegurar sangrado en 1ª línea tras sección (necesario con varios idiomas)
+
 
 %--- Geometría de las páginas del documento
 \usepackage[			% Márgenes del documento
@@ -82,7 +86,8 @@
 
 
 %--- Definición de colores
-% Este paquete debe cargarse antes de ctable.
+% Este paquete debe cargarse antes de que xcolor sea cargado por otro paquete sin estas
+% opciones -> genera errores.
 % Revisar la documentación del paquete para ver los nombres de colores predefinidos.
 \usepackage[%
 	usenames,
@@ -93,8 +98,10 @@
 ]{xcolor}
 
 
+
 %--- Color especial definido para los hiperenlaces
 \definecolor{palered}{rgb}{.8,0,0}
+
 
 
 %--- Generación de hiperenlaces
@@ -118,8 +125,10 @@
 
 
 %--- Paquetes para listas y organización de texto
-\usepackage{paralist}	% Mayor control de listas
+\usepackage{enumitem} 	% Control de listas
+\setlist{nolistsep} 	% Separación de ítems en listas
 \usepackage{multicol}	% Texto en varias columnas
+
 
 
 %--- Gráficos y tablas
@@ -134,9 +143,7 @@
 
 %--- Paquetes especiales para Informática
 \usepackage{listings}	% Inclusión de listados de código
-
-% Inclusión de algoritmos
-\usepackage[
+\usepackage% Inclusión de algoritmos
 	lined,
 	boxruled,
 	algochapter,
@@ -146,7 +153,8 @@
 \else
 	english
 \fi
-]{algorithm2e}
+]{algorithm2e} 
+
 
 
 
@@ -261,12 +269,12 @@
 \cotutor{<co-tutor(a) (nombre apellidos)>}	% Comentar si no existe
 \instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
 % Fichero con escudo de la institución
-% Poner el logo del centro que corresponda
-%\escudo{esi} 								
-%\escudo{esicolor} 
-%\escudo{logo_ESI} 							
-\escudo{escudoInf} 	% Nucleo de ferrita						
-%\escudo{uclm} 
+% Esa el logo de la ESI que prefieras (la normativa no especifica obligatoriedad).
+%\escudo{esi} 			% Logo ESI (gris uniforme)							
+%\escudo{esi_black} 	% Logo ESI (negro)						
+%\escudo{esi_color}		% Logo ESI (dos tintas)						
+\escudo{escudoInf}		% Nucleo de ferrita	(color)
+%\escudo{escudoInfBW} 	% Nucleo de ferrita	(en escala de grises)					
 %\escudo{etsii} 
 
 \centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
@@ -324,6 +332,7 @@
 % -------------------------
 \portadaTFG		% Portada pral.
 
+% EDITAR: Configurar la portadilla de acuerdo a los elementos necesario (número y género), Ver ejemplos.
 \portadillaTFG{Autor}{Tutor}{Co-tutor}	% Portada interior (con tutor y co-tutor)
 %--- Ejemplos de uso
 %\portadillaTFG{Autora}{Tutor}	% Portada interior (sin co-tutor)

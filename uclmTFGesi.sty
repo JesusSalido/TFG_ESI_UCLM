@@ -38,26 +38,16 @@
 %
 % -------------------------
 
+\ProvidesPackage{uclmTFGesi} % Nombre del paquete
 
-\ProvidesPackage{uclmTFGesi}
+\PassOptionsToPackage{indent}{parskip} % Opción pasada al paquete
 \RequirePackage{
+	parskip,	% Control de espaciado entre párrafos
 	fancyhdr,	% Ajuste de cabeceras young pies
 	titlesec,	% Ajustes de títulos de secciones
 	sectsty,	% Ajustes de títulos
 	tikz		% Gráficos avanzados en LeTeX
 }
-
-
-
-% -------------------------
-% CONTROL DE ESPACIADO ENTRE PÁRRAFOS E INDENTACIÓN
-% -------------------------
-%\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex} % Espacio entre párrafos (más versatil cuando se fija como una rubber length (longitud elástica)
-\setlength{\parskip}{1ex plus 0.2ex minus 0.2ex} % Espacio entre párrafos (más versatil cuando se fija como una rubber length (longitud elástica)
-%\setlength{\parindent}{8ex} % Valor por defecto de la indentación en español. 
-%Sólo es preciso activar para modificar el valor por defecto (indicar valor cero para anular)
-% -------------------------
-
 
 
 
