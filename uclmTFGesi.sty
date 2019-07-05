@@ -6,48 +6,135 @@
 % (Escuela Sup. de Informática, UCLM). Creada para el curso 
 % “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
 % académicos” (Esc. Sup. Informática-UCLM)
-%%%%%%%%%%%%%%%% -------------------------
-
+%
+% Opciones:
+% 	spanish (defecto)	: Idioma español como pral. del texto.
+%	english				: Idioma inglés como pral. del texto.
+%	autor, autora		: Prefijo empleado en las portadas para el autor.
+%	tutor, tutora		: Prefijo empleado en las portadas para el autor.
+%   cotutor, cotutora	: Prefijo empleado en las portadas para el autor.
+%%%%%%%%%%%%%%%%
 % -------------------------
 % Ajustes definidos por el usuario
 % OJO: No cambiar a menos que sepa qué está haciendo exactamente.
 % -------------------------
 
 
+
 % -------------------------
-% LISTA DE COMANDOS PROPORCIONADOS:
-% OB-Obligatorio
+% COMANDOS OPCIONALES PROPORCIONADOS:
 % OP-Opcional
 % RE-Recomendado
 %
 % Comandos para definir variables con los datos del documento.
 %
-% OB-\portadaTFG				: Genera pág. de portada (usa variables definidas)
-% OB-\portadillaTFG			: Genera pág. de portada interna
-% OB-\tribunalTFG				: Genera pág. tribunal
-% RE-\dedicado{texto}			: Genera pág. de dedicatoria con texto
-% RE-\creditos{texto}{imagen}	: Añade pág. de créditos con el texto y la imagen
-% OB-\abstract{texto}			: Añade abstract (no definido en clase book)
-% OP-\tecla{texto}				: Genera un borde de tecla en torno al texto		
-% OP-\nodivide[penalty]		: Penaliza la división de palabras. Máx. (n=10000) sin arg.
+% OP-\nodivide[penalty]		: Penaliza la división de palabras. Máx. 
+%(n=10000) sin arg.
 % OP-\nowidowandorphan[penalty]: Penaliza las viudas y huérfanas. (sólo si necesario)
 % OP-\nodividenotes[]penalty]	: Penaliza la división de notas al pié entre págs.	(sólo si necesario)	
 % OP-\savepagecnt				: Salva en un contador interno el nº de pág. actual
 % OP-\contpagination			: Recupera el valor de pág. previamente salvado en el cont. interno.
-% RE-\cleanhdfirst				: Elimina la cabecera en la primera página de capítulo.
+% OP-\tecla{texto}				: Genera un borde de tecla en torno al 
+%texto		
 %
 % -------------------------
 
 \ProvidesPackage{uclmTFGesi} % Nombre del paquete
 
-\PassOptionsToPackage{indent}{parskip} % Opción pasada al paquete
-\RequirePackage{
-	parskip,	% Control de espaciado entre párrafos
-	fancyhdr,	% Ajuste de cabeceras young pies
-	titlesec,	% Ajustes de títulos de secciones
-	sectsty,	% Ajustes de títulos
-	tikz		% Gráficos avanzados en LeTeX
+%--- Procesamiento de opciones de paquete
+\newif\ifspanish\spanishfalse % Condicional para manejo del idioma
+\DeclareOption{spanish}{\spanishtrue}  % Opción: Idioma español
+\DeclareOption{autor}{\newcommand{\@pautor}{Autor}} % Opción: Autor
+\DeclareOption{autora}{\renewcommand{\@pautor}{Autora}} % Opción: Autora
+\DeclareOption{tutor}{\newcommand{\@ptutor}{Tutor}} % Opción: Tutor
+\DeclareOption{tutora}{\renewcommand{\@ptutor}{Tutora}} % Opción: Tutora
+\DeclareOption{cotutor}{\newcommand{\@pcotutor}{Co-Tutor}} % Opción: Tutor
+\DeclareOption{cotutora}{\renewcommand{\@pcotutor}{Co-Tutora}} % Opción: 
+\DeclareOption{english}{\spanishfalse % Opción: Idioma inglés
+	\renewcommand{\@pautor}{Author}
+	\renewcommand{\@ptutor}{Supervisor}
+	\renewcommand{\@pcotutor}{Co-supervisor}
 }
+%Tutora
+\ExecuteOptions{spanish,autor,tutor,cotutor} % Opción por defecto
+\ProcessOptions\relax % Fin de procesamiento de opciones
+%---
+
+
+
+%--- Definición de colores
+% Este paquete debe cargarse antes de que xcolor sea cargado por otro paquete sin estas
+% opciones -> genera errores.
+% Revisar la documentación del paquete para ver los nombres de colores predefinidos.
+\usepackage[%
+	usenames,
+	dvipsnames,
+	svgnames,
+	x11names,
+	table
+]{xcolor}
+
+\definecolor{palered}{rgb}{.8,0,0} % Color especial definido para los hiperenlaces
+\definecolor{gris97}{gray}{.97}
+\definecolor{gris95}{gray}{.95}
+\definecolor{gris75}{gray}{.75}
+\definecolor{gris45}{gray}{.45}
+\definecolor{sombra}{gray}{.70}
+%---
+
+\usepackage{url} 		% Para escritura de URL
+\urlstyle{sf}			% Estilo sans serif para URLs
+
+\usepackage{fancyhdr}	% Ajuste de cabeceras young pies
+\usepackage{titlesec}	% Ajustes de títulos de secciones
+\usepackage{sectsty}	% Ajustes de títulos
+\usepackage{tikz}		% Gráficos avanzados en LeTeX
+
+\usepackage[indent]{parskip}  % Control de espaciado entre párrafos
+
+
+%--- Paquetes para listas y organización de texto
+\usepackage{enumitem} 	% Control de listas
+\setlist{nolistsep} 	% Separación de ítems en listas
+\usepackage{multicol}	% Texto en varias columnas
+
+
+\usepackage[autostyle]{csquotes}
+
+
+%--- Generación de hiperenlaces
+\usepackage[
+	pdftex,
+	breaklinks,			% Permite que los links ocupen más de una línea
+%	hidelinks,			% Oculta el color y borde de los links
+% OJO: La opción colorlinks se comenta para evitar un error con el paquete menukeys. 
+%	colorlinks=true,	% Pone color en los link o un borde
+	linkcolor=palered,	% Color de los links
+	anchorcolor=palered, 
+	citecolor=palered, 
+	filecolor=palered, 
+	menucolor=palered, 
+	urlcolor=palered,
+	bookmarksnumbered=true % Incluye números en bookmarks
+]{hyperref}
+
+
+\usepackage{pdfpages}  % Permite inclusión de páginas de un PDF
+
+
+%--- Paquetes especiales para Informática
+\usepackage{listings}	% Inclusión de listados de código
+\usepackage[% Inclusión de algoritmos
+	lined,
+	boxruled,
+	algochapter,
+	commentsnumbered,
+\ifspanish
+	spanish
+\else
+	english
+\fi
+]{algorithm2e} 
 
 
 
@@ -87,13 +174,6 @@
 
 
 
-
-
-
-
-
-
-
 % -------------------------
 % CONFIGURACIÓN INICIO CAPÍTULOS (paquete titlesec)
 % -------------------------
@@ -113,8 +193,6 @@
 
 
 
-
-
 % -------------------------
 % TIPO DE LETRA EMPLEADO EN TÍTULOS DE SECCIONES (paquete sectsty)
 % -------------------------
@@ -122,25 +200,6 @@
 \subsectionfont{\sffamily\bfseries}
 \subsubsectionfont{\sffamily\bfseries}
 % -------------------------
-
-
-
-
-
-% -------------------------
-% AJUSTES DE COLOR 
-% -------------------------
-\definecolor{gris97}{gray}{.97}
-\definecolor{gris95}{gray}{.95}
-\definecolor{gris75}{gray}{.75}
-\definecolor{gris45}{gray}{.45}
-\definecolor{sombra}{gray}{.70}
-% -------------------------
-
-
-
-
-
 
 
 
@@ -167,6 +226,7 @@
 	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
 	{¡}{{\textexclamdown}}1
 }
+
 
 % Las opciones aquí incluidas deben servir de ejemplo, ya que para una lista exhaustiva se debe consultar la documentación del paquete.
 \lstset{ % Estilo por defecto
@@ -210,6 +270,7 @@
 	backgroundcolor={\color{FloralWhite}} % Color del fondo
 }
 
+
 % Algunos ejemplos de definiciones de estilos.
 % Para ajustar los colores se recomienda echar un vistazo al manual de xcolor donde están todos los colores predefinidos con sus nombres.
 % OJO: Algunos de los ejemplos suministrados no han sido depurados por ellos pueden presentar algún error.
@@ -224,7 +285,6 @@
 %\lstdefinestyle{consola}{%
 %	basicstyle=\scriptsize\bf\ttfamily
 %}
-  
  
 \lstdefinestyle{C-ruled}{%
 	language=C,
@@ -232,7 +292,6 @@
 	rulesep=.1pt,
 	rulecolor=\color{black}
 }
-
 
 \lstdefinestyle{C-color}{%
   	breaklines=true,
@@ -252,7 +311,6 @@
   	stringstyle=\color{DarkOrchid}
 }
 
-
 \lstdefinestyle{Python-color}{%
 	language=Python,
 	basicstyle=\scriptsize,
@@ -268,7 +326,6 @@
 %	escapeinside={(*@}{@*)},
 %	keywordstyle=\bfseries
 %}
-	
 
 %\lstdefinestyle{C++-color}{%
 %  	breaklines=true,
@@ -279,7 +336,6 @@
 %  	identifierstyle=\color{blue},
 %  	stringstyle=\color{orange}
 %}
-    
 	
 %\lstdefinestyle{PHP-color}{%
 %	basicstyle=\scriptsize,
@@ -293,7 +349,6 @@
 %  	emph            =[2]{if,and,or,else},
 %  	emphstyle       =[2]\color{Gold}
 %}
-  
 	
 %\lstdefinestyle{Latex-color}{%
 %	language=[LaTeX]{Tex},
@@ -317,7 +372,6 @@
 %    numbers=none
 %}
 
-
 %\lstdefinestyle{R-color}{%
 %	language=R,                     
 %  	basicstyle=\scriptsize,
@@ -329,20 +383,34 @@
 
 
 
-
-
-
-
-
-
-
-
-
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COMANDOS DE USUARIO
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% -------------------------
+% Ajustes para el idioma español.
+% EDITAR: Sólo si es necesario.
+% NOTA: Al cambiar de idioma las def. de títulos se reinician.
+\newcommand{\setindexnames}{%
+	\ifspanish
+		%--- No necesarios al añadir la opción es-tabla para babel.
+		%\renewcommand{\tablename}{Tabla} % Se sustituye 'Cuadro' por 'Tabla'
+		%\renewcommand{\listtablename}{Índice de tablas}
+		%---
+		\renewcommand{\lstlistingname}{Listado}
+		\renewcommand{\lstlistlistingname}{Índice de listados}
+		\SetAlgorithmName{Algoritmo}{Alg}{Índice de algoritmos}
+		% Modififica las macros \algorithmcfname y \listalgoritmcfname
+		\renewcommand{\appendixname}{Anexo}
+		\renewcommand{\bibname}{Bibliografía}
+		\renewcommand{\indexname}{Índice temático}
+	\fi
+}
+ 
  
 % -------------------------
 % DEFINICIÓN DE DATOS DEL DOCUMENTO
@@ -373,9 +441,6 @@
 
 
 
-
-
-
 % -------------------------
 % PORTADA (TFG)
 % -------------------------
@@ -388,12 +453,14 @@
 			{\LARGE \textbf{\@instEdu\\[1.5\parskip]
 					\@centroEdu\\[2cm]
 					\@titulacion}}\\[0.5cm]
-			{\large \textbf{\@especialidad}}\\[1.5cm]
+			\ifdefined\@especialidad{\large \textbf{\@especialidad}}\\[1.5cm]
+			\else \phantom{\large \textbf{Especialidad}}\\[1.5cm]
+			\fi
 			{\LARGE \textbf{\@tipoDoc}}\\[1cm]
 			
 			{\LARGE \@tituloPrimera}\\ \smallskip%			
 			\ifdefined\@tituloSegunda{\LARGE	\@tituloSegunda}\\[3cm]
-			\else \vspace{3cm}
+			\else \phantom{\LARGE	Título}\\[3cm]
 			\fi
 			
 			{\Large \@autor}\vfill%
@@ -410,37 +477,40 @@
 
 
 
-
 % -------------------------
 % PÁGINA INICIAL (TFG, es como la portada, añade Director/es o Tutor)
 % -------------------------
 %\makeatletter
-\newcommand{\portadillaTFG}[3]{%
+\newcommand{\portadillaTFG}{%
 	\begin{center}
 		\includegraphics[width=3.5cm]{\@escudo}\\[1.5cm]
 		
 		{\LARGE \textbf{\@instEdu \\[1.5\parskip]
 				\@centroEdu}}\\[0.5cm]
 		{\Large \textbf{\@deptoEduPrimera}}\\ \smallskip%
-		\ifdefined\@deptoEduSegunda{\Large \textbf{\@deptoEduSegunda}}\\[0.5cm]
-		\else \vspace{0.5cm}
+		\ifdefined\@deptoEduSegunda{\Large\textbf{\@deptoEduSegunda}}\\[0.5cm]
+		\else \phantom{\Large\textbf{Departamento}}\\[0.5cm]
 		\fi
-		{\large \textbf{\@especialidad}}\\[1.5cm]
+		\ifdefined\@especialidad{\large \textbf{\@especialidad}}\\[1.5cm]
+		\else \phantom{\large \textbf{Especialidad}}\\[1.5cm]
+		\fi
 		
 		{\LARGE \textbf{\@tipoDoc}}\\[1cm]
 		
 		
 		{\LARGE \textbf{\@tituloPrimera}}\\ \smallskip%		
 		\ifdefined\@tituloSegunda{\LARGE \textbf{\@tituloSegunda}}\\[3cm]
-		\else \vspace{3cm}
+		\else \phantom{\LARGE \textbf{Título}}\\[3cm]
 		\fi
 	\end{center}
 	
 	\begin{flushleft}
-		{\Large #1: \@autor} \\ \bigskip%
-		{\Large #2: \@tutor} \\ \bigskip%
+		{\Large \@pautor: \@autor} \\ \bigskip%
+		{\Large \@ptutor: \@tutor} \\ \bigskip%
 		% Si hay definido un co-tutor se añade automáticamente la línea siguiente
-		\ifdefined\@cotutor {\Large #3: \@cotutor} \fi 
+		\ifdefined\@cotutor {\Large \@pcotutor: \@cotutor} 
+		\else \phantom{\Large Co-tutor} 
+		\fi 
 	\end{flushleft}
 	\vfill%
 	
@@ -454,15 +524,9 @@
 
 
 
-
-
-
-
-
 % -------------------------
 % PÁGINA TRIBUNAL (TFG)
 % -------------------------
-%\makeatletter
 \newcommand{\tribunalTFG}{
 	{\flushright \LARGE \textsc{Tribunal:}}
 	
@@ -488,12 +552,9 @@
 			Fdo.: & Fdo.: & Fdo.:		
 		\end{tabularx}
 	\end{center}
-	\cleardoublepage}
-%\makeatother
+	\cleardoublepage
+}
 % -------------------------
-
-
-
 
 
 
@@ -513,18 +574,17 @@
 
 
 
-
-
-
-
-
-
 % -------------------------
 % CRÉDITOS Y LICENCIA (opcional, 1 pág.)
 % -------------------------
 % Todas las obras en gral. deberían presentar información relativa a la propiedad intelectual del contenido y condiciones bajo las cuales se puede distribuir y reproducir
 %\makeatletter
 \newcommand{\creditos}[2]{%
+	\ifspanish
+		\selectlanguage{spanish}% Emplea idioma español
+	\else
+		\selectlanguage{english}% Emplea idioma inglés
+	\fi
 	\null\vspace{6cm}
 	{\small \noindent \@titulo\\
 	\textcopyright{} \@autor, \@yearDef\\[1cm]
@@ -538,40 +598,33 @@
 
 
 
-
-
-
-
 % -------------------------
 % COMANDO \tecla
 % -------------------------
 % (Nota: Sustituido en la última versión por paquete "menukeys")
 %
 % Para crear indicaciones de pulsación de teclas
-%\usetikzlibrary{shadows} % Necesario para poder crear nuevo comando de indicación de pulsación de tecla.
-%\newcommand*\tecla[1]{%   
-%  \tikz[baseline=(key.base)]
-%    \node[%
-%      draw,
-%      fill=white,
-%      drop shadow={%
-%	      shadow xshift=0.25ex,
-%	      shadow yshift=-0.25ex,
-%	      fill=black,
-%	      opacity=0.75
-%      },
-%      rectangle,
-%      rounded corners=2pt,
-%      inner sep=1pt,
-%      line width=0.5pt,
-%      font=\scriptsize\sffamily
-%    ](key) {#1\strut}
-%  ;
-%}
+\usetikzlibrary{shadows} % Necesario para poder crear nuevo comando de indicación de pulsación de tecla.
+\newcommand*\tecla[1]{%   
+  \tikz[baseline=(key.base)]
+    \node[%
+      draw,
+      fill=white,
+      drop shadow={%
+	      shadow xshift=0.25ex,
+	      shadow yshift=-0.25ex,
+	      fill=black,
+	      opacity=0.75
+      },
+      rectangle,
+      rounded corners=2pt,
+      inner sep=1pt,
+      line width=0.5pt,
+      font=\scriptsize\sffamily
+    ](key) {#1\strut}
+  ;
+}
 % -------------------------
-
-
-
 
 
 
@@ -588,12 +641,6 @@
 
 
 
-
-
-
-
-
-
 % -------------------------
 % EVITACIÓN DE VIUDAS Y HUÉRFANAS
 % -------------------------
@@ -603,11 +650,6 @@
 	\widowpenalty=#1 % % Valor típico: hasta 10000
 }
 % -------------------------
-
-
-
-
-
 
 
 
@@ -623,11 +665,6 @@
 
 
 
-
-
-
-
-
 % -------------------------
 % Creación de un contador nuevo para almacenar el nº de páginas actual
 % -------------------------
@@ -639,19 +676,12 @@
 }
 % -------------------------
 
+
 % Continuación de la paginación desde el valor almacenado en \totpages
 \newcommand{\contpagination}{%
 	\setcounter{page}{\value{totpages}}
 }
 % -------------------------
-
-
-
-
-
-
-
-
 
 
 
@@ -669,15 +699,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 % -------------------------
 % AÑADIDO DE ENTORNO ABSTRACT EN CLASE BOOK
 % -------------------------
@@ -686,6 +707,4 @@
 \bfseries \sffamily \abstractname \end{center}}%
 {\vfill \null}
 
-
-
-
+\endinput

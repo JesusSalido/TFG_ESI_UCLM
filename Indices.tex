@@ -1,0 +1,52 @@
+% -------------------------
+%
+% ÍNDICES: 
+% EDITAR: Si alguno de los índices no existe, su inclusión se puede comentar.
+%
+% -------------------------
+\setindexnames % Ajusta nombres (sólo en español).
+\pagestyle{fancy} % Estilo de página ajustado por fancyhdr
+
+%--- Índice general
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\pdfbookmark[0]{Índice general}{idx_toc}% idx_toc.0 % Bookmark en PDF
+\tableofcontents  % Índice general
+% Todos los listados se han incluido en el índice gral. de contenidos. De 
+%modo automático también quedan añadidos a los bookmarks del PDF. Si se 
+%desean 
+%eliminiar del TOC se pueden comentar el comando \addcontensline.
+%---
+
+%--- Índice de figuras
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\listfigurename} % Añade la lista de figuras al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\listfigurename}{idx_lof}% idx_lof.0 % Bookmark en PDF
+\listoffigures    % Índice de figuras (opcional)
+%---
+
+%--- Índice de tablas
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\listtablename} % Añade la lista de tablas al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\listtablename}{idx_lot}% idx_lot.0 % Bookmark en PDF
+\listoftables % Índice de tablas (opcional)
+%---
+
+%--- Índice de listados
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\lstlistlistingname} % Añade la lista de listados al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\lstlistlistingname}{idx_lol}% idx_lol.0 % Bookmark en PDF
+\lstlistoflistings % Índice de listados creados con listings (opcional)
+%---
+
+%--- Índice de algoritmos
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\addcontentsline{toc}{chapter}{\listalgorithmcfname} % Añade la lista de algoritmos al TOC (también a bookmarks en PDF)
+%\pdfbookmark[0]{\listalgorithmcfname}{idx_loa}% idx_loa.0 % Bookmark en PDF
+\listofalgorithms % Índice de algoritmos creados con algortihm2e
+%---
+

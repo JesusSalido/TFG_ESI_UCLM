@@ -1,0 +1,49 @@
+%--- Ajustes del documento.
+\pagestyle{plain}	% Páginas sólo con numeración inferior al pie
+
+% -------------------------
+%
+% RESUMEN:
+% OJO: Si es preciso cambiar manualmente orden Resumen <-> Abstract
+%
+% -------------------------
+%--- Resumen en español
+\selectlanguage{spanish} % Selección de idioma del resumen.
+\cleardoublepage % Se incluye para modificar el contador de página antes de añadir bookmark
+\phantomsection  % OJO: Necesario con hyperref
+\pdfbookmark[0]{Resumen}{idx_resumen}% idx_resumen.0 % Bookmark en PDF
+
+\begin{abstract}
+% EDITAR: Resumen (máx. 1 pág.)
+\begin{center}
+\emph{(... versión del resumen en español ...)}
+\end{center}
+El resumen debe ocupar como máximo una página y en dicho espacio proporcionará información crucial sobre el \emph{`qué'} (problemática que trata de resolver el TFG), el \emph{`cómo'} (metodología para llegar a los resultados) y los objetivos alcanzados.
+\end{abstract}
+%---
+
+
+
+%--- Resumen en inglés
+% Abstract
+\selectlanguage{english} % Selección de idioma del resumen.
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\pdfbookmark[0]{Abstract}{idx_abstract}% idx_abstract.0 % Bookmark en PDF
+
+\begin{abstract}
+% EDITAR: Abstract (máx. 1 pág.)
+
+\begin{center}
+\emph{(... english version of the abstract ...)}
+\end{center}
+Versión del resumen en inglés. En los trabajos cuyo idioma principal sea el inglés, el orden de \textsf{Resumen} y \textsf{Abstract} se invertirá.	
+\end{abstract}
+%---
+
+%--- Ajuste del idioma para el resto del documento.
+\ifspanish
+	\selectlanguage{spanish}% Emplea idioma español
+\else
+	\selectlanguage{english}% Emplea idioma inglés
+\fi
