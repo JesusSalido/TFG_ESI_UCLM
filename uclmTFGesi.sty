@@ -41,9 +41,14 @@
 
 \ProvidesPackage{uclmTFGesi} % Nombre del paquete
 
+%\usepackage[indent]{parskip}  % Control de espaciado entre párrafos
+\usepackage{parskip}  % Control de espaciado entre párrafos
+
 %--- Procesamiento de opciones de paquete
 \newif\ifspanish\spanishfalse % Condicional para manejo del idioma
-\DeclareOption{spanish}{\spanishtrue}  % Opción: Idioma español
+\DeclareOption{spanish}{\spanishtrue
+    \setlength{\parindent}{15pt}
+}  % Opción: Idioma español
 \DeclareOption{autor}{\newcommand{\@pautor}{Autor}} % Opción: Autor
 \DeclareOption{autora}{\renewcommand{\@pautor}{Autora}} % Opción: Autora
 \DeclareOption{tutor}{\newcommand{\@ptutor}{Tutor}} % Opción: Tutor
@@ -54,6 +59,7 @@
 	\renewcommand{\@pautor}{Author}
 	\renewcommand{\@ptutor}{Supervisor}
 	\renewcommand{\@pcotutor}{Co-supervisor}
+    \setlength{\parindent}{0pt}
 }
 %Tutora
 \ExecuteOptions{spanish,autor,tutor,cotutor} % Opción por defecto
@@ -89,8 +95,6 @@
 \usepackage{titlesec}	% Ajustes de títulos de secciones
 \usepackage{sectsty}	% Ajustes de títulos
 \usepackage{tikz}		% Gráficos avanzados en LeTeX
-
-\usepackage[indent]{parskip}  % Control de espaciado entre párrafos
 
 
 %--- Paquetes para listas y organización de texto
