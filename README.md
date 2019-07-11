@@ -10,7 +10,9 @@ El propósito de este proyecto es utilizarlo como plantilla para preparar, con L
 El proyecto está constituido por:
   - Un fichero LaTeX principal (``uclmTFGesi.tex``) en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).
   - Un fichero de estilo ``*.sty`` (paquete `uclmTFGesi`) en el que se han agrupado los aspectos de formato. Y que admite como opciones seleccionar el idioma principal del documento (opción: `english`) o prefijos de género (opciones: `autora`, `tutora` o `cotutora`).
-    > __NOTA__: _Se recomienda evitar su modificación si se carece de conocimientos avanzados de LaTeX._- 
+    > __NOTA__: _Se recomienda evitar su modificación si se carece de conocimientos avanzados de LaTeX._ 
+  - Un fichero de estilo ``uclmTFG.ist`` para el índice temático.
+  - Un fichero de configuración ``latexmkrc`` para automatizar la compilación.
   - Varios ficheros LaTeX (``*.tex``) correspondientes a los principales capítulos de un TFG.
   - Un fichero de bibliografía (``biblioTFG.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
   - Directorio (``./figs``) de figuras contenidas en el documento final.
@@ -26,6 +28,7 @@ Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
+> IMPORTANTE: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas.
 -----
 ##### Contacto
 

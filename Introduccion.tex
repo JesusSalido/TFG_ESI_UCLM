@@ -1,7 +1,10 @@
 \chapter{Introducción}
 \label{cap:Introduccion}
 
-Este capítulo aborda la motivación del trabajo. Se trata de señalar la necesidad de la que surge, su actualidad y pertinencia. Puede incluir también un estado de la cuestión en la que se revisen estudios o desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
+Este capítulo aborda la motivación\index{motivación} del trabajo. Se trata de 
+señalar la necesidad de la que surge, su actualidad y pertinencia. Puede 
+incluir también un estado de la cuestión en la que se revisen estudios o 
+desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
 
 A continuación se muestran algunos ejemplos para la inclusión de elementos en el documento.
 
@@ -14,7 +17,7 @@ A continuación se muestran algunos ejemplos para la inclusión de elementos en 
 A continuación se van a añadir algunos ejemplos que pueden emplearse al redactar la memoria.
 
 \index{ejemplos!listas} % Para el índice
-\noindent Ejemplo de lista con \emph{bullet} especial. 
+\noindent Ejemplo de lista con \emph{bullet} especial.\index{lista!bullet} 
 % Ejemplo: Lista con bullets especiales
 % ============
 \begin{itemize}
@@ -24,7 +27,7 @@ A continuación se van a añadir algunos ejemplos que pueden emplearse al redact
 \end{itemize}
 
 
-\noindent Ejemplo de lista en varias columnas.
+\noindent Ejemplo de lista en varias columnas.\index{lista!columnas}
 % Ejemplo: Listas en varias columnas
 % ============
 \begin{multicols}{2} % El parámetro es el número de columnas de la lista
@@ -45,7 +48,8 @@ A continuación se van a añadir algunos ejemplos que pueden emplearse al redact
 \section{Ejemplos de tablas}
 \label{sec:ejTablas}
 \index{ejemplos!tablas}
-A continuación se incluyen algunos ejemplos de tablas hechas con \LaTeX{} y paquetes dedicados.
+A continuación se incluyen algunos ejemplos de tablas\index{tabla} hechas con 
+\LaTeX{} y paquetes dedicados.
 
 % Ejemplo: Tabla con macro \cline
 % ==========
@@ -65,7 +69,8 @@ A continuación se incluyen algunos ejemplos de tablas hechas con \LaTeX{} y paq
 \end{table}
 
 
-\noindent Ejemplo de tabla en la que se controla el ancho de la celda.
+\noindent Ejemplo de tabla\index{tabla!ancho controlado} en la que se 
+controla el ancho de la celda.
 
 % Ejemplo: Ejemplo de tabla con control de la anchura de celda.
 % ==========
@@ -78,7 +83,8 @@ A continuación se incluyen algunos ejemplos de tablas hechas con \LaTeX{} y paq
 		Día & Temp Mín (\textdegree C) & Temp Máx (\textdegree C) & Previsión \\ \hline
 		Lunes & 11 & 22 & Día claro y muy soleado. Sin embargo, la brisa de la tarde puede hacer que las temperaturas desciendan \\ \hline
 		Martes & 9 & 19 & Nuboso con chubascos en muchas regiones. En Cataluña claro con posibilidad de bancos nubosos al norte de la región \\ \hline
-		Miércoles & 10 & 21 & La lluvía continuará por la mañana pero las condiciones climáticas mejorarán considerablemente por la tarde\\
+		Miércoles & 10 & 21 & La lluvia continuará por la mañana pero las 
+		condiciones climáticas mejorarán considerablemente por la tarde\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -90,20 +96,23 @@ A continuación se incluyen algunos ejemplos de tablas hechas con \LaTeX{} y paq
 \label{sec:ejFiguras}
 \index{ejemplos!figuras}
 
-En esta sección se añaden ejemplos de muestra para la inclusión de figuras simples y subfiguras.
+En esta sección se añaden ejemplos de muestra para la inclusión de 
+figuras\index{figuras} simples y subfiguras.
 
 % Ejemplo: Ejemplo de inclusión de figura
 % ============
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.4\linewidth]{escudoInf}
-	\caption[Ejemplo de figura]{Figura vectorial del escudo de la ESI}
+	\caption[Ejemplo de figura]{Figura vectorial del escudo de la ESI 
+	(Escuela Superior de Informática)}\index{ESI}
 	\label{fig:ejFigure}
 \end{figure}
 
 
 \noindent Ejemplo de figuras compuestas por subfiguras.
-¡Ojo! porque el paquete subfigure ha quedado obsoleto.
+¡Ojo! porque el paquete subfigure ha quedado 
+obsoleto.\index{figuras!subfiguras}
 
 % Ejemplo: Ejemplo de inclusión de subfiguras
 % ============
@@ -129,7 +138,8 @@ En esta sección se añaden ejemplos de muestra para la inclusión de figuras si
 \label{sec:ejListados}
 \index{ejemplos!listados}
 
-Ejemplos más representativos de inclusión de porciones de código fuente.
+Ejemplos más representativos de inclusión de porciones de código 
+fuente.\index{listados}
 
 % Ejemplo: Listado Java
 % ============
@@ -175,7 +185,21 @@ $ gcc -o Hola HolaMundo.c
 
 
 \subsection{Algoritmos con el paquete \texttt{algorithm2e}}
-Como ya se ha comentado en los textos científicos relacionados con las TIC\footnote{Por supuesto en un TFG o tesis de una Escuela de Informática.} (Tecnologías de la Información y Comunicaciones) suelen aparecer porciones de código en los que se explica alguna función o característica relevante del trabajo que se expone. Muchas veces lo que se quiere ilustrar es un algoritmo o método en que se ha resuelto un problema abstrayéndose del lenguaje de programación concreto en que se realiza la implementación. El paquete \texttt{algorithm2e}\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}} proporciona un entorno \texttt{algorithm} para la impresión apropiada de algoritmos tratándolos como objetos flotantes y con muchas flexibilidad de personalización. En el algoritmo \ref{alg:como} se muestra cómo puede emplearse dicho paquete. En este curso no se explican las posibilidades del paquete más en profundidad ya que excede el propósito del curso. A todos los interesados se les remite a la documentación del mismo.
+Como ya se ha comentado en los textos científicos relacionados con las 
+TIC\footnote{Por supuesto en un TFG (Trabajo Fin de Grado)\index{TFG} o tesis 
+de una Escuela de Informática.} (Tecnologías de la Información y 
+Comunicaciones) suelen aparecer porciones de código en los que se explica 
+alguna función o característica relevante del trabajo que se expone. Muchas 
+veces lo que se quiere ilustrar es un algoritmo o método en que se ha 
+resuelto un problema abstrayéndose del lenguaje de programación concreto en 
+que se realiza la implementación. El paquete 
+\texttt{algorithm2e}\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}}\index{CTAN}
+ proporciona un entorno \texttt{algorithm} para la impresión apropiada de 
+algoritmos tratándolos como objetos flotantes y con mucha flexibilidad de 
+personalización. En el algoritmo \ref{alg:como} se muestra cómo puede 
+emplearse dicho paquete. En este curso no se explican las posibilidades del 
+paquete más en profundidad ya que excede el propósito del curso. A todos los 
+interesados se les remite a la documentación del mismo.
 
 
 % Ejemplo:
@@ -209,7 +233,12 @@ inicialización\;
 \newpage
 
 \section{Menús, paths y teclas con el paquete \texttt{menukeys}}
-Cada vez es más usual que los trabajos en ingeniería exijan el uso de software. Para poder especificar de modo elegante el uso menús, pulsación de teclas y directorios se recomienda el uso del paquete \texttt{menukeys}.\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/menukeys/menukeys.pdf}} Este paquete nos permite especificar el acceso a un menú, por ejemplo:
+Cada vez es más usual que los trabajos en ingeniería exijan el uso de 
+software. Para poder especificar de modo elegante el uso menús, pulsación de 
+teclas y directorios se recomienda el uso del paquete 
+\texttt{menukeys}.\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/menukeys/menukeys.pdf}}
+ \index{CTAN} Este paquete nos permite especificar el acceso a un menú, por 
+ejemplo:
 
 \menu{Herramientas > Órdenes > PDFLaTeX}\\
 

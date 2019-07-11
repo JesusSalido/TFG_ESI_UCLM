@@ -1,0 +1,24 @@
+% -------------------------
+%
+% -NOTACIÓN: Lista de símbolos con significado especial.
+%
+% -------------------------
+\cleardoublepage
+\phantomsection % OJO: Necesario con hyperref
+\pdfbookmark[0]{Notación}{idx_notacion}% idx_notacion.0 % Bookmark en PDF
+
+\chapter*{Notación} % Opción con * para que no aparezca en TOC ni numerada
+\addcontentsline{toc}{chapter}{Notación} % Añade al TOC.
+
+Ejemplo de lista con notación empleada en la memoria del TFG.
+
+\begin{tabular}{r r p{0.8\linewidth}}
+$A, B, C, D$	& : & Variables lógicas. \\
+$f, g, h$		& :	& Funciones lógicas. \\
+$\cdot$			& : & Producto lógico (AND). A menudo se omitirá como en $A 
+B$ en lugar de $A \cdot B$.\\
+$+$				& : & Suma aritmética o lógica (OR) dependiendo del 
+contexto.\\
+$\oplus$		& : & OR exclusivo (XOR).\\
+$\overline{A}$ o ${A}'$	& : & Operador NOT o negación.
+\end{tabular}

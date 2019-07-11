@@ -1,7 +1,9 @@
 \chapter{Metodología}
 \label{cap:Metodologia}
 
-En este capítulo se debe detallar las metodologías empleadas para planificación y desarrollo del trabajo, así como explicar de modo claro y conciso cómo se han aplicado dichas metodologías.
+En este capítulo se debe detallar las metodologías\index{metodología} 
+empleadas para planificación y desarrollo del trabajo, así como explicar de 
+modo claro y conciso cómo se han aplicado dichas metodologías.
 
 A continuación se incluye una guía rápida que puede ser de gran utilidad en la elaboración de este capítulo.
 
@@ -9,24 +11,47 @@ A continuación se incluye una guía rápida que puede ser de gran utilidad en l
 
 \subsection{Proceso de desarrollo de software}
 
-El \textbf{proceso de desarrollo de software} se denomina también \textbf{ciclo de vida del desarrollo del software} (\emph{SDLC, Software Development Life-Cycle}) y cubre las siguientes actividades:
+El \textbf{proceso de desarrollo de software} se denomina también 
+\textbf{ciclo de vida del desarrollo del software} (\emph{SDLC, Software 
+Development Life-Cycle})\index{SDLC}\index{Life-Cycle} y cubre las siguientes 
+actividades:
 
 \begin{enumerate}
-\item \textbf{Obtención y análisis de requisitos} (\emph{requirements analysis}). Es la definición de la funcionalidad del software a desarrollar. Suele requerir entrevistas entre los ing. de software y el cliente para obtener el ¿qué y cómo? Permite obtener una \emph{especificación funcional} del software.
+\item \textbf{Obtención y análisis de requisitos}\index{requisitos} 
+(\emph{requirements analysis}). Es la definición de la funcionalidad del 
+software a desarrollar. Suele requerir entrevistas entre los ing. de software 
+y el cliente para obtener el ¿qué y cómo? Permite obtener una 
+\emph{especificación funcional} del software.
 
-\item \textbf{Diseño} (\emph{SW design}). Consiste en la definición de: la arquitectura, componentes, interfaces y otras características del sistema o sus componentes.
+\item \textbf{Diseño} (\emph{SW design}).\index{diseño} Consiste en la 
+definición de: la arquitectura, componentes, interfaces y otras 
+características del sistema o sus componentes.
 
 \item \textbf{Implementación} (\emph{SW construction and coding}). Es el
   proceso de codificación del software en un lenguaje de programación.
   Constituye la fase en que tiene lugar el desarrollo de software.
 
-\item \textbf{Pruebas} (\emph{testing and verification}). Verificación del correcto funcionamiento del software para detectar fallos lo antes posible. Persigue la obtención de software de calidad. Consisten en pruebas de \emph{caja negra} y \emph{caja blanca}. Las primeras comprueban que la funcionalidad es la esperada y para ello se verifica que ante un conjunto amplio de entradas, la salida es correcta. Con las segundas se comprueba la robustez del código sometiéndolo a pruebas cuya finalidad es provocar fallos de software. Esta fase también incorpora la \emph{pruebas de integración} en las que se verifica la interoperabilidad del sistema con otros existentes.
+\item \textbf{Pruebas} (\emph{testing and verification}).\index{testing} 
+Verificación del correcto funcionamiento del software para detectar fallos lo 
+antes posible. Persigue la obtención de software de calidad. Consisten en 
+pruebas de \emph{caja negra} y \emph{caja blanca}. Las primeras comprueban 
+que la funcionalidad es la esperada y para ello se verifica que ante un 
+conjunto amplio de entradas, la salida es correcta. Con las segundas se 
+comprueba la robustez del código sometiéndolo a pruebas cuya finalidad es 
+provocar fallos de software. Esta fase también incorpora la \emph{pruebas de 
+integración} en las que se verifica la interoperabilidad del sistema con 
+otros existentes.
 
 \item \textbf{Documentación} (\emph{documentation}). Persigue facilitar la mejora continua del software y su mantenimiento.
 
-\item \textbf{Despliegue} (\emph{deployment}). Consiste en la instalación del software en un entorno de producción y puesta en marcha para explotación. En ocasiones implica una fase de \emph{entrenamiento} de los usuarios del software.
+\item \textbf{Despliegue} (\emph{deployment}).\index{despliegue} Consiste en 
+la instalación del software en un entorno de producción y puesta en marcha 
+para explotación. En ocasiones implica una fase de \emph{entrenamiento} de 
+los usuarios del software.
 
-\item \textbf{Mantenimiento} (\emph{maintenance}). Su propósito es la resolución de problemas, mejora y adaptación del software en explotación.
+\item \textbf{Mantenimiento} (\emph{maintenance}).\index{mantenimiento} Su 
+propósito es la resolución de problemas, mejora y adaptación del software en 
+explotación.
 \end{enumerate}
 
 
@@ -43,21 +68,47 @@ Una metodología es una colección de:
 \item \textbf{Ayudas documentales}.
 \end{itemize}
 
-Cada metodología es apropiada para un tipo de proyecto dependiendo de sus características técnicas, organizativas y del equipo de trabajo. En los entornos empresariales es obligado, a veces, el uso de una metodología concreta (p.~ej. para participar en concursos públicos). El estándar internacional ISO/IEC 12270 describe el método para seleccionar, implementar y monitorear el ciclo de vida del software.
+Cada metodología es apropiada para un tipo de proyecto dependiendo de sus 
+características técnicas, organizativas y del equipo de trabajo. En los 
+entornos empresariales es obligado, a veces, el uso de una metodología 
+concreta (p.~ej. para participar en concursos públicos). El estándar 
+internacional ISO/IEC 12270\index{ISO/IEC 12270} describe el método para 
+seleccionar, implementar y monitorear el ciclo de vida del software.
 
 Mientras que unos intentan sistematizar y formalizar las tareas de diseño, otros aplican técnicas de gestión de proyectos para dicha tarea. Las metodologías de desarrollo se pueden agrupar dentro de varios enfoques según se señala a continuación.
 
 \begin{enumerate}
-\item \textbf{Metodología de Análisis y Diseño de Sistemas Estructurados} (\emph{SSADM, Structured Systems Analysis and Design Methodology}). Es uno de los paradigmas más antiguos. En esta metodología se emplea un modelo de desarrollo en cascada (\emph{waterfall}). Las fases de desarrollo tienen lugar de modo secuencial. Una fase comienza cuando termina la anterior. Es un método clásico poco flexible y adaptable a cambios en los requisitos. Hace especial hincapié en la planificación derivada de una exhaustiva definición y análisis de los requisitos. Son metodologías que no lidian bien con la flexibilidad requerida en los proyectos de desarrollo software. Derivan de los procesos en  ingeniería tradicionales y están enfocadas a la reducción del riesgo. Emplea tres técnicas clave:
+\item \textbf{Metodología de Análisis y Diseño de Sistemas Estructurados} 
+(\emph{SSADM, Structured Systems Analysis and Design 
+Methodology}).\index{SSADM} Es uno de los paradigmas más antiguos. En esta 
+metodología se emplea un modelo de desarrollo en cascada 
+(\emph{waterfall}).\index{modelo!waterfall@\emph{waterfall}} Las fases de 
+desarrollo tienen lugar de modo secuencial. Una fase comienza cuando termina 
+la anterior. Es un método clásico poco flexible y adaptable a cambios en los 
+requisitos. Hace especial hincapié en la planificación derivada de una 
+exhaustiva definición y análisis de los requisitos. Son metodologías que no 
+lidian bien con la flexibilidad requerida en los proyectos de desarrollo 
+software. Derivan de los procesos en  ingeniería tradicionales y están 
+enfocadas a la reducción del riesgo. Emplea tres técnicas clave:
 
 \begin{itemize}
-\item Modelado lógico de datos (\emph{Logical Data Modelling}),
+\item Modelado lógico de datos (\emph{Logical Data 
+Modelling}),\index{modelado}
 \item Modelado de flujo de datos (\emph{Data Flow Modelling}), y
 \item Modelado de Entidades y Eventos (\emph{Entity Event
   Modelling}).
 \end{itemize} 
 
-\item \textbf{Metodología de Diseño Orientado a Objetos} (\emph{OOD,  Object-Oriented Design}). Está muy ligado a la OOP (Programación Orientada a Objetos) en que se persigue la reutilización. A diferencia del anterior, en este paradigma los datos y los procesos se combinan en una única entidad denominada \emph{objetos} (o clases). Esta orientación pretende que los sistemas sean más modulares, mejorando la eficiencia y calidad del análisis y el diseño. Emplea extensivamente el Lenguaje Unificado de Modelado (UML) para especificar, visualizar, construir y documentar los artefactos de los sistemas software y  también el modelo de negocio. UML proporciona una serie diagramas básicos para modelar un sistema: 
+\item \textbf{Metodología de Diseño Orientado a Objetos} (\emph{OOD,  
+Object-Oriented Design}).\index{OOD} Está muy ligado a la OOP (Programación 
+Orientada a Objetos) en que se persigue la reutilización. A diferencia del 
+anterior, en este paradigma los datos y los procesos se combinan en una única 
+entidad denominada \emph{objetos} (o clases). Esta orientación pretende que 
+los sistemas sean más modulares, mejorando la eficiencia y calidad del 
+análisis y el diseño. Emplea extensivamente el Lenguaje Unificado de Modelado 
+(UML)\index{UML} para especificar, visualizar, construir y documentar los 
+artefactos de los sistemas software y  también el modelo de negocio. UML 
+proporciona una serie diagramas básicos para modelar un sistema: 
 
 \begin{itemize}
 \item Diagrama de Clase (\emph{Class Diagram}). Muestra los objetos del sistema y sus relaciones. 
@@ -68,12 +119,39 @@ Mientras que unos intentan sistematizar y formalizar las tareas de diseño, otro
 \item Modelo de Datos (\emph{Data Model}).
 \end{itemize} 
                                
-\item \textbf{Desarrollo Rápido de Aplicaciones} (\emph{RAD, Rapid Application Developmnent}). Su filosofía es sacrificar calidad a cambio de poner en producción el sistema rápidamente con la funcionalidad esencial. Los procesos de especificación, diseño e implementación son simultáneos. No se realiza una especificación detallada y se reduce la documentación de diseño. El sistema se diseña en una serie de pasos, los usuarios evalúan cada etapa en la que proponen cambios y nuevas mejoras. Las interfaces de usuario se desarrollan habitualmente mediante sistemas interactivos de desarrollo. En vez de seguir un modelo de desarrollo en cascada sigue un modelo en espiral (Boehm). La clave de este modelo es el desarrollo continuo que ayuda a minimizar los riesgos. Los desarrolladores deben definir las características de mayor prioridad. Este tipo de desarrollo se basa en la creación de prototipos y realimentación obtenida de los clientes para definir e implementar más características hasta alcanzar un sistema aceptable para despliegue.
+\item \textbf{Desarrollo Rápido de Aplicaciones} (\emph{RAD, Rapid 
+Application Developmnent}).\index{RAD} Su filosofía es sacrificar calidad a 
+cambio de poner en producción el sistema rápidamente con la funcionalidad 
+esencial. Los procesos de especificación, diseño e implementación son 
+simultáneos. No se realiza una especificación detallada y se reduce la 
+documentación de diseño. El sistema se diseña en una serie de pasos, los 
+usuarios evalúan cada etapa en la que proponen cambios y nuevas mejoras. Las 
+interfaces de usuario se desarrollan habitualmente mediante sistemas 
+interactivos de desarrollo. En vez de seguir un modelo de desarrollo en 
+cascada sigue un modelo en espiral (Boehm).\index{modelo!espiral} La clave de 
+este modelo es el desarrollo continuo que ayuda a minimizar los riesgos. Los 
+desarrolladores deben definir las características de mayor prioridad. Este 
+tipo de desarrollo se basa en la creación de prototipos y realimentación 
+obtenida de los clientes para definir e implementar más características hasta 
+alcanzar un sistema aceptable para despliegue.
 
-\item \textbf{Metodologías Ágiles}. \emph{"[...] envuelven un enfoque para la toma de decisiones en los proyectos de software, que se refiere a métodos de ingeniería del software basados en el desarrollo iterativo e incremental, donde los requisitos y soluciones evolucionan con el tiempo según la necesidad del proyecto. Así el trabajo es realizado mediante la colaboración de equipos auto-organizados y multidisciplinarios, inmersos en un proceso compartido de toma de decisiones a corto plazo. Cada iteración del ciclo de vida incluye:  planificación, análisis de requisitos, diseño, codificación, pruebas y  documentación. Teniendo gran importancia el concepto de "Finalizado" (Done), ya que el objetivo de cada iteración no es agregar toda la funcionalidad para justificar el lanzamiento del producto al mercado, sino incrementar el valor por medio de "software que funciona" (sin errores). Los métodos ágiles enfatizan las comunicaciones cara a cara en vez de la documentación. [...]"}\footnote{Wikipedia}
+\item \textbf{Metodologías Ágiles}. \emph{"[...] envuelven un enfoque para la 
+toma de decisiones en los proyectos de software, que se refiere a métodos de 
+ingeniería del software basados en el desarrollo iterativo e incremental, 
+donde los requisitos y soluciones evolucionan con el tiempo según la 
+necesidad del proyecto. Así el trabajo es realizado mediante la colaboración 
+de equipos auto-organizados y multidisciplinarios, inmersos en un proceso 
+compartido de toma de decisiones a corto plazo. Cada iteración del ciclo de 
+vida incluye:  planificación, análisis de requisitos, diseño, codificación, 
+pruebas y  documentación. Teniendo gran importancia el concepto de 
+"Finalizado" (Done), ya que el objetivo de cada iteración no es agregar toda 
+la funcionalidad para justificar el lanzamiento del producto al mercado, sino 
+incrementar el valor por medio de "software que funciona" (sin errores). Los 
+métodos ágiles enfatizan las comunicaciones cara a cara en vez de la 
+documentación. [...]"}\footnote{Wikipedia}\index{Wikipedia}
 \end{enumerate}
 
-\subsection{Proceso de testing}
+\subsection{Proceso de testing}\index{testing}
 
 \begin{enumerate}
 \item \emph{Pruebas modulares}. (pruebas unitarias) De este modo se intenta hacer pruebas sobre un módulo tan pronto como sea posible. Las \emph{pruebas unitarias} que comprueban el correcto funcionamiento de una unidad de código. Dicha unidad elemental de código consistiría en cada función o procedimiento, en el caso de programación estructurada y cada clase, para la programación orientada a objetos. Las características de una prueba unitaria de calidad son: \emph{automatizable} (sin intervención manual), \emph{completa},  \emph{reutilizable}, \emph{independiente} y \emph{profesional}.
@@ -96,7 +174,9 @@ Mientras que unos intentan sistematizar y formalizar las tareas de diseño, otro
 
 \subsection{Herramientas CASE (\emph{Computer Aided Software Engineering})}
 
-Las herramientas CASE están destinadas a facilitar una o varias de las tareas implicadas en el ciclo de vida del desarrollo de software. Se pueden dividir en la siguientes categorías:
+Las herramientas CASE\index{CASE} están destinadas a facilitar una o varias 
+de las tareas implicadas en el ciclo de vida del desarrollo de software. Se 
+pueden dividir en la siguientes categorías:
 
 \begin{enumerate}
 \item Modelado y análisis de negocio.
@@ -110,7 +190,7 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 
 
 
-\subsubsection{IDE (Integrated Development Environment)}
+\subsubsection{IDE (Integrated Development Environment)}\index{IDE}
 \begin{multicols}{2}
 \begin{itemize}
 \item \href{https://notepad-plus-plus.org/}{Notepad++}
@@ -127,13 +207,13 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 
 
 
-\subsubsection{Depuración}
+\subsubsection{Depuración}\index{depuración}
 \begin{itemize}
 \item \href{https://www.gnu.org/s/gdb/}{GNU Debugger}
 \end{itemize}
 
 
-\subsubsection{Testing}
+\subsubsection{Testing}\index{testing}
 \begin{multicols}{2}
 \begin{itemize}
 \item \href{http://junit.org}{JUnit}. Entorno de pruebas para Java.
@@ -142,7 +222,8 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 \end{itemize}
 \end{multicols}
 
-\subsubsection{Repositorios y control de versiones}
+\subsubsection{Repositorios y control de versiones}\index{control de 
+versiones}
 \begin{multicols}{2}
 \begin{itemize}
 \item \href{https://git-scm.com/}{Git}
@@ -167,7 +248,7 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 
 
 
-\subsubsection{Gestión y planificación de proyectos}
+\subsubsection{Gestión y planificación de proyectos}\index{planificación}
 \begin{multicols}{2}
 \begin{itemize}
 \item \href{https://trello.com/}{Trello}
