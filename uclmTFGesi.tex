@@ -66,14 +66,14 @@
 
 
 %--- Tipografía (Opción 1)
-\usepackage[tt=false]{libertine}	% Libertine
-\usepackage[libertine]{newtxmath}	% Times
+\usepackage[tt=false]{libertine} % Libertine con Old-Style Figures [osf]
+\usepackage[libertine]{newtxmath} % Times
 %---
 
 
 %--- Tipografía (Opción 2)
-%\usepackage{newpxtext}				% Palatino: La opción osf proporciona números en old style.
-%\usepackage{newpxmath}				% Palatino
+%\usepackage{newpxtext} % Palatino: La opción osf proporciona números en old style.
+%\usepackage{newpxmath}	% Palatino
 %---
 
 
@@ -94,7 +94,7 @@
 
 %--- Gráficos y tablas
 \usepackage{graphicx}	% Inclusión de figuras
-\usepackage{subfigure}	% OPT.: Inclusión de subfiguras
+\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
 % EDITAR: Si es necesario cambiar el path para los directorios de figuras.
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
@@ -165,13 +165,13 @@
 % -------------------------
 % EDITAR: Datos del documento. 
 % NOTA: Los elementos opcionales pueden eliminarse o comentarse.
-\tituloPrimera{Plantilla de TFG para ESI-UCLM} % 1ª Línea
+\tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
 \tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Para títulos largos.
 %%existe).
-\titulo{Plantilla TFG} % Título corto (no mostrado en portada)
+\titulo{Plantilla guía de TFG} % Título corto (mostrado en pág. de créditos)
 \autor{Jesús Salido Tercero}
 \email{jesus.salido@uclm.es}					
-\tutor{<tutor(a) (nombre apellidos)>}
+\tutor{<tutor(a) (nombre apellidos)>} % Sólo nombre, el prefijo añadido automát.
 \cotutor{<co-tutor(a) (nombre apellidos)>}	% OPT.: Cotutor(a)
 \instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
 
@@ -185,24 +185,25 @@
 %\escudo{etsii} 		% Ejemplo para otra titulación
 
 \centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
-\deptoEduPrimera{<Primera línea Depto. Director>} % 1ª Línea
+\deptoEduPrimera{<Primera línea Depto. Director>} % 1ª Línea(EN: Department of ...)
 \deptoEduSegunda{<Segunda línea Depto. Director>} % OPT.: Para nombres largos.
-\titulacion{GRADO EN INGENIERÍA INFORMÁTICA}
+\titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % (EN: BACHELOR IN COMPUTING ENGINEERING)
 \especialidad{<Tecnología Específica>} % OPT.: Especialidad - Intensificación
-\tipoDoc{TRABAJO FIN DE GRADO}
+% (EN: Specialization in ...)
+\tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
 
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\fechaDef{<mes, año>} 							% Fecha de defensa
-\mesDef{<mes>}        							% Mes de defensa
-\yearDef{<año>}        							% Año de defensa
+\fechaDef{julio, 2019} 							% Fecha de defensa
+\mesDef{julio}        							% Mes de defensa
+\yearDef{2019}        							% Año de defensa
 \lugarDef{Ciudad Real}							% Lugar de defensa
 
 
 % --- Metadatos (propiedades) para el documento PDF
 \hypersetup{% OPT.
 % EDITAR: Valores para el PDF.	
-	pdftitle={Título}, % Título
-	pdfauthor={Autor}, % Autor
+	pdftitle={Plantilla guía de TFG para la ESI-UCLM}, % Título
+	pdfauthor={Jesús Salido}, % Autor
 	pdfsubject={TFG},  % Tema
 	pdftoolbar=true, % Muestra la toolbar de Acrobat
 	pdfmenubar=true	 % Muestra la menubar de Acrobat
@@ -236,10 +237,12 @@
 
 % -------------------------
 %
-% CRÉDITOS
+% OPT.: CRÉDITOS (aunque no es obligatorio es recomendable).
 %
 % -------------------------
 \input{Creditos}
+%---
+
 %---
 \tribunalTFG % Página para calificaciones del tribunal
 %---
@@ -250,8 +253,8 @@
 % Aunque opcional, no se debería perder la oportunidad de poder 
 % dedicar el trabajo a alguien MUY especial.
 % EDITAR: Dedicatoria.
-\dedicado{A mis alumnos ... \\ % A alguien muy especial
-(para siempre)} % Como mucho dos líneas (no confundir con los agradecimientos).
+\dedicado{A mis estudiantes \\ % A alguien muy especial
+Por contribuir a que cada día me ilusione aprender algo nuevo} % Como mucho dos líneas (no confundir con los agradecimientos).
 % -------------------------
 
 % -------------------------

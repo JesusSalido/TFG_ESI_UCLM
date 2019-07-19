@@ -1,6 +1,6 @@
 # Plantilla LaTeX para TFG de la Esc. Sup. de Informática (ESI-UCLM)
 
-El propósito de este proyecto es utilizarlo como plantilla para preparar, con LaTeX, el TFG en la [Escuela Superior de Informática](http://webpub.esi.uclm.es/) (ESI) de la Univ. de Castilla-La Mancha (UCLM) siguiendo la [normativa de aplicación](https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx). Esta plantilla está disponible en [GitHub](https://github.com/JesusSalido/TFG_ESI_UCLM) (versión de desarrollo) y [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw) (versión estable). Por tanto puede emplearse con comodidad, bien de modo local en un equipo con LaTeX instalado ([MiKTeX](https://miktex.org/), LiveTeX, etc.), o bien en línea empleando el servicio de edición [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw).
+El propósito de este proyecto es utilizarlo como plantilla y guía para preparar, con LaTeX, el TFG en la [Escuela Superior de Informática](http://webpub.esi.uclm.es/) (ESI) de la Univ. de Castilla-La Mancha (UCLM) siguiendo la [normativa de aplicación](https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx). Esta plantilla está disponible en [GitHub](https://github.com/JesusSalido/TFG_ESI_UCLM) (versión de desarrollo) y [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw) (versión estable). Por tanto puede emplearse con comodidad, bien de modo local en un equipo con LaTeX instalado ([MiKTeX](https://miktex.org/), LiveTeX, etc.), o bien en línea empleando el servicio de edición [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw).
 
 > Esta plantilla ha sido desarrollada para el curso de enseñanzas propias impartido en la ESI: [LaTeX esencial para preparación de TFG, Tesis y otros documentos académicos](http://visilab.etsii.uclm.es/?page_id=1468), en el que se explican las estrategias fundamentales para aumentar la productividad y la calidad de resultados finales empleando el sistema de preparación de documentos [LaTeX](https://www.latex-project.org/) en el contexto académico.
 >
@@ -9,8 +9,8 @@ El propósito de este proyecto es utilizarlo como plantilla para preparar, con L
 
 El proyecto está constituido por:
   - Un fichero LaTeX principal (``uclmTFGesi.tex``) en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).
-  - Un fichero de estilo ``*.sty`` (paquete `uclmTFGesi`) en el que se han agrupado los aspectos de formato. Y que admite como opciones seleccionar el idioma principal del documento (opción: `english`) o prefijos de género (opciones: `autora`, `tutora` o `cotutora`).
-    > __NOTA__: _Se recomienda evitar su modificación si se carece de conocimientos avanzados de LaTeX._ 
+  - Un fichero de estilo ``*.sty`` (paquete `uclmTFGesi`) en el que se han agrupado los aspectos de formato. Y que admite como opciones: seleccionar el idioma principal del documento (opción `english`) o prefijos de género (opciones `autora`, `tutora` o `cotutora`).
+    > __NOTA__: _Se recomienda evitar la modificación de este fichero si se carece de conocimientos avanzados de LaTeX._ 
   - Un fichero de estilo ``uclmTFG.ist`` para el índice temático.
   - Un fichero de configuración ``latexmkrc`` para automatizar la compilación.
   - Varios ficheros LaTeX (``*.tex``) correspondientes a los principales capítulos de un TFG.
@@ -30,8 +30,23 @@ Para la automatización del trabajo con esta plantilla es recomendable el empleo
 
 > IMPORTANTE: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas.
 -----
-##### Contacto
+##### Citación y contacto
+
+Si esta plantilla le ha resultado una herramienta útil considere la posibilidad de citarla con la información del registro `bib`:
+
+```
+@Www{salidoTFGgit,
+  author       = {Jesús Salido},
+  title        = {Plantilla guía de TFG para la ESI-UCLM},
+  year         = {2019},
+  editor       = {GitHub},
+  organization = {Universidad de Castilla-La Mancha},
+  url          = {https://github.com/JesusSalido/TFG_ESI_UCLM},
+}
+```
 
 Comunique cualquier asunto relacionado con esta plantilla (comentarios, errores, incompatibilidades, mejoras, etc.) a:
 
 `jesus.salido@uclm.es`
+
+<img src="./figs/by-nc-sa.png" width="150">

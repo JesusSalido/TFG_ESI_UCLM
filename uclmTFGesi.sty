@@ -80,13 +80,10 @@
 	table
 ]{xcolor}
 
-\definecolor{palered}{rgb}{.8,0,0} % Color especial definido para los hiperenlaces
-\definecolor{gris97}{gray}{.97}
-\definecolor{gris95}{gray}{.95}
-\definecolor{gris75}{gray}{.75}
-\definecolor{gris45}{gray}{.45}
-\definecolor{sombra}{gray}{.70}
+% Color especial definido para los hiperenlaces
+\definecolor{palered}{rgb}{0.78, 0.03, 0.08} % dvipsname harvardcrimson
 %---
+
 
 \usepackage{url} 		% Para escritura de URL
 \urlstyle{sf}			% Estilo sans serif para URLs
@@ -277,19 +274,15 @@
 
 % Algunos ejemplos de definiciones de estilos.
 % Para ajustar los colores se recomienda echar un vistazo al manual de xcolor donde están todos los colores predefinidos con sus nombres.
-% OJO: Algunos de los ejemplos suministrados no han sido depurados por ellos pueden presentar algún error.
+% OJO: Algunos de los ejemplos suministrados en los comentarios no han sido depurados.
 
 \lstdefinestyle{consola}{%
-	basicstyle={\color{White}\scriptsize\bf\ttfamily},
-	backgroundcolor={\color{Black}},
+	basicstyle={\color{white}\scriptsize\bf\ttfamily},
+	backgroundcolor={\color{black}},
 	frame=none,
 	showspaces=true
 }
 
-%\lstdefinestyle{consola}{%
-%	basicstyle=\scriptsize\bf\ttfamily
-%}
- 
 \lstdefinestyle{C-ruled}{%
 	language=C,
 	frame=L,
@@ -592,7 +585,7 @@
 	\null\vspace{6cm}
 	{\small \noindent \@titulo\\
 	\textcopyright{} \@autor, \@yearDef\\[1cm]
-	#1}\\
+	#1}\\[0.5cm]
 	\includegraphics[width=0.15\linewidth]{#2}
 	
 	\clearpage

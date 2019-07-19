@@ -1,12 +1,13 @@
 \chapter{Introducción}
 \label{cap:Introduccion}
 
-Este capítulo aborda la motivación\index{motivación} del trabajo. Se trata de 
-señalar la necesidad de la que surge, su actualidad y pertinencia. Puede 
-incluir también un estado de la cuestión en la que se revisen estudios o 
-desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
+Este capítulo aborda la motivación\index{motivación} del trabajo. Se trata de señalar la necesidad que lo origina, su actualidad y pertinencia. Puede incluir también un estado de la cuestión (o estado del arte) en la que se revisen estudios o desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
 
-A continuación se muestran algunos ejemplos para la inclusión de elementos en el documento.
+En este capítulo debería introducirse el \emph{contexto disciplinar y tecnológico} en el que se desarrollará el trabajo de modo que pueda entenderse con facilidad el ámbito y alcance del TFG.\index{TFG} Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, sólo es necesario la inclusión de un <<estado del arte>> cuando este contribuya a aclarar aspectos clave del TFG desarrollado o se desee justificar la originalidad del trabajo realizado.
+
+A continuación se muestran algunos ejemplos para la inclusión de elementos en el documento como listas, tablas y figuras.
+
+\noindent \textsc{IMPORTANTE}: \emph{A la hora de redactar el texto se debe poner especial atención en no cometer plagio\index{plagio} y respetar los derechos de propiedad intelectual \cite{refer00,sidney00}. En particular merece gran atención la inclusión de figuras e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se recomienda consultar el manual de la Universidad de Cantabria en el que se explica de modo conciso cómo incluir imágenes en un trabajo académico \cite{unican18}.}
 
 % ------------------------------------------------------------------------------
 % Ejemplos para la plantilla
@@ -21,9 +22,9 @@ A continuación se van a añadir algunos ejemplos que pueden emplearse al redact
 % Ejemplo: Lista con bullets especiales
 % ============
 \begin{itemize}
-	\item[*] peras
+	\item[\ding{52}] peras
 	\item manzanas
-	\item[\ding{170}] naranjas
+	\item naranjas
 \end{itemize}
 
 
@@ -41,8 +42,15 @@ A continuación se van a añadir algunos ejemplos que pueden emplearse al redact
 	\end{enumerate}
 \end{multicols}
 
+\noindent Las listas se pueden personalizar (aunque debería estar justificado el cambiar el estilo por defecto, haciéndolo con mucha prudencia):
 
-\newpage
+% Ejemplo:
+% ============
+\begin{dingautolist}{202} % Lista con símbolos sucesivos de la tabla dingbat
+	\item peras
+	\item manzanas
+	\item naranjas
+\end{dingautolist}
 
 
 \section{Ejemplos de tablas}
@@ -103,36 +111,48 @@ figuras\index{figuras} simples y subfiguras.
 % ============
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.4\linewidth]{escudoInf}
-	\caption[Ejemplo de figura]{Figura vectorial del escudo de la ESI 
-	(Escuela Superior de Informática)}\index{ESI}
+	\includegraphics[width=0.8\linewidth]{clockCR}
+	\caption[Ejemplo de figura]{Fotografía a color 
+	(por J. Salido, CC BY-NC-ND)}
 	\label{fig:ejFigure}
 \end{figure}
 
 
-\noindent Ejemplo de figuras compuestas por subfiguras.
-¡Ojo! porque el paquete subfigure ha quedado 
-obsoleto.\index{figuras!subfiguras}
+\noindent Ejemplo de figuras compuestas por subfiguras incluidas con paquete \texttt{subcaption}.\index{figuras!subfiguras}\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/caption/subcaption.pdftext}}
+
 
 % Ejemplo: Ejemplo de inclusión de subfiguras
 % ============
 \begin{figure}[htb]
 	\centering
-	\subfigure[Gráfico vectorial PDF]{
-		\includegraphics[width=0.4\linewidth]{escudoInf}
-		\label{fig:escudoColor}
-	} 
-	\subfigure[Gráfico png]{
-		\includegraphics[width=0.4\linewidth]{escudoInfBW}
-		\label{fig:escudoBW}
-	}
-	\caption[Ejemplo de subfiguras]{Ejemplo de inclusión de subfiguras en un mismo entorno}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{clockCR}
+		\caption{Fotografía a color}\label{fig:fotocolor}
+	\end{subfigure} 
+	\begin{subfigure}[b]{0.4\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{clockCRbw}
+		\caption{Fotografía en blanco y negro}\label{fig:fotoBW}
+	\end{subfigure} 
+	\caption[Ejemplo de subfiguras]{Ejemplo de inclusión de subfiguras en un mismo entorno (por J. Salido, CC BY-NC-ND)}
 	\label{fig:ejSubfigures}
 \end{figure}
 
 
-\clearpage
 
+Mediante el uso de etiquetas (\texttt{\textbackslash label}) es posible incluir referencias cruzadas a subfiguras como la fotografía en blanco y negro de la Fig.~\ref{fig:fotoBW}.
+
+En los trabajos académicos la inclusión de imágenes y figuras que no son propiedad del autor suscitan bastante controversia y son fuente de incumplimiento inadvertido de la ley de propiedad intelectual.\index{plagio!propiedad intelectual} Es importante recordar que \emph{<<el desconocimiento de la ley no exime de su cumplimiento>>} por lo que se recomienda tanto a estudiantes como tutores consultar documentación informativa sobre el uso correcto de figuras en documentos académicos \cite{unican18}. Entre las <<incorrecciones>> más frecuentes al incluir figuras en los documentos académicos se observan:
+\begin{itemize}
+\item Abuso del derecho de cita. Se produce al incluir, con fines exclusivamente decorativos o ilustrativos de la explicación, una figura sujeta a derechos de uso restringido invocando el derecho de cita (incluso con correcta atribución de la obra).
+
+\item Incorrecta atribución de la obra.\index{atribución} Es habitual confundir al autor de la obra con la fuente de origen de la misma. La fuente es precisa cuando se cita la obra original. Sin embargo, la licencia de muchas obras exige la atribución al autor y la inclusión de la licencia bajo la que se distribuye o hace uso de la misma (véase como ejemplo cómo se realiza una correcta atribución en las Fig.~\ref{fig:ejFigure} y \ref{fig:ejSubfigures} mencionando al autor y la licencia Creative-Commons\footnote{\url{https://creativecommons.org}} bajo la que se rige el uso de la imagen y el mecanismo de título alternativo para que dicha atribución no aparezca en el índice de figuras).\index{Creative Commons}
+
+\item Supresión de denominación de licencia de uso. Al incluir obras de terceros debemos tener presente los términos de distribución de la misma e incluirlos junto a la atribución de su legítimo autor.
+\end{itemize}
+
+La inclusión de material de \emph{dominio público}\index{dominio público} o sin restricciones de uso hace innecesaria la atribución al autor pero puede incluirse una nota de agradecimiento.\footnote{Por cortesía de \emph{<x>}.}
 
 \section{Ejemplos de listados}
 \label{sec:ejListados}
@@ -146,19 +166,17 @@ fuente.\index{listados}
 \begin{lstlisting}[language=Java,float=ht,caption={[Código fuente en Java]Ejemplo de código fuente en lenguaje Java},label=lst:java]
 // @author www.javadb.com
 public class Main {    
-// Este método convierte un String a
-// un vector de bytes
+// Este método convierte un String a un vector de bytes
 
 public void convertStringToByteArray() {
 
 String stringToConvert = "This String is 15";      
-byte[] theByteArray = stringToConvert.getBytes();        
-System.out.println(theByteArray.length);        
+	byte[] theByteArray = stringToConvert.getBytes();        
+	System.out.println(theByteArray.length);        
 }
 
-// argumentos de línea de comandos 
 public static void main(String[] args) {
-new Main().convertStringToByteArray();
+	new Main().convertStringToByteArray();
 }
 }
 \end{lstlisting}
@@ -168,11 +186,11 @@ new Main().convertStringToByteArray();
 \noindent Otro ejemplo.
 
 \begin{lstlisting}[style=C-ruled,float=ht,caption={Ejemplo de código C},label=lst:codC]
-// Este código se ha incluido tal cual está 
-// en el fichero \LaTeX{}
+// Este código se ha incluido tal cual está en el fichero \LaTeX{}
 #include <stdio.h>
+
 int main(int argc, char* argv[]) {
-puts("¡Hola mundo!");
+	puts("¡Hola mundo!");
 }
 \end{lstlisting}
 
@@ -187,7 +205,7 @@ $ gcc -o Hola HolaMundo.c
 \subsection{Algoritmos con el paquete \texttt{algorithm2e}}
 Como ya se ha comentado en los textos científicos relacionados con las 
 TIC\footnote{Por supuesto en un TFG (Trabajo Fin de Grado)\index{TFG} o tesis 
-de una Escuela de Informática.} (Tecnologías de la Información y 
+de un centro superior de informática.} (Tecnologías de la Información y 
 Comunicaciones) suelen aparecer porciones de código en los que se explica 
 alguna función o característica relevante del trabajo que se expone. Muchas 
 veces lo que se quiere ilustrar es un algoritmo o método en que se ha 
@@ -230,7 +248,6 @@ inicialización\;
 \caption{Cómo escribir algoritmos}\label{alg:como}
 \end{algorithm}\DecMargin{1em}
 
-\newpage
 
 \section{Menús, paths y teclas con el paquete \texttt{menukeys}}
 Cada vez es más usual que los trabajos en ingeniería exijan el uso de 
