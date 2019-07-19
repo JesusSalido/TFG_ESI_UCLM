@@ -1,4 +1,4 @@
-# Plantilla LaTeX para TFG de la Esc. Sup. de Informática (ESI-UCLM)
+# Plantilla guía de TFG para la Escuela Superior de Informática (ESI-UCLM)
 
 El propósito de este proyecto es utilizarlo como plantilla y guía para preparar, con LaTeX, el TFG en la [Escuela Superior de Informática](http://webpub.esi.uclm.es/) (ESI) de la Univ. de Castilla-La Mancha (UCLM) siguiendo la [normativa de aplicación](https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx). Esta plantilla está disponible en [GitHub](https://github.com/JesusSalido/TFG_ESI_UCLM) (versión de desarrollo) y [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw) (versión estable). Por tanto puede emplearse con comodidad, bien de modo local en un equipo con LaTeX instalado ([MiKTeX](https://miktex.org/), LiveTeX, etc.), o bien en línea empleando el servicio de edición [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw).
 
