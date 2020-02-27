@@ -2,6 +2,7 @@
 % Fichero: uclmTFGesy.sty
 % Autor: Jesús Salido Tercero (http://www.uclm.es/profesorado/jsalido)
 % Fecha (creación): Febrero 2018 
+% Revisión: febrero 2020
 % Descripción: Paquete para el TFG de la ESI-UCLM
 % (Escuela Sup. de Informática, UCLM). Creada para el curso 
 % “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
@@ -13,25 +14,31 @@
 %	autor, autora		: Prefijo empleado en las portadas para el autor.
 %	tutor, tutora		: Prefijo empleado en las portadas para el autor.
 %   cotutor, cotutora	: Prefijo empleado en las portadas para el autor.
+%   pageonfooter		: Ubicación de número de página centrado en pie.
 %%%%%%%%%%%%%%%%
+
 % -------------------------
-% Ajustes definidos por el usuario
 % OJO: No cambiar a menos que sepa qué está haciendo exactamente.
 % -------------------------
-
-
 
 % -------------------------
 % COMANDOS OPCIONALES PROPORCIONADOS:
 % OP-Opcional
 % RE-Recomendado
 %
+% Comandos de generación automática de portadas
+% \portadaTFG, \portadaTFG*{ficheroPDF}: Página de portada
+% \portillaTFG, \portadillaTFG*{ficheroPDF}: Página de contraportada
+% \tribunalTFG, \tribunalTFG*{ficheroPDF}: Página de tribunal
+% \dedicado{texto}: Dedicatoria
+% \creditos{texto}{fichero gráfico de licencia}
+%
 % Comandos para definir variables con los datos del documento.
 %
-% OP-\nodivide[penalty]		: Penaliza la división de palabras. Máx. 
-%(n=10000) sin arg.
-% OP-\nowidowandorphan[penalty]: Penaliza las viudas y huérfanas. (sólo si necesario)
-% OP-\nodividenotes[]penalty]	: Penaliza la división de notas al pié entre págs.	(sólo si necesario)	
+% OP-\nodivide[penalty]			: Penaliza la división de palabras. Máx. 
+%								: (n=10000) sin arg.
+% OP-\nowidowandorphan[penalty] : Penaliza las viudas y huérfanas. (sólo si necesario)
+% OP-\nodividenotes[penalty]	: Penaliza la división de notas al pié entre págs.	(sólo si necesario)	
 % OP-\savepagecnt				: Salva en un contador interno el nº de pág. actual
 % OP-\contpagination			: Recupera el valor de pág. previamente salvado en el cont. interno.
 % OP-\tecla{texto}				: Genera un borde de tecla en torno al 
@@ -41,7 +48,6 @@
 
 \ProvidesPackage{uclmTFGesi} % Nombre del paquete
 
-%\usepackage[indent]{parskip}  % Control de espaciado entre párrafos
 \usepackage{parskip}  % Control de espaciado entre párrafos
 
 %--- Procesamiento de opciones de paquete
@@ -49,6 +55,8 @@
 \DeclareOption{spanish}{\spanishtrue
     \setlength{\parindent}{15pt}
 }  % Opción: Idioma español
+\newif\ifpageonfooter\pageonfooterfalse % Condicional poner número de página en pie
+\DeclareOption{pageonfooter}{\pageonfootertrue}
 \DeclareOption{autor}{\newcommand{\@pautor}{Autor}} % Opción: Autor
 \DeclareOption{autora}{\renewcommand{\@pautor}{Autora}} % Opción: Autora
 \DeclareOption{tutor}{\newcommand{\@ptutor}{Tutor}} % Opción: Tutor
@@ -82,19 +90,23 @@
 
 % Color especial definido para los hiperenlaces
 \definecolor{palered}{rgb}{0.78, 0.03, 0.08} % dvipsname harvardcrimson
+\definecolor{UCLMred}{cmyk}{0.0, 1.0, 0.65, 0.28} % UCLM red
 %---
 
 
 \usepackage{url} 		% Para escritura de URL
 \urlstyle{sf}			% Estilo sans serif para URLs
 
-\usepackage{fancyhdr}	% Ajuste de cabeceras young pies
+\usepackage{fancyhdr}	% Ajuste de cabeceras y pies
 \usepackage{titlesec}	% Ajustes de títulos de secciones
 \usepackage{sectsty}	% Ajustes de títulos
-\usepackage{tikz}		% Gráficos avanzados en LeTeX
+\usepackage{tikz}		% Gráficos avanzados en LaTeX
+% OJO: El paquete sectsty genera warnings relativos a los comandos \underline \underbar. No es preciso prestarle excesiva atención pues el resultado es válido. El único modo de evitarlo sería sustituir el paquete sectsty y evitar su empleo.
+
 
 
 %--- Paquetes para listas y organización de texto
+\usepackage{parskip}	% Para ajustes de indentación y espacio entre párrafos
 \usepackage{enumitem} 	% Control de listas
 \setlist{nolistsep} 	% Separación de ítems en listas
 \usepackage{multicol}	% Texto en varias columnas
@@ -147,8 +159,15 @@
 \fancyhead[LO]{\sffamily\leftmark} 
 % En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
 \fancyhead[RE]{\sffamily\rightmark} 
+
+\ifpageonfooter
+% Números de página en el pie de página y centrado
+	\fancyfoot[C]{\sffamily\thepage}
+\else
 % Números de página en las esquinas de los encabezados
-\fancyhead[RO,LE]{\sffamily\thepage}
+	\fancyhead[RO,LE]{\sffamily\thepage}
+\fi
+
 
 % Formato para el capítulo: N. Nombre
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter.#1}}{}}
@@ -317,6 +336,16 @@
 	stringstyle=\color{ForestGreen}
 }
 
+\lstdefinestyle{Matlab-color}{%
+	basicstyle=\scriptsize,
+	language=Matlab,
+  	keywordstyle=\color{blue},
+  	commentstyle=\color{DarkGreen},
+  	stringstyle=\color{DarkOrchid}
+}
+
+
+
 %\lstdefinestyle{CSharp}{%
 %	basicstyle=\scriptsize
 %	language=[Sharp]C,
@@ -405,6 +434,13 @@
 		\renewcommand{\appendixname}{Anexo}
 		\renewcommand{\bibname}{Bibliografía}
 		\renewcommand{\indexname}{Índice temático}
+		% OJO: Macros para tratamiento correcto de comentarios con % en listados Matlab
+		% (sólo necesario si se desea incluir código Matlab)
+        % \makeatletter
+		\def\spanishplainpercent{\let\es@sppercent\@empty}
+		\def\spanishpercent{\def\es@sppercent{\unskip\textormath{$\m@th\,$}{\,}}}
+		% \makeatother
+		
 	\fi
 }
  
@@ -442,10 +478,45 @@
 % PORTADA (TFG)
 % -------------------------
 %\makeatletter
-\newcommand{\portadaTFG}{%
+%\newcommand{\portadaTFG}{%
+%	\begin{titlepage}
+%		\begin{center}
+%			\includegraphics[width=4cm]{\@escudo}\vspace{1cm}
+%			
+%			{\LARGE \textbf{\@instEdu\\[1.5\parskip]
+%					\@centroEdu\\[2cm]
+%					\@titulacion}}\\[0.5cm]
+%			\ifdefined\@especialidad{\large \textbf{\@especialidad}}\\[1.5cm]
+%			\else \phantom{\large \textbf{Especialidad}}\\[1.5cm]
+%			\fi
+%			{\LARGE \textbf{\@tipoDoc}}\\[1cm]
+%			
+%			{\LARGE \@tituloPrimera}\\ \smallskip%			
+%			\ifdefined\@tituloSegunda{\LARGE	\@tituloSegunda}\\[3cm]
+%			\else \phantom{\LARGE	Título}\\[3cm]
+%			\fi
+%			
+%			{\Large \@autor}\vfill%
+%		\end{center}
+%		
+%		\begin{flushright}
+%			{\Large \@fechaDef}
+%		\end{flushright}
+%		
+%		\cleardoublepage
+%\end{titlepage}}
+
+% NOTA: Modificación para incluir una versión estrella que permita indicar el fichero PDF de portada
+%\def\foo{\@ifstar\@foo\@@foo}
+%\def\@foo#1{...}
+%\def\@@foo#1{...}
+\def\portadaTFG{\@ifstar\@portada\@@portada}% 
+
+% 
+\def\@@portada{ % Versión de macro sin estrella
 	\begin{titlepage}
 		\begin{center}
-			\includegraphics[width=3.5cm]{\@escudo}\vspace{1cm}
+			\includegraphics[width=4cm]{\@escudo}\vspace{1cm}
 			
 			{\LARGE \textbf{\@instEdu\\[1.5\parskip]
 					\@centroEdu\\[2cm]
@@ -469,6 +540,8 @@
 		
 		\cleardoublepage
 \end{titlepage}}
+
+\def\@portada#1{\includepdf{#1}} % Versión de macro con estrella.
 %\makeatother
 % -------------------------
 
@@ -478,7 +551,10 @@
 % PÁGINA INICIAL (TFG, es como la portada, añade Director/es o Tutor)
 % -------------------------
 %\makeatletter
-\newcommand{\portadillaTFG}{%
+\def\portadillaTFG{\@ifstar\@portadillaTFG\@@portadillaTFG}% 
+
+% 
+\def\@@portadillaTFG{ % Versión de macro sin estrella
 	\begin{center}
 		\includegraphics[width=3.5cm]{\@escudo}\\[1.5cm]
 		
@@ -515,7 +591,10 @@
 		{\Large \@fechaDef}
 	\end{flushright}
 	
-	\newpage}
+	\newpage%
+}
+
+\def\@portadillaTFG#1{\includepdf{#1}} % Versión de macro con estrella.
 %\makeatother
 % -------------------------
 
@@ -524,7 +603,11 @@
 % -------------------------
 % PÁGINA TRIBUNAL (TFG)
 % -------------------------
-\newcommand{\tribunalTFG}{
+%\makeatletter
+\def\tribunalTFG{\@ifstar\@tribunalTFG\@@tribunalTFG}% 
+
+% 
+\def\@@tribunalTFG{ % Versión de macro sin estrella
 	{\flushright \LARGE \textsc{Tribunal:}}
 	
 	\vspace*{\stretch{0.5}}
@@ -551,6 +634,9 @@
 	\end{center}
 	\cleardoublepage
 }
+
+\def\@tribunalTFG#1{\includepdf{#1}} % Versión de macro con estrella.
+%\makeatother
 % -------------------------
 
 

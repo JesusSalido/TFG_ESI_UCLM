@@ -1,8 +1,9 @@
+% !TeX encoding = UTF-8
 %%%%%%%%%%%%%%
 % Fichero: uclmTFGesi.tex
 % Autor: Jesús Salido Tercero (http://www.uclm.es/profesorado/jsalido)
 % Fecha (creación): Febrero 2010 
-% Rev. : Febrero 2019
+% Rev. : Febrero 2020
 % Descripción: Plantilla para memoria de TFG 
 % (Escuela Sup. de Informática, UCLM). Creada para el curso 
 % “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
@@ -22,14 +23,15 @@
 % Para la automatización del trabajo con esta plantilla es recomendable el 
 % empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 %
-% Una versión actualizada de esta plantilla está disponible en overleaf.
+% Una versión revisada de esta plantilla está disponible en overleaf.
 % Puede crearse un proyecto propio para escribir un TFG directamente en 
-% overleaf, o bien descargarla como un archivo .zip para su utilización en % 
+% overleaf, o bien descargarla como un archivo .zip para su utilización en 
 % modo local.
 %
 % Si deseas acceder a la versión de desarrollo puedes encontrarla en GitHub:
 %	https://github.com/JesusSalido/TFG_ESI_UCLM
 %%%%%%%%%%%%%%
+
 
 
 % -------------------------
@@ -46,8 +48,9 @@
 	final       		% Versión final
 ]{book}
 
-\usepackage[utf8]{inputenx} % Codificación de entrada
+\usepackage[utf8]{inputenx} % Codificación de entrada (mejora respecto a inputenc)
 \usepackage[english,spanish,es-tabla,es-noindentfirst]{babel} % Internacionalización
+
 
 %--- Geometría de las páginas del documento
 \usepackage[			% Márgenes del documento
@@ -74,10 +77,19 @@
 %---
 
 
-
 %--- Tipografía (Opción 3)
 %\usepackage{fourier} % Utopía
 %---
+
+
+%--- Tipografía (Opción 4)
+% EDITAR: Si es preciso cambio de tipo de familia de tipografía por defecto a Sans-Serif
+% Aunque es una opción extraña es la preferida en algunos centros docentes (ADE-UCLM).
+% Con esta elección es más conveniente una tipografía tipo Helvética/Arial (no Libertine)
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+%---
+
 
 \usepackage{textcomp,marvosym,pifont} % OPT.: Generación de símbolos 
 %especiales
@@ -90,13 +102,21 @@
 
 %--- Paquete con personalización local para el TFG (ESI-UCLM)
 % EDITAR: Si es preciso que la memoria emplee "english" como idioma 
-% principal y prefijos de género.
+% principal, prefijos de género y ubicación en número de página al pie.
 % Con la opción "english" el resto de opciones son irrelevantes.
-% Ejemplos: 
-% 	\usepackage{uclmTFGesi} % Memoria en español y prefijos masculinos.
-%	\usepackage[autora]{uclmTFGesi} % Memoria en español y autora.
-%  	\usepackage[english]{uclmTFGesi} % Memoria en inglés.
-\usepackage[spanish]{uclmTFGesi} % Opción de idioma de la memoria y prefijos de género.
+% Los prefijos de género permiten un tratamiento adecuado en portadas
+% automáticas.
+%
+% Opciones del paquete: (por defecto) Memoria en español y prefijos masculinos.
+%	spanish: idioma pral. español (valor por defecto).
+%   english: idioma pral. inglés.
+%	autora,tutora,cotutora: indica el género de intervinientes (masculino por defecto) 	
+%	pageonfooter: Número de página en el pie y centrado como ADE-UCLM (por defecto en cabeceras)
+\usepackage{uclmTFGesi}
+%\usepackage[pageonfooter]{uclmTFGesi}
+
+% EDITAR: No comentar si es necesario suprimir el sangrado de párrafos.
+%\setlength{\parindent}{0pt} % Elimina sangrado de párrafos
 
 
 %--- Gráficos y tablas
@@ -117,23 +137,43 @@
 	labelfont=bf,		% Prefijo-Etiqueta en negrita
 	format=hang			%
 ]{caption}
-\captionsetup[table]{skip=4pt} 	% Separación del caption en las tablas
+\captionsetup[table]{skip=5pt} 	% Separación del caption en las tablas
+\captionsetup[figure]{skip=5pt} % Separación del caption en las figuras
+
+
 
 
 %--- Bibliografía: Biblatex con biber.
-\usepackage[
-	backend=biber, 		% Backend
-	sortcites,
-	defernumbers=true, 	% Para numerar al final
-	style=numeric-comp, % Estilo numérico condensado
+% EDITAR: Si se desea cambiar los estilos de citación y ordenación de la bibliografía
+\usepackage[%
+	backend=biber,
+	% Estilos: numeric, numeric-comp, alphabetic, authoryear, authoryear-comp
+	% Otros: apa, chicago, ieee, mla-new, iso-numeric, iso-authoryear
+	% Estilos tradicionales BibTeX: trad-plain, trad-unsrt, trad-alpha y trad-abbrv
+%	style=apa, % Estilo APA
+	style=ieee,
+	% Citación: numeric, numeric-comp, numeric-verb, 
+	%           authoryear, authoryear-comp,...
+	%           otros aplicados con estilo gral.: ieee,apa,aml,chem-acs,iso-numeric,iso-authoryear
+	citestyle=numeric-comp,
+	sortcites, % Ordenación de citas múltiples cuando son numéricas
+	maxbibnames=3, % Máximo número listado de autores en la bibliografía
+	minbibnames=1, % Mínimo número de autores cuando se abrevia la lista de autores
+	sorting=nyt%
+					% Para cambiar criterio de ordenación de las referencias.
+ 					% =nty (name-title-year), nyt (name-year-title), nyvt (name-year-volume-title), 
+					% =anyt (alphabetic-name-year-title), anyvt (alphabetic-name-year-volume-title), 
+					% =ynt (year-name-title), ydnt (yeardescendent-name-title), 
+					% =none (por orden de citación, como en ETSII-UCLM).			
 	% Descomentar las opciones siguientes para bibliografía multilingüe
-%	autolang=other, 	% Requerido para opción multilingüe
-%	language=auto   	% Requerido para opción multilingüe
+%	autolang=other, % Requerido para opción multilingüe
+%	language=auto   % Requerido para opción multilingüe
 ]{biblatex}
+
 
 % Línea añadida para eliminar el idioma de la fuente bibliográfica.
 \AtEveryBibitem{\clearfield{note} \clearlist{language}}
-% OJO: Editar si se cambia el fichero de bibliografía. 
+% EDITAR: Si es preciso cambiar el fichero de bibliografía. 
 \addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
 %---
 
@@ -144,10 +184,10 @@
 %--- OPT.: Paquete para incluir menús, paths y teclas de modo "elegante"
 \usepackage[os=win,hyperrefcolorlinks]{menukeys} 
 % OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el 
-%último y exige la desactivación de la opción colorlinks y la inclusión en 
-%este paquete de la opción hyperrefcolorlinks.
+% último y exige la desactivación de la opción colorlinks y la inclusión en 
+% este paquete de la opción hyperrefcolorlinks.
 % Este paquete presenta alguna incompatibilidades por lo que cambiarlo de 
-%ubicación puede generar algún error (manejar con cuidado).
+% ubicación puede generar algún error (manejar con cuidado).
 
 % Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
 \renewmenumacro{\menu}[>]{menus} % OPT.: default: menus
@@ -184,12 +224,12 @@
 
 % Fichero con escudo de la institución
 % Logo de la ESI que prefieras (la normativa no especifica obligatoriedad).
-%\escudo{esi} 			% Logo ESI (gris uniforme)							
-%\escudo{esi_black} 	% Logo ESI (negro)						
-%\escudo{esi_color}		% Logo ESI (dos tintas)						
-\escudo{escudoInf}		% Nucleo de ferrita	(color)
-%\escudo{escudoInfBW} 	% Nucleo de ferrita	(en escala de grises)					
-%\escudo{etsii} 		% Ejemplo para otra titulación
+%\escudo{esi} 					% Logo ESI (gris uniforme)							
+%\escudo{esi_black} 			% Logo ESI (negro)						
+\escudo{esi_color}				% Logo ESI (dos tintas)						
+%\escudo{IngInformatica_color}	% Nucleo de ferrita	(color)
+%\escudo{IngInformatica_bw} 	% Nucleo de ferrita	(en escala de grises)					
+%\escudo{etsii_color} 			% Escudo ETSII
 
 \centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
 \deptoEduPrimera{<Primera línea Depto. Director>} % 1ª Línea(EN: Department of ...)
@@ -200,17 +240,17 @@
 \tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
 
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\fechaDef{julio, 2019} 							% Fecha de defensa
-\mesDef{julio}        							% Mes de defensa
-\yearDef{2019}        							% Año de defensa
-\lugarDef{Ciudad Real}							% Lugar de defensa
+\fechaDef{julio, 2020} 			% Fecha de defensa
+\mesDef{julio}        			% Mes de defensa
+\yearDef{2020}        			% Año de defensa
+\lugarDef{Ciudad Real}			% Lugar de defensa
 
 
 % --- Metadatos (propiedades) para el documento PDF
 \hypersetup{% OPT.
 % EDITAR: Valores para el PDF.	
-	pdftitle={Plantilla guía de TFG para la ESI-UCLM}, % Título
-	pdfauthor={Jesús Salido}, % Autor
+	pdftitle={Plantilla guía para TFG en la UCLM}, % Título
+	pdfauthor={Jesús Salido (ESI-UCLM)}, % Autor
 	pdfsubject={TFG},  % Tema
 	pdftoolbar=true, % Muestra la toolbar de Acrobat
 	pdfmenubar=true	 % Muestra la menubar de Acrobat
@@ -221,6 +261,16 @@
 
 
 
+
+
+
+
+
+
+
+% -------------------------
+% -------------------------
+% -------------------------
 % -------------------------
 %
 % CUERPO DEL DOCUMENTO
@@ -234,12 +284,22 @@
 
 % -------------------------
 %
-% PORTADAS
+% PORTADAS: 
+% Los comandos \portadaTFG y \portadilla generan dos portadas con LaTeX 
+% teniendo en cuenta los datos sobre el documento aportados en el preámbulo.
+% EDITAR: Si se desea incluir una portada generada externamente en PDF se emplea la
+% versión del comando con estrella indicando el fichero.
 %
 % -------------------------
 \portadaTFG		% Portada pral.
+%\portadaTFG*{./portadas/portadaADE} % Portada generada externamente en PDF
+%\portadaTFG*{./portadas/portadaETSII_IE} % Portada generada externamente en PDF
+%\portadaTFG*{./portadas/portadaETSII_TFM} % Portada generada externamente en PDF
 %---
+% EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadillaTFG	% Portada interior (con tutor(a) y co-tutor(a) si existe).
+% También en versión con estrella para indicar fichero PDF
+% Comentar si no se desea incluir
 %---
 
 % -------------------------
@@ -251,7 +311,9 @@
 %---
 
 %---
+% EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \tribunalTFG % Página para calificaciones del tribunal
+% También en versión con estrella para indicar fichero PDF
 %---
 
 % -------------------------
@@ -304,8 +366,11 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \mainmatter
 % Justo antes del primer capítulo del libro. Activa la numeración con números arábigos y reinicia el contador de páginas.
 
-% OJO: No cambiar de ubicación. Elimina cabecera y pie en pág. inicial de cap.
-\cleanhdfirst
+% Ajusta valor de cabeceras y pies a comienzo de capítulo
+\ifpageonfooter
+\else
+	\cleanhdfirst
+\fi
 
 % Reajuste del número de página consecutivo para no reiniciar paginación en Cáp. 1
 %\contpagination % Comentado para reiniciar paginación (pag. 1)
@@ -322,22 +387,12 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \include{Conclusiones}
 % -------------------------
 
-% -------------------------
-%
-% OPT.: ANEXOS: Comentar si no se desean incluir.
-%
-% -------------------------
-\appendix
-\portadaAnexos % OPT. Añade una portada para anexos
-
-% Tras este punto los capítulos se numeran con letras.
-% Aquí todos los apéndices necesarios
-\include{AnexoA} % Apéndice A (opcionales)
-
-%---
 
 %--- BACKMATTER
-\backmatter
+%\backmatter (se comenta para que los índices puedan aparecer después de la bibliografía)
+
+
+
 % -------------------------
 %
 % BIBLIOGRAFÍA
@@ -347,6 +402,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % EDITAR: Comentar línea siguiente
 \nocite{*} % INCLUIDO para ver cómo queda, pero comentar en versión final.
 
+\cleardoublepage % OJO: Necesario para ajustar el avance de página
 \phantomsection  % OJO: Ojo necesario con hyperref.
 \addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos.
 %---
@@ -363,19 +419,33 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 %\printbibliography[heading=subbibliography,nottype=online,title={Fuentes no online}]
 % -------------------------
 
+
+% -------------------------
+%
+% OPT.: ANEXOS: Comentar si no se desean incluir.
+% Mover si se desea que aparezcan antes de la bobliografía.
+%
+% -------------------------
+\appendix
+\portadaAnexos % OPT. Añade una portada para anexos
+
+% Tras este punto los capítulos se numeran con letras.
+% Aquí todos los apéndices necesarios
+\include{AnexoA} % Apéndice A (opcionales)
+
+%---
+
+
+
 % -------------------------
 %
 % OPT.: ÍNDICE TEMÁTICO: Comentar si no se desean incluir.
 %
 % -------------------------
 % CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
-\cleardoublepage
-\phantomsection % OJO: Ojo necesario con hyperref.
+\cleardoublepage % OJO: Necesario para ajustar el avance de página
+\phantomsection  % OJO: Ojo necesario con hyperref.
 \addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
-
-%---
-% Impresión de Índice Temático (comentar para eliminar)
-%---
 \printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
 %---
 \end{document}

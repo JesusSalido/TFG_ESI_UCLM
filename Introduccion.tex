@@ -202,6 +202,23 @@ $ gcc -o Hola HolaMundo.c
 \end{lstlisting}
 
 
+\noindent Un ejemplo más. Este en Matlab:
+\spanishplainpercent
+\begin{lstlisting}[style=Matlab-color,float=ht,caption={Ejemplo escrito en Matlab},label=lst:matlab]
+function f = fibonacci(n)
+ % FIBONACCI  Fibonacci sequence
+ %	f = FIBONACCI(n) generates the first n Fibonacci numbers.
+ %	Copyright 2014 Cleve Moler
+ %	Copyright 2014 The MathWorks, Inc.
+f = zeros(n,1); 
+f(1) = 1;
+f(2) = 2;
+for k = 3:n
+f(k) = f(k-1) + f(k-2);
+end
+\end{lstlisting}
+\spanishpercent
+
 \subsection{Algoritmos con el paquete \texttt{algorithm2e}}
 Como ya se ha comentado en los textos científicos relacionados con las 
 TIC\footnote{Por supuesto en un TFG (Trabajo Fin de Grado)\index{TFG} o tesis 
@@ -266,3 +283,127 @@ ejemplo:
 \directory{C:/user/LaTeX/Ejemplos}\\
 
 \noindent Aunque este paquete permite muchas opciones de configuración de los estilos aplicados, no es necesario hacerlo para obtener unos resultados muy elegantes.
+
+
+
+\section{Ejemplos de fórmulas matemáticas}
+Para que \LaTeX{} pueda incluir muchos símbolos matemáticos es preciso incluir algunos paquetes que ayudan en dicha tarea: \texttt{amsmath}, \texttt{amsfonts}, \texttt{amssymb}. También hay que tener en cuenta que si el tipo principal empleado en el texto es Times y se desea utilizar un tipo coherente en las fórmulas es conveniente emplear el paquete \emph{mathptmx} en vez de \emph{Times}. Pero en este caso es recomendable incluir siempre paquetes adicionales para suministrar las otras dos familias de fuentes escalables (p.~ej.\ \texttt{helvet} para familia \textsf{palo seco} y \texttt{couriers} para \texttt{monoespaciada}). Si no se hace esta última inclusión pueden obtenerse errores de difícil diagnóstico.
+
+
+
+\subsection{Fórmulas creadas en línea y con entorno \texttt{equation}}
+Es muy sencillo incluir fórmulas matemáticas sencillas en el mismo texto en el que se escribe. Por ejemplo, $c^{2}=a^{2}+b^{2}$ que podría ser la ecuación representativa del teorema de Pitágoras.
+
+Las fórmulas también se pueden separar del texto para que aparezcan destacadas, así:
+
+% Ejemplo: Ecuación no numerada
+% ============
+\[
+c^2  = \int {\left( {a^2  + b^2} \right)}  \cdot dx
+\]
+
+
+Pero si se desea, las ecuaciones pueden ser numeradas de forma automática e incluso utilizar referencias cruzadas a ellas:
+
+% Ejemplo: Ec. numerada.
+% ============
+% MathType!MTEF!2!1!+-
+% feqaeaartrvr0aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaebbnrfifHhDYfgasaacH8srps0l
+% bbf9q8WrFfeuY-Hhbbf9v8qqaqFr0xc9pk0xbba9q8WqFfea0-yr0R
+% Yxir-Jbba9q8aq0-yq-He9q8qqQ8frFve9Fve9Ff0dmeaabaqaciGa
+% caGaaeqabaaaamaaaOqaaiaadogadaahaaWcbeqaaiaaikdaaaGccq
+% GH9aqpcaWGHbWaaWbaaSqabeaacaaIYaaaaOGaey4kaSIaamOyamaa
+% CaaaleqabaGaaGOmaaaaaaa!3910!
+\begin{equation} \label{eq:pitagoras}
+	a^{2}=b^{2} + c^{2}
+\end{equation}
+
+No hay que preocuparse demasiado por la tipografía empleada en las fórmulas pues \LaTeX{} hace por nosotros <<casi>> todo el trabajo.\footnote{Los matemáticos son muy exquisitos y no se conforman con cualquier cosa, pero nosotros debemos ser mucho menos pretenciosos si queremos resultados rápidos.}
+
+Los ejemplos que aquí se muestran son muy sencillos pero \LaTeX{} proporciona entornos específicos más potentes. Para mostrar algo <<más sofisticado>> añado dos ejemplos más. La ec.~\ref{eq:integral} que es un poquito más compleja y la ec.~\ref{eq:cuadro} que está recuadrada.
+
+% Ejemplo:
+% ============
+\begin{equation}\label{eq:integral}
+	I = \! \int_{-\infty}^\infty f(x)\,dx
+\end{equation}
+
+Un ejemplo de alineación de ecuación mediante entorno \texttt{flalign}:\footnote{Otra forma de conseguir el alineamiento a la izquierda de las ecuaciones se consigue añadiendo \texttt{fleqn} como opción de la clase del documento.}
+\begin{flalign}
+    &f(x) = -1.25x^{2} + 1.5x&
+\end{flalign}
+
+En este caso la versión con estrella (\texttt{flalign*}) suprime la numeración de la ecuación.
+
+% Ejemplo: Ec. con recuadro (numeración exterior).
+% ============
+{\fboxsep 8pt \fboxrule 0.5pt 
+%\fboxsep ajusta la separación entre la caja y el elemento recuadrado
+%\fboxrule ajusta el espesor de la línea del recuadro
+\begin{equation}\label{eq:cuadro}
+\fbox{$\displaystyle 
+R = \frac{L}{2} \cdot \frac{{\left( {v_d  + v_i } \right)}}{{\left( {v_d  - v_i } \right)}}
+$}
+\end{equation}
+}
+
+
+Algunos otros cuadros en ecuaciones son p.~ej.\ $x + y = \fbox{$\Omega$}$ o incluso el que se muestra a continuación (ec.~\ref{eq:cuadrogrande}) y que abarca todo el ancho de la línea:\footnote{Adaptado del manual \emph{Documentation for fancybox.sty:
+Box tips and tricks for \LaTeX{}} de Timothy Van Zandt (2010).}
+
+% Ejemplo: Ec. con recuadro (numeración interior).
+% ============
+\newlength{\milong}
+\[
+	\setlength{\fboxsep}{15pt}
+	\setlength{\milong}{\linewidth}
+	\addtolength{\milong}{-2\fboxsep}
+	\addtolength{\milong}{-2\fboxrule}
+	\fbox{%
+		\parbox{\milong}{
+		\setlength{\abovedisplayskip}{0pt}
+		\setlength{\belowdisplayskip}{0pt}
+		\begin{equation}\label{eq:cuadrogrande}
+		\sqrt[n]{1+x+x^2+x^3+\ldots}
+		\end{equation}}}
+\]
+
+
+
+\subsection{Ecuaciones en varias líneas con entornos \texttt{eqnarray} y \texttt{align}}
+A continuación se muestra un ejemplo de ecuación muy larga dividida en varias líneas:
+
+% Ejemplo: Ec. en varias líneas con alineación y sin numeración.
+% ============
+\begin{eqnarray*}
+  \lefteqn{\left(1+x\right)^n = } \\
+  & & 1 + nx + \frac{n\left(n-1\right)}{2!}x^2 + \\
+  & & \frac{n\left(n-1\right)\left(n-2\right)}{3!}x^3 + \\
+  & & \frac{n\left(n-1\right)\left(n-2\right)\left(n-3\right)}{4!}x^4 + \\
+  & & \ldots
+\end{eqnarray*}
+% Apreciar el asterisco en la ecuación anterior para evitar que todas las líneas de la ecuación aparezcan numeradas.
+
+También se puede escribir varias ecuaciones en líneas sucesivas alineadas por algún elemento como se hace en el siguiente ejemplo de uso del entorno \texttt{align}:
+
+% Ejemplo: Ecs. en varias líneas con alineación y manejo de la numeración.
+% ============
+\begin{align}
+f(x) & = \cos x \\
+f'(x) & = -\sin x \\
+\int_{0}^{x} f(y)dy & = \sin x \nonumber
+\end{align}
+
+\noindent En este último ejemplo se observa también cómo es posible suprimir la numeración de una de las ecuaciones con el comando (\texttt{\textbackslash nonumber}).
+
+Para terminar, un ejemplo más del control del espaciado horizontal empleando el entorno \texttt{array}:
+
+% Ejemplo:
+% ============
+\[f(n) = \left\{ 
+\begin{array}{l l}
+  n/2 & \quad \mbox{si $n$ es par}\\
+  -(n+1)/2 & \quad \mbox{si $n$ es impar}\\ \end{array} \right. \]
+
+
