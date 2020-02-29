@@ -159,15 +159,15 @@
 	sortcites, % Ordenación de citas múltiples cuando son numéricas
 	maxbibnames=3, % Máximo número listado de autores en la bibliografía
 	minbibnames=1, % Mínimo número de autores cuando se abrevia la lista de autores
+	% Descomentar las opciones siguientes para bibliografía multilingüe
+	autolang=other, % Requerido para opción multilingüe
+	language=auto,   % Requerido para opción multilingüe
 	sorting=nyt%
 					% Para cambiar criterio de ordenación de las referencias.
  					% =nty (name-title-year), nyt (name-year-title), nyvt (name-year-volume-title), 
 					% =anyt (alphabetic-name-year-title), anyvt (alphabetic-name-year-volume-title), 
 					% =ynt (year-name-title), ydnt (yeardescendent-name-title), 
 					% =none (por orden de citación, como en ETSII-UCLM).			
-	% Descomentar las opciones siguientes para bibliografía multilingüe
-%	autolang=other, % Requerido para opción multilingüe
-%	language=auto   % Requerido para opción multilingüe
 ]{biblatex}
 
 
@@ -226,8 +226,8 @@
 % Logo de la ESI que prefieras (la normativa no especifica obligatoriedad).
 %\escudo{esi} 					% Logo ESI (gris uniforme)							
 %\escudo{esi_black} 			% Logo ESI (negro)						
-\escudo{esi_color}				% Logo ESI (dos tintas)						
-%\escudo{IngInformatica_color}	% Nucleo de ferrita	(color)
+%\escudo{esi_color}				% Logo ESI (dos tintas)						
+\escudo{IngInformatica_color}	% Nucleo de ferrita	(color)
 %\escudo{IngInformatica_bw} 	% Nucleo de ferrita	(en escala de grises)					
 %\escudo{etsii_color} 			% Escudo ETSII
 
@@ -445,6 +445,8 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
 \cleardoublepage % OJO: Necesario para ajustar el avance de página
 \phantomsection  % OJO: Ojo necesario con hyperref.
+% EDITAR: Si se desea cambiar el nomre del ínidice temático
+%\renewcommand{\indexname}{Índice de acrónimos}
 \addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
 \printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
 %---

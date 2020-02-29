@@ -416,7 +416,6 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
 % -------------------------
 % Ajustes para el idioma español.
 % EDITAR: Sólo si es necesario.
@@ -440,7 +439,10 @@
 		\def\spanishplainpercent{\let\es@sppercent\@empty}
 		\def\spanishpercent{\def\es@sppercent{\unskip\textormath{$\m@th\,$}{\,}}}
 		% \makeatother
-		
+	\else
+		% Se incluye la misma definción sin efecto para que al mantenerla en otros idiomas no produzca error.
+		\def\spanishplainpercent{}
+		\def\spanishpercent{}		
 	\fi
 }
  
