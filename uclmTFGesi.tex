@@ -16,9 +16,9 @@
 % temático).
 %
 % Para su compilación se aconseja utilizar `latexmk` (requiere para su 
-% ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
+% ejecución de un intérprete [`Perl`]([Win] http://strawberryperl.com/)):
 %
-%> \$> latexmk -pdf -silent -synctex=1 --enable-write18 
+%> \$> latexmk -pdf -silent -synctex=1  
 %
 % Para la automatización del trabajo con esta plantilla es recomendable el 
 % empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
@@ -60,35 +60,37 @@
 	outer=2cm			% Margen al exterior
 ]{geometry}
 
-
 %--- Tipografía
+%--- Si no se emplea ningún paquete de tipografía se empleará Computern Modern.
 \usepackage{amsmath,amsthm,amssymb}	% OPT.: Mejoras cuando hay matemáticas
-
 
 %--- Tipografía (Opción 1)
 \usepackage[tt=false]{libertine} % Libertine con Old-Style Figures [osf]
 \usepackage[libertine]{newtxmath} % Times
 %---
 
-
 %--- Tipografía (Opción 2)
 %\usepackage{newpxtext} % Palatino: La opción osf proporciona números en old style.
 %\usepackage{newpxmath}	% Palatino
 %---
 
-
 %--- Tipografía (Opción 3)
 %\usepackage{fourier} % Utopía
 %---
 
+%--- Tipografía (Opción 5)
+%\usepackage{lmodern} % Latin Modern. Debe ser la empleada cuando se desea una tipografía genuina de LaTeX sucesora de Computer Modern.
+%---
 
-%--- Tipografía (Opción 4)
+%--- Tipografía (Opción excepcional)
 % EDITAR: Si es preciso cambio de tipo de familia de tipografía por defecto a Sans-Serif
 % Aunque es una opción extraña es la preferida en algunos centros docentes (ADE-UCLM).
 % Con esta elección es más conveniente una tipografía tipo Helvética/Arial (no Libertine)
 %\usepackage{helvet}
 %\renewcommand{\familydefault}{\sfdefault}
 %---
+
+
 
 
 \usepackage{textcomp,marvosym,pifont} % OPT.: Generación de símbolos 
@@ -211,10 +213,9 @@
 % emplear los campos opcionales (OPT.) estos deben comentarse.
 % -------------------------
 % EDITAR: Datos del documento. 
-% NOTA: Los elementos opcionales pueden eliminarse o comentarse.
+% NOTA: Los elementos opcionales pueden dejarse eliminarse o comentarse. No se deben dejar vacíos porque provoca errores.
 \tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
 \tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Para títulos largos.
-%%existe).
 \titulo{Plantilla guía de TFG} % Título corto (mostrado en pág. de créditos)
 \autor{Jesús Salido Tercero}
 \email{jesus.salido@uclm.es}					
@@ -282,19 +283,31 @@
 %numeradas aunque si aparecen en el índice de contenidos.
 \pagestyle{empty}  % Páginas sin cabecera ni pies
 
+
+% -------------------------
+% -------------------------
 % -------------------------
 %
 % PORTADAS: 
+%
 % Los comandos \portadaTFG y \portadilla generan dos portadas con LaTeX 
 % teniendo en cuenta los datos sobre el documento aportados en el preámbulo.
-% EDITAR: Si se desea incluir una portada generada externamente en PDF se emplea la
+% Si se desea incluir una portada generada externamente en PDF se emplea la
 % versión del comando con estrella indicando el fichero.
 %
 % -------------------------
+
+
+%---
+% EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadaTFG		% Portada pral.
 %\portadaTFG*{./portadas/portadaADE} % Portada generada externamente en PDF
 %\portadaTFG*{./portadas/portadaETSII_IE} % Portada generada externamente en PDF
 %\portadaTFG*{./portadas/portadaETSII_TFM} % Portada generada externamente en PDF
+% También en versión con estrella para indicar fichero PDF
+% Comentar si no se desea incluir
+%---
+
 %---
 % EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadillaTFG	% Portada interior (con tutor(a) y co-tutor(a) si existe).
@@ -302,11 +315,8 @@
 % Comentar si no se desea incluir
 %---
 
-% -------------------------
-%
+%---
 % OPT.: CRÉDITOS (aunque no es obligatorio es recomendable).
-%
-% -------------------------
 \input{Creditos}
 %---
 
@@ -316,15 +326,21 @@
 % También en versión con estrella para indicar fichero PDF
 %---
 
-% -------------------------
-%
+%---
 % OPT.: DEDICATORIA (1 pág. máximo) comentar si no se desea incluir.
 % Aunque opcional, no se debería perder la oportunidad de poder 
 % dedicar el trabajo a alguien MUY especial.
 % EDITAR: Dedicatoria.
 \dedicado{A mis estudiantes \\ % A alguien muy especial
 Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos líneas (no confundir con los agradecimientos).
-% -------------------------
+%---
+
+%
+% FIN PORTADAS: 
+% |
+% |
+% -> ----------------------
+
 
 % -------------------------
 %
