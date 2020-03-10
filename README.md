@@ -11,7 +11,7 @@ Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Es
 > - Grado en Ing. Informática,
 > - Grados en Ing. Industrial,
 > - Grados en Química,
-> - Grados en Adminitración y dirección de empresas,... y la lista sigue creciendo.
+> - Grados en Administración y Dirección de Empresas,... y la lista sigue creciendo.
 
 Esta plantilla consta de:
   - Un fichero LaTeX principal (``uclmTFGesi.tex``) en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).
@@ -31,11 +31,11 @@ Esta plantilla ha sido preparada para compilarse con `pdflatex`, `biblatex` (bib
 
 Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
 
-> \$> latexmk -pdf -silent -synctex=1 --enable-write18 
+> \$> latexmk -pdf -silent -synctex=1 uclmTFGesi.tex
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
-> IMPORTANTE: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas.
+> IMPORTANTE: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas. Consultar manual de `latexmk` para opciones adicionales.
 -----
 ##### Citación y contacto
 
