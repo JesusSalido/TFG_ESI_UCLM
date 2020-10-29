@@ -63,7 +63,7 @@
 
 %--- Tipografía
 %--- Si no se emplea ningún paquete de tipografía se empleará Computern Modern.
-\usepackage{amsmath,amsthm,amssymb,amsfonts}	% OPT.: Mejoras cuando hay matemáticas
+\usepackage{amsmath,amssymb,amsfonts} % OPT.: Mejoras cuando hay matemáticas
 
 %--- Tipografía (Opción 1)
 \usepackage[tt=false]{libertine} % Libertine con Old-Style Figures [osf]
@@ -179,26 +179,12 @@
 % EDITAR: Si es preciso cambiar el fichero de bibliografía. 
 \addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
 %---
-
+%
 \usepackage{makeidx} % OPT.: Indice temático
 \makeindex           % OPT.: Procesamiento de índice temático
 
 
-%--- OPT.: Paquete para incluir menús, paths y teclas de modo "elegante"
-\usepackage[os=win,hyperrefcolorlinks]{menukeys} 
-% OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el 
-% último y exige la desactivación de la opción colorlinks y la inclusión en 
-% este paquete de la opción hyperrefcolorlinks.
-% Este paquete presenta alguna incompatibilidades por lo que cambiarlo de 
-% ubicación puede generar algún error (manejar con cuidado).
 
-% Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
-\renewmenumacro{\menu}[>]{menus} % OPT.: default: menus
-\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT.: default: paths
-\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT.: default: roundedkeys
-%---
-
-\usepackage{setspace}
 
 % -------------------------
 % -------------------------
@@ -399,8 +385,6 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % CAPÍTULOS: Un fichero por capítulo.
 %
 % -------------------------
-% EDITAR: Se introduce para poder ajustar el espacio interlineado a 1,5 líneas
-%\onehalfspacing % Comentar si se desea el interlineado por defecto
 \include{Introduccion}
 \include{Objetivo}
 \include{Metodologia}
@@ -466,8 +450,8 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
 \cleardoublepage % OJO: Necesario para ajustar el avance de página
 \phantomsection  % OJO: Ojo necesario con hyperref.
-% EDITAR: Si se desea cambiar el nomre del ínidice temático
-%\renewcommand{\indexname}{Índice de acrónimos}
+% EDITAR: Si se desea cambiar el nombre del índice temático
+%\renewcommand{\indexname}{Título del índice}
 \addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
 \printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
 %---
