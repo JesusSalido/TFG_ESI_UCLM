@@ -13,19 +13,29 @@ Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Es
 > - Grados en Química,
 > - Grados en Administración y Dirección de Empresas,... y la lista sigue creciendo.
 
-Esta plantilla consta de:
-  - Un fichero LaTeX principal (``uclmTFGesi.tex``) en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).
+Esta plantilla está organizada en ficheros y directorios del modo que se indica a continuación:
+  - Este fichero ``README.md``.
+  - Un fichero LaTeX principal o maestro (``uclmTFGesi.tex``) en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).
   - Un fichero de estilo ``*.sty`` (paquete `uclmTFGesi`) en el que se han agrupado los aspectos de formato. Y que admite como opciones: seleccionar el idioma principal del documento (opción `english`) o prefijos de género (opciones `autora`, `tutora` o `cotutora`).
-    > __NOTA__: _Se recomienda evitar la modificación de este fichero si se carece de conocimientos avanzados de LaTeX._ 
+  
+    > __NOTA__: _Se recomienda evitar la modificación de este fichero si se carece de conocimientos avanzados de LaTeX._
+    
   - Un fichero de estilo ``uclmTFG.ist`` para el índice temático.
   - Un fichero de configuración ``latexmkrc`` para automatizar la compilación.
-  - Varios ficheros LaTeX (``*.tex``) correspondientes a los principales capítulos de un TFG.
   - Un fichero de bibliografía (``biblioTFG.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
-  - Directorio (``./portadas``) con ejemplos de portadas (en formatos ``doc`` y ``PDF``) cuyo diseño no se ajusta al generado automáticamente por la plantilla,
-  - Directorio (``./figs``) de figuras contenidas en el documento final.
-  - Directorio de porciones de código fuente (``./code``) incluido como parte de los documentos finales.
+  - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
+  - Directorio ``/mainmatter`` con ficheros para los capítulos principales de la memoria.
+  - Directorio ``/backmatter`` con ficheros para los anexos.
+  - Directorio ``/figs`` de figuras contenidas en el documento final.
+  
+    > __NOTA__: Si alguno de los ficheros incluidos en los directorios frontmatter, mainmatter y backmatter, no es necesario, su inclusión en el fichero maestro se debe eliminar/comentar. 
+ 
+### Ajustes (ESI-UCLM)
+  1. Editar los datos del documento siguiendo las indicaciones incluidas en el fichero maestro: título, autor/a, tutores/as, fechas, institución, etc. 
+  2. Opciones del paquete uclmTFGesi: ``english`` (idioma pral.) e indicación de género ``autora``, ``tutora`` y ``cotutora``.
+  3. Tanto en el documento maestro como en el paquete suministrado se aportan indicaciones para ajustes opcionales sencillos (p.ej., márgenes, tipografía, estilo de citación/bibliografía, etc.)
 
-#### Compilación 
+### Compilación 
 
 Esta plantilla ha sido preparada para compilarse con `pdflatex`, `biblatex` (bibliografía con `biber`) y `makeindex` (sólo si se incluye índice temático).
 
@@ -35,9 +45,9 @@ Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
-> IMPORTANTE: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas. Consultar manual de `latexmk` para opciones adicionales.
+> __IMPORTANTE__: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas. Consultar manual de `latexmk` para opciones adicionales.
 -----
-##### Citación y contacto
+#### Citación y contacto
 
 Si esta plantilla le resulta útil considere la posibilidad de citarla con la información del registro `bib`:
 

@@ -35,6 +35,7 @@
 %%%%%%%%%%%%%%
 % END_FOLD
 
+
 % -------------------------
 %
 % PREÁMBULO
@@ -97,8 +98,6 @@
 \usepackage{ccicons} % OPT.: Iconos de licencia Creative Commons
 \usepackage[T1]{fontenc}% Codificación de salida    
 
-
-
 %--- Paquete con personalización local para el TFG (ESI-UCLM)
 % EDITAR: Si es preciso que la memoria emplee "english" como idioma 
 % principal, prefijos de género y ubicación en número de página al pie.
@@ -134,7 +133,8 @@
 % OP-\tecla{texto}				: Genera un borde de tecla en torno al 
 %texto		
 % -------------------------
-\usepackage{uclmTFGesi}
+%\usepackage{uclmTFGesi}
+\usepackage[tutora,cotutora]{uclmTFGesi}
 %\usepackage[pageonfooter]{uclmTFGesi}
 
 
@@ -223,9 +223,9 @@
 \tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
 
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\fechaDef{julio, 2020} 			% Fecha de defensa
+\fechaDef{julio, 2021} 			% Fecha de defensa
 \mesDef{julio}        			% Mes de defensa
-\yearDef{2020}        			% Año de defensa
+\yearDef{2021}        			% Año de defensa
 \lugarDef{Ciudad Real}			% Lugar de defensa
 
 
@@ -306,7 +306,7 @@
 
 %---
 % OPT.: CRÉDITOS (aunque no es obligatorio es recomendable).
-\input{Creditos}
+\input{./frontmatter/Creditos}
 %---
 
 
@@ -342,7 +342,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % RESUMEN:
 %
 % -------------------------
-\input{Resumen}
+\input{./frontmatter/Resumen}
 %---
 
 
@@ -351,7 +351,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % AGRADECIMIENTOS (recomendable máx. 1 pág.)
 %
 % -------------------------
-\input{Agradecimientos} % Agradecimientos etc.
+\input{./frontmatter/Agradecimientos} % Agradecimientos etc.
 %---
 
 
@@ -360,7 +360,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % OPT. NOTACIÓN: Lista de símbolos con significado especial.
 %
 % -------------------------
-\input{Notacion} % Notación empleada.
+\input{./frontmatter/Notacion} % Notación empleada.
 %---
 
 
@@ -369,7 +369,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % ÍNDICES
 %
 % -------------------------
-\input{Indices} % Índice de contenido, figuras, tablas, listados, etc.
+\input{./frontmatter/Indices} % Índice de contenido, figuras, tablas, listados, etc.
 %---
 % END_FOLD
 
@@ -399,11 +399,11 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % CAPÍTULOS: Un fichero por capítulo.
 %
 % -------------------------
-\include{Introduccion}
-\include{Objetivo}
-\include{Metodologia}
-\include{Resultados}
-\include{Conclusiones}
+\include{./mainmatter/Introduccion}
+\include{./mainmatter/Objetivo}
+\include{./mainmatter/Metodologia}
+\include{./mainmatter/Resultados}
+\include{./mainmatter/Conclusiones}
 % -------------------------
 
 
@@ -414,8 +414,9 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % -------------------------
 %
 %--- BIBLIOGRAFÍA
-% BEGIN_FOLD
+%
 % -------------------------
+% BEGIN_FOLD
 % OJO: Todas las referencias deben estar citadas en el texto)
 % EDITAR: Comentar línea siguiente
 \nocite{*} % INCLUIDO para ver cómo queda, pero comentar en versión final.
@@ -455,7 +456,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 
 % Tras este punto los capítulos se numeran con letras.
 % Aquí todos los apéndices necesarios
-\include{AnexoA} % Apéndice A (opcionales)
+\include{./backmatter/AnexoA} % Apéndice A (opcionales)
 
 %---
 
