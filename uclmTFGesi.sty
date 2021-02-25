@@ -90,12 +90,10 @@
 
 % Color especial definido para los hiperenlaces
 \definecolor{palered}{rgb}{0.78, 0.03, 0.08} % dvipsname harvardcrimson
-\definecolor{UCLMred}{cmyk}{0.0, 1.0, 0.65, 0.28} % UCLM red
+\definecolor{UCLMred}{cmyk}{0.19, 1.0, 0.74, 0.12} % UCLM red
 %---
 
 
-\usepackage{url} 		% Para escritura de URL
-\urlstyle{sf}			% Estilo sans serif para URLs
 
 \usepackage{fancyhdr}	% Ajuste de cabeceras y pies
 \usepackage{titlesec}	% Ajustes de títulos de secciones
@@ -111,8 +109,24 @@
 \setlist{nolistsep} 	% Separación de ítems en listas
 \usepackage{multicol}	% Texto en varias columnas
 
-
 \usepackage[autostyle]{csquotes}
+
+\usepackage{graphicx}	% Inclusión de figuras
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
+\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
+\usepackage{ctable}	% OPT.: Ajustes para tablas
+
+%--- Personalización de títulos de figuras y tablas
+\usepackage[%
+	margin=10pt,		% Margen
+	font=small,			% Tamaño de tipografía
+	labelfont=bf,		% Prefijo-Etiqueta en negrita
+	format=hang			%
+]{caption}
+\captionsetup[table]{skip=5pt} 	% Separación del caption en las tablas
+\captionsetup[figure]{skip=5pt} % Separación del caption en las figuras
+
+
 
 
 %--- Generación de hiperenlaces
@@ -130,9 +144,12 @@
 	bookmarksnumbered=true % Incluye números en bookmarks
 ]{hyperref}
 
+\urlstyle{sf}			% Estilo sans serif para URLs
+
 
 \usepackage{pdfpages}  % Permite inclusión de páginas de un PDF
 
+\usepackage{microtype}	% Mejoras de microtipografía en la obtención de PDF (sólo para pdflatex)
 
 %--- Paquetes especiales para Informática
 \usepackage{listings}	% Inclusión de listados de código
@@ -147,6 +164,19 @@
 	english
 \fi
 ]{algorithm2e} 
+
+
+
+%--- OPT.: Paquete para incluir menús, paths y teclas de modo "elegante"
+\usepackage[os=win]{menukeys} 
+% OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el 
+% último (manejar con cuidado).
+
+% Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
+\renewmenumacro{\menu}[:]{menus} % OPT.: default: menus
+\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT.: default: paths
+\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT.: default: roundedkeys
+%---
 
 
 

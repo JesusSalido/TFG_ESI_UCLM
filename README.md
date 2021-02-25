@@ -42,7 +42,7 @@ Para la automatización del trabajo con esta plantilla es recomendable el empleo
 Si esta plantilla le resulta útil considere la posibilidad de citarla con la información del registro `bib`:
 
 ```
-@Www{salidoTFGgit,
+@www{salidoTFGgit,
   author       = {Jesús Salido},
   title        = {Plantilla guía de TFG de la ESI-UCLM},
   year         = {2019},

@@ -1,7 +1,9 @@
 % !TeX encoding = UTF-8
+% CABECERA
+% BEGIN_FOLD
 %%%%%%%%%%%%%%
 % Fichero: uclmTFGesi.tex
-% Autor: Jesús Salido Tercero (http://www.uclm.es/profesorado/jsalido)
+% Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
 % Fecha (creación): Febrero 2010 
 % Rev. : Febrero 2020
 % Descripción: Plantilla para memoria de TFG 
@@ -31,25 +33,30 @@
 % Si deseas acceder a la versión de desarrollo puedes encontrarla en GitHub:
 %	https://github.com/JesusSalido/TFG_ESI_UCLM
 %%%%%%%%%%%%%%
-
-
+% END_FOLD
 
 % -------------------------
 %
-% PREÁMBULO del documento
-%
+% PREÁMBULO
+% BEGIN_FOLD
 % -------------------------
-	
 \documentclass[ 		% Clase del documento
 	11pt,				% Tamaño de letra
 	a4paper,			% Tamaño de papel
 	twoside,			% Impresión a doble cara
 	openright,			% La apertura de cap. a la dcha.
+%	draft       		% Versión borrador (sin figuras)
 	final       		% Versión final
 ]{book}
 
-\usepackage[utf8]{inputenx} % Codificación de entrada (mejora respecto a inputenc)
-\usepackage[english,spanish,es-tabla,es-noindentfirst]{babel} % Internacionalización
+%--- Codificación de entrada (mejora respecto a inputenc)
+\usepackage[utf8]{inputenx} 
+\usepackage[
+    english,     % Se emplea porque el resumen siempre en inglés
+    spanish,     % Se emplea para resumen en español
+    es-tabla,    % Si idioma pral. español
+    es-noindentfirst
+]{babel} % Internacionalización
 
 
 %--- Geometría de las páginas del documento
@@ -60,30 +67,24 @@
 	outer=2cm			% Margen al exterior
 ]{geometry}
 
-
 %--- Tipografía
-%--- Si no se emplea ningún paquete de tipografía se empleará Computern Modern.
-\usepackage{amsmath,amssymb,amsfonts} % OPT.: Mejoras cuando hay matemáticas
+\usepackage{amsmath,amssymb,amsfonts} % Para ecs.
 
-%--- Tipografía (Opción 1)
+%--- Si no se emplea ningún paquete de tipografía se empleará Computern Modern.
+%--- Tipografía 
+%--- (Opción: Latin Modern)
+%\usepackage{lmodern} % Latin Modern. Empleada cuando se desea una tipografía genuina de LaTeX sucesora de Computer Modern.
+%--- (Opción: Libertine)
 \usepackage[tt=false]{libertine} % Libertine con Old-Style Figures [osf]
 \usepackage[libertine]{newtxmath} % Times
-%---
-
-%--- Tipografía (Opción 2)
+%--- (Opción: Palatino)
 %\usepackage{newpxtext} % Palatino: La opción osf proporciona números en old style.
 %\usepackage{newpxmath}	% Palatino
-%---
-
-%--- Tipografía (Opción 3)
+%--- (Opción: Fourier)
 %\usepackage{fourier} % Utopía
 %---
 
-%--- Tipografía (Opción 5)
-%\usepackage{lmodern} % Latin Modern. Debe ser la empleada cuando se desea una tipografía genuina de LaTeX sucesora de Computer Modern.
-%---
-
-%--- Tipografía (Opción excepcional)
+%--- (Opción excepcional)
 % EDITAR: Si es preciso cambio de tipo de familia de tipografía por defecto a Sans-Serif
 % Aunque es una opción extraña es la preferida en algunos centros docentes (ADE-UCLM).
 % Con esta elección es más conveniente una tipografía tipo Helvética/Arial (no Libertine)
@@ -91,16 +92,11 @@
 %\renewcommand{\familydefault}{\sfdefault}
 %---
 
-
-
-
 \usepackage{textcomp,marvosym,pifont} % OPT.: Generación de símbolos 
 %especiales
 \usepackage{ccicons} % OPT.: Iconos de licencia Creative Commons
-
-
 \usepackage[T1]{fontenc}% Codificación de salida    
-\usepackage{microtype}	% Mejoras de microtipografía en la obtención de PDF (sólo para pdflatex)
+
 
 
 %--- Paquete con personalización local para el TFG (ESI-UCLM)
@@ -115,34 +111,31 @@
 %   english: idioma pral. inglés.
 %	autora,tutora,cotutora: indica el género de intervinientes (masculino por defecto) 	
 %	pageonfooter: Número de página en el pie y centrado como ADE-UCLM (por defecto en cabeceras)
+% -------------------------
+% COMANDOS OPCIONALES PROPORCIONADOS:
+% OP-Opcional
+% RE-Recomendado
+%
+% Comandos de generación automática de portadas
+% \portadaTFG, \portadaTFG*{ficheroPDF}: Página de portada
+% \portillaTFG, \portadillaTFG*{ficheroPDF}: Página de contraportada
+% \tribunalTFG, \tribunalTFG*{ficheroPDF}: Página de tribunal
+% \dedicado{texto}: Dedicatoria
+% \creditos{texto}{fichero gráfico de licencia}
+%
+% Comandos para definir variables con los datos del documento.
+%
+% OP-\nodivide[penalty]			: Penaliza la división de palabras. Máx. 
+%								: (n=10000) sin arg.
+% OP-\nowidowandorphan[penalty] : Penaliza las viudas y huérfanas. (sólo si necesario)
+% OP-\nodividenotes[penalty]	: Penaliza la división de notas al pié entre págs.	(sólo si necesario)	
+% OP-\savepagecnt				: Salva en un contador interno el nº de pág. actual
+% OP-\contpagination			: Recupera el valor de pág. previamente salvado en el cont. interno.
+% OP-\tecla{texto}				: Genera un borde de tecla en torno al 
+%texto		
+% -------------------------
 \usepackage{uclmTFGesi}
 %\usepackage[pageonfooter]{uclmTFGesi}
-
-% EDITAR: No comentar si es necesario suprimir el sangrado de párrafos.
-%\setlength{\parindent}{0pt} % Elimina sangrado de párrafos
-
-
-%--- Gráficos y tablas
-\usepackage{graphicx}	% Inclusión de figuras
-\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
-% EDITAR: Si es necesario cambiar el path para los directorios de figuras.
-\graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
-\DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
-\usepackage{rotating}	% OPT.: Giro de cajas (texto, figuras, tablas) (No 
-%DVI)
-\usepackage{ctable}	% OPT.: Ajustes para tablas
-
-
-%--- Personalización de títulos de figuras y tablas
-\usepackage[%
-	margin=10pt,		% Margen
-	font=small,			% Tamaño de tipografía
-	labelfont=bf,		% Prefijo-Etiqueta en negrita
-	format=hang			%
-]{caption}
-\captionsetup[table]{skip=5pt} 	% Separación del caption en las tablas
-\captionsetup[figure]{skip=5pt} % Separación del caption en las figuras
-
 
 
 
@@ -173,25 +166,26 @@
 					% =none (por orden de citación, como en ETSII-UCLM).			
 ]{biblatex}
 
-
 % Línea añadida para eliminar el idioma de la fuente bibliográfica.
 \AtEveryBibitem{\clearfield{note} \clearlist{language}}
-% EDITAR: Si es preciso cambiar el fichero de bibliografía. 
+
+% OPT: No comentar si es necesario suprimir el sangrado de párrafos.
+%\setlength{\parindent}{0pt} % Elimina sangrado de párrafos
+
 \addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
-%---
-%
+\graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
+
 \usepackage{makeidx} % OPT.: Indice temático
 \makeindex           % OPT.: Procesamiento de índice temático
-
-
-
-
+% END_FOLD
 % -------------------------
 % -------------------------
 % -------------------------
 
 
 
+% DATOS del documento
+% BEGIN_FOLD
 % -------------------------
 % -------------------------
 % -------------------------
@@ -202,7 +196,7 @@
 % emplear los campos opcionales (OPT.) estos deben comentarse.
 % -------------------------
 % EDITAR: Datos del documento. 
-% NOTA: Los elementos opcionales pueden dejarse eliminarse o comentarse. No se deben dejar vacíos porque provoca errores.
+% NOTA: Los elementos opcionales pueden dejarse, eliminarse o comentarse. No se deben dejar vacíos porque provoca errores.
 \tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
 \tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Para títulos largos.
 \titulo{Plantilla guía de TFG} % Título corto (mostrado en pág. de créditos)
@@ -219,7 +213,6 @@
 %\escudo{esi_color}				% Logo ESI (dos tintas)						
 \escudo{IngInformatica_color}	% Nucleo de ferrita	(color)
 %\escudo{IngInformatica_bw} 	% Nucleo de ferrita	(en escala de grises)					
-%\escudo{etsii_color} 			% Escudo ETSII
 
 \centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
 \deptoEduPrimera{<Primera línea Depto. Director>} % 1ª Línea(EN: Department of ...)
@@ -248,13 +241,7 @@
 % -------------------------
 % -------------------------
 % -------------------------
-
-
-
-
-
-
-
+% END_FOLD
 
 
 
@@ -263,15 +250,16 @@
 % -------------------------
 % -------------------------
 %
-% CUERPO DEL DOCUMENTO
+% CUERPO del documento
 %
 % -------------------------
 \begin{document}
+% PORTADAS (FRONTMATTER)
+% BEGIN_FOLD
 \frontmatter
 % Cambia la numeración de páginas a números romanos y las secciones no están 
 %numeradas aunque si aparecen en el índice de contenidos.
 \pagestyle{empty}  % Páginas sin cabecera ni pies
-
 
 % -------------------------
 % -------------------------
@@ -287,6 +275,9 @@
 % -------------------------
 
 
+
+
+
 %---
 % EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadaTFG		% Portada pral.
@@ -297,6 +288,11 @@
 % Comentar si no se desea incluir
 %---
 
+
+
+
+
+
 %---
 % EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadillaTFG	% Portada interior (con tutor(a) y co-tutor(a) si existe).
@@ -304,16 +300,27 @@
 % Comentar si no se desea incluir
 %---
 
+
+
+
+
 %---
 % OPT.: CRÉDITOS (aunque no es obligatorio es recomendable).
 \input{Creditos}
 %---
+
+
+
 
 %---
 % EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \tribunalTFG % Página para calificaciones del tribunal
 % También en versión con estrella para indicar fichero PDF
 %---
+
+
+
+
 
 %---
 % OPT.: DEDICATORIA (1 pág. máximo) comentar si no se desea incluir.
@@ -323,7 +330,6 @@
 \dedicado{A mis estudiantes \\ % A alguien muy especial
 Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos líneas (no confundir con los agradecimientos).
 %---
-
 %
 % FIN PORTADAS: 
 % |
@@ -339,6 +345,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \input{Resumen}
 %---
 
+
 % -------------------------
 %
 % AGRADECIMIENTOS (recomendable máx. 1 pág.)
@@ -346,6 +353,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % -------------------------
 \input{Agradecimientos} % Agradecimientos etc.
 %---
+
 
 % -------------------------
 %
@@ -355,6 +363,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \input{Notacion} % Notación empleada.
 %---
 
+
 % -------------------------
 %
 % ÍNDICES
@@ -362,7 +371,11 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % -------------------------
 \input{Indices} % Índice de contenido, figuras, tablas, listados, etc.
 %---
+% END_FOLD
 
+
+% Ajustes previos a Capítulos (MAINMATTER)
+% BEGIN_FOLD
 %--- MAINMATTER
 % Capítulos del documento
 % Salva en un contador interno el nº de páginas actual
@@ -379,6 +392,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 
 % Reajuste del número de página consecutivo para no reiniciar paginación en Cáp. 1
 %\contpagination % Comentado para reiniciar paginación (pag. 1)
+% END_FOLD
 
 % -------------------------
 %
@@ -394,14 +408,13 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 
 
 %--- BACKMATTER
-%\backmatter (se comenta para que los índices puedan aparecer después de la bibliografía)
-
+%\backmatter (se comenta para que los apéndices puedan aparecer después de la bibliografía)
 
 
 % -------------------------
 %
-% BIBLIOGRAFÍA
-%
+%--- BIBLIOGRAFÍA
+% BEGIN_FOLD
 % -------------------------
 % OJO: Todas las referencias deben estar citadas en el texto)
 % EDITAR: Comentar línea siguiente
@@ -409,7 +422,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 
 \cleardoublepage % OJO: Necesario para ajustar el avance de página
 \phantomsection  % OJO: Ojo necesario con hyperref.
-\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos.
+\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos. Se debe mantaner cuando se desean subbibliografías.
 %---
 % Opción 1: Bibliografía con todas las fuentes en un apartado.
 %---
@@ -420,17 +433,23 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % Opción 2: Bibliografía con secciones separadas.
 %---
 %\printbibheading
-%\printbibliography[heading=subbibliography,type=online,title={Fuentes online}]
-%\printbibliography[heading=subbibliography,nottype=online,title={Fuentes no online}]
+% Se puede incluir un apartado de fuentes de consulta no citadas
+% Como no están citadas es preciso incluir comando \nocite{<key>}
+% Se añaden palabras clave a las entradas en el fichero *.bib para poder diferenciarlas
+%\printbibliography[heading=subbibliography,keyword=consulta,title={Fuentes de consulta}]
+%\printbibliography[heading=subbibliography,keyword=url,title={Direcciones de Internet}]
 % -------------------------
+% END_FOLD
+
 
 
 % -------------------------
 %
-% OPT.: ANEXOS: Comentar si no se desean incluir.
+%--- ANEXOS: Comentar si no se desean incluir. [OPT.]
 % Mover si se desea que aparezcan antes de la bobliografía.
 %
 % -------------------------
+%BEGIN_FOLD
 \appendix
 \portadaAnexos % OPT. Añade una portada para anexos
 
@@ -439,6 +458,11 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \include{AnexoA} % Apéndice A (opcionales)
 
 %---
+
+
+
+
+
 
 
 
@@ -455,4 +479,5 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
 \printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
 %---
+%END_FOLD
 \end{document}
