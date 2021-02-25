@@ -185,6 +185,8 @@
 
 
 % DATOS del documento
+% EDITAR: Datos del documento. 
+% Los elementos opcionales pueden dejarse, eliminarse o comentarse. No se deben dejar vacíos porque provoca errores.
 % BEGIN_FOLD
 % -------------------------
 % -------------------------
@@ -195,8 +197,6 @@
 % campos señalados como <campo>Primera y <campo>Segunda. Si no se desea 
 % emplear los campos opcionales (OPT.) estos deben comentarse.
 % -------------------------
-% EDITAR: Datos del documento. 
-% NOTA: Los elementos opcionales pueden dejarse, eliminarse o comentarse. No se deben dejar vacíos porque provoca errores.
 \tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
 \tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Para títulos largos.
 \titulo{Plantilla guía de TFG} % Título corto (mostrado en pág. de créditos)
@@ -231,7 +231,6 @@
 
 % --- Metadatos (propiedades) para el documento PDF
 \hypersetup{% OPT.
-% EDITAR: Valores para el PDF.	
 	pdftitle={Plantilla guía para TFG en la UCLM}, % Título
 	pdfauthor={Jesús Salido (ESI-UCLM)}, % Autor
 	pdfsubject={TFG},  % Tema
@@ -254,13 +253,15 @@
 %
 % -------------------------
 \begin{document}
-% PORTADAS (FRONTMATTER)
-% BEGIN_FOLD
+%--- PORTADAS + FRONTMATTER
 \frontmatter
 % Cambia la numeración de páginas a números romanos y las secciones no están 
 %numeradas aunque si aparecen en el índice de contenidos.
 \pagestyle{empty}  % Páginas sin cabecera ni pies
 
+\includecomment{portadas} % Cambiar por exclude para evitar compilar portadas
+%\excludecomment{portadas} % Cambiar por exclude para evitar compilar portadas
+\begin{portadas}
 % -------------------------
 % -------------------------
 % -------------------------
@@ -335,43 +336,15 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % |
 % |
 % -> ----------------------
+\end{portadas}
 
-
-% -------------------------
-%
-% RESUMEN:
-%
-% -------------------------
-\input{./frontmatter/Resumen}
-%---
-
-
-% -------------------------
-%
-% AGRADECIMIENTOS (recomendable máx. 1 pág.)
-%
-% -------------------------
+      % Puedes comentar los apartados que no deseas compilar
+\input{./frontmatter/Resumen} % Abstract
 \input{./frontmatter/Agradecimientos} % Agradecimientos etc.
-%---
-
-
-% -------------------------
-%
-% OPT. NOTACIÓN: Lista de símbolos con significado especial.
-%
-% -------------------------
 \input{./frontmatter/Notacion} % Notación empleada.
-%---
-
-
-% -------------------------
-%
-% ÍNDICES
-%
-% -------------------------
 \input{./frontmatter/Indices} % Índice de contenido, figuras, tablas, listados, etc.
-%---
-% END_FOLD
+%--- (FIN FRONTMATTER)
+
 
 
 % Ajustes previos a Capítulos (MAINMATTER)
