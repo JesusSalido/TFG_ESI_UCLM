@@ -1,4 +1,3 @@
-% !TeX encoding = UTF-8
 % CABECERA
 % BEGIN_FOLD
 %%%%%%%%%%%%%%
@@ -86,7 +85,7 @@
 %---
 
 %--- (Opción excepcional)
-% EDITAR: Si es preciso cambio de tipo de familia de tipografía por defecto a Sans-Serif
+% Si es preciso cambio de tipo de familia de tipografía por defecto a Sans-Serif
 % Aunque es una opción extraña es la preferida en algunos centros docentes (ADE-UCLM).
 % Con esta elección es más conveniente una tipografía tipo Helvética/Arial (no Libertine)
 %\usepackage{helvet}
@@ -140,7 +139,7 @@
 
 
 %--- Bibliografía: Biblatex con biber.
-% EDITAR: Si se desea cambiar los estilos de citación y ordenación de la bibliografía
+% Permite cambiar los estilos de citación y ordenación de la bibliografía
 \usepackage[%
 	backend=biber,
 	% Estilos: numeric, numeric-comp, alphabetic, authoryear, authoryear-comp
@@ -175,9 +174,11 @@
 \addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
-\usepackage{makeidx} % OPT.: Indice temático
-\makeindex           % OPT.: Procesamiento de índice temático
+\usepackage{makeidx} % Indice temático
+
 % END_FOLD
+% EDITAR: Descomentar si se desea índice temático
+%\makeindex           % OPT.: Procesamiento de índice temático
 % -------------------------
 % -------------------------
 % -------------------------
@@ -280,7 +281,6 @@
 
 
 %---
-% EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadaTFG		% Portada pral.
 %\portadaTFG*{./portadas/portadaADE} % Portada generada externamente en PDF
 %\portadaTFG*{./portadas/portadaETSII_IE} % Portada generada externamente en PDF
@@ -295,7 +295,6 @@
 
 
 %---
-% EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \portadillaTFG	% Portada interior (con tutor(a) y co-tutor(a) si existe).
 % También en versión con estrella para indicar fichero PDF
 % Comentar si no se desea incluir
@@ -314,7 +313,6 @@
 
 
 %---
-% EDITAR: Si es preciso incluir portada generada externamente en PDF.
 \tribunalTFG % Página para calificaciones del tribunal
 % También en versión con estrella para indicar fichero PDF
 %---
@@ -390,12 +388,8 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 %
 % -------------------------
 % BEGIN_FOLD
-% OJO: Todas las referencias deben estar citadas en el texto)
-% EDITAR: Comentar línea siguiente
-\nocite{*} % INCLUIDO para ver cómo queda, pero comentar en versión final.
-
-\cleardoublepage % OJO: Necesario para ajustar el avance de página
-\phantomsection  % OJO: Ojo necesario con hyperref.
+\cleardoublepage % Necesario para ajustar el avance de página
+\phantomsection  % Ojo necesario con hyperref.
 \addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos. Se debe mantaner cuando se desean subbibliografías.
 %---
 % Opción 1: Bibliografía con todas las fuentes en un apartado.
@@ -446,9 +440,9 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 %
 % -------------------------
 % CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
-\cleardoublepage % OJO: Necesario para ajustar el avance de página
-\phantomsection  % OJO: Ojo necesario con hyperref.
-% EDITAR: Si se desea cambiar el nombre del índice temático
+\cleardoublepage % Necesario para ajustar el avance de página
+\phantomsection  % Ojo necesario con hyperref.
+% Permite cambiar el nombre del índice temático
 %\renewcommand{\indexname}{Título del índice}
 \addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
 \printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
