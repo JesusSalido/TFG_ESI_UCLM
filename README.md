@@ -20,8 +20,8 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   
     > __NOTA__: _Se recomienda evitar la modificación de este fichero si se carece de conocimientos avanzados de LaTeX._
     
-  - Un fichero de estilo ``uclmTFG.ist`` para el índice temático.
-  - Un fichero de configuración ``latexmkrc`` para automatizar la compilación.
+  - Un fichero de estilo ``uclmTFG.ist`` para el índice temático. Este fichero se puede descartar si no se desea incluir un índice de contenido o aplicar a este el estilo por defecto. 
+  - Un fichero de configuración ``latexmkrc`` para automatizar la compilación. Solo necesario si se desea obtener un índice de contenido aplicando el estilo definido en el fichero ``uclmTFG.ist``.
   - Un fichero de bibliografía (``biblioTFG.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
   - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
   - Directorio ``/caps`` con ficheros para los capítulos principales de la memoria.
@@ -41,11 +41,10 @@ Esta plantilla ha sido preparada para compilarse con `pdflatex`, `biblatex` (bib
 
 Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
 
-> \$> latexmk -pdf -silent -synctex=1 uclmTFGesi.tex
+> \$> latexmk -gg -pdflatex -silent -auxdir=build -outdir=build uclmTFGesi.tex
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
-> __IMPORTANTE__: Para garantizar una compilación correcta es recomendable limpiar el directorio de trabajo de los ficheros auxiliares generados en compilaciones previas. Consultar manual de `latexmk` para opciones adicionales.
 -----
 #### Citación y contacto
 
