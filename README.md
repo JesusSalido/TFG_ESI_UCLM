@@ -24,8 +24,8 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   - Un fichero de configuración ``latexmkrc`` para automatizar la compilación.
   - Un fichero de bibliografía (``biblioTFG.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
   - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
-  - Directorio ``/mainmatter`` con ficheros para los capítulos principales de la memoria.
-  - Directorio ``/backmatter`` con ficheros para los anexos.
+  - Directorio ``/caps`` con ficheros para los capítulos principales de la memoria.
+  - Directorio ``/anexos`` con ficheros para los anexos.
   - Directorio ``/figs`` de figuras contenidas en el documento final.
   
     > __NOTA__: Si alguno de los ficheros incluidos en los directorios frontmatter, mainmatter y backmatter, no es necesario, su inclusión en el fichero maestro se debe eliminar/comentar. 
