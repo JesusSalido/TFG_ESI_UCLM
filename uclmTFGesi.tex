@@ -172,6 +172,10 @@
 %\setlength{\parindent}{0pt} % Elimina sangrado de párrafos
 
 \addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
+
+\usepackage{graphicx}	% Inclusión de figuras
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
+\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
 \usepackage{makeidx} % Indice temático
@@ -282,9 +286,7 @@
 
 %---
 \portadaTFG		% Portada pral.
-%\portadaTFG*{./portadas/portadaADE} % Portada generada externamente en PDF
-%\portadaTFG*{./portadas/portadaETSII_IE} % Portada generada externamente en PDF
-%\portadaTFG*{./portadas/portadaETSII_TFM} % Portada generada externamente en PDF
+%\portadaTFG*{./figs/portadaETSII} % Portada generada externamente en PDF
 % También en versión con estrella para indicar fichero PDF
 % Comentar si no se desea incluir
 %---
@@ -336,7 +338,7 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % -> ----------------------
 \end{portadas}
 
-      % Puedes comentar los apartados que no deseas compilar
+% Puedes comentar los apartados que no deseas compilar
 \input{./frontmatter/Resumen} % Abstract
 \input{./frontmatter/Agradecimientos} % Agradecimientos etc.
 \input{./frontmatter/Notacion} % Notación empleada.

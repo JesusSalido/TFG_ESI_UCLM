@@ -48,7 +48,6 @@
 
 \ProvidesPackage{uclmTFGesi} % Nombre del paquete
 
-\usepackage{parskip}  % Control de espaciado entre párrafos
 
 %--- Procesamiento de opciones de paquete
 \newif\ifspanish\spanishfalse % Condicional para manejo del idioma
@@ -88,33 +87,29 @@
 	table
 ]{xcolor}
 
+
 % Color especial definido para los hiperenlaces
 \definecolor{palered}{rgb}{0.78, 0.03, 0.08} % dvipsname harvardcrimson
 \definecolor{UCLMred}{cmyk}{0.19, 1.0, 0.74, 0.12} % UCLM red
 %---
 
 
-
 \usepackage{fancyhdr}	% Ajuste de cabeceras y pies
 \usepackage{titlesec}	% Ajustes de títulos de secciones
-\usepackage{sectsty}	% Ajustes de títulos
 \usepackage{tikz}		% Gráficos avanzados en LaTeX
-% OJO: El paquete sectsty genera warnings relativos a los comandos \underline \underbar. No es preciso prestarle excesiva atención pues el resultado es válido. El único modo de evitarlo sería sustituir el paquete sectsty y evitar su empleo.
 
 
-
-%--- Paquetes para listas y organización de texto
-%\usepackage{parskip}	% Para ajustes de indentación y espacio entre párrafos
 \usepackage{enumitem} 	% Control de listas
 \setlist{nolistsep} 	% Separación de ítems en listas
 \usepackage{multicol}	% Texto en varias columnas
 
+
 \usepackage[autostyle]{csquotes}
 
-\usepackage{graphicx}	% Inclusión de figuras
-\DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
-\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
-\usepackage{ctable}	% OPT.: Ajustes para tablas
+
+\usepackage{booktabs} % OPT.: Ajustes para tablas
+\usepackage{tabularx}
+
 
 %--- Personalización de títulos de figuras y tablas
 \usepackage[%
@@ -125,8 +120,6 @@
 ]{caption}
 \captionsetup[table]{skip=5pt} 	% Separación del caption en las tablas
 \captionsetup[figure]{skip=5pt} % Separación del caption en las figuras
-
-
 
 
 %--- Generación de hiperenlaces
@@ -143,8 +136,8 @@
 	urlcolor=palered,
 	bookmarksnumbered=true % Incluye números en bookmarks
 ]{hyperref}
-
 \urlstyle{sf}			% Estilo sans serif para URLs
+
 
 
 \usepackage{pdfpages}  % Permite inclusión de páginas de un PDF
@@ -164,7 +157,6 @@
 	english
 \fi
 ]{algorithm2e} 
-
 
 
 %--- OPT.: Paquete para incluir menús, paths y teclas de modo "elegante"
@@ -228,27 +220,24 @@
 % -------------------------
 \newcommand{\bigrule}{\titlerule[0.5mm]}
 
-\titleformat{\chapter}[display] % cambiamos el formato de los capítulos
-{\bfseries\Huge\sffamily} % por defecto se usarán caracteres de tamaño \Huge en negrita y familia sans serif
-{% contenido de la etiqueta
-\titlerule % línea horizontal
-\filleft % texto alineado a la derecha
-\Large{\MakeUppercase\chaptertitlename}\ % "Capítulo" o "Apéndice" en tamaño \Large en lugar de \Huge
-\Large\thechapter} % número de capítulo en tamaño \Large
-{0mm} % espacio mínimo entre etiqueta y cuerpo
-{\filleft\MakeUppercase} % texto del cuerpo alineado a la derecha
-[\vspace{0.5mm} \bigrule] % después del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
+\titleformat{\chapter}[display]% {<command>}[<shape>]
+{\filleft\bfseries\Huge\sffamily}% {<format>}
+{\titlerule
+\vspace{0.2\baselineskip}
+\Large{\MakeUppercase\chaptertitlename{} \thechapter}
+} % {<label>}
+{0mm}{}[\bigrule]% {<sep>}{<before-code>}[<after-code>]
+% -------------------------
 % -------------------------
 
+% -------------------------
+% CONFIGURACIÓN TÍTULOS DE SECCIONES (paquete titlesec)
+% -------------------------
+\titleformat{\section}{\sffamily\bfseries\MakeUppercase}{\thesection .}{1ex}{}
 
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection .}{1ex}{}
 
-% -------------------------
-% TIPO DE LETRA EMPLEADO EN TÍTULOS DE SECCIONES (paquete sectsty)
-% -------------------------
-\sectionfont{\sffamily\bfseries\MakeUppercase}
-\subsectionfont{\sffamily\bfseries}
-\subsubsectionfont{\sffamily\bfseries}
-% -------------------------
+\titleformat{\subsubsection}{\sffamily\bfseries}{\thesubsubsection .}{1ex}{}
 
 
 
