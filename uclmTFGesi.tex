@@ -145,8 +145,8 @@
 	% Estilos: numeric, numeric-comp, alphabetic, authoryear, authoryear-comp
 	% Otros: apa, chicago, ieee, mla-new, iso-numeric, iso-authoryear
 	% Estilos tradicionales BibTeX: trad-plain, trad-unsrt, trad-alpha y trad-abbrv
-%	style=apa, % Estilo APA
-	style=ieee,
+%	bibstyle=apa, % Estilo APA
+	bibstyle=ieee,
 	% Citación: numeric, numeric-comp, numeric-verb, 
 	%           authoryear, authoryear-comp,...
 	%           otros aplicados con estilo gral.: ieee,apa,aml,chem-acs,iso-numeric,iso-authoryear
@@ -173,9 +173,7 @@
 
 \addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
 
-\usepackage{graphicx}	% Inclusión de figuras
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
-\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
 \usepackage{makeidx} % Indice temático
@@ -442,12 +440,12 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 %
 % -------------------------
 % CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
-\cleardoublepage % Necesario para ajustar el avance de página
-\phantomsection  % Ojo necesario con hyperref.
-% Permite cambiar el nombre del índice temático
-%\renewcommand{\indexname}{Título del índice}
-\addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
-\printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
+%\cleardoublepage % Necesario para ajustar el avance de página
+%\phantomsection  % Ojo necesario con hyperref.
+%% Permite cambiar el nombre del índice temático
+%%\renewcommand{\indexname}{Título del índice}
+%\addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
+%\printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
 %---
 %END_FOLD
 \end{document}

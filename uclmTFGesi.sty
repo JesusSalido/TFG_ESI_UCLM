@@ -93,6 +93,9 @@
 \definecolor{UCLMred}{cmyk}{0.19, 1.0, 0.74, 0.12} % UCLM red
 %---
 
+\usepackage{graphicx}	% Inclusión de figuras
+\usepackage{subcaption}	% OPT.: Inclusión de subfiguras
+
 
 \usepackage{fancyhdr}	% Ajuste de cabeceras y pies
 \usepackage{titlesec}	% Ajustes de títulos de secciones
@@ -139,7 +142,6 @@
 \urlstyle{sf}			% Estilo sans serif para URLs
 
 
-
 \usepackage{pdfpages}  % Permite inclusión de páginas de un PDF
 
 \usepackage{microtype}	% Mejoras de microtipografía en la obtención de PDF (sólo para pdflatex)
@@ -159,16 +161,6 @@
 ]{algorithm2e} 
 
 
-%--- OPT.: Paquete para incluir menús, paths y teclas de modo "elegante"
-\usepackage[os=win]{menukeys} 
-% OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el 
-% último (manejar con cuidado).
-
-% Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
-\renewmenumacro{\menu}[:]{menus} % OPT.: default: menus
-\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT.: default: paths
-\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT.: default: roundedkeys
-%---
 
 
 
