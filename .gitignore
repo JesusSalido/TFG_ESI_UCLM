@@ -26,7 +26,6 @@
 *.fls
 *.fdb_latexmk
 *.bcf
-*.pdf
 *.txss
 uclmTFGesi.pdf
 *.xdv
