@@ -20,8 +20,8 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   
     > __NOTA__: _Se recomienda evitar la modificación de este fichero si se carece de conocimientos avanzados de LaTeX._
     
-  - Un fichero de estilo ``uclmTFG.ist`` para el índice temático. Este fichero se puede descartar si no se desea incluir un índice de contenido o aplicar a este el estilo por defecto. 
-  - Un fichero de configuración ``latexmkrc`` para automatizar la compilación. Solo necesario si se desea obtener un índice de contenido aplicando el estilo definido en el fichero ``uclmTFG.ist``.
+  - Un fichero de estilo ``uclmTFG.ist`` para el índice temático. Este fichero se puede descartar si no se desea incluir un índice temático o aplicar a este el estilo por defecto. 
+  - Un fichero de configuración ``latexmkrc`` para automatizar la compilación. Solo necesario si se desea obtener un índice temático aplicando el estilo definido en el fichero ``uclmTFG.ist``.
   - Un fichero de bibliografía (``biblioTFG.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
   - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
   - Directorio ``/caps`` con ficheros para los capítulos principales de la memoria.
