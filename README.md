@@ -28,7 +28,7 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   - Directorio ``/anexos`` con ficheros para los anexos.
   - Directorio ``/figs`` de figuras contenidas en el documento final.
   
-    > __NOTA__: Si alguno de los ficheros incluidos en los directorios frontmatter, mainmatter y backmatter, no es necesario, su inclusión en el fichero maestro se debe eliminar/comentar. 
+    > __NOTA__: Si alguno de los ficheros incluidos en los directorios ``/frontmatter``, ``/caps`` y ``/anexos``, no es necesario, su inclusión en el fichero maestro se debe eliminar/comentar. 
  
 ### Ajustes (ESI-UCLM)
   1. Editar los datos del documento siguiendo las indicaciones incluidas en el fichero maestro: título, autor/a, tutores/as, fechas, institución, etc. 
