@@ -41,7 +41,7 @@ Esta plantilla ha sido preparada para compilarse con `pdflatex`, `biblatex` (bib
 
 Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
 
-> \$> latexmk -gg -pdflatex -silent -auxdir=build -outdir=build uclmTFGesi.tex
+> \$> latexmk -gg -pdflatex -bibtex-cond1 -silent -auxdir=build -outdir=build uclmTFGesi.tex
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
