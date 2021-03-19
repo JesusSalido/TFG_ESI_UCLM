@@ -370,6 +370,13 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 % CAPÍTULOS: Un fichero por capítulo.
 %
 % -------------------------
+
+% NOTA: En la ESI-UCLM es obligado interlineado de una línea, pero en algunas circunstancias se puede necesitar alterar dicho interlineado.
+% OPT: Si deseas modificar el interlineado de una línea (por defecto)
+% puedes emplear los comandos señalados (proporcionados por paquete `setspace')
+%\onehalfspacing % Ajusta interlineado a 1.5 líneas
+%\doublespacing  % Ajusta interlineado a 2 líneas  
+
 \include{./caps/Introduccion}
 \include{./caps/Objetivo}
 \include{./caps/Metodologia}
@@ -377,6 +384,8 @@ Por contribuir a hacer de cada día un reto ilusionante} % Como mucho dos línea
 \include{./caps/Conclusiones}
 % -------------------------
 
+% No olvides retornar al interlineado sencillo en el resto del documento.
+\singlespacing
 
 %--- BACKMATTER
 %\backmatter (se comenta para que los apéndices puedan aparecer después de la bibliografía)
