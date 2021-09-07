@@ -3,19 +3,32 @@
 
 Este capítulo aborda la motivación\index{motivación} del trabajo. Se trata de señalar la necesidad que lo origina, su actualidad y pertinencia. Puede incluir también un estado de la cuestión (o estado del arte) en la que se revisen estudios o desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
 
-En este capítulo debería introducirse el \emph{contexto disciplinar y tecnológico} en el que se desarrolla el trabajo de modo que pueda entenderse con facilidad el ámbito y alcance del TFG.\index{TFG} Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, solo es necesario la inclusión de <<estado del arte>> cuando este contribuya a aclarar aspectos clave del TFG o se desee justificar la originalidad del trabajo realizado. 
+En este capítulo debería introducirse el \emph{contexto disciplinar y tecnológico} en el que se desarrolla el trabajo de modo que pueda entenderse con facilidad el ámbito y alcance del TFG.\index{TFG} Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, solo es necesario la inclusión de \emph{estado del arte} cuando este contribuya a aclarar aspectos clave del TFG o se desee justificar la originalidad del trabajo realizado.
 
-A continuación se muestran algunos ejemplos para la inclusión de elementos en el documento como listas, tablas y figuras. Todos estos ejemplos se han presentado en al curso de \LaTeX{}\cite{salido10} y tanto estos como los recogidos en varias obras de referencia se pueden emplear para preparar este documento \cite{goos07,cascales03,goos07,lamport94,oetiker14,wikibookLaTex10}.
+Este capítulo suele finalizar indicando la estructura (capítulos) del documento y el contenido de cada una de las partes en que se divide. Por tanto, las secciones que suelen acompañar este capítulo son:
+\begin{enumerate}
+    \item \textbf{Motivación}. Responde a la pregunta sobre la necesidad o pertinencia del trabajo.
+    \item \textbf{Objetivo}. Determina de modo claro el propósito del trabajo descrito que puede desglosarse en sub objetivos cuando el objetivo principal se puede descomponer en módulos o componentes. Es muy importante definir el objetivo de modo apropiado. El Capítulo \ref{cap:Objetivo} de esta guía explica cómo definir el objetivo.
+    \item \textbf{Contexto disciplinar} (o tecnológico). También puede denominarse \emph{estado del arte} cuando se trata de comentar trabajos relacionados que han abordado la cuestión u objetivo que se plantea.
+    \item \textbf{Estructura del documento}.
+\end{enumerate}
 
-\noindent \textsc{IMPORTANTE}: \emph{A la hora de redactar el texto se debe poner especial atención en no cometer plagio\index{plagio} y respetar los derechos de propiedad intelectual \cite{refer00,sidney00}. En particular merece gran atención la inclusión de figuras e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se recomienda consultar el manual de la Universidad de Cantabria en el que se explica de modo conciso cómo incluir imágenes en un trabajo académico \cite{unican18}.}
+
+\section{Redacción de la memoria}
+A continuación se muestran algunos ejemplos para la inclusión de elementos en el documento como listas, tablas y figuras. Todos estos ejemplos se han presentado en el curso de \LaTeX{} \cite{salido10} y tanto estos, como los recogidos en varias obras de referencia, se pueden emplear para preparar este documento \cite{grat99,grat07,goos04,cascales03,goos07,lamport94,oetiker14,wikibookLaTex10,borbon21}. Entre las obras publicadas se recomienda el uso de la obra gratuita de Borbón~\cite{borbon21} et al.\ (en español) y la documentación disponible en la página web de Overleaf~\cite{overleaf21} (en inglés).
+
+Durante la realización de la memoria del TFG es importante tener presente respetar la guía de estilo de la institución. Por tanto, el empleo de plantillas para un sistema de procesamiento de textos (p.ej., Word o \LaTeX) puede requerir su adaptación cuando la plantilla mencionada no haya sido suministrada en la institución a la que se dirige el trabajo.
+
+\noindent \textsc{IMPORTANTE}: \emph{A la hora de redactar el texto se debe poner especial atención en no cometer plagio\index{plagio} y respetar los derechos de propiedad intelectual \cite{uc3m21}. En particular merece gran atención la inclusión de gráficos e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se recomienda consultar el manual de la Universidad de Cantabria en el que se explica de modo conciso cómo incluir imágenes en un trabajo académico \cite{unican18}.}
 
 % ------------------------------------------------------------------------------
 % Ejemplos para la plantilla
 % ------------------------------------------------------------------------------
-\section{Ejemplos de listas}
+\subsection{Listas}
 \label{sec:ejListas}
 \index{ejemplos} % Véase cómo se incluyen entradas en el índice alfabético
-A continuación se van a añadir algunos ejemplos que pueden emplearse al redactar la memoria.
+A continuación se van a añadir algunos ejemplos que pueden emplearse al redactar la memoria. También se recomienda la consulta de las referencias citadas anteriormente en la que se pueden encontrar ejemplos de uso y aplicación.
+
 
 \index{ejemplos!listas} % Para el índice
 \noindent Ejemplo de lista con \emph{bullet} especial.\index{lista!bullet} 
@@ -42,22 +55,15 @@ A continuación se van a añadir algunos ejemplos que pueden emplearse al redact
 	\end{enumerate}
 \end{multicols}
 
-\noindent Las listas se pueden personalizar (aunque debería estar justificado el cambiar el estilo por defecto, haciéndolo con mucha prudencia):
-
-% Ejemplo:
-% ============
-\begin{dingautolist}{202} % Lista con símbolos sucesivos de la tabla dingbat
-	\item peras
-	\item manzanas
-	\item naranjas
-\end{dingautolist}
 
 
-\section{Ejemplos de tablas}
-\label{sec:ejTablas}
+
+
+\subsection{Tablas}
+\label{sec:tablas}
 \index{ejemplos!tablas}
 A continuación se incluyen algunos ejemplos de tablas\index{tabla} hechas con 
-\LaTeX{} y paquetes dedicados.
+\LaTeX{} y paquetes dedicados. Para la realización de tablas más complejas se recomienda la consulta de \cite{borbon21,overleaf21}.
 
 % Ejemplo: Tabla con macro \cline
 % ==========
@@ -99,11 +105,8 @@ controla el ancho de la celda.
 
 \clearpage
 
-
-\section{Ejemplos de figuras}
-\label{sec:ejFiguras}
+\subsection{Figuras}
 \index{ejemplos!figuras}
-
 En esta sección se añaden ejemplos de muestra para la inclusión de 
 figuras\index{figuras} simples y subfiguras.
 
@@ -111,14 +114,14 @@ figuras\index{figuras} simples y subfiguras.
 % ============
 \begin{figure}[hbt]
 	\centering
-	\includegraphics[width=0.8\linewidth]{clockCR}
+	\includegraphics[width=0.7\linewidth]{clockCR}
 	\caption[Ejemplo de figura]{Fotografía a color 
 	(por J. Salido, CC BY-NC-ND)}
 	\label{fig:ejFigure}
 \end{figure}
 
 
-\noindent Ejemplo de figuras compuestas por subfiguras incluidas con paquete \texttt{subcaption}.\index{figuras!subfiguras}\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/caption/subcaption.pdftext}}
+\noindent Ejemplo de figuras compuestas por subfiguras incluidas con paquete \texttt{subcaption}.\index{figuras!subfiguras}\footnote{\url{https://www.ctan.org/pkg/subcaption}}
 
 
 % Ejemplo: Ejemplo de inclusión de subfiguras
@@ -154,7 +157,7 @@ En los trabajos académicos la inclusión de imágenes y figuras que no son prop
 
 La inclusión de material de \emph{dominio público}\index{dominio público} o sin restricciones de uso hace innecesaria la atribución al autor pero puede incluirse una nota de agradecimiento.\footnote{Por cortesía de \emph{<x>}.}
 
-\section{Ejemplos de listados}
+\subsection{Listados de código}
 \label{sec:ejListados}
 \index{ejemplos!listados}
 
@@ -182,10 +185,7 @@ public static void main(String[] args) {
 \end{lstlisting}
 
 
-
-\noindent Otro ejemplo.
-
-\begin{lstlisting}[style=C-ruled,float=ht,caption={Ejemplo de código C},label=lst:codC]
+\begin{lstlisting}[style=ruled,language=C,float=ht,caption={Ejemplo de código C},label=lst:codC]
 // Este código se ha incluido tal cual está en el fichero \LaTeX{}
 #include <stdio.h>
 
@@ -195,18 +195,7 @@ int main(int argc, char* argv[]) {
 \end{lstlisting}
 
 
-\noindent Ejemplo de entrada por consola.
-
-\begin{lstlisting}[style=consola, numbers=none]
-$ gcc -o Hola HolaMundo.c
-\end{lstlisting}
-
-
-\noindent Un ejemplo más. Este en Matlab:
-% NOTA: En español soluciona problema con signo % en listados de código Matlab. 
-% Si efecto en el resto de idiomas.
-\spanishplainpercent
-\begin{lstlisting}[style=Matlab-color,float=ht,caption={Ejemplo escrito en Matlab},label=lst:matlab]
+\begin{lstlisting}[style=ruled,language=Matlab,float=ht,caption={Ejemplo escrito en Matlab},label=lst:matlab]
 function f = fibonacci(n)
  % FIBONACCI  Fibonacci sequence
  %	f = FIBONACCI(n) generates the first n Fibonacci numbers.
@@ -219,9 +208,15 @@ for k = 3:n
 f(k) = f(k-1) + f(k-2);
 end
 \end{lstlisting}
-\spanishpercent
 
-\subsection{Algoritmos con el paquete \texttt{algorithm2e}}
+\noindent Ejemplo de entrada por consola.
+
+\begin{lstlisting}[style=consola, numbers=none]
+$ gcc -o Hola HolaMundo.c
+\end{lstlisting}
+
+
+\subsubsection{Algoritmos con el paquete \texttt{algorithm2e}}
 Como ya se ha comentado en los textos científicos relacionados con las 
 TIC\footnote{Por supuesto en un TFG (Trabajo Fin de Grado)\index{TFG} o tesis 
 de un centro superior de informática.} (Tecnologías de la Información y 
@@ -269,12 +264,10 @@ inicialización\;
 
 
 
-\section{Ejemplos de fórmulas matemáticas}
+\subsection{Ecuaciones matemáticas}
 Para que \LaTeX{} pueda incluir muchos símbolos matemáticos es preciso incluir algunos paquetes que ayudan en dicha tarea: \texttt{amsmath}, \texttt{amsfonts}, \texttt{amssymb}. También hay que tener en cuenta que si el tipo principal empleado en el texto es Times y se desea utilizar un tipo coherente en las fórmulas es conveniente emplear el paquete \emph{mathptmx} en vez de \emph{Times}. Pero en este caso es recomendable incluir siempre paquetes adicionales para suministrar las otras dos familias de fuentes escalables (p.~ej.\ \texttt{helvet} para familia \textsf{palo seco} y \texttt{couriers} para \texttt{monoespaciada}). Si no se hace esta última inclusión pueden obtenerse errores de difícil diagnóstico.
 
 
-
-\subsection{Fórmulas creadas en línea y con entorno \texttt{equation}}
 Es muy sencillo incluir fórmulas matemáticas sencillas en el mismo texto en el que se escribe. Por ejemplo, $c^{2}=a^{2}+b^{2}$ que podría ser la ecuación representativa del teorema de Pitágoras.
 
 Las fórmulas también se pueden separar del texto para que aparezcan destacadas, así:
@@ -302,91 +295,29 @@ Pero si se desea, las ecuaciones pueden ser numeradas de forma automática e inc
 	a^{2}=b^{2} + c^{2}
 \end{equation}
 
-No hay que preocuparse demasiado por la tipografía empleada en las fórmulas pues \LaTeX{} hace por nosotros <<casi>> todo el trabajo.\footnote{Los matemáticos son muy exquisitos y no se conforman con cualquier cosa, pero nosotros debemos ser mucho menos pretenciosos si queremos resultados rápidos.}
-
-Los ejemplos que aquí se muestran son muy sencillos pero \LaTeX{} proporciona entornos específicos más potentes. Para mostrar algo <<más sofisticado>> añado dos ejemplos más. La ec.~\ref{eq:integral} que es un poquito más compleja y la ec.~\ref{eq:cuadro} que está recuadrada.
-
-% Ejemplo:
-% ============
-\begin{equation}\label{eq:integral}
-	I = \! \int_{-\infty}^\infty f(x)\,dx
-\end{equation}
-
-Un ejemplo de alineación de ecuación mediante entorno \texttt{flalign}:\footnote{Otra forma de conseguir el alineamiento a la izquierda de las ecuaciones se consigue añadiendo \texttt{fleqn} como opción de la clase del documento.}
-\begin{flalign}
-    &f(x) = -1.25x^{2} + 1.5x&
-\end{flalign}
-
-En este caso la versión con estrella (\texttt{flalign*}) suprime la numeración de la ecuación.
-
-% Ejemplo: Ec. con recuadro (numeración exterior).
-% ============
-{\fboxsep 8pt \fboxrule 0.5pt 
-%\fboxsep ajusta la separación entre la caja y el elemento recuadrado
-%\fboxrule ajusta el espesor de la línea del recuadro
-\begin{equation}\label{eq:cuadro}
-\fbox{$\displaystyle 
-R = \frac{L}{2} \cdot \frac{{\left( {v_d  + v_i } \right)}}{{\left( {v_d  - v_i } \right)}}
-$}
-\end{equation}
-}
-
-
-Algunos otros cuadros en ecuaciones son p.~ej.\ $x + y = \fbox{$\Omega$}$ o incluso el que se muestra a continuación (ec.~\ref{eq:cuadrogrande}) y que abarca todo el ancho de la línea:\footnote{Adaptado del manual \emph{Documentation for fancybox.sty:
-Box tips and tricks for \LaTeX{}} de Timothy Van Zandt (2010).}
-
-% Ejemplo: Ec. con recuadro (numeración interior).
-% ============
-\newlength{\milong}
-\[
-	\setlength{\fboxsep}{15pt}
-	\setlength{\milong}{\linewidth}
-	\addtolength{\milong}{-2\fboxsep}
-	\addtolength{\milong}{-2\fboxrule}
-	\fbox{%
-		\parbox{\milong}{
-		\setlength{\abovedisplayskip}{0pt}
-		\setlength{\belowdisplayskip}{0pt}
-		\begin{equation}\label{eq:cuadrogrande}
-		\sqrt[n]{1+x+x^2+x^3+\ldots}
-		\end{equation}}}
-\]
 
 
 
-\subsection{Ecuaciones en varias líneas con entornos \texttt{eqnarray} y \texttt{align}}
-A continuación se muestra un ejemplo de ecuación muy larga dividida en varias líneas:
+\subsection{Bibliografía}
+\index{bibliografía}
+Esta sección, que si se prefiere puede titularse 
+«Referencias»,\index{referencias} incluirá un listado por orden alfabético 
+(primer apellido del primer autor) con todas las obras en que se ha basado 
+para la realización del TFG\index{TFG} en las que se especificará: autor/es, 
+título, editorial y año de publicación. Solo se incluirán en esta sección las 
+referencias bibliográficas que hayan sido citadas en el documento. Todas las 
+fuentes consultadas no citadas en el documento deberían incluirse en una 
+sección opcional denominada <<Material de consulta>>, aunque preferiblemente 
+estas deberían incluirse como referencias en notas a pie de página a lo largo 
+del documento.
 
-% Ejemplo: Ec. en varias líneas con alineación y sin numeración.
-% ============
-\begin{eqnarray*}
-  \lefteqn{\left(1+x\right)^n = } \\
-  & & 1 + nx + \frac{n\left(n-1\right)}{2!}x^2 + \\
-  & & \frac{n\left(n-1\right)\left(n-2\right)}{3!}x^3 + \\
-  & & \frac{n\left(n-1\right)\left(n-2\right)\left(n-3\right)}{4!}x^4 + \\
-  & & \ldots
-\end{eqnarray*}
-% Apreciar el asterisco en la ecuación anterior para evitar que todas las líneas de la ecuación aparezcan numeradas.
+Se usará método de citación numérico con el número de la referencia empleada entre corchetes. La cita podrá incluir el número de página concreto de la referencia que desea citarse. Debe tenerse en cuenta que el uso correcto de la citación implica que debe quedar claro para el lector cuál es el texto, material o idea citado. Las obras referenciadas sin mención explícita o implícita al material concreto citado deberían considerarse material de consulta y por tanto ser agrupados como «Material de consulta» distinguiéndolas claramente de aquellas otras en las que si se recurre a la citación.
 
-También se puede escribir varias ecuaciones en líneas sucesivas alineadas por algún elemento como se hace en el siguiente ejemplo de uso del entorno \texttt{align}:
+Cuando se desee incluir referencias a páginas genéricas de la Web sin mención expresa a un artículo con título y autor definido, dichas referencias podrán hacerse como notas al pie de página o como un apartado dedicado a las <<Direcciones de Internet>>.
 
-% Ejemplo: Ecs. en varias líneas con alineación y manejo de la numeración.
-% ============
-\begin{align}
-f(x) & = \cos x \\
-f'(x) & = -\sin x \\
-\int_{0}^{x} f(y)dy & = \sin x \nonumber
-\end{align}
-
-\noindent En este último ejemplo se observa también cómo es posible suprimir la numeración de una de las ecuaciones con el comando (\texttt{\textbackslash nonumber}).
-
-Para terminar, un ejemplo más del control del espaciado horizontal empleando el entorno \texttt{array}:
-
-% Ejemplo:
-% ============
-\[f(n) = \left\{ 
-\begin{array}{l l}
-  n/2 & \quad \mbox{si $n$ es par}\\
-  -(n+1)/2 & \quad \mbox{si $n$ es impar}\\ \end{array} \right. \]
+Todo el material ajeno deberá ser citado convenientemente sin contravenir los términos de las licencias de uso y distribución de dicho material. Esto se extiende al uso de diagramas y fotografías. El incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es responsabilidad exclusiva del autor independientemente de la cesión de derechos que este haya convenido.
 
 
+\subsection{Índice Temático}
+\index{Indice Temático@Índice Temático}
+Este índice es opcional y se empleará como índice para encontrar los temas tratados en el trabajo. Se organizará de modo alfabético indicando el número de página(s) en el que se aborda el tema concreto señalado.
