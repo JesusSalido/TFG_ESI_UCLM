@@ -4,7 +4,7 @@
 % Fichero: uclmTFGesi.tex
 % Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
 % Fecha (creación): febrero 2010 
-% Rev. : abril 2021
+% Rev. : septiembre 2021
 % Descripción: Plantilla para memoria de TFG 
 % (Escuela Sup. de Informática, UCLM). Creada para el curso 
 % “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
@@ -13,8 +13,7 @@
 %### Compilación 
 %
 % Esta plantilla ha sido preparada para compilarse con `pdflatex`, `biblatex` 
-% (bibliografía con `biber`) y `makeindex` (sólo si se incluye índice 
-% temático).
+% (bibliografía con `bibtex`).
 %
 % Para su compilación se aconseja utilizar `latexmk` (requiere para su 
 % ejecución de un intérprete perl:
@@ -146,9 +145,7 @@
 % Reajuste del n. de pág. consecutivo para no reiniciar pag. en Cáp. 1
 %\contpagination % Comentado para reiniciar paginación (pag. 1)
 % -------------------------
-%
-% CAPÍTULOS: Un fichero por capítulo.
-%
+% --- CAPÍTULOS: Un fichero por capítulo.
 % -------------------------
 % NOTA: En la ESI-UCLM es obligado interlineado de una línea, pero en algunas circunstancias se puede necesitar alterar dicho interlineado.
 % OPT: Si deseas modificar el interlineado de una línea (por defecto)
@@ -183,15 +180,13 @@
 
 
 % -------------------------
-%
-%--- BIBLIOGRAFÍA
-%
+% --- BIBLIOGRAFÍA
 % -------------------------
 \cleardoublepage % Necesario para ajustar el avance de página
 \phantomsection  % Ojo necesario con hyperref.
 \addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos. Se debe mantener cuando se desean subbibliografías.
 
-% Definición del estilo empleado en la bibliografía
+% EDITAR: Definición del estilo empleado en la bibliografía
 \bibliographystyle{plain}
 % Estilos nativos incluidos con LaTeX (plain, abbrv, alpha, unsrt).
 %
@@ -212,20 +207,18 @@
 %            ordenación alfabética.
 % ieeetr:    Para los IEEE Transactions, con citación numárica y ordenación de r
 %            referencias por orden de cita.
-% 
-% Estilo incluido con BibTeX para citar en formato autor-año
-% apacite:   No numérica, con referencias ordenadas alfabéticamente por apellido de autor.
+% apacite:   No numérica, con referencias ordenadas alfabéticamente por apellido %            de autor.
 %---
 \bibliography{biblioTFG} % Nombre del fichero .bib (sin extensión)
 % -------------------------
 
 
 
+
+
 % -------------------------
-%
-%--- ANEXOS: Comentar si no se desean incluir. [OPT.]
-% Mover si se desea que aparezcan antes de la bibliografía.
-%
+% - ANEXOS: Comentar si no se desean incluir. [OPT.]
+% - Mover si se desea que aparezcan antes de la bibliografía.
 % -------------------------
 \appendix
 \ifspanish
