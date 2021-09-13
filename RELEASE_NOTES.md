@@ -1,6 +1,6 @@
 **septiembre 2021**
 
-Esta nueva versión surge de los comentarios de realimentación recibidos por los usuarios de la misma y un proceso natural de evolución de este proyecto. Cada poco tiempo descubro algo nuevo que puedo modificar y que, en mi opinión, mejora el resultado final o la experiencia del usuario.
+Esta nueva versión surge de los comentarios de realimentación recibidos por los usuarios y un proceso natural de evolución de este proyecto. Cada poco tiempo descubro algo nuevo que puedo modificar y que, en mi opinión, mejora el resultado final o la experiencia del usuario.
 
 En esta nueva release de la plantilla he decidido incluir bastantes cambios para facilitar su uso y configuración. A continuación describo brevemente los cambios más importantes:
 
