@@ -17,7 +17,6 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   - Este fichero ``README.md``.
   - ``RELEASE_NOTES.md`` comentarios sobre la release actual.
   - Un fichero LaTeX principal o maestro (``uclmTFGesi.tex``) que incluye otro denominado ``preambulo.tex`` en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este último fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).  
-  - Un fichero de estilo ``uclmTFG.ist`` para el índice temático. Este fichero se puede descartar si no se desea incluir un índice temático o aplicar a este el estilo por defecto. 
   - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
   - Directorio ``/caps`` con ficheros para los capítulos principales de la memoria.
   - Directorio ``/anexos`` con ficheros para los anexos.
@@ -25,10 +24,6 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   
     > __NOTA__: Si alguno de los ficheros incluidos en los directorios ``/frontmatter``, ``/caps`` y ``/anexos``, no es necesario, su inclusión en el fichero maestro se debe eliminar/comentar. 
  
-### Ajustes (ESI-UCLM)
-  1. Editar los datos del documento siguiendo las indicaciones incluidas en el fichero maestro: título, autor/a, tutores/as, fechas, institución, etc. 
-  2. Opciones del paquete uclmTFGesi: ``english`` (idioma pral.) e indicación de género ``autora``, ``tutora`` y ``cotutora``.
-  3. Tanto en el documento maestro como en el paquete suministrado se aportan indicaciones para ajustes opcionales sencillos (p.ej., márgenes, tipografía, estilo de citación/bibliografía, etc.)
 
 ### Compilación 
 
