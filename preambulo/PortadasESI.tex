@@ -1,3 +1,5 @@
+% OJO: Editar este fichero a voluntad para ajustarlo al resultado deseado.
+% OJO: Poner especial atención en usar los adjetivos de género correctos.
 % -------------------------
 % -------------------------
 % -------------------------
@@ -14,7 +16,8 @@
     \makeatletter
 	\begin{center}
         \pdfbookmark{Portada}{portada}
-		\includegraphics[width=5cm]{\@escudo}\vspace{1cm} 
+        \vspace{1cm}
+		\includegraphics[width=4.5cm]{\@escudo}\vspace{1cm} 
 		
 		{\LARGE \textbf{\@instEdu\\[0.5ex]
 				\@centroEdu\\[2cm]
@@ -30,7 +33,7 @@
 	\end{center}
 	
 	\begin{flushright}
-		{\Large \@mesDefensa, \@yearDefensa}
+		{\Large \ifspanish \@mesTF \else \@monthTF \fi, \@yearTF}
 	\end{flushright}
 	
 	\cleardoublepage
@@ -52,7 +55,8 @@
 \begin{titlepage}
     \makeatletter
 	\begin{center}
-		\includegraphics[width=5cm]{\@escudo}\\[1.5cm]
+        \vspace{1cm}
+		\includegraphics[width=4.55cm]{\@escudo}\vspace{1cm}
 		
 		{\LARGE \textbf{\@instEdu \\[0.5ex]
 				\@centroEdu}}\\[0.5cm]
@@ -64,19 +68,19 @@
 		
 		
 		{\LARGE \textbf{\@tituloPrimera}}\\ \smallskip%		
-		\ifdefined\@tituloSegunda{\LARGE \textbf{\@tituloSegunda}}\\[3cm]
-		\else \phantom{\LARGE Texto fantasma}\\[3cm]
+		\ifdefined\@tituloSegunda{\LARGE \textbf{\@tituloSegunda}}
+		\else \phantom{\LARGE Texto fantasma}
 		\fi
 	\end{center}
+	\vfill%
 	\begin{flushleft}
 		{\Large Autor: \@autor} \\ \bigskip% (EN: Author)
 		{\Large Tutor(a): nombre y apellidos} \\ \bigskip% (EN: Co-Supervisor)
 		{\Large Co-tutor(a): nombre y apellidos}
 	\end{flushleft}
-	\vfill%
-	
+	\vspace{2cm}%
 	\begin{flushright}
-		{\Large \@mesDefensa, \@yearDefensa}
+		{\Large \ifspanish \@mesTF \else \@monthTF \fi, \@yearTF}
 	\end{flushright}
 	\cleardoublepage
     \makeatother
@@ -114,7 +118,7 @@
 	\hspace*{1cm}{\Large Vocal: \hrulefill}
 	
 	\vspace*{\stretch{0.5}}
-	\hspace*{1cm}{\Large Secretario: \hrulefill}
+	\hspace*{1cm}{\Large Secretario(a): \hrulefill}
 	
 	\vspace*{\stretch{0.5}}
 	{\flushright \LARGE \textsc{Fecha de defensa:} \hrulefill}

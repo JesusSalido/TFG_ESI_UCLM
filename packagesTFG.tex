@@ -20,9 +20,12 @@
     es-tabla, es-noindentfirst
 ]{babel} % Internacionalización
 
+
 %--- Márgenes del documento
 \usepackage[top=2.5cm,bottom=2.5cm,inner=3.5cm,outer=2cm]{geometry}
-\usepackage[indent]{parskip} % Salto entre párrafos 
+\usepackage[skip=.3\baselineskip plus 2pt,indent]{parskip} % Salto entre párrafos 
+% skip= .5\baselineskip plus 2pt -> Valor por defecto
+% 
 
 \usepackage{amsmath,amssymb,amsfonts} % Para ecuaciones
 %--- Si no se emplea ningún paquete de tipografía se emplea Computern Modern.
@@ -52,7 +55,7 @@
 %\renewcommand{\familydefault}{\sfdefault} % Familia por defecto sans serif
 %---
 
-\usepackage{textcomp,marvosym,pifont} % Símbolos especiales
+\usepackage{textcomp,marvosym,pifont,fontawesome5} % Símbolos especiales
 \usepackage{ccicons}    % Iconos de licencia Creative Commons
 \usepackage[T1]{fontenc}% Codificación de salida    
 
@@ -60,7 +63,7 @@
 \usepackage{comment}    % Permite la exclusión de porciones de texto 
 
 \usepackage[shortlabels,inline]{enumitem} 	% Control de listas
-\setlist{nolistsep} 	% Reduce separación de ítems en listas
+\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas
 \usepackage{multicol}	% Texto en varias columnas
 
 \usepackage{booktabs,tabularx}   % Paquetes para tablas
@@ -173,6 +176,11 @@
 \titleformat{\section}{\sffamily\bfseries\MakeUppercase}{\thesection .}{1ex}{}
 \titleformat{\subsection}{\sffamily\bfseries}{\thesubsection .}{1ex}{}
 \titleformat{\subsubsection}{\sffamily\bfseries}{\thesubsubsection .}{1ex}{}
+
+%\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
+\titlespacing*{\section}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
+\titlespacing*{\subsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
+\titlespacing*{\subsubsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
 % -------------------------
 
 \usepackage[% Inclusión de algoritmos
@@ -254,54 +262,14 @@
 
 \usepackage[autostyle]{csquotes} % Necesario para bibliografía multilingüe
 
+
+
+% EDITAR: Descomentar si se precisan citación en formato APA
+%\usepackage{apacite}
 % -------------------------
-% CONFIGURACIÓN BIBLIOGRAFÍA (paquete biblatex)
 % -------------------------
-\usepackage[%
-	backend=biber,
-	% Estilos: numeric, numeric-comp, alphabetic, authoryear, authoryear-comp
-	% Otros: apa, chicago, ieee, mla-new, iso-numeric, iso-authoryear
-	% Estilos tradicionales BibTeX: trad-plain, trad-unsrt, trad-alpha y trad-abbrv
-%	bibstyle=apa, % Estilo APA
-	bibstyle=numeric,
-	% Citación: numeric, numeric-comp, numeric-verb, 
-	%           authoryear, authoryear-comp,...
-	%           otros aplicados con estilo gral.: ieee,apa,aml,chem-acs,iso-numeric,iso-authoryear
-	citestyle=numeric-comp,
-	sortcites, % Ordenación de citas múltiples cuando son numéricas
-	maxbibnames=3, % Máximo número listado de autores en la bibliografía
-	minbibnames=1, % Mínimo número de autores cuando se abrevia la lista de autores
-	% Descomentar las opciones siguientes para bibliografía multilingüe
-	autolang=other, % Requerido para opción multilingüe
-	language=auto,   % Requerido para opción multilingüe
-	sorting=nyt%
-					% Para cambiar criterio de ordenación de las referencias.
- 					% =nty (name-title-year), nyt (name-year-title), nyvt (name-year-volume-title), 
-					% =anyt (alphabetic-name-year-title), anyvt (alphabetic-name-year-volume-title), 
-					% =ynt (year-name-title), ydnt (yeardescendent-name-title), 
-					% =none (por orden de citación, como en ETSII-UCLM).			
-]{biblatex}
-
-\DefineBibliographyStrings{spanish}{ % Cambios en cadenas impresas en español
-	url = {\adddot\space[En línea] URL:},
-	urlseen = {última visita:}
-}
-
-% Línea añadida para eliminar el idioma de la fuente bibliográfica.
-\AtEveryBibitem{\clearfield{note} \clearlist{language}}
-
-% EDITAR: Si se cambia el fichero de bibliografía
-\addbibresource{biblioTFG.bib} 	% Fichero de bibliografía.
 % -------------------------
-
-
 % END_FOLD
-% EDITAR: Descomentar si se desea índice temático
-%\usepackage{makeidx} % Indice temático
-%\makeindex           % OPT.: Procesamiento de índice temático
-% -------------------------
-% -------------------------
-% -------------------------
 
 
 
@@ -334,7 +302,10 @@
 		\renewcommand{\indexname}{Índice temático}
 	\fi
 }
- 
+
+
+
+
  
 % -------------------------
 % DEFINICIÓN DE DATOS DEL DOCUMENTO
@@ -348,9 +319,10 @@
 \newcommand{\centroEdu}[1]{\newcommand{\@centroEdu}{#1}}
 \newcommand{\titulacion}[1]{\newcommand{\@titulacion}{#1}}
 \newcommand{\tipoDoc}[1]{\newcommand{\@tipoDoc}{#1}}
-\newcommand{\mesDefensa}[1]{\newcommand{\@mesDefensa}{#1}}
-\newcommand{\yearDefensa}[1]{\newcommand{\@yearDefensa}{#1}}
-\newcommand{\lugarDefensa}[1]{\newcommand{\@lugarDefensa}{#1}}
+\newcommand{\mesTF}[1]{\newcommand{\@mesTF}{#1}}
+\newcommand{\monthTF}[1]{\newcommand{\@monthTF}{#1}}
+\newcommand{\yearTF}[1]{\newcommand{\@yearTF}{#1}}
+\newcommand{\cityTF}[1]{\newcommand{\@cityTF}{#1}}
 \newcommand{\escudo}[1]{\newcommand{\@escudo}{#1}}
 \makeatother
 % -------------------------

@@ -1,9 +1,9 @@
 \chapter{Introducción}
 \label{cap:Introduccion}
 
-Este capítulo aborda la motivación\index{motivación} del trabajo. Se trata de señalar la necesidad que lo origina, su actualidad y pertinencia. Puede incluir también un estado de la cuestión (o estado del arte) en la que se revisen estudios o desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
+Este capítulo aborda la motivación del trabajo. Se trata de señalar la necesidad que lo origina, su actualidad y pertinencia. Puede incluir también un estado de la cuestión (o estado del arte) en la que se revisen estudios o desarrollos previos y en qué medida sirven de base al trabajo que se presenta.
 
-En este capítulo debería introducirse el \emph{contexto disciplinar y tecnológico} en el que se desarrolla el trabajo de modo que pueda entenderse con facilidad el ámbito y alcance del TFG.\index{TFG} Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, solo es necesario la inclusión de \emph{estado del arte} cuando este contribuya a aclarar aspectos clave del TFG o se desee justificar la originalidad del trabajo realizado.
+En este capítulo debería introducirse el \emph{contexto disciplinar y tecnológico} en el que se desarrolla el trabajo de modo que pueda entenderse con facilidad el ámbito y alcance del TFG. Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, solo es necesario la inclusión de \emph{estado del arte} cuando este contribuya a aclarar aspectos clave del TFG o se desee justificar la originalidad del trabajo realizado.
 
 Este capítulo suele finalizar indicando la estructura (capítulos) del documento y el contenido de cada una de las partes en que se divide. Por tanto, las secciones que suelen acompañar este capítulo son:
 \begin{enumerate}
@@ -15,43 +15,53 @@ Este capítulo suele finalizar indicando la estructura (capítulos) del document
 
 
 \section{Redacción de la memoria}
-A continuación se muestran algunos ejemplos para la inclusión de elementos en el documento como listas, tablas y figuras. Todos estos ejemplos se han presentado en el curso de \LaTeX{} \cite{salido10} y tanto estos, como los recogidos en varias obras de referencia, se pueden emplear para preparar este documento \cite{grat99,grat07,goos04,cascales03,goos07,lamport94,oetiker14,wikibookLaTex10,borbon21}. Entre las obras publicadas se recomienda el uso de la obra gratuita de Borbón~\cite{borbon21} et al.\ (en español) y la documentación disponible en la página web de Overleaf~\cite{overleaf21} (en inglés).
+Durante la realización de la memoria del TFG es importante tener presente respetar la guía de estilo de la institución \cite{esi19}. Por tanto, el empleo de plantillas para un sistema de procesamiento de textos (p.ej., Word o \LaTeX) puede requerir su adaptación cuando la plantilla mencionada no haya sido suministrada en la institución a la que se dirige el trabajo.
 
-Durante la realización de la memoria del TFG es importante tener presente respetar la guía de estilo de la institución. Por tanto, el empleo de plantillas para un sistema de procesamiento de textos (p.ej., Word o \LaTeX) puede requerir su adaptación cuando la plantilla mencionada no haya sido suministrada en la institución a la que se dirige el trabajo.
+Para redactar un trabajo académico de modo efectivo se deben tener presentes una serie de normas que ayuden a conseguir un resultado final que sea claro y de fácil lectura. Para obtener un documento con estas características se recomienda seguir una serie de pautas como las expuestas en el blog de Leonor Zozaya \cite{zozaya17} o el apartado de comunicación eficaz del departamento de Legua y Estilo de la UOC \cite{uoc}, de lectura recomendada.
 
-\noindent \textsc{IMPORTANTE}: \emph{A la hora de redactar el texto se debe poner especial atención en no cometer plagio\index{plagio} y respetar los derechos de propiedad intelectual \cite{uc3m21}. En particular merece gran atención la inclusión de gráficos e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se recomienda consultar el manual de la Universidad de Cantabria en el que se explica de modo conciso cómo incluir imágenes en un trabajo académico \cite{unican18}.}
+A la hora de redactar el texto se debe poner especial atención en no cometer plagio y respetar los derechos de propiedad intelectual \cite{uc3m21}. En particular merece gran atención la inclusión de gráficos e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se recomienda consultar el manual de la Universidad de Cantabria en el que se explica de modo conciso cómo incluir imágenes en un trabajo académico \cite{unican18}.
 
-% ------------------------------------------------------------------------------
-% Ejemplos para la plantilla
-% ------------------------------------------------------------------------------
-\subsection{Listas}
+A continuación en esta plantilla se muestran ejemplos en una memoria preparada con \LaTeX{}. Todos estos ejemplos que se muestran en esta plantilla se han presentado en el curso de \LaTeX{} \cite{salido10} y tanto estos, como los recogidos en varias obras de referencia, se pueden emplear para adaptar este documento a las necesidades particulares de los estudiantes \cite{lamport94,grat99,cascales03,mittelbach04,grat07,goos07,wikibookLaTex10}. Entre las obras de consulta disponibles sobre \LaTeX{} se recomiendan el uso de las obras gratuitas en español \cite{oetiker14,borbon21} y la documentación disponible en la página web de Overleaf~\cite{overleaf21} (en inglés).
+
+
+
+
+\subsection{Organización de información}
+El contenido del trabajo final de estudios se organiza en capítulos que se subdividen en secciones. Con \LaTeX{} este tipo de organización se realiza de modo inmediato y automáticamente se genera los estilos para los títulos de cada sección y su inclusión en la tabla de contenidos.
+
+En \LaTeX{}, los ajustes relativos a la generación del formato y estilos asociados a secciones del documento se realizan con el paquete \texttt{`titlesec'} empleado en esta plantilla.
+
+En las secciones siguientes se comenta la inclusión mediante \LaTeX{} de otros elementos de información y ejemplos de los mismos para poder utilizarlos en la elaboración de la memoria del TFG.
+
+
+
+
+\subsubsection{Listas}
 \label{sec:ejListas}
-\index{ejemplos} % Véase cómo se incluyen entradas en el índice alfabético
-A continuación se van a añadir algunos ejemplos que pueden emplearse al redactar la memoria. También se recomienda la consulta de las referencias citadas anteriormente en la que se pueden encontrar ejemplos de uso y aplicación.
+Existen dos tipos de listas: enumeraciones y listas con viñetas. En el primer tipo los elementos de la lista se preceden de una clave numérica o alfabética mientras que en el segundo tipo se emplea una viñeta. En ambos casos se pueden anidar los elementos para crear una jerarquía entre los elementos que forman la lista. En \LaTeX{} se recomienda la inclusión del paquete \texttt{`enumitem'} que permite personalizar fácilmente las listas de un documento. A continuación se muestran algunos ejemplos:
 
 
-\index{ejemplos!listas} % Para el índice
-\noindent Ejemplo de lista con \emph{bullet} especial.\index{lista!bullet} 
+\noindent Ejemplo de lista con viñetas. 
 % Ejemplo: Lista con bullets especiales
 % ============
 \begin{itemize}
-	\item[\ding{52}] peras
-	\item manzanas
-	\item naranjas
+	\item pera
+	\item[\ding{43}] manzana % Particularización de viñeta
+	\item naranja
 \end{itemize}
 
 
-\noindent Ejemplo de lista en varias columnas.\index{lista!columnas}
+\noindent Ejemplo de lista condensada con separación mínima, en varias columnas y configuración de la etiqueta.
 % Ejemplo: Listas en varias columnas
 % ============
 \begin{multicols}{2} % El parámetro es el número de columnas de la lista
-	\begin{enumerate}
-		\item peras
-		\item manzanas
-		\item naranjas
-		\item patatas
-		\item calabazas
-		\item fresas
+	\begin{enumerate}[(1),nosep]
+		\item pera
+		\item manzana
+		\item naranja
+		\item patata
+		\item calabaza
+		\item fresa
 	\end{enumerate}
 \end{multicols}
 
@@ -59,11 +69,45 @@ A continuación se van a añadir algunos ejemplos que pueden emplearse al redact
 
 
 
-\subsection{Tablas}
+\subsubsection{Ecuaciones matemáticas}
+Para escribir ecuaciones matemáticas con \LaTeX{} se recomienda incluir algunos en el documento los paquetes siguientes: \texttt{amsmath}, \texttt{amsfonts}, \texttt{amssymb}. 
+
+La composición de ecuaciones requiere el uso de comandos especializados, por tanto para facilitar dicha tarea se aconseja el uso de programas especializados como \textsf{MathType} o asistentes como el incluido en editores como \TeX studio\footnote{\url{https://www.texstudio.org/}} o herramientas en línea.\footnote{\url{https://latex.codecogs.com/},  \url{http://www.sciweavers.org/free-online-latex-equation-editor}} Es muy sencillo incluir fórmulas matemáticas sencillas en el mismo texto en el que se escribe. Por ejemplo, $c^{2}=a^{2}+b^{2}$ que podría ser la ecuación representativa del teorema de Pitágoras (ver también ec.~\ref{eq:pitagoras}).
+
+Las fórmulas también se pueden separar del texto para que aparezcan destacadas, así:
+
+% Ejemplo: Ecuación no numerada
+% ============
+\[
+c^2  = \int {\left( {a^2  + b^2} \right)}  \cdot dx
+\]
+
+Pero si se desea, las ecuaciones pueden ser numeradas de forma automática e incluso utilizar referencias cruzadas a ellas:
+
+% Ejemplo: Ec. numerada. (con código para edición con MathType)
+% ============
+% MathType!MTEF!2!1!+-
+% feqaeaartrvr0aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaebbnrfifHhDYfgasaacH8srps0l
+% bbf9q8WrFfeuY-Hhbbf9v8qqaqFr0xc9pk0xbba9q8WqFfea0-yr0R
+% Yxir-Jbba9q8aq0-yq-He9q8qqQ8frFve9Fve9Ff0dmeaabaqaciGa
+% caGaaeqabaaaamaaaOqaaiaadogadaahaaWcbeqaaiaaikdaaaGccq
+% GH9aqpcaWGHbWaaWbaaSqabeaacaaIYaaaaOGaey4kaSIaamOyamaa
+% CaaaleqabaGaaGOmaaaaaaa!3910!
+\begin{equation} \label{eq:pitagoras}
+	a^{2}=b^{2} + c^{2}
+\end{equation}
+
+
+
+
+
+\subsubsection{Tablas}
 \label{sec:tablas}
-\index{ejemplos!tablas}
-A continuación se incluyen algunos ejemplos de tablas\index{tabla} hechas con 
-\LaTeX{} y paquetes dedicados. Para la realización de tablas más complejas se recomienda la consulta de \cite{borbon21,overleaf21}.
+A continuación se incluyen algunos ejemplos de tablas hechas con 
+\LaTeX{} y paquetes dedicados. Para la realización de tablas más complejas se recomienda la consulta de \cite{borbon21,overleaf21} y el empleo de asistentes o herramientas en línea.\footnote{\url{https://www.tablesgenerator.com/}}
+
+Se debe observar que el título de las tablas se ubica en la parte superior de la tabla. Puesto que el contenido de la tabla es texto, tiene sentido leer primero el título para contextualizar el contenido de la tabla antes de su lectura.
 
 % Ejemplo: Tabla con macro \cline
 % ==========
@@ -83,7 +127,7 @@ A continuación se incluyen algunos ejemplos de tablas\index{tabla} hechas con
 \end{table}
 
 
-\noindent Ejemplo de tabla\index{tabla!ancho controlado} en la que se 
+\noindent Ejemplo de tabla en la que se 
 controla el ancho de la celda.
 
 % Ejemplo: Ejemplo de tabla con control de la anchura de celda.
@@ -103,12 +147,17 @@ controla el ancho de la celda.
 	\end{tabular}
 \end{table}
 
-\clearpage
 
-\subsection{Figuras}
-\index{ejemplos!figuras}
+
+
+
+
+\clearpage
+\subsubsection{Figuras}
+A diferencia de lo que sucede en las tablas, el título de las figuras aparece en la parte inferior de esta. Para la inclusión de las figuras debe tenerse en cuenta que el contenido de cada una se encuentra en un fichero individual que debería tener el formato y resolución apropiados para garantizar la calidad del resultado final.
+
 En esta sección se añaden ejemplos de muestra para la inclusión de 
-figuras\index{figuras} simples y subfiguras.
+figuras simples y otras compuestas de subfiguras mediante el empleo del paquete \texttt{`subcaption'}.
 
 % Ejemplo: Ejemplo de inclusión de figura
 % ============
@@ -121,7 +170,7 @@ figuras\index{figuras} simples y subfiguras.
 \end{figure}
 
 
-\noindent Ejemplo de figuras compuestas por subfiguras incluidas con paquete \texttt{subcaption}.\index{figuras!subfiguras}\footnote{\url{https://www.ctan.org/pkg/subcaption}}
+\noindent Ejemplo de figura compuesta por dos subfiguras incuidas mediante paquete \texttt{`subcaption'}. Mediante el uso de etiquetas (\texttt{\textbackslash label}) es posible incluir referencias cruzadas a subfiguras como la fotografía en blanco y negro de la Fig.~\ref{fig:fotoBW}.
 
 
 % Ejemplo: Ejemplo de inclusión de subfiguras
@@ -138,100 +187,36 @@ figuras\index{figuras} simples y subfiguras.
 		\includegraphics[width=0.8\linewidth]{clockCRbw}
 		\caption{Fotografía en blanco y negro}\label{fig:fotoBW}
 	\end{subfigure} 
-	\caption[Ejemplo de subfiguras]{Ejemplo de inclusión de subfiguras en un mismo entorno (por J. Salido, CC BY-NC-ND)}
+	\caption[Ejemplo de subfiguras]{Ejemplo de inclusión de subfiguras en un mismo entorno (por J. Salido, \faCreativeCommons{} \faCreativeCommonsBy{} \faCreativeCommonsNcEu{} \faCreativeCommonsNd)}
 	\label{fig:ejSubfigures}
 \end{figure}
 
 
 
-Mediante el uso de etiquetas (\texttt{\textbackslash label}) es posible incluir referencias cruzadas a subfiguras como la fotografía en blanco y negro de la Fig.~\ref{fig:fotoBW}.
 
-En los trabajos académicos la inclusión de imágenes y figuras que no son propiedad del autor suscitan bastante controversia y son fuente de incumplimiento inadvertido de la ley de propiedad intelectual.\index{plagio!propiedad intelectual} Es importante recordar que \emph{<<el desconocimiento de la ley no exime de su cumplimiento>>} por lo que se recomienda tanto a estudiantes como tutores consultar documentación informativa sobre el uso correcto de figuras en documentos académicos \cite{unican18}. Entre las <<incorrecciones>> más frecuentes al incluir figuras en los documentos académicos se observan:
+
+En los trabajos académicos la inclusión de imágenes y figuras que no son propiedad del autor suscitan bastante controversia y son fuente de incumplimiento inadvertido de la ley de propiedad intelectual. Respecto a este hecho se recomienda tanto a estudiantes como tutores consultar documentación informativa sobre el uso correcto de figuras en documentos académicos \cite{unican18}. Entre las <<incorrecciones>> más frecuentes al incluir figuras en los documentos académicos se observa:
 \begin{itemize}
 \item Abuso del derecho de cita. Se produce al incluir, con fines exclusivamente decorativos o ilustrativos de la explicación, una figura sujeta a derechos de uso restringido invocando el derecho de cita (incluso con correcta atribución de la obra).
 
-\item Incorrecta atribución de la obra.\index{atribución} Es habitual confundir al autor de la obra con la fuente de origen de la misma. La fuente es precisa cuando se cita la obra original. Sin embargo, la licencia de muchas obras exige la atribución al autor y la inclusión de la licencia bajo la que se distribuye o hace uso de la misma (véase como ejemplo cómo se realiza una correcta atribución en las Fig.~\ref{fig:ejFigure} y \ref{fig:ejSubfigures} mencionando al autor y la licencia Creative-Commons\footnote{\url{https://creativecommons.org}} bajo la que se rige el uso de la imagen y el mecanismo de título alternativo para que dicha atribución no aparezca en el índice de figuras).\index{Creative Commons}
+\item Incorrecta atribución de la obra. Es habitual confundir al autor de la obra con la fuente de origen de la misma. La fuente es precisa cuando se cita la obra original. Sin embargo, la licencia de muchas obras exige la atribución al autor y la inclusión de la licencia bajo la que se distribuye o hace uso de la misma (véase como ejemplo cómo se realiza una correcta atribución en las Fig.~\ref{fig:ejFigure} y \ref{fig:ejSubfigures} mencionando al autor y la licencia Creative-Commons\footnote{\url{https://creativecommons.org}} bajo la que se rige el uso de la imagen y el mecanismo de título alternativo para que dicha atribución no aparezca en el índice de figuras).
 
-\item Supresión de denominación de licencia de uso. Al incluir obras de terceros debemos tener presente los términos de distribución de la misma e incluirlos junto a la atribución de su legítimo autor.
+\item Supresión de los detalles de la licencia de uso. Al incluir obras de terceros debemos tener presente los términos de distribución de la misma e incluirlos junto a la atribución de su legítimo autor.
 \end{itemize}
 
-La inclusión de material de \emph{dominio público}\index{dominio público} o sin restricciones de uso hace innecesaria la atribución al autor pero puede incluirse una nota de agradecimiento.\footnote{Por cortesía de \emph{<x>}.}
-
-\subsection{Listados de código}
-\label{sec:ejListados}
-\index{ejemplos!listados}
-
-Ejemplos más representativos de inclusión de porciones de código 
-fuente.\index{listados}
-
-% Ejemplo: Listado Java
-% ============
-\begin{lstlisting}[language=Java,float=ht,caption={[Código fuente en Java]Ejemplo de código fuente en lenguaje Java},label=lst:java]
-// @author www.javadb.com
-public class Main {    
-// Este método convierte un String a un vector de bytes
-
-public void convertStringToByteArray() {
-
-String stringToConvert = "This String is 15";      
-	byte[] theByteArray = stringToConvert.getBytes();        
-	System.out.println(theByteArray.length);        
-}
-
-public static void main(String[] args) {
-	new Main().convertStringToByteArray();
-}
-}
-\end{lstlisting}
+La inclusión de material de \emph{dominio público} o sin restricciones de uso hace innecesaria la atribución al autor pero puede incluirse una nota de agradecimiento.\footnote{Incluyendo un texto como: \emph{<<Por cortesía de ...>>}}
 
 
-\begin{lstlisting}[style=ruled,language=C,float=ht,caption={Ejemplo de código C},label=lst:codC]
-// Este código se ha incluido tal cual está en el fichero \LaTeX{}
-#include <stdio.h>
 
-int main(int argc, char* argv[]) {
-	puts("¡Hola mundo!");
-}
-\end{lstlisting}
-
-
-\begin{lstlisting}[style=ruled,language=Matlab,float=ht,caption={Ejemplo escrito en Matlab},label=lst:matlab]
-function f = fibonacci(n)
- % FIBONACCI  Fibonacci sequence
- %	f = FIBONACCI(n) generates the first n Fibonacci numbers.
- %	Copyright 2014 Cleve Moler
- %	Copyright 2014 The MathWorks, Inc.
-f = zeros(n,1); 
-f(1) = 1;
-f(2) = 2;
-for k = 3:n
-f(k) = f(k-1) + f(k-2);
-end
-\end{lstlisting}
-
-\noindent Ejemplo de entrada por consola.
-
-\begin{lstlisting}[style=consola, numbers=none]
-$ gcc -o Hola HolaMundo.c
-\end{lstlisting}
-
-
-\subsubsection{Algoritmos con el paquete \texttt{algorithm2e}}
-Como ya se ha comentado en los textos científicos relacionados con las 
-TIC\footnote{Por supuesto en un TFG (Trabajo Fin de Grado)\index{TFG} o tesis 
+\subsubsection{Algoritmos y listados de código fuente}
+En los textos científicos relacionados con las 
+TIC\footnote{Por supuesto en un TFG (Trabajo Fin de Grado) o tesis 
 de un centro superior de informática.} (Tecnologías de la Información y 
 Comunicaciones) suelen aparecer porciones de código en los que se explica 
 alguna función o característica relevante del trabajo que se expone. Muchas 
 veces lo que se quiere ilustrar es un algoritmo o método en que se ha 
 resuelto un problema abstrayéndose del lenguaje de programación concreto en 
-que se realiza la implementación. El paquete 
-\texttt{algorithm2e}\footnote{\url{https://osl.ugr.es/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}}\index{CTAN}
- proporciona un entorno \texttt{algorithm} para la impresión apropiada de 
-algoritmos tratándolos como objetos flotantes y con mucha flexibilidad de 
-personalización. En el algoritmo \ref{alg:como} se muestra cómo puede 
-emplearse dicho paquete. En este curso no se explican las posibilidades del 
-paquete más en profundidad, ya que excede el propósito del curso. A todos los 
-interesados se les remite a la documentación del mismo.
+que se realiza la implementación. El paquete \texttt{algorithm2e} proporciona un entorno \texttt{algorithm} para la impresión apropiada de algoritmos tratándolos como objetos flotantes y con mucha flexibilidad de personalización.
 
 
 % Ejemplo:
@@ -263,61 +248,73 @@ inicialización\;
 \end{algorithm}\DecMargin{1em}
 
 
-
-\subsection{Ecuaciones matemáticas}
-Para que \LaTeX{} pueda incluir muchos símbolos matemáticos es preciso incluir algunos paquetes que ayudan en dicha tarea: \texttt{amsmath}, \texttt{amsfonts}, \texttt{amssymb}. También hay que tener en cuenta que si el tipo principal empleado en el texto es Times y se desea utilizar un tipo coherente en las fórmulas es conveniente emplear el paquete \emph{mathptmx} en vez de \emph{Times}. Pero en este caso es recomendable incluir siempre paquetes adicionales para suministrar las otras dos familias de fuentes escalables (p.~ej.\ \texttt{helvet} para familia \textsf{palo seco} y \texttt{couriers} para \texttt{monoespaciada}). Si no se hace esta última inclusión pueden obtenerse errores de difícil diagnóstico.
+La inclusión de porciones de código fuente se puede formatear de modo sencillo en \LaTeX{} mediante el uso del paquete \texttt{`listings'}. A continuación, se muestran varios ejemplos.
 
 
-Es muy sencillo incluir fórmulas matemáticas sencillas en el mismo texto en el que se escribe. Por ejemplo, $c^{2}=a^{2}+b^{2}$ que podría ser la ecuación representativa del teorema de Pitágoras.
-
-Las fórmulas también se pueden separar del texto para que aparezcan destacadas, así:
-
-% Ejemplo: Ecuación no numerada
+% Ejemplo: Listado Java
 % ============
-\[
-c^2  = \int {\left( {a^2  + b^2} \right)}  \cdot dx
-\]
+% Los entornos lstlisting se pueden tratar tambión como elementos flotantes mediante la opción 'float=hbt', donde se indica la ubicación del elemento.
+\begin{lstlisting}[language=Java,caption={[Código fuente en Java]Ejemplo de código fuente en lenguaje Java},label=lst:java]
+// @author www.javadb.com
+public class Main {    
+// Este método convierte un String a un vector de bytes
+
+public void convertStringToByteArray() {
+
+String stringToConvert = "This String is 15";      
+	byte[] theByteArray = stringToConvert.getBytes();        
+	System.out.println(theByteArray.length);        
+}
+
+public static void main(String[] args) {
+	new Main().convertStringToByteArray();
+}
+}
+\end{lstlisting}
 
 
-Pero si se desea, las ecuaciones pueden ser numeradas de forma automática e incluso utilizar referencias cruzadas a ellas:
+\begin{lstlisting}[style=ruled,language=C,caption={Ejemplo de código C},label=lst:codC]
+// Este código se ha incluido tal cual está en el fichero \LaTeX{}
+#include <stdio.h>
 
-% Ejemplo: Ec. numerada.
-% ============
-% MathType!MTEF!2!1!+-
-% feqaeaartrvr0aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
-% hiov2DGi1BTfMBaeXatLxBI9gBaebbnrfifHhDYfgasaacH8srps0l
-% bbf9q8WrFfeuY-Hhbbf9v8qqaqFr0xc9pk0xbba9q8WqFfea0-yr0R
-% Yxir-Jbba9q8aq0-yq-He9q8qqQ8frFve9Fve9Ff0dmeaabaqaciGa
-% caGaaeqabaaaamaaaOqaaiaadogadaahaaWcbeqaaiaaikdaaaGccq
-% GH9aqpcaWGHbWaaWbaaSqabeaacaaIYaaaaOGaey4kaSIaamOyamaa
-% CaaaleqabaGaaGOmaaaaaaa!3910!
-\begin{equation} \label{eq:pitagoras}
-	a^{2}=b^{2} + c^{2}
-\end{equation}
+int main(int argc, char* argv[]) {
+	puts("¡Hola mundo!");
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=ruled,language=Matlab,caption={Ejemplo escrito en Matlab},label=lst:matlab]
+function f = fibonacci(n)
+ % FIBONACCI  Fibonacci sequence
+ %	f = FIBONACCI(n) generates the first n Fibonacci numbers.
+ %	Copyright 2014 Cleve Moler
+ %	Copyright 2014 The MathWorks, Inc.
+f = zeros(n,1); 
+f(1) = 1;
+f(2) = 2;
+for k = 3:n
+f(k) = f(k-1) + f(k-2);
+end
+\end{lstlisting}
+
+
 
 
 
 
 \subsection{Bibliografía}
-\index{bibliografía}
-Esta sección, que si se prefiere puede titularse 
-«Referencias»,\index{referencias} incluirá un listado por orden alfabético 
-(primer apellido del primer autor) con todas las obras en que se ha basado 
-para la realización del TFG\index{TFG} en las que se especificará: autor/es, 
-título, editorial y año de publicación. Solo se incluirán en esta sección las 
-referencias bibliográficas que hayan sido citadas en el documento. Todas las 
-fuentes consultadas no citadas en el documento deberían incluirse en una 
-sección opcional denominada <<Material de consulta>>, aunque preferiblemente 
-estas deberían incluirse como referencias en notas a pie de página a lo largo 
-del documento.
+Todo el material ajeno se debe citar convenientemente sin contravenir los términos de las licencias de uso y distribución de dicho material. Esto se extiende al uso de diagramas y fotografías. El incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es responsabilidad exclusiva del autor independientemente de la cesión de derechos que este haya convenido.
 
-Se usará método de citación numérico con el número de la referencia empleada entre corchetes. La cita podrá incluir el número de página concreto de la referencia que desea citarse. Debe tenerse en cuenta que el uso correcto de la citación implica que debe quedar claro para el lector cuál es el texto, material o idea citado. Las obras referenciadas sin mención explícita o implícita al material concreto citado deberían considerarse material de consulta y por tanto ser agrupados como «Material de consulta» distinguiéndolas claramente de aquellas otras en las que si se recurre a la citación.
+La sección de \emph{Bibliografía}, que si se prefiere puede titularse \emph{Referencias}, incluirá un listado ordenado preferentemente por orden alfabético (primer apellido del autor principal) con todas las obras citadas en el texto. En la lista de referencias se especificará para cada obra: autores, título, editorial y año de publicación. Este formato se conseguirá en \LaTeX{} mediante el uso del estilo estándar \texttt{`plain'} o cualquier otro derivado con estilo de citación numérica. En algunas titulaciones se obliga a una ordenación por orden de cita en el texto que con Bib\TeX{} se puede obtener mediante los estilos estándar \texttt{`unsrt'} e \texttt{`ieeetr'}. 
 
-Cuando se desee incluir referencias a páginas genéricas de la Web sin mención expresa a un artículo con título y autor definido, dichas referencias podrán hacerse como notas al pie de página o como un apartado dedicado a las <<Direcciones de Internet>>.
+Es muy importante tener en cuenta que solo se incluirán en esta sección las referencias bibliográficas citadas expresamente en el documento. Si se desea incluir fuentes consultadas, pero no citadas, se puede confeccionar con ellas una sección denominada \emph{Material de consulta}, aunque estas referencias se pueden incluir opcionalmente a lo largo del documento como notas a pie de página.
 
-Todo el material ajeno deberá ser citado convenientemente sin contravenir los términos de las licencias de uso y distribución de dicho material. Esto se extiende al uso de diagramas y fotografías. El incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es responsabilidad exclusiva del autor independientemente de la cesión de derechos que este haya convenido.
+En las titulaciones técnicas se empleará estilo de citación numérico con el número de la referencia entre corchetes. La cita podrá incluir el número de página concreto de la referencia que se desea citar. El uso correcto de la citación implica dejar claro al lector cuál es el texto, material o idea citado. Las obras referenciadas sin mención explícita o implícita al material concreto citado deberían considerarse material de consulta y por tanto ser agrupados como \emph{Material de consulta} distinguiéndolas claramente de aquellas otras en las que si se recurre a la citación.
+
+En las titulaciones que requieren un estilo de citación de tipo autor-año (no numérico), se puede incluir el paquete \LaTeX{} \texttt{`apalike'} y especificar este mismo estilo en la sección de bibliografía en el argumento del comando \texttt{`bibliographystyle'}.
+
+Cuando se desee incluir referencias a páginas genéricas de la Web sin mención expresa a un artículo con título y autor definido, dichas referencias podrán hacerse como notas al pie de página o como un apartado de fuentes de consultas dedicado a las \emph{Direcciones de Internet}. Por el contrario los documentos electrónicos publicados en Internet se pueden incluir empleando el tipo de entrada \texttt{`misc'} como se muestra en la bibliografía que acompaña esta plantilla.
 
 
-\subsection{Índice Temático}
-\index{Indice Temático@Índice Temático}
-Este índice es opcional y se empleará como índice para encontrar los temas tratados en el trabajo. Se organizará de modo alfabético indicando el número de página(s) en el que se aborda el tema concreto señalado.
+
+

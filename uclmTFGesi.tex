@@ -72,13 +72,14 @@
 \titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % (EN: BACHELOR IN COMPUTING ENGINEERING)
 \tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\mesDefensa{julio}        			% Mes de defensa
-\yearDefensa{2021}        			% Año de defensa
-\lugarDefensa{Ciudad Real}			% Lugar de defensa
+\mesTF{julio}        			% Mes de defensa
+\monthTF{July}        		
+\yearTF{2021}        			% Año de defensa
+\cityTF{Ciudad Real}			% Lugar de defensa
 
 % Fichero con escudo de la institución (en directorio ./figs)
-% Logo de la ESI que prefieras (la normativa no especifica obligatoriedad).
-\escudo{esi} % Logo ESI (imagen corporativa). Fichero gráfico (pdf, png o jpg)
+% Logo de la ESI (consulta obligatoriedad de uso concreto)
+\escudo{esiLogo} % Logo ESI (imagen corporativa). Fichero gráfico (pdf, png o jpg)
 
 
 \makeatletter
@@ -118,7 +119,6 @@
 \input{./preambulo/Resumen} % Resumen/Abstract
 \input{./preambulo/Agradecimientos} % Agradecimientos etc.
 \input{./preambulo/Notacion} % Notación empleada.
-%\input{./frontmatter/Prologo} % [Opt.] Prólogo (más apropiado en libros.).
 \input{./preambulo/Indices} % Índice de contenido, figuras, tablas, listados, etc.
 % END_FOLD
 %--- (FIN FRONTMATTER)
@@ -189,22 +189,34 @@
 % -------------------------
 \cleardoublepage % Necesario para ajustar el avance de página
 \phantomsection  % Ojo necesario con hyperref.
-\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos. Se debe mantaner cuando se desean subbibliografías.
-%---
-% Opción 1: Bibliografía con todas las fuentes en un apartado.
-%---
-\printbibliography
-%---
+\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos. Se debe mantener cuando se desean subbibliografías.
 
+% Definición del estilo empleado en la bibliografía
+\bibliographystyle{plain}
+% Estilos nativos incluidos con LaTeX (plain, abbrv, alpha, unsrt).
+%
+% plain: las referencias se numeran y en la bibliografía las entradas
+%        aparecen en orden alfabético.
+% abbrv: igual que el anterior pero en la bibliografía los nombres se
+%        escriben sólo con la inicial.
+% alpha: (No funciona con UTF8) las referencias se componen con las iniciales de %        los autores
+%        y el año de publicación. En la bibliografía los nombres 
+%        igual que en plain. 
+%        .
+% unsrt: la bibliografía no aparece por orden alfabético sino por 
+%        orden de cita en el texto.
+
+% Estilos incluidos con BibTeX “no nativos” pero muy “populares” para ingenierías
+%
+% acm:       Numérica con los nombre de autores en mayúsculas y referencias con
+%            ordenación alfabética.
+% ieeetr:    Para los IEEE Transactions, con citación numárica y ordenación de r
+%            referencias por orden de cita.
+% 
+% Estilo incluido con BibTeX para citar en formato autor-año
+% apacite:   No numérica, con referencias ordenadas alfabéticamente por apellido de autor.
 %---
-% Opción 2: Bibliografía con secciones separadas.
-%---
-%\printbibheading
-% Se puede incluir un apartado de fuentes de consulta no citadas
-% Como no están citadas es preciso incluir comando \nocite{<key>}
-% Se añaden palabras clave a las entradas en el fichero *.bib para poder diferenciarlas
-%\printbibliography[heading=subbibliography,keyword=consulta,title={Fuentes de consulta}]
-%\printbibliography[heading=subbibliography,keyword=url,title={Direcciones de Internet}]
+\bibliography{biblioTFG} % Nombre del fichero .bib (sin extensión)
 % -------------------------
 
 
@@ -225,22 +237,6 @@
 % Aquí todos los apéndices necesarios
 \include{./anexos/AnexoA} % Apéndice A (opcionales)
 
-%---
-
-
-% -------------------------
-%
-% OPT.: ÍNDICE TEMÁTICO: Comentar si no se desean incluir.
-%
-% -------------------------
-% CONSEJO: Incluir los comandos mientras se escribe cada capítulo ya que hacerlo al final resulta tedioso.
-%\cleardoublepage % Necesario para ajustar el avance de página
-%\phantomsection  % Ojo necesario con hyperref.
-%% Permite cambiar el nombre del índice temático
-%%\renewcommand{\indexname}{Título del índice}
-%\addcontentsline{toc}{chapter}{\indexname} % Añade al Índice de contenidos.
-%\printindex  % Facilitado por makeidx (opcional, si no se usa no se imprime)
-%---
 %END_FOLD
 %--- (FIN DOCUMENTO)
 \end{document}

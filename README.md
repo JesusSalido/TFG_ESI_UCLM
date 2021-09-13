@@ -15,10 +15,9 @@ Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Es
 
 Esta plantilla está organizada en ficheros y directorios del modo que se indica a continuación:
   - Este fichero ``README.md``.
+  - ``RELEASE_NOTES.md`` comentarios sobre la release actual.
   - Un fichero LaTeX principal o maestro (``uclmTFGesi.tex``) que incluye otro denominado ``preambulo.tex`` en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este último fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).  
   - Un fichero de estilo ``uclmTFG.ist`` para el índice temático. Este fichero se puede descartar si no se desea incluir un índice temático o aplicar a este el estilo por defecto. 
-  - Un fichero de configuración ``latexmkrc`` para automatizar la compilación. Solo necesario si se desea obtener un índice temático aplicando el estilo definido en el fichero ``uclmTFG.ist``.
-  - Un fichero de bibliografía (``biblioTFG.bib``) de ejemplo para procesar con  ``biblatex``. De este modo en la plantilla se muestra el empleo de este tipo de fichero.
   - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
   - Directorio ``/caps`` con ficheros para los capítulos principales de la memoria.
   - Directorio ``/anexos`` con ficheros para los anexos.
@@ -33,7 +32,7 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
 
 ### Compilación 
 
-Esta plantilla ha sido preparada para compilarse con `pdflatex`, `biblatex` (bibliografía con `biber`) y `makeindex` (sólo si se incluye índice temático).
+Esta plantilla ha sido preparada para compilarse con `pdflatex` y `bibtex`.
 
 Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
 

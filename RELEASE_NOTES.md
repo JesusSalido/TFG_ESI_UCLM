@@ -1,11 +1,14 @@
-**junio 2021**
+**septiembre 2021**
 
-Quizá te preguntas por qué transcurrido el tiempo sigo haciendo cambios en esta plantilla. La respuesta rápida es: *"Porque puedo y porque quiero."*
+Esta nueva versión surge de los comentarios de realimentación recibidos por los usuarios de la misma y un proceso natural de evolución de este proyecto. Cada poco tiempo descubro algo nuevo que puedo modificar y que, en mi opinión, mejora el resultado final o la experiencia del usuario.
 
-Sin embargo, el principal motivo es que al igual que sucede con el desarrollo del software, rara vez un programa queda completado y finalizado. Por tanto, cada poco tiempo descubro algo nuevo que puedo modificar y que, en mi opinión, mejora el resultado final. También las experiencias de los usuarios son una fuente de realimentación para plantearme cambios que mejoren la experiencia de los usuarios si menoscabar la flexibilidad de uso.
-
-En esta nueva release de trabajo he decidido incluir bastantes cambios para facilitar el trabajo con la plantilla propuesta. A continuación describo brevemente los cambios más importantes:
+En esta nueva release de la plantilla he decidido incluir bastantes cambios para facilitar su uso y configuración. A continuación describo brevemente los cambios más importantes:
 
 1. Eliminación de paquete `uclmTFGesi.sty` para limpieza de código y transferencia de la carga de paquetes y configuración de los mismos en el fichero `packagesTFG.tex`.
-2. Eliminación de comandos creados para configuración de portadas. Se ha reducido el número de comandos. Ahora el usuario puede inspeccionar en el fichero `.\preambulo\Portadas.tex` los entornos `titlepage` con los que se crea cada portada para su edición directa de un modo muy flexible.
-3. Organización general del proyecto con directorio raíz más limpio. El fichero maestro `uclmTFGesi.tex` queda mejor estructurado y fácil de comprender.
+1. Organización general del proyecto con directorio raíz más limpio. El fichero maestro `uclmTFGesi.tex` queda mejor estructurado y fácil de comprender. De este modo se facilita la configuración y ajustes propios a la plantilla.
+1. Eliminación de comandos creados para configuración de portadas. Se ha reducido el número de comandos. Ahora el usuario puede inspeccionar en el fichero `.\preambulo\Portadas.tex` los entornos `titlepage` con los que se crea cada portada para su edición directa de un modo muy flexible.
+1. Las páginas de resumen/abstract se han completado con información primordial del documento (tipo de trabajo, centro, autor, lugar y fecha) para facilitar su difusión.
+1. Se eliminan todos los códigos, paquete `makeidx` y ficheros auxiliares (`latexmkrc` y `uclmTFGesi.ist`) precisos para la elaboración de un índice de contenidos al final del documento.
+1. Eliminación de paquete `biblatex` y ajustes para procesamiento tradicional de bibliografía. Aunque `biblatex` posee una gran flexibilidad de formato y resuelve muchos aspectos de las bibligrafías multilingües su empleo y configuración es más complejo que el procesamiento tradicional mediante bibliografía mediante entorno `thebibliography` o procesamiento de ficheros `bib` para **BibTeX** que continúa siendo un estándar en multitud de publicaciones científicas.
+
+    *NOTA: El uso de BibTeX permite aplicar estilos a los ficheros de bibliografía `bib` y en el paso de generación del documento final sustituir la generación de lista de referencias por el entorno `thebibliography` obtenido en el fichero `bbl`. De este modo es muy sencillo aplicar manualmente los cambios deseados en el formato de la bibliografía sin necesidad de recurrir a nuevos procesamientos con BibTeX.*
