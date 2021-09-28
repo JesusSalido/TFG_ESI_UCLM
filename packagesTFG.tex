@@ -56,7 +56,6 @@
 %---
 
 \usepackage{textcomp,marvosym,pifont,fontawesome5} % Símbolos especiales
-\usepackage{ccicons}    % Iconos de licencia Creative Commons
 \usepackage[T1]{fontenc}% Codificación de salida    
 
 \usepackage{setspace}   % Permite el ajuste del interlineado
@@ -100,21 +99,11 @@
 % -------------------------
 % AJUSTE DE HIPERENLACES (paquete hyperref)
 % -------------------------
-\usepackage[%--- Generación de hiperenlaces
-	pdftex,
-	breaklinks,			% Permite que los enlaces ocupen más de una línea
-%	colorlinks=false,	% Pone recuadro de color en los enlaces
-	colorlinks=true,	% Pone texto de enlace en color
-% NOTA: Si se desea todos los colores se pueden ajustar a "black"
-	linkcolor=UCLMred,  % Color de los hipernelaces en el texto
-	anchorcolor=UCLMred,% Color para texto referenciado
-	citecolor=UCLMred,  % Color de las citas
-	filecolor=ocre,     % Color de nombres de ficheros referenciados
-	urlcolor=aquaESI,      % Color de URLs
-    linktocpage=true,   % En los índices el color afecto solo a núm. de página
-	bookmarksnumbered=true % Incluye números en bookmarks
+\usepackage[pdftex,
+	breaklinks=true,			% Permite que los enlaces ocupen más de una línea
 ]{hyperref}
 \urlstyle{sf}			% Estilo sans serif para URLs
+\pdfoptionpdfminorversion=6
 % -------------------------
 
 \usepackage{pdfpages}   % Permite inclusión de páginas de un PDF

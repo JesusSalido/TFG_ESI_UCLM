@@ -82,12 +82,22 @@
 
 
 \makeatletter
-\hypersetup{% OPT. (Metadatos del fichero PDF generado)
-	pdftitle={\@title}, % Título
-	pdfauthor={\@author}, % Autor
-	pdfsubject={Trabajo Fin de Grado},  % Tema
-	pdftoolbar=true, % Muestra la toolbar de Acrobat
-	pdfmenubar=true	 % Muestra la menubar de Acrobat
+% NOTA: Ajustes y colores de los enlaces y marcadores en el texto
+\hypersetup{% (Metadatos del fichero PDF generado)
+    linktocpage=true,        % true = enlace al nº de pág., false=texto completo
+	colorlinks=true,         % true=colorea texto del enlace, false=recuadra el texto
+%    hidelinks,               % Oculta colores en los enlaces
+    linkcolor=UCLMred,       % Color links internos
+    anchorcolor=UCLMred,     % Color para anclas a texto
+	urlcolor=aquaESI,        % Color para URL enlazadas
+	citecolor=UCLMred,       % Color para citas a bibliografía
+	bookmarksopen=true,      % Abre PDF con panel de marcadores abierto
+	bookmarksnumbered=true,  % Incluye números en marcadores
+	pdftoolbar=true,         % Muestra la toolbar de Acrobat
+	pdfmenubar=true,	     % Muestra la menubar de Acrobat
+	pdftitle={\@title},      % Título
+	pdfauthor={\@author},    % Autor
+	pdfsubject={\@tipoDoc}   % Tipo de de documento
 }
 \makeatother
 
