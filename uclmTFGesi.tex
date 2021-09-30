@@ -34,28 +34,26 @@
 % END_FOLD
 
 
-% EDITAR: En caso de memoria en inglés y numeración de páginas al pie
 \newif\ifspanish\spanishtrue
-% NOTA: Descomentar si se desea que el idioma pral. sea inglés
+% EDITAR: Descomentar si se desea que el idioma pral. sea inglés
 %\spanishfalse 
 \newif\ifpageonfooter\pageonfooterfalse
-% NOTA: Descomentar si se desea número de página en el pie de página
+% EDITAR: Descomentar si se desea número de página en el pie de página
 %\pageonfootertrue
 
 \input{packagesTFG} % Contiene todos los paquetes y configuraciones
 
 \setcounter{tocdepth}{1} % Suprime del índice los apdos. de nivel mayor
 
+
 % -------------------------
-%
-% DATOS del documento
-% EDITAR: Datos del documento. 
-% Los elementos opcionales pueden dejarse, eliminarse o comentarse. No se deben dejar vacíos porque provoca errores.
+% -------------------------
+% -------------------------
 % BEGIN_FOLD
 % -------------------------
 % -------------------------
 % -------------------------
-% DATOS DEL DOCUMENTO 
+% EDITAR: Datos del documento. 
 % Definición de variables empleadas en el documento por lo que no son
 % traducidos. Cuando algún campo puede tener varias líneas aparecen dos
 % campos señalados como <campo>Primera y <campo>Segunda. Si no se desea 
@@ -71,18 +69,25 @@
 \titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % (EN: BACHELOR IN COMPUTING ENGINEERING)
 \tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\mesTF{septiembre}        			% Mes de defensa
-\monthTF{September}        		
+\mesTF{septiembre}        		% Mes de defensa (incluir siempre)
+\monthTF{September}        		% En inglés (incluir siempre)
 \yearTF{2021}        			% Año de defensa
 \cityTF{Ciudad Real}			% Lugar de defensa
 
 % Fichero con escudo de la institución (en directorio ./figs)
 % Logo de la ESI (consulta obligatoriedad de uso concreto)
 \escudo{esiLogo} % Logo ESI (imagen corporativa). Fichero gráfico (pdf, png o jpg)
+% -------------------------
+% -------------------------
+% -------------------------
+% END_FOLD
+% -------------------------
+% -------------------------
+% -------------------------
 
 
+% EDITAR: Para cambiar ajustes y colores de los enlaces y marcadores en el texto
 \makeatletter
-% NOTA: Ajustes y colores de los enlaces y marcadores en el texto
 % Más información en: https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
 \hypersetup{% (Metadatos del fichero PDF generado)
     linktocpage=true,        % true = enlace al nº de pág., false=texto completo
@@ -102,13 +107,6 @@
 }
 \makeatother
 
-% -------------------------
-% -------------------------
-% -------------------------
-% END_FOLD
-% -------------------------
-% -------------------------
-% -------------------------
 
 % -------------------------
 % -------------------------
@@ -124,8 +122,8 @@
 \frontmatter
 \pagestyle{empty}  % Páginas sin cabecera ni pies
 \input{./preambulo/PortadasESI} % Diseño de portadas
-% OJO: Para incluirla como fichero PDF (otras titulaciones)
-% \includepdf{fichero_portada.pdf} 
+% EDITAR: Puedes incluirla como fichero PDF (otras titulaciones) como se indica:
+%%     \includepdf{fichero_portada.pdf} 
 \input{./preambulo/Resumen} % Resumen/Abstract
 \input{./preambulo/Agradecimientos} % Agradecimientos etc.
 \input{./preambulo/Notacion} % Notación empleada.
@@ -196,7 +194,7 @@
 % -------------------------
 \cleardoublepage % Necesario para ajustar el avance de página
 \phantomsection  % Ojo necesario con hyperref.
-\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos. Se debe mantener cuando se desean subbibliografías.
+\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos
 
 % EDITAR: Definición del estilo empleado en la bibliografía
 \bibliographystyle{plain}
