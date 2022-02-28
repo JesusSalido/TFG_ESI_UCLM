@@ -55,7 +55,7 @@ Existen dos tipos de listas: enumeraciones y listas con viñetas. En el primer t
 % Ejemplo: Listas en varias columnas
 % ============
 \begin{multicols}{2} % El parámetro es el número de columnas de la lista
-	\begin{enumerate}[(1),nosep]
+	\begin{enumerate}[(1),noitemsep]
 		\item pera
 		\item manzana
 		\item naranja
@@ -303,17 +303,17 @@ end
 
 
 \subsection{Bibliografía}
-Todo el material ajeno se debe citar convenientemente sin contravenir los términos de las licencias de uso y distribución de dicho material. Esto se extiende al uso de diagramas y fotografías. El incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es responsabilidad exclusiva del autor independientemente de la cesión de derechos que este haya convenido.
+Todo el material ajeno se debe citar convenientemente sin contravenir los términos de las licencias de uso y distribución de dicho material. Esto se extiende al uso de diagramas y fotografías. El incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es responsabilidad exclusiva del autor, independientemente de la cesión de derechos que este haya convenido.
 
-La sección de \emph{Bibliografía}, que si se prefiere puede titularse \emph{Referencias}, incluirá un listado ordenado preferentemente por orden alfabético (primer apellido del autor principal) con todas las obras citadas en el texto. En la lista de referencias se especificará para cada obra: autores, título, editorial y año de publicación. Este formato se conseguirá en \LaTeX{} mediante el uso del estilo estándar \texttt{`plain'} o cualquier otro derivado con estilo de citación numérica. En algunas titulaciones se obliga a una ordenación por orden de cita en el texto que con Bib\TeX{} se puede obtener mediante los estilos estándar \texttt{`unsrt'} e \texttt{`ieeetr'}. 
+La sección de \emph{Bibliografía}, que si se prefiere puede titularse \emph{Referencias}, incluirá un listado ordenado preferentemente por orden alfabético (primer apellido del autor principal) con todas las obras citadas en el texto. En la lista de referencias se especificará para cada obra: autores, título, editorial y año de publicación. Este formato se conseguirá en \LaTeX{} mediante el uso del estilo estándar \texttt{plain} o cualquier otro derivado con estilo de citación numérica. En algunas titulaciones se obliga a una ordenación por orden de cita en el texto que con Bib\TeX{} se puede obtener mediante los estilos estándar \texttt{unsrt} e \texttt{ieeetr}. 
 
 Es muy importante tener en cuenta que solo se incluirán en esta sección las referencias bibliográficas citadas expresamente en el documento. Si se desea incluir fuentes consultadas, pero no citadas, se puede confeccionar con ellas una sección denominada \emph{Material de consulta}, aunque estas referencias se pueden incluir opcionalmente a lo largo del documento como notas a pie de página.
 
-En las titulaciones técnicas se empleará estilo de citación numérico con el número de la referencia entre corchetes. La cita podrá incluir el número de página concreto de la referencia que se desea citar. El uso correcto de la citación implica dejar claro al lector cuál es el texto, material o idea citado. Las obras referenciadas sin mención explícita o implícita al material concreto citado deberían considerarse material de consulta y por tanto ser agrupados como \emph{Material de consulta} distinguiéndolas claramente de aquellas otras en las que si se recurre a la citación.
+En las titulaciones técnicas se empleará estilo de citación numérico con el número de la referencia entre corchetes. La cita podrá incluir el número de página concreto de la referencia que se desea citar. El uso correcto de la citación implica dejar claro al lector cuál es el texto, material o idea citado. Las obras referenciadas sin mención explícita o implícita al material concreto citado deberían considerarse material de consulta y por tanto ser agrupados como \emph{Material de consulta}, distinguiéndolas claramente de aquellas otras en las que si se recurre a la citación.
 
-En las titulaciones que requieren un estilo de citación de tipo autor-año (no numérico), se puede incluir el paquete \LaTeX{} \texttt{`apalike'} y especificar este mismo estilo en la sección de bibliografía en el argumento del comando \texttt{`bibliographystyle'}.
+En las titulaciones que requieren un estilo de citación de tipo autor-año (no numérico), se puede incluir el paquete \LaTeX{} \texttt{apacite} (con la opción \texttt{natbibapa}) y especificar este mismo estilo en la sección de bibliografía en el argumento del comando \texttt{bibliographystyle}.
 
-Cuando se desee incluir referencias a páginas genéricas de la Web sin mención expresa a un artículo con título y autor definido, dichas referencias podrán hacerse como notas al pie de página o como un apartado de fuentes de consultas dedicado a las \emph{Direcciones de Internet}. Por el contrario los documentos electrónicos publicados en Internet se pueden incluir empleando el tipo de entrada \texttt{`misc'} como se muestra en la bibliografía que acompaña esta plantilla.
+Cuando se desee incluir referencias a páginas genéricas de la Web sin mención expresa a un artículo con título y autor definido, dichas referencias podrán hacerse como notas al pie de página o como un apartado de fuentes de consultas dedicado a las \emph{Direcciones de Internet}. Por el contrario los documentos electrónicos publicados en Internet se pueden incluir empleando el tipo de entrada \texttt{misc} como se muestra en la bibliografía que acompaña esta plantilla.
 
 
 

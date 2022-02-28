@@ -61,12 +61,13 @@
 \usepackage{setspace}   % Permite el ajuste del interlineado
 \usepackage{comment}    % Permite la exclusión de porciones de texto 
 
-\usepackage[shortlabels,inline]{enumitem} 	% Control de listas
-\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas
+\usepackage[shortlabels]{enumitem} 	% Control de listas
+%\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas (cuidado no repetir viñeta si incluyes un 2º nivel)
 \usepackage{multicol}	% Texto en varias columnas
 
-\usepackage{booktabs,tabularx}   % Paquetes para tablas
-\usepackage{graphicx,subcaption} % Inclusión de figuras y subfiguras
+\usepackage{float} % Ubicación de objetos float
+\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
+\usepackage{graphicx,subcaption,rotating} % Inclusión de figuras y subfiguras
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
@@ -256,7 +257,7 @@
 
 
 % EDITAR: Descomentar si se precisan citación en formato APA
-%\usepackage{apacite}
+%\usepackage[natbibapa]{apacite}
 % -------------------------
 % -------------------------
 % -------------------------
