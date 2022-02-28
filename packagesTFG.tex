@@ -65,8 +65,8 @@
 %\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas (cuidado no repetir viñeta si incluyes un 2º nivel)
 \usepackage{multicol}	% Texto en varias columnas
 
-\usepackage{float} % Ubicación de objetos float
-\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
+%\usepackage{float} % Ubicación de objetos float
+%\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
 \usepackage{graphicx,subcaption,rotating} % Inclusión de figuras y subfiguras
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
@@ -96,6 +96,8 @@
 \definecolor{sombra}{HTML}{F0F0F0} % Sombra código
 \definecolor{gris}{gray}{0.4} % Gris numeración código
 % -------------------------
+\usepackage{float} % Ubicación de objetos float
+\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
 
 % -------------------------
 % AJUSTE DE HIPERENLACES (paquete hyperref)
@@ -252,7 +254,6 @@
 }
 % -------------------------
 
-\usepackage[autostyle]{csquotes} % Necesario para bibliografía multilingüe
 
 
 
