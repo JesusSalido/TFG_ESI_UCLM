@@ -50,7 +50,7 @@ Si esta plantilla le resulta útil considere la posibilidad de citarla con la in
   editor       = {GitHub},
   organization = {Universidad de Castilla-La Mancha},
   url          = {https://github.com/JesusSalido/TFG_ESI_UCLM},
-  doi          = {10.5281/zenodo.4574562}
+  doi          = {10.5281/zenodo.4561708}
 }
 ```
 
