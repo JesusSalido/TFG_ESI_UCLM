@@ -17,12 +17,17 @@
 \usepackage[     % Ambos idiomas son precisos para bibliografía multilingüe
     english,     % Se emplea porque el resumen siempre en inglés
     spanish,     % Se emplea para resumen en español
-    es-tabla, es-noindentfirst
+    es-tabla,    % Cambia denominacion de cuadro a tabla (en español)
+    es-noindentfirst % No sangra primer párrafo de sección (en español)
 ]{babel} % Internacionalización
 
 
 %--- Márgenes del documento
-\usepackage[top=2.5cm,bottom=2.5cm,inner=3.5cm,outer=2cm]{geometry}
+\usepackage[top=2.5cm,    % Superior
+            bottom=2.5cm, % Inferior
+            inner=3.5cm,  % Interior 
+            outer=2cm     % Exterior
+]{geometry}
 \usepackage[skip=.3\baselineskip plus 2pt,indent]{parskip} % Salto entre párrafos 
 % skip= .5\baselineskip plus 2pt -> Valor por defecto
 % 
@@ -65,17 +70,17 @@
 %\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas (cuidado no repetir viñeta si incluyes un 2º nivel)
 \usepackage{multicol}	% Texto en varias columnas
 
-%\usepackage{float} % Ubicación de objetos float
-%\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
+\usepackage{float} % Ubicación de objetos float
+\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
 \usepackage{graphicx,subcaption,rotating} % Inclusión de figuras y subfiguras
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
-\usepackage[% Personalización de títulos de figuras y tablas
-	margin=10pt,		% Margen
-	font=small,			% Tamaño de tipografía
-	labelfont=bf,		% Prefijo-Etiqueta en negrita
-	format=hang			%
+\usepackage[      % Personalización de títulos de figuras y tablas
+	margin=10pt,  % Margen
+	font=small,	  % Tamaño de tipografía
+	labelfont=bf, % Prefijo-Etiqueta en negrita
+	format=hang	  %
 ]{caption}
 % -------------------------
 % AJUSTE DE TÍTULOS (paquete caption)
@@ -96,22 +101,25 @@
 \definecolor{sombra}{HTML}{F0F0F0} % Sombra código
 \definecolor{gris}{gray}{0.4} % Gris numeración código
 % -------------------------
-\usepackage{float} % Ubicación de objetos float
-\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
+
 
 % -------------------------
 % AJUSTE DE HIPERENLACES (paquete hyperref)
 % -------------------------
 \usepackage[pdftex,
-	breaklinks=true,			% Permite que los enlaces ocupen más de una línea
+	breaklinks=true, % Permite que los enlaces ocupen más de una línea
 ]{hyperref}
-\urlstyle{sf}			% Estilo sans serif para URLs
-\pdfoptionpdfminorversion=6
+\urlstyle{sf}		 % Estilo sans serif para URLs
+\pdfoptionpdfminorversion=6 % Elimina warnings
 % -------------------------
 
 \usepackage{pdfpages}   % Permite inclusión de páginas de un PDF
 \usepackage{microtype}  % Mejoras de microtipografía (solo pdflatex)
 \usepackage{tikz}       % Paquete para gráficos
+
+
+
+
 
 \usepackage{fancyhdr}	% Ajuste de cabeceras y pies
 % -------------------------
@@ -152,6 +160,11 @@
 }
 % -------------------------
 
+
+
+
+
+
 \usepackage{titlesec}   % Ajustes de títulos de secciones
 % -------------------------
 % CONFIGURACIÓN INICIO CAPÍTULOS Y SECCIONES (paquete titlesec)
@@ -174,6 +187,9 @@
 \titlespacing*{\subsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
 \titlespacing*{\subsubsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
 % -------------------------
+
+
+
 
 \usepackage[% Inclusión de algoritmos
 	lined,boxruled,algochapter,commentsnumbered,%
@@ -259,9 +275,9 @@
 %
 %\usepackage[natbibapa]{apacite} % Permite citación (Autor, año) y bibliografía APA
 %
-% Recuerda que la citación medianye este paquete permite el empleo de comandos 
+% NOTA: Para tener en cuenta
+% La citación mediante este paquete permite el empleo de comandos 
 % del paquete natbib como:
-%
 %   \citet{key} ==>>                Jones y col. (1990)
 %   \citet*{key} ==>>               Jones, Baker, y Smith (1990)
 %   \citep{key} ==>>                (Jones y col., 1990)

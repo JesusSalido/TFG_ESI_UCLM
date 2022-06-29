@@ -48,7 +48,7 @@
 %%
 
 \setcounter{tocdepth}{1} % Suprime del índice los apdos. de nivel mayor
-
+\setcounter{secnumdepth}{3} % Suprime numeración de secciones de nivel mayor
 
 % -------------------------
 % -------------------------
@@ -70,17 +70,19 @@
 \email{jesus.salido@uclm.es}					
 \instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
 \centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
-\titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % (EN: BACHELOR IN COMPUTING ENGINEERING)
+\titulacion{GRADO EN INGENIERÍA INFORMÁTICA} 
+% (EN: BACHELOR IN COMPUTING ENGINEERING)
 \tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\mesTF{julio}        		% Mes de defensa (incluir siempre)
-\monthTF{July}        		% En inglés (incluir siempre)
-\yearTF{2022}        			% Año de defensa
-\cityTF{Ciudad Real}			% Lugar de defensa
+\mesTF{julio}        	% Mes de defensa (incluir siempre)
+\monthTF{July}        	% En inglés (incluir siempre)
+\yearTF{2022}        	% Año de defensa
+\cityTF{Ciudad Real}	% Ciudad de defensa
+
 
 % Fichero con escudo de la institución (en directorio ./figs)
 % Logo de la ESI (consulta obligatoriedad de uso concreto)
-\escudo{esiLogo} % Logo ESI (imagen corporativa). Fichero gráfico (pdf, png o jpg)
+\escudo{esiLogo} % Logo centro (imagen corporativa). Fichero gráfico (pdf, png o jpg)
 % -------------------------
 % -------------------------
 % -------------------------
@@ -112,6 +114,19 @@
 \makeatother
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 % -------------------------
 % -------------------------
 % -------------------------
@@ -126,8 +141,9 @@
 \frontmatter
 \pagestyle{empty}  % Páginas sin cabecera ni pies
 \input{./preambulo/PortadasESI} % Diseño de portadas
+%\input{./preambulo/PortadaETSII} % Otras portadas
 % EDITAR: Puedes incluirla como fichero PDF (otras titulaciones) como se indica:
-%%     \includepdf{fichero_portada.pdf} 
+%%  \includepdf{fichero_portada.pdf} 
 \input{./preambulo/Resumen} % Resumen/Abstract
 \input{./preambulo/Agradecimientos} % Agradecimientos etc.
 \input{./preambulo/Notacion} % Notación empleada.
@@ -163,7 +179,6 @@
 % OPT: Si deseas modificar el interlineado de una línea (por defecto)
 % puedes emplear los comandos señalados (proporcionados por paquete `setspace')
 %\onehalfspacing % Ajusta interlineado a 1.5 líneas
-%\doublespacing  % Ajusta interlineado a 2 líneas  
 
 
 \include{./caps/Introduccion}
