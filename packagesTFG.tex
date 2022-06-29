@@ -124,7 +124,8 @@
 	\fancyfoot[C]{\sffamily\thepage}
 \else % Números de página en las esquinas de los encabezados
 	\fancyhead[RO,LE]{\sffamily\thepage}
-\fi
+\fi %
+	\fancyhead[RO,LE]{\sffamily\thepage}
 
 % Formato para el capítulo: N. Nombre
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter.#1}}{}}
@@ -179,7 +180,7 @@
 	lined,boxruled,algochapter,commentsnumbered,%
     \ifspanish spanish% 
     \else english%
-    \fi
+    \fi%
 ]{algorithm2e} 
 
 \usepackage{listings}	% Inclusión de listados de código
