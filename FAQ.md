@@ -13,8 +13,15 @@ Recuerda consultar el contenido de este documento antes de plantear tus pregunta
 - [¿Cómo utilizar correctamente figuras e imágenes de terceros sin violar sus derechos de uso?](#fuentefiguras)
 - [¿Cómo conseguir que las referencias bibliográficas aparezcan en el idioma correcto?](#includebbl)
 - [¿Cómo conseguir una lista de referencias bibliográficas ordenadas por orden de citación en el texto?](#unsorted)
+- [¿Cómo solucionar errores en LaTeX?](#errors)
+- [¿Porqué al crear un proyecto con la memoria del TFG en Overleaf la compilación produce errores?](#master)
 
 ---
+
+
+
+
+
 
 
 
@@ -219,6 +226,43 @@ Estos estilos de citación se pueden combinar con distintos estilos para la list
 
 
 
+
+
+
+
+
+### <a name="errors"></a>¿Cómo solucionar errores en LaTeX?
+
+Depurar errores en LaTeX es una tarea poco amigable y la razón principal de que muchos usuarios renuncien al uso de este sistema de preparación de documentos. La depuración de errores se convierte en algo complejo y tedioso porque el modo en que se gestionan estos requiere cierto grado de experiencia y pericia. Esto es así incluso en los sistemas más recientes de edición en línea con LaTeX como Overleaf. A continuación te indico mis sugerencias.
+
+Pasos para tratar con los errores:
+  1. Ve al primer error de la lista de errores. Los errores siguientes suelen ser consecuencia del primero de ellos.
+  2. Analiza el mensaje de error y el texto de la línea señalada por el error. Con suerte en la descripción del error se indicará claramente la causa del mismo y cómo resolverlo. Consulta alguna página sobre los errores más comunes en LaTeX y sus causas: [Overleaf](https://es.overleaf.com/learn/latex/Errors), [Wikibooks](https://en.wikibooks.org/wiki/LaTeX/Errors_and_Warnings), [LaTeX Error Classes en Univ. de Texas](https://www.cs.utexas.edu/users/witchel/projects/clarify_errorclasses.html), etc. 
+  3. Si no tenemos idea de cómo solucionar el error debemos enfrentar la "ingrata" tarea de depuración manual del documento. La estrategia personal que puedo recomendar consiste en:
+  
+       - Compilar regularmente para comprobar que todo va bien y saber de antemano dónde es probable que se encuentre el error. Te sugiero el empleo de un sistema de control de versiones (p.ej., [git](https://git-scm.com/) junto al repositorio GitHub) que te permita rastrear los cambios realizados en un documento y de este modo ubicar las posibles fuentes de errores.
+       - Aplicar una estrategia de búsqueda binaria para aislar porciones del documento desplazando el comando ``\end{document}`` y utilizando comentarios.
+       - Comprueba el fichero ``.log`` generado durante la compilación por si ahí puedes encontrar alguna pista sobre el origen del error. 
+       - Cuando el mensaje de error resulte poco informativo, el ``log`` no aporte nueva información y no puedas encontrar el motivo que lo provoca, es muy posible que esté causado por la inclusión de un paquete. Para asegurarte, haz una copia del documento en el que puedas dejar un texto simple de prueba en el que te asegures que no hay error posible. Si el error se sigue produciendo puedes estar seguro que está provocado por un paquete. Aplica comentarios para descubrir el paquete problemático. Una vez descubierto comprueba que empleas la versión más reciente del mismo. En caso contrario, actualízalo. Si el error se sigue produciendo, cambia la posición del paquete para que se cargue antes en el documento. Si es imposible eliminar el error, renuncia al uso del paquete problemático.  
+   
+Recuerda asegurarte del uso de paquetes oficiales y actualizados. Rehuye el uso de paquetes obsoletos o que han sido sustituidos por otros más recientes. Cuando uses plantillas sé prudente al introducir nuevos paquetes, ya que pueden ser fuente de errores de diagnóstico complejo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### <a name="master"></a>¿Porqué al crear un proyecto con la memoria del TFG en Overleaf la compilación produce errores?
+Si deseas crear una copia funcional de la plantilla del TFG en Overleaf, te recomiendo partir de la [versión publicada en Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw) haciendo clic sobre el icono ``Open as Template``. De este modo se creará un nuevo proyecto en tu espacio de Overleaf que se compila sin errores y que podrás modificar de inmediato. Sin embargo, si has trabajado en un proyecto local de tu TFG y deseas subirlo a Overleaf mediante importación del proyecto a partir de un archivo ``ZIP``, posiblemente obtengas errores de compilación que no están apareciendo en tu versión local. Esto es fuente de perplejidad y frustración justificada. Los errores que aparecen en Overleaf están provocados por una incorrecta configuración del proyecto. Como en el directorio raíz aparecen dos ficheros ``.tex`` es preciso indicar a Overleaf cuál de ellos es el fichero principal. Para efectuar esta configuración, debemos ir a ``Menu`` una vez abierto el proyecto en Overleaf. Esta acción despliega un conjunto de opciones que deben ajustarse de modo apropiado, en especial ``Main document`` (``uclmTFGesi.tex``). Revisa también el valor del resto de opciones para obtener el comportamiento deseado. Una vez aceptada la configuración deseada, haciendo clic sobre el fichero ``uclmTFGesi.tex`` es posible lanzar una compilación sin los errores iniciales.   
 
 
 ---
