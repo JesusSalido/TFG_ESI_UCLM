@@ -17,7 +17,7 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   - Este fichero ``README.md``.
   - ``RELEASE_NOTES.md`` comentarios sobre la release actual.
   - ``FAQ.md`` Preguntas frecuentes respondidas sobre el uso de la plantilla en las que puede estar la respuesta a esa duda que te atormenta. 
-  - Un fichero LaTeX principal o maestro (``uclmTFGesi.tex``) que incluye otro denominado ``preambulo.tex`` en el que se cargan paquetes que emplea el documento. Los paquetes cargados en este último fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).  
+  - Un fichero LaTeX principal o maestro (``uclmTFGesi.tex``) que carga el paquete ``uclmTFGesi.sty`` en el que se incluyen los paquetes que emplea la plantilla. Los paquetes cargados en este último fichero emplean las opciones que respetan la normativa actual de la ESI-UCLM, pero algunas de las opciones pueden ser modificadas sin contravenir dicha normativa. Algunos de los paquetes son opcionales (señalado en los comentarios con el tag `OPT.`).  
   - Directorio ``/frontmatter`` con ficheros con los elementos de la parte delantera del documento no incluidos en las portadas (``Creditos.tex``, ``Resumen.tex``, ``Agradecimientos.tex``, ``Notación.tex``, e ``Indices.tex``).
   - Directorio ``/caps`` con ficheros para los capítulos principales de la memoria.
   - Directorio ``/anexos`` con ficheros para los anexos.
