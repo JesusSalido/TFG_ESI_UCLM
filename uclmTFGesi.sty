@@ -13,12 +13,6 @@
 ]{babel} % Internacionalización
 
 
-%--- Márgenes del documento
-\usepackage[top=2.5cm,    % Superior
-            bottom=2.5cm, % Inferior
-            inner=3.5cm,  % Interior 
-            outer=2cm     % Exterior
-]{geometry}
 \usepackage[skip=.3\baselineskip plus 2pt,indent]{parskip} % Salto entre párrafos 
 % skip= .5\baselineskip plus 2pt -> Valor por defecto
 % 
@@ -123,7 +117,7 @@
 \else % Números de página en las esquinas de los encabezados
 	\fancyhead[RO,LE]{\sffamily\thepage}
 \fi %
-	\fancyhead[RO,LE]{\sffamily\thepage}
+
 
 % Formato para el capítulo: N. Nombre
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter.#1}}{}}

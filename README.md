@@ -11,7 +11,8 @@ Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Es
 > - Grado en Ing. Informática,
 > - Grados en Ing. Industrial,
 > - Grados en Química,
-> - Grados en Administración y Dirección de Empresas,... y la lista sigue creciendo.
+> - Grados en Administración y Dirección de Empresas,
+> - Máster en Humanidades, ... y la lista sigue creciendo.
 
 Esta plantilla está organizada en ficheros y directorios del modo que se indica a continuación:
   - Este fichero ``README.md``.
@@ -32,7 +33,7 @@ Esta plantilla ha sido preparada para compilarse con `pdflatex` y `bibtex`.
 
 Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
 
-> \$> latexmk -gg -pdflatex -bibtex-cond1 -silent -auxdir=build -outdir=build uclmTFGesi.tex
+> \$> latexmk -gg -pdflatex -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
