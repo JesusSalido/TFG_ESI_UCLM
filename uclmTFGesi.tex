@@ -18,7 +18,7 @@
 % Para su compilación se aconseja utilizar `latexmk` (requiere para su 
 % ejecución de un intérprete perl:
 %
-%> \$> latexmk -gg -pdflatex -bibtex-cond1 -silent -auxdir=build -outdir=build uclmTFGesi.tex
+%> \$> latexmk -gg -pdf -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
 %
 % Para la automatización del trabajo con esta plantilla es recomendable el 
 % empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
@@ -62,6 +62,24 @@
 %%
 %% Añade aquí los paquetes adicionales que necesites
 %%
+% EDITAR: Descomentar si se precisan citación en formato APA
+%
+%\usepackage[natbibapa]{apacite} % Permite citación (Autor, año) y bibliografía APA
+%
+% NOTA: Para tener en cuenta
+% La citación mediante este paquete permite el empleo de comandos 
+% del paquete natbib como:
+%   \citet{key} ==>>                Jones y col. (1990)
+%   \citet*{key} ==>>               Jones, Baker, y Smith (1990)
+%   \citep{key} ==>>                (Jones y col., 1990)
+%   \citep*{key} ==>>               (Jones, Baker, y Smith, 1990)
+%   \citep[cap. 2]{key} ==>>        (Jones y col., 1990, cap. 2)
+%   \citep[ver][]{key} ==>>         (ver Jones y col., 1990)
+%   \citep[ver][pág. 32]{key} ==>>  (ver Jones y col., pág. 32)
+%   \citeauthor{key} ==>>           Jones y col.
+%   \citeauthor*{key} ==>>          Jones, Baker, y Smith
+%   \citeyear{key} ==>>             1990
+
 
 % -------------------------
 % -------------------------
@@ -158,12 +176,13 @@
 \frontmatter
 \pagestyle{empty}  % Páginas sin cabecera ni pies
 \input{./preambulo/PortadasESI} % Diseño de portadas
-%\input{./preambulo/PortadaETSII} % Otras portadas
-% EDITAR: Puedes incluirla como fichero PDF (otras titulaciones) como se indica:
-%%  \includepdf{fichero_portada.pdf} 
+%\input{./preambulo/PortadaETSII} % Por ej.,: Otras portadas
+%\includepdf{fichero_portada.pdf} % Incluso como fichero PDF
+
 \input{./preambulo/Resumen} % Resumen/Abstract
 \input{./preambulo/Agradecimientos} % Agradecimientos etc.
-\input{./preambulo/Notacion} % Notación empleada.
+
+\input{./preambulo/Notacion} % [OPT:] Notación empleada.
 \input{./preambulo/Indices} % Índice de contenido, figuras, tablas, listados, etc.
 % END_FOLD
 %--- (FIN FRONTMATTER)

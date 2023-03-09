@@ -33,7 +33,7 @@ Esta plantilla ha sido preparada para compilarse con `pdflatex` y `bibtex`.
 
 Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
 
-> \$> latexmk -gg -pdflatex -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
+> \$> latexmk -gg -pdf -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
 
 Para la automatización del trabajo con esta plantilla es recomendable el empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
 
