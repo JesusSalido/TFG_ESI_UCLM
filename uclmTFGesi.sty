@@ -20,7 +20,6 @@
 \usepackage{amssymb,amsfonts} % Para ecuaciones
 \usepackage{amsmath}
 %--- Si no se emplea ningún paquete de tipografía se emplea Computern Modern.
-
 % -------------------------
 % AJUSTE DE TIPOGRAFÍA (paquete específico para cada tipografía)
 % -------------------------
@@ -47,6 +46,7 @@
 %---
 
 \usepackage{textcomp,marvosym,pifont,fontawesome5} % Símbolos especiales
+
 \usepackage[T1]{fontenc}% Codificación de salida    
 
 \usepackage{setspace}   % Permite el ajuste del interlineado
@@ -75,7 +75,7 @@
 \captionsetup[figure]{skip=5pt} % Separación de título en figuras
 % -------------------------
 
-\usepackage[usenames,dvipsnames,svgnames,x11names,table]{xcolor}
+\usepackage[dvipsnames,svgnames,x11names,table]{xcolor}
 % -------------------------
 % AJUSTE DE COLORES (paquete xcolor)
 % -------------------------
@@ -92,17 +92,22 @@
 % -------------------------
 % AJUSTE DE HIPERENLACES (paquete hyperref)
 % -------------------------
-\usepackage[pdftex,
-	breaklinks=true, % Permite que los enlaces ocupen más de una línea
-]{hyperref}
+\usepackage[breaklinks=true]{hyperref}
 \urlstyle{sf}		 % Estilo sans serif para URLs
 \pdfoptionpdfminorversion=6 % Elimina warnings
 % -------------------------
 
 \usepackage{pdfpages}   % Permite inclusión de páginas de un PDF
 \usepackage{tikz}       % Paquete para gráficos
-\usepackage{microtype}  % Mejoras de microtipografía (solo pdflatex)
-
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100]{microtype} % Mejoras de microtipografía (solo pdflatex)
+\SetTracking{encoding={*}, shape=sc}{40}
 
 
 
@@ -335,6 +340,21 @@
   ;
 }
 % -------------------------
+
+
+% -------------------------
+% INCLUSIÓN DE MENÚS, PATHS Y TECLAS
+% -------------------------
+\usepackage[os=win]{menukeys} 
+% OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el 
+% último (manejar con cuidado).
+
+% Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
+\renewmenumacro{\menu}[:]{menus} % OPT.: default: menus
+\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT.: default: paths
+\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT.: default: roundedkeys
+%---
+
 
 % -------------------------
 % DESACTIVACIÓN DE DIVISIÓN DE PALABRAS 
