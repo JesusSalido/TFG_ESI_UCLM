@@ -4,15 +4,6 @@
 % BEGIN_FOLD
 % -------------------------
 
-%\documentclass[ 		% Clase del documento
-%	11pt,				% Tamaño de letra
-%	a4paper,			% Tamaño de papel
-%	twoside,			% Impresión a doble cara
-%	openright,			% La apertura de cap. a la dcha.
-%%	draft       		% Versión borrador (sin figuras)
-%	final       		% Versión final
-%]{book}
- 
 \usepackage[utf8]{inputenx} %--- Codificación de entrada (mejora inputenc)
 \usepackage[     % Ambos idiomas son precisos para bibliografía multilingüe
     english,     % Se emplea porque el resumen siempre en inglés
@@ -22,17 +13,12 @@
 ]{babel} % Internacionalización
 
 
-%--- Márgenes del documento
-\usepackage[top=2.5cm,    % Superior
-            bottom=2.5cm, % Inferior
-            inner=3.5cm,  % Interior 
-            outer=2cm     % Exterior
-]{geometry}
 \usepackage[skip=.3\baselineskip plus 2pt,indent]{parskip} % Salto entre párrafos 
 % skip= .5\baselineskip plus 2pt -> Valor por defecto
 % 
 
-\usepackage{amsmath,amssymb,amsfonts} % Para ecuaciones
+\usepackage{amssymb,amsfonts} % Para ecuaciones
+\usepackage{amsmath}
 %--- Si no se emplea ningún paquete de tipografía se emplea Computern Modern.
 % -------------------------
 % AJUSTE DE TIPOGRAFÍA (paquete específico para cada tipografía)
@@ -137,7 +123,7 @@
 \else % Números de página en las esquinas de los encabezados
 	\fancyhead[RO,LE]{\sffamily\thepage}
 \fi %
-	\fancyhead[RO,LE]{\sffamily\thepage}
+
 
 % Formato para el capítulo: N. Nombre
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter.#1}}{}}
@@ -275,24 +261,6 @@
 }
 % -------------------------
 
-
-% EDITAR: Descomentar si se precisan citación en formato APA
-%
-%\usepackage[natbibapa]{apacite} % Permite citación (Autor, año) y bibliografía APA
-%
-% NOTA: Para tener en cuenta
-% La citación mediante este paquete permite el empleo de comandos 
-% del paquete natbib como:
-%   \citet{key} ==>>                Jones y col. (1990)
-%   \citet*{key} ==>>               Jones, Baker, y Smith (1990)
-%   \citep{key} ==>>                (Jones y col., 1990)
-%   \citep*{key} ==>>               (Jones, Baker, y Smith, 1990)
-%   \citep[cap. 2]{key} ==>>        (Jones y col., 1990, cap. 2)
-%   \citep[ver][]{key} ==>>         (ver Jones y col., 1990)
-%   \citep[ver][pág. 32]{key} ==>>  (ver Jones y col., pág. 32)
-%   \citeauthor{key} ==>>           Jones y col.
-%   \citeauthor*{key} ==>>          Jones, Baker, y Smith
-%   \citeyear{key} ==>>             1990
 
 
 % -------------------------
