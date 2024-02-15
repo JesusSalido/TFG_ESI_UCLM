@@ -1,6 +1,6 @@
 # Plantilla guía de TFG de la Escuela Superior de Informática (ESI-UCLM)
 
-Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Escuela Superior de Informática](http://webpub.esi.uclm.es/) (ESI) de la Univ. de Castilla-La Mancha (UCLM) siguiendo la [normativa de aplicación](https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx). Está disponible en [GitHub](https://github.com/JesusSalido/TFG_ESI_UCLM)  y [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw). Por tanto, puede emplearse tanto en modo local en un equipo con LaTeX instalado ([MiKTeX](https://miktex.org/), [TeX Live](https://www.tug.org/texlive/), etc.), o bien en línea empleando el servicio de edición [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw).
+Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Escuela Superior de Informática](http://webpub.esi.uclm.es/) (ESI) de la Univ. de Castilla-La Mancha (UCLM) siguiendo la [normativa de aplicación](https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx). Está disponible en [GitHub](https://github.com/JesusSalido/TFG_ESI_UCLM)  y [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw). Por tanto, puede emplearse tanto en modo local en un equipo con LaTeX instalado ([MiKTeX](https://miktex.org/), [TeX Live](https://www.tug.org/texlive/), etc.), o bien en línea mediante el servicio de edición [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw).
 
 > Esta plantilla ha sido desarrollada para el curso de enseñanzas propias impartido en la ESI: [LaTeX esencial para preparación de TFG, Tesis y otros documentos académicos](http://visilab.etsii.uclm.es/?page_id=1468), en el que se explican las estrategias fundamentales para aumentar la productividad y la calidad de resultados finales empleando el sistema de preparación de documentos [LaTeX](https://www.latex-project.org/) en el contexto académico.
 >
@@ -24,14 +24,14 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   - Directorio ``/anexos`` con ficheros para los anexos.
   - Directorio ``/figs`` de figuras contenidas en el documento final.
   
-    > __NOTA__: Si alguno de los ficheros incluidos en los directorios ``/frontmatter``, ``/caps`` y ``/anexos``, no es necesario, su inclusión en el fichero maestro se debe eliminar/comentar. 
+    > __NOTA__: Si alguno de los ficheros incluidos en los directorios ``/frontmatter``, ``/caps`` y ``/anexos``, no es necesario, su inclusión en el fichero maestro se debe eliminar o comentar. 
  
 
 ### Compilación 
 
 Esta plantilla ha sido preparada para compilarse con `pdflatex` y `bibtex`.
 
-Para su compilación se aconseja utilizar `latexmk` (requiere para su ejecución de un intérprete [`Perl`](http://strawberryperl.com/)):
+Para su compilación se aconseja utilizar `latexmk` (requiere un intérprete [`Perl`](http://strawberryperl.com/) para su ejecución):
 
 > \$> latexmk -gg -pdf -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
 
