@@ -3,14 +3,14 @@
 
 Este capítulo aborda la motivación del trabajo. Se trata de señalar la necesidad que lo origina, su actualidad y pertinencia. Puede incluir también un estado de la cuestión (o estado del arte) en el que se revisen estudios o desarrollos previos, así como en qué medida sirven de base al trabajo que se presenta.
 
-En este capítulo se debería introducir el \emph{contexto disciplinar y tecnológico} en el que se desarrolla el trabajo de modo que entienda con facilidad su \emph{ámbito} y \emph{alcance}. Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, solo es necesario la inclusión de \emph{estado del arte} cuando este contribuya a aclarar aspectos clave del TFG o se desee justificar la originalidad del trabajo realizado.
+En este capítulo se debería introducir el \emph{contexto disciplinar y tecnológico} en el que se desarrolla el trabajo de modo que entienda con facilidad su ámbito y alcance. Puesto que un TFG no tiene que ser necesariamente un trabajo con aportes novedosos u originales, solo es necesario la inclusión de \emph{estado del arte} cuando este contribuya a aclarar aspectos clave del TFG o se desee justificar la originalidad del trabajo realizado.
 
 Este capítulo suele finalizar indicando la estructura (capítulos) del documento y el contenido de cada una de las partes en que se divide. Por tanto, las secciones que suelen acompañar este capítulo son:
 \begin{enumerate}
     \item \textbf{Motivación}. Responde a la pregunta sobre la necesidad o pertinencia del trabajo.
-    \item \textbf{Objetivo}. Determina de modo \emph{claro} y \emph{conciso} el propósito del trabajo descrito que se puede desglosar en subobjetivos cuando el objetivo principal se descompone en módulos o componentes. Es muy importante definir el objetivo de modo apropiado. El capítulo~\ref{cap:Objetivo} de esta guía explica cómo definir el objetivo del trabajo.
-    \item \textbf{Antecedentes} o \emph{Contexto disciplinar/tecnológico}. También se puede denominar \emph{Estado del Arte} cuando se trata de comentar trabajos relacionados que han abordado la cuestión u objetivo planteado. Recuerda que esta sección solo es necesaria si contribuye a aclarar aspectos clave del TFG o a justificar la originalidad del mismo.
-    \item \textbf{Estructura del documento}. Donde se explica de modo breve la estructura del documento.
+    \item \textbf{Objetivo}. Determina de modo claro el propósito del trabajo descrito que se puede desglosar en subobjetivos cuando el objetivo principal se descompone en módulos o componentes. Es muy importante definir el objetivo de modo apropiado. El capítulo~\ref{cap:Objetivo} de esta guía explica cómo definir el objetivo del trabajo.
+    \item \textbf{Antecedentes} o \emph{Contexto disciplinar/tecnológico}. También se puede denominar \emph{Estado del Arte} cuando se trata de comentar trabajos relacionados que han abordado la cuestión u objetivo planteado.
+    \item \textbf{Estructura del documento}. Donde se explica de modo conciso la estructura del documento.
 \end{enumerate}
 
 
@@ -19,14 +19,14 @@ Durante la realización de la memoria del TFG es muy importante respetar la guí
 
 Para redactar un trabajo académico de modo efectivo se recomienda seguir pautas para obtener un resultado final claro y de lectura fácil, como las expuestas en el blog de Leonor Zozaya~\cite{zozaya17} o el apartado de comunicación eficaz del departamento de Legua y Estilo de la UOC~\cite{uoc}.
 
-A la hora de redactar el texto se debe poner especial atención para  respetar los derechos de propiedad intelectual evitando el plagio~\cite{uc3m21}. En particular merece gran atención la inclusión de gráficos e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se sugiere la consulta del manual de la Universidad de Cantabria. Dicho documento explica de modo conciso cómo incluir imágenes en un trabajo académico de modo apropiado~\cite{unican18}.
+A la hora de redactar el texto se debe poner especial atención para evitar el plagio respetando los derechos de propiedad intelectual~\cite{uc3m21}. En particular, merece gran atención la inclusión de gráficos e imágenes procedentes de Internet que no sean de elaboración propia. En este sentido se sugiere la consulta del manual de la Universidad de Cantabria. Dicho documento explica de modo conciso cómo incluir imágenes en un trabajo académico de modo apropiado~\cite{unican18}.
 
-A continuación en esta plantilla se muestran ejemplos de elementos de organización del texto en un documento preparado con \LaTeX{}. Todos estos ejemplos se explican en detalle durante el curso de \LaTeX{}~\cite{salido10}. Dichos ejemplos, así como los recogidos en varias obras de referencia, se pueden emplear para adaptar este documento a las necesidades particulares de los estudiantes \cite{lamport94,grat99,cascales03,mittelbach04,grat07,goos07,wikibookLaTex10}. Entre las obras de consulta disponibles sobre \LaTeX{} se recomienda el uso de las obras gratuitas en español~\cite{oetiker14,borbon21} y las guías disponibles en la página web de \href{https://es.overleaf.com/learn}{Overleaf} (en inglés).
-
-
+A continuación en esta plantilla se muestran ejemplos de elementos de organización del texto en un documento preparado con \LaTeX{}. Todos estos ejemplos se explican en detalle durante el curso de \LaTeX{}~\cite{salido10}. Todos ellos, así como los recogidos en varias obras de referencia, se pueden emplear para adaptar este documento a las necesidades particulares de los estudiantes \cite{lamport94,grat99,cascales03,mittelbach04,grat07,goos07,wikibookLaTex10}. Entre las obras de consulta disponibles sobre \LaTeX{} se recomienda el uso de las obras gratuitas en español~\cite{oetiker14,borbon21} y las guías disponibles en la página web de \href{https://es.overleaf.com/learn}{Overleaf} (en inglés).
 
 
-\section{Organización de información}
+
+
+\subsection{Organización de información}
 El contenido del trabajo final de estudios se organiza en capítulos que se subdividen en secciones. Con \LaTeX{} este tipo de organización se realiza de modo inmediato mediante la generación automática de los estilos correspondientes a los títulos de cada sección y su inclusión en la tabla de contenidos.
 
 En \LaTeX{}, los ajustes relativos a la generación del formato y estilos asociados a secciones del documento se realizan con el paquete \texttt{titlesec} empleado en esta plantilla.
@@ -36,9 +36,9 @@ En las secciones siguientes se comenta la inclusión con \LaTeX{} de distintos e
 
 
 
-\subsection{Listas}
+\subsubsection{Listas}
 \label{sec:ejListas}
-Existen dos tipos de listas: enumeraciones y listas con viñetas. En el primer tipo los elementos de la lista se preceden de una clave numérica o alfabética mientras que en el segundo tipo se emplea una viñeta. En ambos casos los elementos se pueden anidar para crear una jerarquía entre ellos. En \LaTeX{} se recomienda la inclusión del paquete \texttt{enumitem} que permite personalizar fácilmente las listas de un documento. A continuación se muestran algunos ejemplos:
+Existen dos tipos de listas: enumeraciones y listas con viñetas. En el primer tipo los elementos de la lista se preceden de una clave numérica o alfabética, mientras que en el segundo tipo se emplea una viñeta. En ambos casos los elementos se pueden anidar para crear una jerarquía entre ellos. En \LaTeX{} se recomienda la inclusión del paquete \texttt{enumitem} que permite personalizar fácilmente las listas de un documento. A continuación se muestran algunos ejemplos:
 
 
 \noindent Ejemplo de lista con viñetas personalizadas. 
@@ -69,7 +69,7 @@ Existen dos tipos de listas: enumeraciones y listas con viñetas. En el primer t
 
 
 
-\subsection{Ecuaciones matemáticas}
+\subsubsection{Ecuaciones matemáticas}
 Para escribir ecuaciones matemáticas con \LaTeX{} se recomienda incluir los paquetes siguientes en el documento: \texttt{amsmath}, \texttt{amsfonts}, \texttt{amssymb}. 
 
 La composición de ecuaciones requiere el uso de comandos especializados. Por tanto, para facilitar dicha tarea se aconseja el empleo de programas especializados como \textsf{MathType} o asistentes como el incluido en editores como \TeX studio\footnote{\url{https://www.texstudio.org/}} o herramientas en línea.\footnote{\url{https://latex.codecogs.com/},  \url{http://www.sciweavers.org/free-online-latex-equation-editor}} Es muy sencillo incluir fórmulas matemáticas sencillas en el mismo texto en el que se escribe. Por ejemplo, $h^{2}=a^{2}+b^{2}$ que podría ser la ecuación representativa del teorema de Pitágoras (ver también ec.~\ref{eq:pitagoras}).
@@ -102,7 +102,7 @@ Pero si se desea, las ecuaciones pueden ser numeradas de forma automática e inc
 
 
 
-\subsection{Tablas}
+\subsubsection{Tablas}
 \label{sec:tablas}
 A continuación se incluyen algunos ejemplos de tablas elaboradas con 
 \LaTeX{} mediante el empleo de paquetes dedicados. Para la realización de tablas más complejas se recomienda la consulta de \cite{borbon21} y el empleo de asistentes o herramientas en línea.\footnote{\url{https://www.tablesgenerator.com/}}
@@ -153,7 +153,7 @@ controla el ancho de la celda.
 
 
 \newpage % NOTA: Observa el efecto del salto de página
-\subsection{Figuras}
+\subsubsection{Figuras}
 A diferencia de lo que sucede en las tablas, el título de las figuras aparece en la parte inferior de estas. Para la inclusión de las figuras se debe tener en cuenta que su contenido se encuentra en un fichero individual con el formato y resolución apropiados para garantizar la calidad del resultado final.
 
 En esta sección se añaden ejemplos de muestra para la inclusión de 
@@ -191,7 +191,7 @@ figuras simples y otras compuestas de subfiguras mediante el empleo del paquete 
 	\label{fig:ejSubfigures}
 \end{figure}
 
-En los trabajos académicos la inclusión de imágenes y figuras que no son propiedad del autor suscitan bastante controversia, ya que con frecuencia se incumple inadvertidamente la ley vigente de propiedad intelectual. Respecto a este hecho se recomienda, tanto a estudiantes como tutores, consultar documentación informativa sobre el uso correcto de figuras en documentos académicos \cite{uclm20,unican18}. Entre las <<incorrecciones>> más habituales en los documentos académicos, se observa:
+En los trabajos académicos la inclusión de imágenes y figuras que no son propiedad del autor suscitan bastante controversia. Ya que con frecuencia se incumple inadvertidamente la ley vigente de propiedad intelectual. Respecto a este hecho se recomienda, tanto a estudiantes como tutores, consultar documentación informativa sobre el uso correcto de figuras en documentos académicos \cite{uclm20,unican18}. Entre las <<incorrecciones>> más habituales en los documentos académicos, se observa:
 \begin{itemize}
 \item \emph{Abuso del derecho de cita}. Se produce al incluir, con fines exclusivamente decorativos o ilustrativos de la explicación, una figura sujeta a derechos de uso restringido invocando el derecho de cita (incluso con correcta atribución de la obra).
 
@@ -204,13 +204,13 @@ La inclusión de material de \emph{dominio público}, sin restricciones de uso o
 
 
 
-\subsection{Algoritmos y listados de código fuente}
+\subsubsection{Algoritmos y listados de código fuente}
 En los textos científicos relacionados con las 
 TIC\footnote{Por supuesto, en un TFG (Trabajo Fin de Grado) o tesis 
 de un centro superior de Informática.} (Tecnologías de la Información y 
 Comunicaciones) suelen aparecer porciones de código en los que se explica 
 alguna función o característica relevante del trabajo que se expone. Muchas 
-veces lo que se quiere ilustrar es un algoritmo o método con el que se resuelve un problema abstrayéndose del lenguaje de implementación. El paquete \texttt{algorithm2e} proporciona un entorno \texttt{algorithm} para la impresión apropiada de algoritmos tratándolos como objetos deslizantes y con mucha flexibilidad de personalización, como se observa en el algoritmo~\ref{alg:como} del ejemplo.
+veces lo que se quiere ilustrar es un algoritmo o método con el que se resuelve un problema abstrayéndose del lenguaje de implementación. El paquete \texttt{algorithm2e} proporciona un entorno \texttt{algorithm} para la impresión apropiada de algoritmos, tratándolos como objetos flotantes y con mucha flexibilidad de personalización, como se observa en el algoritmo~\ref{alg:como} del ejemplo.
 
 
 % Ejemplo:
@@ -286,21 +286,21 @@ int main(int argc, char* argv[]) {
 
 \begin{lstlisting}[style=ruled,language=Matlab,caption={Ejemplo de script en Matlab},label=lst:matlab]
 function f = fibonacci(n)
-% FIBONACCI  Fibonacci sequence
-% f = FIBONACCI(n) generates the first n Fibonacci numbers.
-% Copyright 2014 Cleve Moler
-% Copyright 2014 The MathWorks, Inc.
-	f = zeros(n,1); 
-	f(1) = 1;
-	f(2) = 2;
-	for k = 3:n
-		f(k) = f(k-1) + f(k-2);
+ % FIBONACCI  Fibonacci sequence
+ %	f = FIBONACCI(n) generates the first n Fibonacci numbers.
+ %	Copyright 2014 Cleve Moler
+ %	Copyright 2014 The MathWorks, Inc.
+f = zeros(n,1); 
+f(1) = 1;
+f(2) = 2;
+for k = 3:n
+f(k) = f(k-1) + f(k-2);
 end
 \end{lstlisting}
 
 
 
-\subsection{Menús, paths y teclas con el paquete \texttt{menukeys}}
+\subsubsection{Menús, paths y teclas con el paquete \texttt{menukeys}}
 Cada vez es más usual que los trabajos en ingeniería exijan el uso de 
 software. Para poder especificar de modo elegante el uso de menús, pulsación de 
 teclas y directorios, se recomienda el uso del paquete 
@@ -310,7 +310,7 @@ ejemplo:\\
 
 \noindent \menu{Herramientas:Órdenes:PDFLaTeX}\\
 
-\noindent También la pulsación de un conjunto de teclas. Por ejemplo:
+\noindent También un conjunto de teclas. Por ejemplo:
 \keys{\ctrl + \shift + T}\\
 
 \noindent O un directorio:
@@ -322,7 +322,7 @@ ejemplo:\\
 \subsection{Bibliografía}
 Todo el material de terceros se debe citar convenientemente sin contravenir los términos de las licencias de uso y distribución de dicho material. Esto se extiende al uso de diagramas y fotografías. El incumplimiento de la legislación vigente en materia de protección de la propiedad intelectual es responsabilidad exclusiva del autor, independientemente de la cesión de derechos que este haya convenido.
 
-La sección de \emph{Bibliografía}, que si se prefiere se puede titular \emph{Referencias}, incluirá un listado ordenado preferentemente por orden alfabético (primer apellido del autor principal), con todas las obras citadas en el texto. En la lista de referencias se especificará para cada obra: autores, título, editorial y año de publicación. Este formato se consigue en \LaTeX{} mediante el uso del estilo estándar \texttt{plain} o cualquier otro derivado con estilo de citación numérica. En algunas titulaciones se obliga a una ordenación por orden de cita en el texto que con Bib\TeX{} se puede obtener mediante los estilos estándar \texttt{ieeetr} (estilo para los IEEE \emph{transactions}) y \texttt{unsrt} (estilo \emph{unsorted}). 
+La sección de \emph{Bibliografía}, que si se prefiere se puede titular \emph{Referencias}, incluirá un listado ordenado preferentemente por orden alfabético (primer apellido del autor principal), con todas las obras citadas en el texto. En la lista de referencias se especificará para cada obra: autores, título, editorial y año de publicación. Este formato se conseguirá en \LaTeX{} mediante el uso del estilo estándar \texttt{plain} o cualquier otro derivado con estilo de citación numérica. En algunas titulaciones se obliga a una ordenación por orden de cita en el texto que con Bib\TeX{} se puede obtener mediante los estilos estándar \texttt{ieeetr} (estilo para los IEEE \emph{transactions}) y \texttt{unsrt} (estilo \emph{unsorted}). 
 
 Es muy importante tener presente que en esta sección solo se debe incluir las referencias bibliográficas citadas expresamente en el documento. Si se desea incluir fuentes consultadas, pero no citadas, se puede confeccionar con ellas una sección denominada \emph{Material de consulta}, aunque estas referencias se pueden incluir opcionalmente a lo largo del documento como notas a pie de página.
 
