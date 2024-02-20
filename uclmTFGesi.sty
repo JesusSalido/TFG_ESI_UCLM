@@ -48,6 +48,15 @@
 \usepackage{textcomp,marvosym,pifont,fontawesome5} % Símbolos especiales
 
 \usepackage[T1]{fontenc}% Codificación de salida    
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100]{microtype} % Mejoras de microtipografía (solo pdflatex)
+\SetTracking{encoding={*}, shape=sc}{40}
 
 \usepackage{setspace}   % Permite el ajuste del interlineado
 \usepackage{comment}    % Permite la exclusión de porciones de texto 
@@ -99,16 +108,6 @@
 
 \usepackage{pdfpages}   % Permite inclusión de páginas de un PDF
 \usepackage{tikz}       % Paquete para gráficos
-\usepackage[
-    protrusion=true,
-    activate={true,nocompatibility},
-    final,
-    tracking=true,
-    kerning=true,
-    spacing=true,
-    factor=1100]{microtype} % Mejoras de microtipografía (solo pdflatex)
-\SetTracking{encoding={*}, shape=sc}{40}
-
 
 
 \usepackage{fancyhdr}	% Ajuste de cabeceras y pies
