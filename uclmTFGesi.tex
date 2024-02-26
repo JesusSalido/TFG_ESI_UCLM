@@ -4,7 +4,7 @@
 % Fichero: uclmTFGesi.tex
 % Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
 % Fecha (creación): febrero 2010 
-% Rev. : marzo 2023
+% Rev. : marzo 2024
 % Descripción: Plantilla para memoria de TFG 
 % (Escuela Sup. de Informática, UCLM). Creada para el curso 
 % “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
@@ -42,9 +42,6 @@
 	final       		% Versión final
 ]{book}
 
-\pdfcompresslevel=0
-\pdfobjcompresslevel=0
-
 %--- Márgenes del documento
 \usepackage[top=2.5cm,    % Superior
             bottom=2.5cm, % Inferior
@@ -52,35 +49,53 @@
             outer=2cm     % Exterior
 ]{geometry}
 
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
+\pdfoptionpdfminorversion=6 % Elimina warnings
 
 \newif\ifspanish\spanishtrue
-% EDITAR: Descomentar si se desea que el idioma pral. sea inglés
-%\spanishfalse 
+% OPT.: Idioma pral. inglés, descomentar
+%\spanishfalse
+ 
 \newif\ifpageonfooter\pageonfooterfalse
-% EDITAR: Descomentar si se desea número de página en el pie de página
+% OPT: nº pág. en el pie de página, descomentar
 %\pageonfootertrue
 
-\usepackage{uclmTFGesi}
-%%
-%% Añade aquí los paquetes adicionales que necesites
-%%
-% EDITAR: Descomentar si se precisan citación en formato APA
-%
-%\usepackage[natbibapa]{apacite} % Permite citación (Autor, año) y bibliografía APA
-%
-% NOTA: Para tener en cuenta
-% La citación mediante este paquete permite el empleo de comandos 
-% del paquete natbib como:
-%   \citet{key} ==>>                Jones y col. (1990)
-%   \citet*{key} ==>>               Jones, Baker, y Smith (1990)
-%   \citep{key} ==>>                (Jones y col., 1990)
-%   \citep*{key} ==>>               (Jones, Baker, y Smith, 1990)
-%   \citep[cap. 2]{key} ==>>        (Jones y col., 1990, cap. 2)
-%   \citep[ver][]{key} ==>>         (ver Jones y col., 1990)
-%   \citep[ver][pág. 32]{key} ==>>  (ver Jones y col., pág. 32)
-%   \citeauthor{key} ==>>           Jones y col.
-%   \citeauthor*{key} ==>>          Jones, Baker, y Smith
-%   \citeyear{key} ==>>             1990
+%=== PAQUETE QUE ACOMPAÑA A LA PLANTILLA
+%--- Paquetes empleados por la plantilla
+\usepackage{uclmTFGesi} % Carga de paquetes en background
+%===
+
+% OPT: Nivles de índice y numeración de secciones
+\setcounter{tocdepth}{1} % Suprime del índice los apdos. de nivel mayor
+\setcounter{secnumdepth}{3} % Suprime numeración de secciones de nivel mayor
+
+% OPT: Opciones de hipertexto
+\hypersetup{% (Metadatos del fichero PDF generado)
+	breaklinks=true,         % Enlaces con división entre líneas
+    linktocpage=true,        % T/F=enlace al nº de pág./texto completo
+	colorlinks=true,         % T/F=texto en color/recuadro al texto
+%    hidelinks,               % Oculta colores en los enlaces (en negro)
+    linkcolor=UCLMred,       % Color links internos
+    anchorcolor=UCLMred,     % Color para anclas a texto
+	urlcolor=aquaESI,        % Color para URL enlazadas
+	citecolor=UCLMred,       % Color para citas a bibliografía
+	bookmarksopen=true,      % Abre PDF con panel de marcadores abierto
+	bookmarksnumbered=true,  % Incluye números en marcadores
+	pdftoolbar=true,         % Muestra la toolbar de Acrobat
+	pdfmenubar=true,	     % Muestra la menubar de Acrobat
+}
+
+%---
+% OPT.: Citación APA, descomentar
+% Permite citación (Autor, año) y bibliografía APA
+%\usepackage[natbibapa]{apacite} 
+%---
+
+%% ============================
+%% Añade aquí los paquetes y comandos adicionales que necesites
+%% ===>
+
 
 
 % -------------------------
@@ -90,15 +105,16 @@
 % -------------------------
 % -------------------------
 % -------------------------
-% EDITAR: Datos del documento. 
+% EDITA: Datos del documento. 
 % Definición de variables empleadas en el documento por lo que no son
 % traducidos. Cuando algún campo puede tener varias líneas aparecen dos
 % campos señalados como <campo>Primera y <campo>Segunda. Si no se desea 
 % emplear los campos opcionales (OPT.) estos deben comentarse.
 % -------------------------
 \tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
-\tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Para títulos largos.
-\tituloCorto{Plantilla guía de TFG} % Título corto (mostrado en pág. de créditos)
+\tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Títulos largos.
+\tituloCorto{Plantilla guía de TFG} % Título corto (mostrado en pág. de 
+%créditos)
 \autor{Jesús Salido Tercero}
 \email{jesus.salido@uclm.es}					
 \instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
@@ -113,55 +129,23 @@
 \cityTF{Ciudad Real}	% Ciudad de defensa
 
 
-% Fichero con escudo de la institución (en directorio ./figs)
-% Logo de la ESI (consulta obligatoriedad de uso concreto)
-\escudo{esiLogo} % Logo centro (imagen corporativa). Fichero gráfico (pdf, png o jpg)
-% -------------------------
-% -------------------------
-% -------------------------
-% END_FOLD
-% -------------------------
-% -------------------------
-% -------------------------
-
-
-% EDITAR: Para cambiar ajustes y colores de los enlaces y marcadores en el texto
-
-\setcounter{tocdepth}{1} % Suprime del índice los apdos. de nivel mayor
-\setcounter{secnumdepth}{3} % Suprime numeración de secciones de nivel mayor
-
 \makeatletter
-% Más información en: https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
 \hypersetup{% (Metadatos del fichero PDF generado)
-    linktocpage=true,        % true = enlace al nº de pág., false=texto completo
-	colorlinks=true,         % true=colorea texto del enlace, false=recuadra el texto
-%    hidelinks,               % Oculta colores en los enlaces (en negro)
-    linkcolor=UCLMred,       % Color links internos
-    anchorcolor=UCLMred,     % Color para anclas a texto
-	urlcolor=aquaESI,        % Color para URL enlazadas
-	citecolor=UCLMred,       % Color para citas a bibliografía
-	bookmarksopen=true,      % Abre PDF con panel de marcadores abierto
-	bookmarksnumbered=true,  % Incluye números en marcadores
-	pdftoolbar=true,         % Muestra la toolbar de Acrobat
-	pdfmenubar=true,	     % Muestra la menubar de Acrobat
 	pdftitle={\@title},      % Título
 	pdfauthor={\@author},    % Autor
 	pdfsubject={\@tipoDoc}   % Tipo de de documento
 }
 \makeatother
 
-
-
-
-
-
-
-
-
-
-
-
-
+% OPT: Logo institución
+% Fichero con escudo de la institución (en directorio ./figs)
+% Logo de la ESI (consulta obligatoriedad de uso concreto)
+\escudo{esiLogo} % Logo centro (imagen corporativa). Fichero gráfico (pdf, 
+%png o jpg)
+% -------------------------
+% -------------------------
+% -------------------------
+% END_FOLD
 
 
 % -------------------------
@@ -175,6 +159,7 @@
 \begin{document}
 %--- PORTADAS + FRONTMATTER
 % BEGIN_FOLD
+% OPT.: Ficheros incluidos, modifica o comenta.
 \frontmatter
 \pagestyle{empty}  % Páginas sin cabecera ni pies
 \input{./preambulo/PortadasESI} % Diseño de portadas
@@ -214,22 +199,18 @@
 % -------------------------
 % --- CAPÍTULOS: Un fichero por capítulo.
 % -------------------------
-% OPT: Si deseas modificar el interlineado de una línea (por defecto)
-% puedes emplear los comandos señalados (proporcionados por paquete `setspace')
+% puedes emplear los comandos señalados (proporcionados por paquete 
+%`setspace')
+% OPT: Interlineado de una línea (por defecto)
 %\onehalfspacing % Ajusta interlineado a 1.5 líneas
 
-
+% OPT.: Ficheros incluidos correspondientes a los caps.
 \include{./caps/Introduccion}
 \include{./caps/Objetivo}
 \include{./caps/Planificacion}
 \include{./caps/Desarrollo}
 \include{./caps/Conclusiones}
-%--- (FIN FRONTMATTER)
-
-
-
-
-
+%--- (FIN MAINMATTER)
 
 
 % -------------------------
@@ -253,9 +234,16 @@
 \phantomsection  % Ojo necesario con hyperref.
 \addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos
 
-% EDITAR: Definición del estilo empleado en la bibliografía
-% Comentar si se emplea lista de \bibitem{citekey}
-\bibliographystyle{plain}
+% Descomentar si se incluye lista \bibitem desde fichero "refs.bbl"
+\newif\ifbibitemrefs\bibitemrefsfalse
+% OPT: Activa bibitems para la bibliografía descomentabdi línea sig.
+%\bibitemrefstrue 
+\ifbibitemrefs  % Se incluye bibitem list desde refs.bbl
+	\input{refs.bbl} % OJO: Fichero refs.bbl debe existir
+\else % OPT: Estilo en bibliografía
+	\bibliography{biblioTFG}   % Nombre del fichero .bib (sin extensión)
+	\bibliographystyle{plain}  % Estilo empleado en la bibliografía
+\fi
 % Estilos nativos incluidos con LaTeX (plain, abbrv, alpha, unsrt).
 %
 % plain: las referencias se numeran y en la bibliografía las entradas
@@ -267,17 +255,33 @@
 %        .
 % unsrt: la bibliografía no aparece por orden alfabético sino por 
 %        orden de cita en el texto.
-
-% Estilos incluidos con BibTeX “no nativos” pero muy “populares” para ingenierías
 %
-% acm:       Numérica con los nombre de autores en mayúsculas y referencias con
-%            ordenación alfabética.
-% ieeetr:    Para los IEEE Transactions, con citación numérica y ordenación de 
-%            referencias por orden de cita.
-% apacite:   No numérica, con referencias ordenadas alfabéticamente por apellido %            de autor.
-%---
-% Comentar si se emplea lista de \bibitem{citekey} 
-\bibliography{biblioTFG} % Nombre del fichero .bib (sin extensión)
+%---     Estilos incluidos con BibTeX “no nativos”, pero populares” 
+%        para ingenierías (no requieren paquetes adicionales).
+% acm:   Numérica con los nombre de autores en mayúsculas y 
+%        referencias con ordenación alfabética.
+% ieeetr:Para los IEEE Transactions, con citación numérica 
+%        y ordenación de referencias por orden de cita.
+%========
+% apacite: No numérica, con referencias ordenadas alfabéticamente
+%          por apellido de autor (requiere paquete 'apacite'). 
+%
+% NOTA: Cita natbib con estilo apacite
+%          La citación mediante este paquete permite el empleo 
+%          de comandos del paquete natbib como:
+%
+%   \citet{key} 				==>> Jones y col. (1990)
+%   \citet*{key} 				==>> Jones, Baker, y Smith (1990)
+%   \citep{key} 				==>> (Jones y col., 1990)
+%   \citep*{key} 				==>> (Jones, Baker, y Smith, 1990)
+%   \citep[cap. 2]{key} 		==>> (Jones y col., 1990, cap. 2)
+%   \citep[ver][]{key} 			==>> (ver Jones y col., 1990)
+%   \citep[ver][pág. 32]{key} 	==>> (ver Jones y col., pág. 32)
+%   \citeauthor{key} 			==>> Jones y col.
+%   \citeauthor*{key} 			==>> Jones, Baker, y Smith
+%   \citeyear{key} 				==>> 1990
+% -------------------------
+%--- (FIN BIBLIOGRAFÍA)
 % -------------------------
 
 
@@ -286,6 +290,7 @@
 % - ANEXOS: Comentar si no se desean incluir. [OPT.]
 % - Mover si se desea que aparezcan antes de la bibliografía.
 % -------------------------
+% EDITA: Anexos, ajusta a las necesidades añadiendo o quitando
 \appendix
 \ifspanish
 	\part*{\sffamily ANEXOS}
@@ -295,6 +300,7 @@
 % Tras este punto los capítulos se numeran con letras.
 % Aquí todos los apéndices necesarios
 \include{./anexos/AnexoA} % Apéndice A (opcionales)
+\include{./anexos/AnexoB} % Apéndice A (opcionales)
 
 %END_FOLD
 %--- (FIN DOCUMENTO)

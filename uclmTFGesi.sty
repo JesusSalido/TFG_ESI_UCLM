@@ -4,8 +4,8 @@
 % BEGIN_FOLD
 % -------------------------
 
-%\usepackage[utf8]{inputenx} %--- Codificación de entrada (mejora inputenc)
-                            %--- No necesario con UTF8 a partir de LateX 2018
+% OJO: Inputenx con UTF8 (necesario en versiones LaTeX anteriores 2018)
+%\usepackage[utf8]{inputenx} 
 \usepackage[     % Ambos idiomas son precisos para bibliografía multilingüe
     english,     % Se emplea porque el resumen siempre en inglés
     spanish,     % Se emplea para resumen en español
@@ -20,7 +20,9 @@
 
 \usepackage{amssymb,amsfonts} % Para ecuaciones
 \usepackage{amsmath}
-%--- Si no se emplea ningún paquete de tipografía se emplea Computern Modern.
+% OPT. Tipografía incluida (des/comentar según necesidad).
+%--- Si no se emplea ningún paquete de tipografía se emplea Computern 
+%Modern.
 % -------------------------
 % AJUSTE DE TIPOGRAFÍA (paquete específico para cada tipografía)
 % -------------------------
@@ -41,7 +43,9 @@
 
 %--- (Opción excepcional y extraña)
 % Preferida en algunos centros docentes (ADE-UCLM).
-% Con esta elección es más conveniente una tipografía tipo Helvética/Arial (no Libertine)
+% Con esta elección es más conveniente una tipografía tipo Helvética/Arial 
+%(no Libertine)
+% OPT.: Tipografía sans serif pral. (descomentar).
 %\usepackage{helvet}
 %\renewcommand{\familydefault}{\sfdefault} % Familia por defecto sans serif
 %---
@@ -66,9 +70,9 @@
 %\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas (cuidado no repetir viñeta si incluyes un 2º nivel)
 \usepackage{multicol}	% Texto en varias columnas
 
-\usepackage{float} % Ubicación de objetos float
-\usepackage{array,booktabs,tabularx}   % Paquetes para tablas
-\usepackage{graphicx,subcaption,rotating} % Inclusión de figuras y subfiguras
+\usepackage{float} % Forzado de pos. de floats (opción H)
+\usepackage{array,booktabs,tabularx} % Paquetes para tablas
+\usepackage{graphicx,subcaption,rotating,pdflscape} % Incl. de sub-figuras
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
@@ -79,7 +83,7 @@
 	format=hang	  %
 ]{caption}
 % -------------------------
-% AJUSTE DE TÍTULOS (paquete caption)
+% OPT: AJUSTE DE TÍTULOS (paquete caption)
 % -------------------------
 \captionsetup[table]{skip=5pt} 	% Separación de título tablas
 \captionsetup[figure]{skip=5pt} % Separación de título en figuras
@@ -87,7 +91,7 @@
 
 \usepackage[dvipsnames,svgnames,x11names,table]{xcolor}
 % -------------------------
-% AJUSTE DE COLORES (paquete xcolor)
+% OPT: AJUSTE DE COLORES (paquete xcolor)
 % -------------------------
 \definecolor{palered}{rgb}{0.78, 0.03, 0.08}
 \definecolor{ocre}{RGB}{243,102,25} % Ocre
@@ -98,20 +102,12 @@
 \definecolor{gris}{gray}{0.4} % Gris numeración código
 % -------------------------
 
-
-% -------------------------
-% AJUSTE DE HIPERENLACES (paquete hyperref)
-% -------------------------
-\usepackage[breaklinks=true]{hyperref}
-\urlstyle{sf}		 % Estilo sans serif para URLs
-\pdfoptionpdfminorversion=6 % Elimina warnings
-% -------------------------
-
+\usepackage{hyperref}
+\urlstyle{sf}		    % Estilo sans serif para URLs
 \usepackage{pdfpages}   % Permite inclusión de páginas de un PDF
 \usepackage{tikz}       % Paquete para gráficos
-
-
 \usepackage{fancyhdr}	% Ajuste de cabeceras y pies
+
 % -------------------------
 % AJUSTE DE CABECERA Y PIE DE PÁGINA (paquete fancyhdr)
 % -------------------------
@@ -153,9 +149,6 @@
 
 
 
-
-
-
 \usepackage{titlesec}   % Ajustes de títulos de secciones
 % -------------------------
 % CONFIGURACIÓN INICIO CAPÍTULOS Y SECCIONES (paquete titlesec)
@@ -178,8 +171,6 @@
 \titlespacing*{\subsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
 \titlespacing*{\subsubsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
 % -------------------------
-
-
 
 
 \usepackage[% Inclusión de algoritmos
@@ -211,7 +202,7 @@
 	{¡}{{\textexclamdown}}1
 }
 
-\lstset{ % Estilo por defecto
+\lstset{ % OPT: Estilo por defecto de listados
 	belowcaptionskip=5pt, % Espacio bajo el título
 	basicstyle={\footnotesize\ttfamily}, % Estilo básico para el texto
 	%stringstyle=\textsl,        % Estilo para las cadenas
@@ -246,6 +237,7 @@
 	backgroundcolor={\color{sombra}} % Color del fondo
 }
 
+% OPT: Estilo consola
 \lstdefinestyle{consola}{% Estilo para comandos tipo consola
 	basicstyle={\color{white}\scriptsize\bf\ttfamily},
 	backgroundcolor={\color{black}},
@@ -253,6 +245,7 @@
 	showspaces=true
 }
 
+% OPT: Estilo con filete izdo.
 \lstdefinestyle{ruled}{% Estilo para listado con filete a la izda.
 	frame=L,
 	rulesep=.1pt,
@@ -281,9 +274,7 @@
 % -------------------------
 % BEGIN_FOLD
 % -------------------------
-% Ajustes para el idioma español.
-% EDITAR: Sólo si es necesario.
-% NOTA: Al cambiar de idioma las def. de títulos se reinician.
+% OPT: Nombres en spanish (babel)
 \newcommand{\setindexnames}{%
 	\ifspanish
 		%--- No necesarios al añadir la opción es-tabla para babel.
@@ -299,7 +290,6 @@
 		\renewcommand{\indexname}{Índice temático}
 	\fi
 }
-
 
 
 
@@ -346,13 +336,13 @@
 % INCLUSIÓN DE MENÚS, PATHS Y TECLAS
 % -------------------------
 \usepackage[os=win]{menukeys} 
-% OJO: Este paquete presenta algunas incompatibilidades, debe cargarse el 
-% último (manejar con cuidado).
-
-% Estas definiciones permiten cambiar el estilo de los elementos. Si se desean otros estilos o su configuación es preciso recurrir a la documentación del paquete (no lo recomiendo).
-\renewmenumacro{\menu}[:]{menus} % OPT.: default: menus
-\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT.: default: paths
-\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT.: default: roundedkeys
+% OJO: Incompatibilidad con otros paquetes, debe cargarse el último.
+% Estas definiciones permiten cambiar el estilo de los elementos. Si se 
+%desean otros estilos o su configuación es preciso recurrir a la 
+%documentación del paquete (no lo recomiendo).
+\renewmenumacro{\menu}[:]{menus} % OPT: estilo menus
+\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT: estilo paths
+\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT: estilo keys
 %---
 
 
@@ -390,7 +380,7 @@
 % -------------------------
 % Creación de un contador nuevo para almacenar el nº de páginas actual
 % -------------------------
-% OJO: Debe ir antes de \mainmatter (antes de que se reinicie en cnt page)
+% Debe ir antes de \mainmatter (antes de que se reinicie en cnt page)
 \newcommand{\savepagecnt}{%
 	\newcounter{totpages}
 	\setcounter{totpages}{\value{page}}

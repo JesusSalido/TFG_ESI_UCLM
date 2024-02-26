@@ -1,9 +1,17 @@
+
+**febrero 20224**
+Esta revisión implica cambio importantes en la plantilla, aunque mantiene el modo en que se usa.
+
+- Limpeza y reordenación en profuncidad del preámbulo del documento y del paquete pral. `uclmTFGesi.sty`.
+- Renombrado de ficheros de capítulos y adaptación de los mismos a un TFG de desarrollo de software.
+- Revisión completa de capítulos.
+- Creación de anexos: `AnexoA.tex` para comentarios sobre la bibliografía, y `AnexoB.tex` para una breve introducción a LaTeX.
+ 
 **marzo 2023**
 - Renombrado de fichero `packagesTFG.tex` para limpieza de código y transferencia de la carga de paquetes y configuración de los mismos al fichero `uclmTFGesi.sty`.
 - Cambios menores de limpieza y corrección.
   
 **junio 2022**
-
 Esta nueva versión incluye cambios menores. 
 
 - Revisión completa de textos.
@@ -13,7 +21,6 @@ Esta nueva versión incluye cambios menores.
 - Cambios menores.
 
 **septiembre 2021**
-
 Esta nueva versión surge de los comentarios de realimentación recibidos por los usuarios y un proceso natural de evolución de este proyecto. Cada poco tiempo descubro algo nuevo que puedo modificar y que, en mi opinión, mejora el resultado final o la experiencia del usuario.
 
 En esta nueva release de la plantilla he decidido incluir bastantes cambios para facilitar su uso y configuración. A continuación describo brevemente los cambios más importantes:
