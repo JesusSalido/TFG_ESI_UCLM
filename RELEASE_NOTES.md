@@ -1,5 +1,5 @@
 
-**febrero 20224**
+**marzo 2024**
 Esta revisión implica cambio importantes en la plantilla, aunque mantiene el modo en que se usa.
 
 - Limpeza y reordenación en profuncidad del preámbulo del documento y del paquete pral. `uclmTFGesi.sty`.
