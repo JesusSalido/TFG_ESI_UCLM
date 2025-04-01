@@ -335,13 +335,20 @@
 \newcommand{\yearTF}[1]{\newcommand{\@yearTF}{#1}}
 \newcommand{\cityTF}[1]{\newcommand{\@cityTF}{#1}}
 \newcommand{\escudo}[1]{\newcommand{\@escudo}{#1}}
-\makeatother
+
 
 \newcommand{\keywordslist}{} % Variable que almacenará la lista
 \newcommand{\setkeywords}[1]{%
   \renewcommand{\keywordslist}{#1}% guarda lista
-  \hypersetup{pdfkeywords={#1}}% añade a metadatos
+  \hypersetup{% (Metadatos del fichero PDF generado)
+	  pdftitle={\@title},      % Título
+	  pdfauthor={\@author},    % Autor
+	  pdfsubject={\@tipoDoc},  % Tipo de de documento
+	  pdfkeywords={#1}         % Palabras clave
+  }
 }
+
+\makeatother
 % -------------------------
 
 % -------------------------

@@ -61,18 +61,12 @@
 \escudo{esiLogo}        % Logo centro (pdf, png o jpg)
 % -------------------------
 
-\makeatletter
-\hypersetup{% (Metadatos del fichero PDF generado)
-	pdftitle={\@title},      % Título
-	pdfauthor={\@author},    % Autor
-	pdfsubject={\@tipoDoc}   % Tipo de de documento
-}
-\makeatother
-
 % Palabras clave: Son importantes para facilitar búsqueda en Internet
-\setkeywords{TFG, %
+\setkeywords{%
+	Escuela Superior de Informática, %
+	Trabajo Fin de Grado, %
 	\LaTeX, %
-	plantilla, %
+	plantilla de TFG, %
 	UCLM %
 } % (como mucho 5)
 
@@ -99,7 +93,7 @@
 % -------------------------
 % --- BIBLIOGRAFÍA
 % -------------------------
-\bibliography{bibliografia}   % Nombre del fichero .bib (sin extensión)
+\bibliography{bibliografia}   % Nombre del fichero .bib
 \bibliographystyle{plain} % Estilo de bibliografía.
 
 % Estilos nativos incluidos con LaTeX (plain, abbrv, alpha, unsrt).
