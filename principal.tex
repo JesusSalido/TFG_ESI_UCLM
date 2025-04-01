@@ -38,27 +38,36 @@
 ]{TFGesi}
 
 % -------------------------
-% EDITA: Datos del documento. 
+% EDITA: Datos del documento.
+% Cumplimenta con tus datos.
+% Se usan en el documento suprimiendo el caracter '@'
 % -------------------------
-\tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
-\tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Títulos largos.
-\tituloCorto{Plantilla guía de TFG} % Título corto (mostrado en pág. de 
-%créditos)
-\autor{Jesús Salido Tercero}
-\email{jesus.salido@uclm.es}					
-\instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
-\centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
-\titulacion{GRADO EN INGENIERÍA INFORMÁTICA}
-\especialidad{Intensificación cursada}
-\depto{Depto. del tutor(a)}
-% (EN: BACHELOR IN COMPUTING ENGINEERING)
-\tipoDoc{TRABAJO FIN DE GRADO} % (EN: BACHELOR DISSERTATION)
+\makeatletter 
+\@tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
+\@tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Títulos largos.
+\@tituloCorto{Plantilla guía de TFG} % En idioma pral.
+\@tituloCortoAlt{Guided template for TFG} % En idioma alt.
+\@autor{Jesús Salido Tercero}
+\@email{jesus.salido@uclm.es}
+\@autorline{Autor: \autor}
+\@tutline{Tutor/a: Quien tutoriza}
+\@cotutline{Cotutor/a: Quien cotutoriza} % No borrar, sino dejar en blanco
+%\@cotutline{} % No borrar, sino dejar en blanco
+\@instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
+\@centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
+\@titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % En idioma pral.
+\@titulacionAlt{BACHELOR IN COMPUTING ENGINEERING} % En idioma alt.
+\@especialidad{Intensificación cursada} 
+\@depto{Depto. del tutor(a)}
+\@tipoDoc{TRABAJO FIN DE GRADO} % En idioma pral.
+\@tipoDocAlt{BACHELOR DISSERTATION} % En idioma alt.
 % Si las fechas se desean en inglés hay que ponerla explícita.
-\mesTF{julio}        	% Mes de defensa
-\monthTF{July}        	% En inglés
-\yearTF{2024}        	% Año de defensa
-\cityTF{Ciudad Real}	% Ciudad de defensa
-\escudo{esiLogo}        % Logo centro (pdf, png o jpg)
+\@mesTF{julio}        	% Mes de defensa
+\@monthTF{July}        	% En inglés
+\@yearTF{2024}        	% Año de defensa
+\@cityTF{Ciudad Real}	% Ciudad de defensa
+\@escudo{esiLogo}       % Logo centro (pdf, png o jpg)
+\makeatother 
 % -------------------------
 
 % Palabras clave: Son importantes para facilitar búsqueda en Internet

@@ -319,36 +319,42 @@
 % -------------------------
 % DEFINICIÓN DE DATOS DEL DOCUMENTO
 \makeatletter % Estas declaraciones son precisas fuera del paquete
-\newcommand{\tituloPrimera}[1]{\newcommand{\@tituloPrimera}{#1}}
-\newcommand{\tituloSegunda}[1]{\newcommand{\@tituloSegunda}{#1}}
-\newcommand{\tituloCorto}[1]{\newcommand{\@tituloCorto}{#1}\renewcommand{\@title}{#1}}
-\newcommand{\autor}[1]{\newcommand{\@autor}{#1}\renewcommand{\@author}{#1}}
-\newcommand{\email}[1]{\newcommand{\@email}{\url{#1}}}
-\newcommand{\instEdu}[1]{\newcommand{\@instEdu}{#1}}
-\newcommand{\centroEdu}[1]{\newcommand{\@centroEdu}{#1}}
-\newcommand{\titulacion}[1]{\newcommand{\@titulacion}{#1}}
-\newcommand{\especialidad}[1]{\newcommand{\@especialidad}{#1}}
-\newcommand{\depto}[1]{\newcommand{\@depto}{#1}}
-\newcommand{\tipoDoc}[1]{\newcommand{\@tipoDoc}{#1}}
-\newcommand{\mesTF}[1]{\newcommand{\@mesTF}{#1}}
-\newcommand{\monthTF}[1]{\newcommand{\@monthTF}{#1}}
-\newcommand{\yearTF}[1]{\newcommand{\@yearTF}{#1}}
-\newcommand{\cityTF}[1]{\newcommand{\@cityTF}{#1}}
-\newcommand{\escudo}[1]{\newcommand{\@escudo}{#1}}
-
+\newcommand{\@tituloPrimera}[1]{\newcommand{\tituloPrimera}{#1}}
+\newcommand{\@tituloSegunda}[1]{\newcommand{\tituloSegunda}{#1}}
+\newcommand{\@tituloCorto}[1]{\newcommand{\tituloCorto}{#1}\renewcommand{\title}{#1}}
+\newcommand{\@tituloCortoAlt}[1]{\newcommand{\tituloCortoAlt}{#1}}
+\newcommand{\@autor}[1]{\newcommand{\autor}{#1}\renewcommand{\author}{#1}}
+\newcommand{\@email}[1]{\newcommand{\email}{\url{#1}}}
+\newcommand{\@autorline}[1]{\newcommand{\autorline}{#1}}
+\newcommand{\@tutline}[1]{\newcommand{\tutline}{#1}}
+\newcommand{\@cotutline}[1]{\newcommand{\cotutline}{#1}}
+\newcommand{\@instEdu}[1]{\newcommand{\instEdu}{#1}}
+\newcommand{\@centroEdu}[1]{\newcommand{\centroEdu}{#1}}
+\newcommand{\@titulacion}[1]{\newcommand{\titulacion}{#1}}
+\newcommand{\@titulacionAlt}[1]{\newcommand{\titulacionAlt}{#1}}
+\newcommand{\@especialidad}[1]{\newcommand{\especialidad}{#1}}
+\newcommand{\@depto}[1]{\newcommand{\depto}{#1}}
+\newcommand{\@tipoDoc}[1]{\newcommand{\tipoDoc}{#1}}
+\newcommand{\@tipoDocAlt}[1]{\newcommand{\tipoDocAlt}{#1}}
+\newcommand{\@mesTF}[1]{\newcommand{\mesTF}{#1}}
+\newcommand{\@monthTF}[1]{\newcommand{\monthTF}{#1}}
+\newcommand{\@yearTF}[1]{\newcommand{\yearTF}{#1}}
+\newcommand{\@cityTF}[1]{\newcommand{\cityTF}{#1}}
+\newcommand{\@escudo}[1]{\newcommand{\escudo}{#1}}
+\makeatother
 
 \newcommand{\keywordslist}{} % Variable que almacenará la lista
 \newcommand{\setkeywords}[1]{%
   \renewcommand{\keywordslist}{#1}% guarda lista
   \hypersetup{% (Metadatos del fichero PDF generado)
-	  pdftitle={\@title},      % Título
-	  pdfauthor={\@author},    % Autor
-	  pdfsubject={\@tipoDoc},  % Tipo de de documento
+	  pdftitle={\title},      % Título
+	  pdfauthor={\author},    % Autor
+	  pdfsubject={\tipoDoc},  % Tipo de de documento
 	  pdfkeywords={#1}         % Palabras clave
   }
 }
 
-\makeatother
+
 % -------------------------
 
 % -------------------------
@@ -445,11 +451,69 @@
 
 % -------------------------------------------------------------------------
 % PORTADA PRAL. (1)
-% Puedes incluir directamente la portada realizada por un programa externo.
-% Y directamente modificar el diseño que se proporciona. 
-% NOTA: Para eliminar líneas sin alterar el espaciado original se recomienda emplear \phantom{text}
 \newcommand{\portadaPral}{%
-\end{titlepage}}
+	\begin{titlepage}
+		\begin{center}
+	        \ifbool{ESI@spanish}{\pdfbookmark{Portada}{portada}}
+	        	{\pdfbookmark{Front page}{portada}}
+	        \vspace{1cm}
+			\includegraphics[width=4.5cm]{\escudo}\vspace{1cm} 
+			
+			{\LARGE \textbf{\instEdu\\[0.5ex]
+					\centroEdu\\[2cm]
+					\titulacion}}\\[0.5cm]
+	        {\large \textbf{\especialidad}}\\[1.5cm] 
+			{\LARGE \textbf{\tipoDoc}}\\[1cm]	
+			{\LARGE \tituloPrimera}\\ \smallskip%			
+			\ifdefined\tituloSegunda{\LARGE \tituloSegunda}\\[3cm]
+			\else \phantom{\LARGE	Texto fantasma}\\[3cm]
+			\fi
+			{\Large \autor}\vfill%
+		\end{center}
+		
+		\begin{flushright}
+			{\Large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
+		\end{flushright}
+	\end{titlepage}
+}
+
+
+% -------------------------------------------------------------------------
+% PORTADA INT. (2)
+\newcommand{\portadaInt}{%
+	\begin{titlepage}
+		\begin{center}
+	        \ifbool{ESI@spanish}{\pdfbookmark[1]{Portada Int.}{portadaInt}}
+	        	{\pdfbookmark[1]{Front page int.}{portadaInt}}
+	        \vspace{1cm}
+			\includegraphics[width=4.55cm]{\escudo}\vspace{1cm}
+			
+			{\LARGE \textbf{\instEdu \\[0.5ex]
+					\centroEdu}}\\[0.5cm]
+			{\Large \textbf{\depto}}\\ [1cm]%
+			{\large \textbf{\especialidad}}\\[1.5cm]
+			{\LARGE \textbf{\tipoDoc}}\\[1cm]
+			
+			{\LARGE \textbf{\tituloPrimera}}\\ \smallskip%		
+			\ifdefined\tituloSegunda{\LARGE \textbf{\tituloSegunda}}
+			\else \phantom{\LARGE Texto fantasma}
+			\fi
+		\end{center}
+		\vfill%
+		\begin{flushleft}
+			{\Large \autorline} \\ \bigskip%
+			{\Large \tutline} \\ \bigskip% 
+			\ifdefined\cotutline{\Large \cotutline}
+			\else \phantom{\Large Texto fantasma}
+			\fi  
+		\end{flushleft}
+		\vspace{2cm}%
+		\begin{flushright}
+			{\Large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
+		\end{flushright}
+		\cleardoublepage
+	\end{titlepage}
+}
 
 % -------------------------------------------------------------------------
 % PORTADA PARA CALIFICACIÓN TRIBUNAL
@@ -490,12 +554,15 @@
 % -------------------------
 % Entorno para incluir créditos
 % -------------------------
-\makeatletter
-\newenvironment{creditos}{%
-	\ifbool{ESI@spanish}{\selectlanguage{spanish}}{\selectlanguage{english}}
+\newenvironment{creditos}[1][\tituloCorto]{%
+	\ifbool{ESI@spanish}{\selectlanguage{spanish}%
+		\pdfbookmark[1]{Créditos}{creditos}%
+	}{\selectlanguage{english}%
+		\pdfbookmark[1]{Credits}{creditos}%
+	}
 	\null\vspace{6cm}
-	{\pdfbookmark[1]{Créditos}{creditos}\small \noindent \@tituloCorto\\
-	\textcopyright{} \@autor, \@yearTF\\[1cm]}
+	\small \noindent {#1}\\
+	\textcopyright{} \autor, \yearTF\\[1cm]
 }{%
 	\vfill
 	Este texto ha sido preparado con la plantilla \LaTeX{} para Trabajo Fin de 
@@ -510,7 +577,7 @@
 	Mancha.
 	\cleardoublepage
 }	
-\makeatother
+
 
 
 % -------------------------
@@ -519,16 +586,80 @@
 \newenvironment{dedicatoria}{\null\vspace{\stretch{1}}\begin{flushright}}
 	{\end{flushright}\vspace{\stretch{2}}\null\cleardoublepage}
 
-\makeatletter		
+
+% -------------------------
+% Entorno para incluir resumen
+% -------------------------
+\newenvironment{resumenPral}[1][spanish]{%
+	\phantomsection  % Necesario con hyperref
+	\ifstrequal{#1}{spanish}{
+		\addcontentsline{toc}{chapter}{Resumen} % Añade al TOC.
+		\selectlanguage{spanish} % Selección de idioma del resumen.
+		\def\txtkey{Palabras clave}
+	}
+	{
+		\addcontentsline{toc}{chapter}{Abstract} % Añade al TOC.
+		\selectlanguage{english} % Selección de idioma del resumen.
+		\def\txtkey{Keywords}
+	}
+	\begin{center} %
+	   {\textsc{\tipoDoc - \centroEdu{}
+	   (UCLM)}\par} % Tipo de trabajo
+	   \vspace{1cm} %  
+	   {\textbf{\Large\tituloCorto}\par}  % Título del trabajo
+	   \vspace{0.4cm} %
+	   {\autor \\ \cityTF,{} \mesTF{} \yearTF\par} 
+	   \vspace{0.9cm} % 
+		\ifstrequal{#1}{spanish}{
+			{\textbf{\large\textsf{Resumen}}\par}}
+		{
+			{\textbf{\large\textsf{Abstract}}\par}}
+	\end{center}   
+}{\par \bigskip %
+	\noindent \textbf{\txtkey}: \keywordslist.
+	\cleardoublepage
+}
+
+\newenvironment{resumenAlt}[1][english]{%
+	\phantomsection  % Necesario con hyperref
+	\ifstrequal{#1}{spanish}{
+		\addcontentsline{toc}{chapter}{Resumen} % Añade al TOC.
+		\selectlanguage{spanish} % Selección de idioma del resumen.
+		\def\txtkey{Palabras clave}
+	}
+	{
+		\addcontentsline{toc}{chapter}{Abstract} % Añade al TOC.
+		\selectlanguage{english} % Selección de idioma del resumen.
+		\def\txtkey{Keywords}
+	}
+	\begin{center} %
+	   {\textsc{\tipoDocAlt - \centroEdu{}
+	   (UCLM)}\par} % Tipo de trabajo
+	   \vspace{1cm} %  
+	   {\textbf{\Large\tituloCortoAlt}\par}  % Título del trabajo
+	   \vspace{0.4cm} %
+	   {\autor \\ \cityTF,{} \mesTF{} \yearTF\par} 
+	   \vspace{0.9cm} % 
+		\ifstrequal{#1}{spanish}{
+			{\textbf{\large\textsf{Resumen}}\par}}
+		{
+			{\textbf{\large\textsf{Abstract}}\par}}
+	\end{center}   
+}{\par \bigskip %
+	\noindent \textbf{\txtkey}: \keywordslist.
+	\cleardoublepage
+}
+
+
+
 \newcommand{\firma}{%
 	\leavevmode
 	\vspace{1,5cm}
 	\begin{flushright}
-		\textit{\@autor}\\
-		\@cityTF, \@yearTF
+		\textit{\autor}\\
+		\cityTF, \yearTF
 	\end{flushright}
 }
-\makeatother
 
 
 \newcommand{\auxchapter}[1]{
