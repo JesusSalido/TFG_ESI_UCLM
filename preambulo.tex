@@ -1,0 +1,220 @@
+%\input{./Anexos/PortadaETSII} % Por ej.,: Otras portadas
+%\includepdf{fichero_portada.pdf} % Incluso como fichero PDF
+
+%% -------------------------------------------------------------------------
+%% PORTADA PRAL. (1)
+%% Puedes incluir directamente la portada realizada por un programa externo.
+%% Y directamente modificar el diseño que se proporciona. 
+%% NOTA: Para eliminar líneas sin alterar el espaciado original se recomienda emplear \phantom{text}
+\begin{titlepage}
+    \makeatletter
+	\begin{center}
+        \pdfbookmark{Portada}{portada}
+        \vspace{1cm}
+		\includegraphics[width=4.5cm]{\@escudo}\vspace{1cm} 
+		
+		{\LARGE \textbf{\@instEdu\\[0.5ex]
+				\@centroEdu\\[2cm]
+				\@titulacion}}\\[0.5cm]
+        {\large \textbf{\@especialidad}}\\[1.5cm] 
+		{\LARGE \textbf{\@tipoDoc}}\\[1cm]	
+		{\LARGE \@tituloPrimera}\\ \smallskip%			
+		\ifdefined\@tituloSegunda{\LARGE \@tituloSegunda}\\[3cm]
+		\else \phantom{\LARGE	Texto fantasma}\\[3cm]
+		\fi
+		{\Large \@autor}\vfill%
+	\end{center}
+	
+	\begin{flushright}
+		{\Large \ifbool{ESI@spanish}{\@mesTF}{\@monthTF}, \@yearTF}
+	\end{flushright}
+    \makeatother
+\end{titlepage}
+
+% -------------------------------------------------------------------------
+% PORTADA INTERIOR (2)
+% -------------------------------------------------------------------------
+\begin{titlepage}
+    \makeatletter
+	\begin{center}
+        \vspace{1cm}
+		\includegraphics[width=4.55cm]{\@escudo}\vspace{1cm}
+		
+		{\LARGE \textbf{\@instEdu \\[0.5ex]
+				\@centroEdu}}\\[0.5cm]
+		{\Large \textbf{\@depto}}\\ [1cm]%
+		{\large \textbf{\@especialidad}}\\[1.5cm]
+		{\LARGE \textbf{\@tipoDoc}}\\[1cm]
+		
+		{\LARGE \textbf{\@tituloPrimera}}\\ \smallskip%		
+		\ifdefined\@tituloSegunda{\LARGE \textbf{\@tituloSegunda}}
+		\else \phantom{\LARGE Texto fantasma}
+		\fi
+	\end{center}
+	\vfill%
+	\begin{flushleft}
+		{\Large Autor: \@autor} \\ \bigskip% (EN: Author)
+		{\Large Tutor(a): nombre y apellidos} \\ \bigskip% (EN: Co-Supervisor)
+		{\Large Co-tutor(a): nombre y apellidos}
+	\end{flushleft}
+	\vspace{2cm}%
+	\begin{flushright}
+		{\Large \ifbool{ESI@spanish}{\@mesTF}{\@monthTF}, \@yearTF}
+	\end{flushright}
+	\cleardoublepage
+    \makeatother
+\end{titlepage}
+% -------------------------------------------------------------------------
+% -------------------------------------------------------------------------
+
+% -------------------------
+% CRÉDITOS
+% -------------------------
+\begin{creditos}
+El autor puede elegir el tipo de licencia que desee.
+Este documento se distribuye con licencia CC BY-NC-SA 4.0. El texto 
+completo de la licencia se puede obtener en 
+\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+La copia y distribución de esta obra está permitida en todo el mundo, sin regalías y por cualquier medio, siempre que esta nota sea preservada. Se concede permiso para copiar y distribuir traducciones de este libro desde el español original a otro idioma, siempre que la traducción sea aprobada por el autor del libro y tanto el aviso de copyright como esta nota de permiso, sean preservados en todas las copias.
+
+\noindent \includegraphics[width=0.15\linewidth]{by-nc-sa}
+% Para citar este plantilla empleando bibtex puedes emplear el registro siguiente:
+%@www{salidoTFG,
+%  author       = {Jesús Salido},
+%  title        = {Plantilla guía de TFG para la ESI-UCLM},
+%  year         = {2019},
+%  editor       = {GitHub},
+%  organization = {Universidad de Castilla-La Mancha},
+%  url          = {https://github.com/JesusSalido/TFG_ESI_UCLM},
+%  doi          = {10.5281/zenodo.4574562}
+%}
+\end{creditos}
+
+
+\tribunal % Página opcional para calificación 
+
+% -------------------------
+% DEDICATORIA (1 pág. máximo) comentar si no se desea incluir.
+% -------------------------
+\begin{dedicatoria} % (no confundir con los agradecimientos)
+\emph{A mis estudiantes \\ % A alguien muy especial
+Por contribuir a hacer de cada día un reto ilusionante}
+\end{dedicatoria}
+
+
+\pagestyle{plain}	% Páginas sólo con numeración inferior al pie
+% -------------------------
+% RESÚMENES:
+% -------------------------
+% EDITAR: Resumen (máx. 1 pág.)
+\phantomsection  % Necesario con hyperref
+\addcontentsline{toc}{chapter}{Resumen} % Añade al TOC.
+\selectlanguage{spanish} % Selección de idioma del resumen.
+\makeatletter
+\begin{center} %
+   {\textsc{TRABAJO FIN DE GRADO - \@centroEdu{}
+   (UCLM)}\par} % Tipo de trabajo
+   \vspace{1cm} %  
+   {\textbf{\Large\@tituloCorto}\par}  % Título del trabajo
+   \vspace{0.4cm} %
+   {\@autor \\ \@cityTF,{} \@mesTF{} \@yearTF\par} 
+   \vspace{0.9cm} %
+   {\textbf{\large\textsf{Resumen}}\par} % Título de resumen
+\end{center}   
+\makeatother %
+En una página como máximo, el resumen explica de modo conciso la problemática que trata de resolver el trabajo \emph{(<<Qué>>)}, la metodología para  abordar su solución (\emph{<<Cómo>>)} y las principales conclusiones del trabajo. En los trabajos cuyo idioma principal sea el inglés, el orden de \textsf{Resumen} y \textsf{Abstract} se invertirá. 
+
+En concreto este documento debe servir como guía para preparar, con \LaTeX, el TFG en la \href{http://webpub.esi.uclm.es/}{Escuela Superior de Informática} (ESI) de la Univ. de Castilla-La Mancha (UCLM), siguiendo la \href{https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx}{normativa de aplicación}. Está disponible tanto en \href{https://github.com/JesusSalido/TFG_ESI_UCLM}{GitHub} como \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf}. Por tanto, se puede emplear, tanto en un equipo con \LaTeX{} (modo local) instalado, o bien empleando el servicio de edición \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf} (modo online).
+
+Este texto se aprovecha para proporcionar información sobre la elaboración de la memoria del TFG con ayuda de \LaTeX{} empleando este documento como plantilla. Por este motivo, sigue una estructura similar a la que se espera encontrar en un TFG, mostrando ejemplos de uso de distintos elementos y comandos de maquetación de textos que se amplía en el anexo~\ref{cap:AnexoA}.
+
+\noindent\emph{IMPORTANTE: Aunque la plantilla se ajusta a las necesidades y reglamentación de la ESI-UCLM, se puede adaptar fácilmente a otras titulaciones, instituciones y otros documentos de carácter académico. Esta plantilla permite la elaboración automática del documento en idioma inglés en cualquier SO (Windows, Linux, Mac OSX, etc.).}
+
+\bigskip
+\noindent\textbf{Palabras clave}: \keywordslist.
+
+%---
+\cleardoublepage % Se incluye para modificar el contador de página antes de añadir 
+
+% EDITAR: Abstract (máx. 1 pág.)
+%---
+\phantomsection  % Necesario con hyperref
+\addcontentsline{toc}{chapter}{Abstract} % Añade al TOC.
+\selectlanguage{english} % Selección de idioma del resumen.
+\makeatletter
+\begin{center} %
+   {\textsc{BACHELOR DISSERTATION - \@centroEdu{}
+   (UCLM)}\par}
+   \vspace{1cm} %  
+   {\textbf{\Large Guided template for TFG}\par}
+   \vspace{0.4cm} %
+   {\@autor \\ \@cityTF,{} \@monthTF{} \@yearTF\par} 
+   \vspace{0.9cm} %
+   {\textbf{\large\textsf{Abstract}}\par} 
+\end{center}   
+\makeatother %
+\emph{English version for the abstract.}
+
+\bigskip 
+\noindent\textbf{Keywords}: \keywordslist.
+
+\ifbool{ESI@spanish}{\selectlanguage{spanish}}{\selectlanguage{english}}
+% -------------------------
+% AGRADECIMIENTOS (recomendable máx. 1 pág.)
+% -------------------------
+\auxchapter{Agradecimientos}
+Aunque es un apartado opcional, haremos bueno el refrán \emph{<<es de bien nacidos, ser agradecidos>>} si empleamos este espacio como un medio para agradecer a todos los que, de un modo u otro, han hecho posible que el trabajo realizado \emph{llegue a buen puerto}. Esta sección es ideal para agradecer a directores, profesores, mentores, familiares, compañeros, amigos, etc. 
+ 
+Estos agradecimientos pueden ser tan personales como se desee e incluir anécdotas y chascarrillos, pero recuerda que \emph{no deberían ocupar más de una página}.
+
+\firma % Nombre, lugar y año (automáticamente)
+
+% -------------------------
+% -NOTACIÓN: Lista de símbolos con significado especial.
+% -------------------------
+\auxchapter{Notación y acrónimos}
+\section*{Notacion}
+Ejemplo de lista con notación (o nomenclatura) empleada en la memoria del TFG.\footnote{Se incluye únicamente con propósito de ilustración, ya que el documento no emplea la notación aquí mostrada.}
+
+\begin{tabular}{r r p{0.8\linewidth}}
+$A, B, C, D$	& : & Variables lógicas \\
+$f, g, h$		& :	& Funciones lógicas \\
+$\cdot$			& : & Producto lógico (AND), a menudo se omitirá como en $A 
+B$ en lugar de $A \cdot B$\\
+$+$				& : & Suma aritmética o lógica (OR) dependiendo del 
+contexto\\
+$\oplus$		& : & OR exclusivo (XOR)\\
+$\overline{A}$ o ${A}'$	& : & Operador NOT o negación
+\end{tabular}
+
+\section*{Lista de acrónimos}
+% OJO: Esta lista debería estar ordenada alfabeticamente (hacer de modo manual).
+Ejemplo de lista \emph{ordenada alfabéticamente} con los acrónimos empleados en el texto.\footnote{Se pueden omitir aquellos acrónimos que son reconocidos en el contexto académico (p.~ej., PhD), aunque aquí se han incluido a efectos ilustrativos.}
+
+\begin{tabular}{r r p{0.8\linewidth}}
+CASE& : &Computer-Aided Software Engineering \\
+CTAN& : &Comprenhensive \TeX{} Archive network \\
+IDE& : &Integrated Development Environment \\
+ECTS& : &European Credit Transfer and Accumulation System \\
+OOD& : &Object-Oriented Design \\
+PhD& : &Philosophiae Doctor \\
+RAD& : &Rapid Application Development \\
+SDLC& : &Software Development Life Cycle \\
+SSADM& : &Structured Systems Analysis \& Design Method \\
+TFE& : &Trabajo Fin de Estudios \\
+TFG& : &Trabajo Fin de Grado \\
+TFM& : &Trabajo Fin de Máster \\
+UML& : &Unified Modeling Language
+\end{tabular}
+
+% -------------------------
+% ÍNDICES: Si algún índice no existe, se puede eliminar.
+% -------------------------
+\idxGral
+\idxFiguras
+\idxTablas
+\idxListados
+\idxAlgoritmos
+%---
+
+
