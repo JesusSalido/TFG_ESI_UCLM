@@ -47,38 +47,37 @@ El \textbf{proceso de desarrollo de software} se denomina también \textbf{ciclo
 
 Cada metodología es apropiada para un tipo de proyecto dependiendo de sus características técnicas, organizativas y del equipo de trabajo. En los entornos empresariales es obligado, a veces, el uso de una metodología concreta (p.~ej., para participar en concursos públicos). El estándar internacional ISO/IEC 12270 describe el método para seleccionar, implementar y monitorear el ciclo de vida del software~\cite{Vijayasarathy16,Appelbaum22}.
 
-Mientras que unas metodologías intentan sistematizar y formalizar las tareas de diseño, otras aplican técnicas de gestión de proyectos para dicha tarea. Las metodologías de desarrollo se pueden agrupar dentro de varios enfoques según se señala a continuación.
+Mientras que unas metodologías intentan sistematizar y formalizar las tareas de diseño, otras aplican técnicas de gestión de proyectos para dicha tarea. Las metodologías de desarrollo se pueden agrupar dentro de varios enfoques según se resume a continuación en la tabla~\ref{tab:metodologias}.
 
-\begin{enumerate}
-\item \textbf{Metodología de Análisis y Diseño de Sistemas Estructurados} (\emph{SSADM, Structured Systems Analysis and Design Methodology}). Es uno de los paradigmas más antiguos. En esta metodología se emplea un modelo de desarrollo en cascada (\emph{waterfall}). Las fases de desarrollo tienen lugar de modo secuencial. Una fase comienza cuando termina la anterior. Es un método clásico poco flexible y adaptable a cambios en los requisitos. Hace especial hincapié en la planificación derivada de una exhaustiva definición y análisis de los requisitos. Son metodologías que no lidian bien con la flexibilidad requerida en los proyectos de desarrollo software. Derivan de los procesos en  ingeniería tradicionales y están enfocadas a la reducción del riesgo. Emplea tres técnicas clave:
-
-\begin{itemize}
-\item Modelado lógico de datos (\emph{Logical Data Modelling}),
-\item Modelado de flujo de datos (\emph{Data Flow Modelling}), y
-\item Modelado de Entidades y Eventos (\emph{Entity Event  Modelling}).
-\end{itemize} 
-
-\item \textbf{Metodología de Diseño Orientado a Objetos} (\emph{OOD,  Object-Oriented Design}). Está muy ligada a la OOP (\emph{Programación Orientada a Objetos}) en que se persigue la reutilización del código. A diferencia de la anterior, en este paradigma los datos y los procesos se combinan en una única entidad denominada \emph{objetos} (o clases). Esta orientación pretende que los sistemas sean más modulares para mejorar la eficiencia, calidad del análisis y el diseño. Emplea extensivamente el \emph{Lenguaje Unificado de Modelado} (UML) para especificar, visualizar, construir y documentar los artefactos de los sistemas software y  también el modelo de negocio. UML proporciona una serie diagramas de básicos para modelar un sistema: 
-
-\begin{itemize}
-\item Diagrama de Clase (\emph{Class Diagram}). Muestra los objetos del sistema y sus relaciones. 
-\item Diagrama de Caso de Uso (\emph{Use Case Diagram}). Plasma la   funcionalidad del sistema y quién interacciona con él.
-\item Diagrama de secuencia (\emph{Sequence Diagram}). Muestra los eventos que se producen en el sistema y como este reacciona ante ellos. 
-\item Modelo de Datos (\emph{Data Model}).
-\end{itemize} 
-                               
-\item \textbf{Desarrollo Rápido de Aplicaciones} (\emph{RAD, Rapid Application Developmnent}). Su filosofía es sacrificar calidad a cambio de poner en producción el sistema rápidamente con la funcionalidad esencial. Los procesos de especificación, diseño e implementación son simultáneos. No se realiza una especificación detallada y se reduce la documentación de diseño. El sistema se diseña en una serie de pasos, los usuarios evalúan cada etapa en la que proponen cambios y nuevas mejoras. Las interfaces de usuario se desarrollan habitualmente mediante sistemas interactivos de desarrollo. En vez de seguir un modelo de desarrollo en cascada sigue un modelo en espiral (Boehm). La clave de este modelo es el desarrollo continuo que ayuda a minimizar los riesgos. Los desarrolladores deben definir las características de mayor prioridad. Este tipo de desarrollo se basa en la creación de prototipos y realimentación obtenida de los clientes para definir e implementar más características hasta alcanzar un sistema aceptable para despliegue.
-
-\item \textbf{Metodologías Ágiles}. \emph{<<[...] envuelven un enfoque para la toma de decisiones en los proyectos, que se refiere a métodos de ingeniería de software basados en el desarrollo iterativo e incremental, donde los requisitos y soluciones evolucionan con el tiempo según la necesidad del proyecto. Así, el trabajo es realizado mediante la colaboración de equipos auto-organizados y multidisciplinarios, inmersos en un proceso compartido de toma de decisiones a corto plazo. Cada iteración del ciclo de vida incluye:  planificación, análisis de requisitos, diseño, codificación, pruebas y  documentación. Teniendo gran importancia el concepto de <<Finalizado>> (Done), ya que el objetivo de cada iteración no es agregar toda la funcionalidad para justificar el lanzamiento del producto al mercado, sino incrementar el valor por medio de <<software que funciona>> (sin errores). Los métodos ágiles enfatizan las comunicaciones cara a cara en vez de la documentación. [...]>>}\footnote{Fuente: Wikipedia}
-\end{enumerate}
+\begin{table}[H]
+	\centering
+	\caption{Resumen de metodologías de desarrollo de software}
+	\label{tab:metodologias}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|p{4.5cm}|p{6.5cm}|}
+	\hline
+	\textbf{Metodología} & \textbf{Características} & \textbf{Herramientas/Enfoques asociados} \\
+	\hline
+	\textbf{SSADM} (\emph{Structured Systems Analysis and Design Methodology}) & Metodología estructurada, secuencial (modelo en cascada), centrada en análisis exhaustivo de requisitos. & Modelado lógico de datos, flujo de datos, entidades y eventos. \\
+	\hline
+	\textbf{OOD} (\emph{Object-Oriented Design}) & Centrado en la modularidad y reutilización del código a través de objetos y clases. & \textbf{UML} (Diagramas de clase, casos de uso, secuencia, modelo de datos). \\
+	\hline
+	\textbf{RAD} (\emph{Rapid Application Development}) & Desarrollo iterativo y rápido basado en prototipos, minimiza documentación, enfatiza entrega rápida. & Interfaces gráficas, prototipado, ciclo en espiral (Boehm), evaluación continua por parte del usuario. \\
+	\hline
+	Metodologías Ágiles & Desarrollo incremental e iterativo, énfasis en la colaboración y en software funcional, poca documentación. & \emph{Scrum}, \emph{Kanban}, reuniones diarias, sprints, enfoque en el concepto de “hecho (\emph{done})”. \\
+	\hline
+	\end{tabular}
+\end{table}
 
 
 
 
-\subsection{Proceso de testing}
 
+
+\subsection{Proceso de \emph{testing}}
+
+El testeo del software puede consistir en varios tipos de procesos:
 \begin{enumerate}[noitemsep]
-\item \emph{Pruebas modulares} (pruebas unitarias). Su propósito es hacer pruebas sobre un módulo tan pronto como sea posible. Las \emph{pruebas unitarias} comprueban el correcto funcionamiento de una unidad de código. Dicha unidad elemental de código consistiría en cada función o procedimiento, en el caso de la programación estructurada y cada clase, para la programación orientada a objetos. Las características de una prueba unitaria de calidad son: \emph{automatizable} (sin intervención manual), \emph{completa},  \emph{reutilizable}, \emph{independiente} y \emph{profesional}.
+\item \emph{Pruebas modulares} (pruebas unitarias). Su propósito es hacer pruebas sobre un módulo tan pronto como sea posible. Las \emph{pruebas unitarias} comprueban el correcto funcionamiento de una unidad de código. En la programación estructurada, dicha unidad elemental de código consistiría en cada función o procedimiento. Para la programación orientada a objetos se trataría de cada clase. Las características de una prueba unitaria de calidad son: \emph{automatizable} (sin intervención manual), \emph{completa},  \emph{reutilizable}, \emph{independiente} y \emph{profesional}.
 
 \item \emph{Pruebas de integración}. Pruebas de varios módulos en conjunto para comprobar su interoperabilidad.
 
@@ -98,17 +97,18 @@ Además de la metodología se deben abordar los aspectos siguientes relacionados
 \begin{itemize}
 \item \textbf{Recursos}. En este apartado se describirán los recursos hardware y software empleados. También debería quedar aclarado el número y papel de los integrantes del equipo de proyecto.
 
-\item \textbf{Gestión de la configuración y aseguramiento de la calidad}. Durante el desarrollo de proyectos de software es esencial definir la estrategia de control de versiones y las diferentes \emph{releases}. En esta sección además se describirán las actividades y tareas que garantizan la calidad durante el proceso de desarrollo del software, incorporando los estándares, prácticas y normas de aplicación. También se deben documentar los distintos tipos de revisiones, verificaciones y validaciones que se realizarán, los criterios para la aprobación o rechazo de cada producto y los procedimientos para llevar a cabo acciones correctivas o preventivas.
+\item \textbf{Gestión de la configuración y aseguramiento de la calidad}. Durante el desarrollo de proyectos de software es esencial definir la estrategia de control de versiones y las diferentes \emph{releases}. Además, en esta sección se describirán las actividades y tareas que garantizan la calidad del proceso de desarrollo del software, incorporando los estándares, prácticas y normas de aplicación. También se deben documentar los distintos tipos de revisiones, verificaciones y validaciones que se realizarán, criterios de aprobación o rechazo de cada, y los procedimientos para llevar a cabo acciones correctivas o preventivas.
 
 \item \textbf{Planificación}. Detallará la estimación de la evolución temporal del proyecto, marcando sus iteraciones e hitos básicos. Para ello, se emplearán diagramas Gantt y debería incluir una comparación cuantitativa del tiempo y el esfuerzo realmente invertido frente al estimado.
 
-\item \textbf{Costes y análisis de riesgos}. Análisis y presupuesto del coste de los recursos (humanos y materiales) necesarios para el proyecto. El cálculo de costes de personal debe tener en cuenta la realidad del mercado laboral en España. Dicho cálculo se puede hacer en persona/mes, y luego hacer la correspondencia al coste monetario. En esta sección se debería incluir una enumeración de los riesgos del proyecto, indicando su posible impacto (efecto que la ocurrencia del citado riesgo tendría en el desarrollo del proyecto) y la probabilidad de ocurrencia. Una vez se identifican los riesgos, se deben priorizar para definir los planes necesarios que reduzcan su impacto o incluso su probabilidad de ocurrencia.
+\item \textbf{Costes}. Análisis y presupuesto del coste de los recursos (humanos y materiales) necesarios para el proyecto. El cálculo de costes de personal debe tener en cuenta la realidad del mercado laboral en España. Dicho cálculo se puede hacer en persona/mes, y luego hacer la correspondencia al coste monetario. 
+
+\item \textbf{Análisis de riesgos}. En esta sección se debería incluir una enumeración de los riesgos del proyecto, indicando su posible impacto (efecto que la ocurrencia del citado riesgo tendría en el desarrollo del proyecto) y la probabilidad de ocurrencia. Una vez se identifican los riesgos, se deben priorizar para definir los planes necesarios que reduzcan su impacto o incluso su probabilidad de ocurrencia.
 \end{itemize}
 
 
-
 \section[Tecnologías]{Revisión de tecnologías y herramientas CASE (\emph{Computer Aided Software Engineering})}
-Además de los recursos humanos y de hardware necesarios en el trabajo, en la sección de recursos software se deberían enumerar las herramientas software previstas. A continuación se realiza una revisión rápida no exhaustiva de las mismas.
+Además de los recursos humanos y de hardware necesarios en el trabajo, en la sección de recursos software se deberían enumerar las herramientas software previstas. A continuación se realiza una revisión rápida no exhaustiva de las herramientas más populares.\footnote{Este listado, no exhaustivo, es meramente informativo, ya que en la memoria de un TFG solo se deben incluir aquellas que se hayan evaluado y empleado finalmente.}
 
 Las herramientas CASE están destinadas a facilitar una o varias de las tareas implicadas en el ciclo de vida del desarrollo de software. Se pueden dividir en las siguientes categorías:
 
@@ -121,12 +121,10 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 \item Gestión de proyecto (gestión de planes, asignación de tareas, planificación, etc.).
 \end{enumerate}
 
-
-
 \subsection{IDE (Integrated Development Environment)}
 \begin{multicols}{2}
 \begin{itemize}[nosep]
-\item \href{https://notepad-plus-plus.org/}{Notepad++}
+%\item \href{https://notepad-plus-plus.org/}{Notepad++}
 \item \href{https://code.visualstudio.com/}{Visual Studio Code}
 \item \href{https://atom.io/}{Atom}
 \item \href{https://www.gnu.org/s/emacs/}{GNU Emacs}
@@ -138,13 +136,10 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 \end{itemize}
 \end{multicols}
 
-
-
 \subsection{Depuración}
 \begin{itemize}[nosep]
 \item \href{https://www.gnu.org/s/gdb/}{GNU Debugger}
 \end{itemize}
-
 
 \subsection{Testing}
 \begin{multicols}{2}
@@ -152,6 +147,7 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 \item \href{http://junit.org}{JUnit}. Entorno de pruebas para Java.
 \item \href{http://cunit.sourceforge.net/}{CUnit}. Entorno de pruebas para C.
 \item \href{https://wiki.python.org/moin/PyUnit}{PyUnit}. Entorno de pruebas para Python.
+\item \href{https://nunit.org/}{NUnit}. Entorno de pruebas para .Net.
 \end{itemize}
 \end{multicols}
 
@@ -159,18 +155,19 @@ Las herramientas CASE están destinadas a facilitar una o varias de las tareas i
 \begin{multicols}{2}
 \begin{itemize}[nosep]
 \item \href{https://git-scm.com/}{Git}
-\item \href{https://www.mercurial-scm.org/}{Mercurial}
 \item \href{https://github.com/}{Github}
+\item \href{https://www.mercurial-scm.org/}{Mercurial}
 \item \href{https://bitbucket.org/}{Bitbucket}
 \item \href{https://www.sourcetreeapp.com/}{SourceTree}
 \end{itemize}
 \end{multicols}
 
-\newpage
+
 \subsection{Documentación}
 \begin{multicols}{2}
 \begin{itemize}[nosep]
 \item \href{https://www.latex-project.org/}{\LaTeX}
+\item \href{https://www.overleaf.com/}{Overleaf}
 \item \href{https://markdown.es/}{Markdown}
 \item \href{http://www.stack.nl/\%7Edimitri/doxygen/index.html}{Doxygen}
 \item \href{http://mtmacdonald.github.io/docgen/docs/index.html}{DocGen}

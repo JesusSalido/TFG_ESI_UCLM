@@ -5,7 +5,8 @@
 % PORTADA PRAL. (1)
 % -------------------------------------------------------------------------
 
-\portadaPral % Portada pral.
+%\portadaOld % Portada pral.
+\portadaNew
 
 % -------------------------------------------------------------------------
 % PORTADA INTERIOR (2)
@@ -16,14 +17,11 @@
 % -------------------------
 % CRÉDITOS
 % -------------------------
-\begin{creditos}
-El autor puede elegir el tipo de licencia que desee.
-Este documento se distribuye con licencia CC BY-NC-SA 4.0. El texto 
-completo de la licencia se puede obtener en 
-\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
-La copia y distribución de esta obra está permitida en todo el mundo, sin regalías y por cualquier medio, siempre que esta nota sea preservada. Se concede permiso para copiar y distribuir traducciones de este libro desde el español original a otro idioma, siempre que la traducción sea aprobada por el autor del libro y tanto el aviso de copyright como esta nota de permiso, sean preservados en todas las copias.
+\begin{creditos} % Editar a conveniencia
+El autor puede elegir el tipo de licencia que desee. Este documento se distribuye con licencia CC BY-NC-SA 4.0. El texto completo de la licencia se puede obtener en \url{https://creativecommons.org/licenses/by-nc-sa/4.0/}. La copia y distribución de esta obra está permitida en todo el mundo, sin regalías y por cualquier medio, siempre que esta nota sea preservada. Se concede permiso para copiar y distribuir traducciones de este libro desde el español original a otro idioma, siempre que la traducción sea aprobada por el autor del libro y tanto el aviso de copyright como esta nota de permiso, sean preservados en todas las copias.
 
 \noindent \includegraphics[width=0.15\linewidth]{by-nc-sa}
+
 % Para citar este plantilla empleando bibtex puedes emplear el registro siguiente:
 %@www{salidoTFG,
 %  author       = {Jesús Salido},
@@ -44,7 +42,7 @@ La copia y distribución de esta obra está permitida en todo el mundo, sin rega
 
 
 % -------------------------
-% DEDICATORIA (1 pág. máximo) 
+% DEDICATORIA 
 % -------------------------
 \begin{dedicatoria} % (no confundir con los agradecimientos)
 \emph{A mis estudiantes \\ % A alguien muy especial
@@ -52,6 +50,7 @@ Por contribuir a hacer de cada día un reto ilusionante}
 \end{dedicatoria}
 
 \pagestyle{plain}	% Páginas sólo con numeración inferior al pie
+
 
 % -------------------------
 % RESÚMENES:
@@ -62,9 +61,9 @@ En una página como máximo, el resumen explica de modo conciso la problemática
 
 En concreto este documento debe servir como guía para preparar, con \LaTeX, el TFG en la \href{http://webpub.esi.uclm.es/}{Escuela Superior de Informática} (ESI) de la Univ. de Castilla-La Mancha (UCLM), siguiendo la \href{https://esi.uclm.es/index.php/grado-en-ingenieria-informatica/trabajos-fin-de-grado/}{normativa de aplicación}. Está disponible tanto en \href{https://github.com/JesusSalido/TFG_ESI_UCLM}{GitHub} como \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf}.
 
-Este texto se aprovecha para proporcionar información sobre la elaboración de la memoria del TFG con ayuda de \LaTeX{} empleando este documento como plantilla. Por este motivo, sigue una estructura similar a la que se espera encontrar en un TFG, mostrando ejemplos de uso de distintos elementos y comandos de maquetación de textos que se amplía en el anexo~\ref{cap:AnexoA}.
+Este texto se aprovecha para proporcionar información sobre la elaboración de la memoria del TFG con ayuda de \LaTeX{} empleando este documento como plantilla. Por este motivo, sigue una estructura similar a la que se espera encontrar en un TFG, mostrando ejemplos de uso de distintos elementos y comandos de maquetación de textos, como puede verse en el anexo~\ref{cap:AnexoA}.
 
-\noindent\emph{IMPORTANTE: Modifica esta plantilla según tus necesidades. Aunque se ajusta a los requisitos y reglamentación de la ESI-UCLM, se puede adaptar fácilmente a otras titulaciones, instituciones y otros documentos de carácter académico. Además, esta plantilla permite la elaboración automática del documento en idioma inglés.}
+\noindent\emph{IMPORTANTE: Puedes alterar la estructura del documento según lo estimes conveniente. También, puedes modificar la plantilla para alterar el formato según tus preferencias. Aunque se ajusta a los requisitos y reglamentación de la ESI-UCLM, se puede adaptar fácilmente a otras titulaciones, instituciones y otros documentos de carácter académico. Además, esta plantilla permite la elaboración automática del documento en idioma inglés.}
 \end{resumenPral}
 
 
@@ -77,15 +76,17 @@ Este texto se aprovecha para proporcionar información sobre la elaboración de 
 % Ajuste al idioma pral.
 \ifbool{ESI@spanish}{\selectlanguage{spanish}}{\selectlanguage{english}}
 
+
 % -------------------------
-% AGRADECIMIENTOS (recomendable máx. 1 pág.)
+% AGRADECIMIENTOS (máx. recomendable: 1 pág.)
 % -------------------------
-\auxchapter{Agradecimientos}
+\auxchapter{Agradecimientos} % Editar a conveniencia
 Aunque es un apartado opcional, haremos bueno el refrán \emph{<<es de bien nacidos, ser agradecidos>>} si empleamos este espacio como un medio para agradecer a todos los que, de un modo u otro, han hecho posible que el trabajo realizado \emph{llegue a buen puerto}. Esta sección es ideal para agradecer a directores, profesores, mentores, familiares, compañeros, amigos, etc. 
  
 Estos agradecimientos pueden ser tan personales como desees e incluir anécdotas y chascarrillos, pero recuerda que \emph{no deberían ocupar más de una página}.
 
 \firma % Nombre, lugar y año (automático, no cambies)
+
 
 % -------------------------
 % -NOTACIÓN: Lista de símbolos con significado especial.
@@ -112,6 +113,7 @@ $\overline{A}$ o ${A}'$	& : & Operador NOT o negación
 \begin{tabular}{r r p{0.8\linewidth}}
 CASE& : &Computer-Aided Software Engineering \\
 CTAN& : &Comprenhensive \TeX{} Archive network \\
+IA& : & Inteligencia Artificial \\
 IDE& : &Integrated Development Environment \\
 ECTS& : &European Credit Transfer and Accumulation System \\
 OOD& : &Object-Oriented Design \\
@@ -124,6 +126,7 @@ TFG& : &Trabajo Fin de Grado \\
 TFM& : &Trabajo Fin de Máster \\
 UML& : &Unified Modeling Language
 \end{tabular}
+
 
 % -------------------------
 % ÍNDICES: Elimina los innecesarios.

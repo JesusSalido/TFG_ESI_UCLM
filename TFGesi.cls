@@ -172,10 +172,8 @@
 \fancyhf{} % Reset de la cabecera y pie
 \fancyhead[LO]{\sffamily\leftmark} % pág impar: [Capítulo                      pág]
 \fancyhead[RE]{\sffamily\rightmark} % pág par:  [pág.                      Sección]
-\makeatletter
 \ifbool{ESI@pageonfooter}{\fancyfoot[C]{\sffamily\thepage}}%
 	{\fancyhead[RO,LE]{\sffamily\thepage}}
-\makeatother
 
 % Formato para el capítulo: N. Nombre
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter.#1}}{}}
@@ -269,7 +267,7 @@
 	%	deletekeywords={}, 			% Quita keywords separadas por comas
 	captionpos=t,               % Ajusta la posición de títulos 
 	numbers=left,               % Posición de números de línea
-	numberstyle={\color{grisESI}\tiny\sffamily},          % Tamaño del número de línea
+	numberstyle={\color{gris}\tiny\sffamily},          % Tamaño del número de línea
 	numberfirstline=false,
 	firstnumber=1, 				%  Nº de la primera línea
 	stepnumber=1,               % Paso de línea numerada
@@ -327,11 +325,10 @@
 % -------------------------
 % DEFINICIÓN DE DATOS DEL DOCUMENTO
 \makeatletter % Estas declaraciones son precisas fuera del paquete
-\newcommand{\@tituloPrimera}[1]{\newcommand{\tituloPrimera}{#1}}
-\newcommand{\@tituloSegunda}[1]{\newcommand{\tituloSegunda}{#1}}
+\newcommand{\@titulo}[1]{\newcommand{\titulo}{#1}}
 \newcommand{\@tituloCorto}[1]{\newcommand{\tituloCorto}{#1}\renewcommand{\title}{#1}}
 \newcommand{\@tituloCortoAlt}[1]{\newcommand{\tituloCortoAlt}{#1}}
-\newcommand{\@autor}[1]{\newcommand{\autor}{#1}\renewcommand{\author}{#1}}
+\newcommand{\@autoria}[1]{\newcommand{\autoria}{#1}\renewcommand{\author}{#1}}
 \newcommand{\@email}[1]{\newcommand{\email}{\url{#1}}}
 \newcommand{\@autorline}[1]{\newcommand{\autorline}{#1}}
 \newcommand{\@tutline}[1]{\newcommand{\tutline}{#1}}
@@ -494,8 +491,37 @@
 % -------------------------
 % -------------------------
 % -------------------------
+\usetikzlibrary{calc} 
+\newcommand{\portadaNew}{%
+\begin{titlepage}
+     \ifbool{ESI@spanish}{\pdfbookmark{Portada}{portada}}
+        	{\pdfbookmark{Front page}{portada}}	\begin{tikzpicture}[remember picture,overlay]
+    % Imagen de fondo que cubre toda la página
+    \node[anchor=north west, inner sep=0] at (current page.north west)
+        {\includegraphics[width=\paperwidth]{portadabgESI}};
+    \node[anchor=center] at ($(current page.center)+(2.5cm,0)$) {
+        \begin{minipage}[t]{0.98\textwidth}
+		\begin{center}
+			\vspace*{1cm}
+			{\huge \textbf{\textsf{\instEdu}}}\\[1cm]
+			{\LARGE \textbf{\textsf{\titulacion}}}\\[0.5cm]
+	        {\Large \textsf{\especialidad}}\\[3cm] 
+			{\LARGE \textbf{\textsf{\tipoDoc}}}\\[1cm]	
+			
+			{\LARGE \textsf{\titulo}}\\[1.5cm]%			
+						
+			{\Large \textsf{\autoria}} \\[12cm]
+		
+			{\Large \textsf{\cityTF, \mesTF{} de \yearTF}}
+		\end{center}
+        \end{minipage}
+    };
+	\end{tikzpicture}
+\end{titlepage}
+}
+
 % PORTADA PRAL. (1)
-\newcommand{\portadaPral}{%
+\newcommand{\portadaOld}{%
 	\begin{titlepage}
 		\begin{center}
 	        \ifbool{ESI@spanish}{\pdfbookmark{Portada}{portada}}
@@ -503,20 +529,18 @@
 	        \vspace{1cm}
 			\includegraphics[width=4.5cm]{\escudo}\vspace{1cm} 
 			
-			{\LARGE \textbf{\instEdu\\[0.5ex]
-					\centroEdu\\[2cm]
-					\titulacion}}\\[0.5cm]
+			{\LARGE \textbf{\instEdu\\[1ex]
+					\centroEdu}}\\[2cm]
+			{\LARGE \textbf{\titulacion}}\\[0.5cm]
 	        {\large \textbf{\especialidad}}\\[1.5cm] 
 			{\LARGE \textbf{\tipoDoc}}\\[1cm]	
 			
-			{\LARGE \tituloPrimera}\\ \smallskip%			
-			\ifdefined\tituloSegunda{\LARGE \tituloSegunda}
-			\else \phantom{\LARGE Texto fantasma}
-			\fi
-			\vspace{3cm} 
-			\Large \autor
+			{\LARGE \titulo}\\[1.5cm]%			
+			
+			
+			{\Large \autoria}
 		\end{center}
-		\vfill%
+		\vfill
 		\begin{flushright}
 			{\Large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
 		\end{flushright}
@@ -532,20 +556,17 @@
 	        \ifbool{ESI@spanish}{\pdfbookmark[1]{Portada Int.}{portadaInt}}
 	        	{\pdfbookmark[1]{Front page int.}{portadaInt}}
 	        \vspace{1cm}
-			\includegraphics[width=4.55cm]{\escudo}\vspace{1cm}
+			\includegraphics[width=4.5cm]{\escudo}\vspace{1cm}
 			
-			{\LARGE \textbf{\instEdu \\[0.5ex]
+			{\LARGE \textbf{\instEdu\\[1ex]
 					\centroEdu}}\\[0.5cm]
 			{\Large \textbf{\depto}}\\ [1cm]%
 			{\large \textbf{\especialidad}}\\[1.5cm]
 			{\LARGE \textbf{\tipoDoc}}\\[1cm]
 			
-			{\LARGE \textbf{\tituloPrimera}}\\ \smallskip%		
-			\ifdefined\tituloSegunda{\LARGE \textbf{\tituloSegunda}}
-			\else \phantom{\LARGE Texto fantasma}
-			\fi
+			{\LARGE \textbf{\titulo}}%		
 		\end{center}
-		\vfill%
+		\vfill
 		\begin{flushleft}
 			{\Large \autorline} \\ \bigskip%
 			{\Large \tutline} \\ \bigskip% 
@@ -608,7 +629,7 @@
 	}
 	\null\vspace{6cm}
 	\small \noindent {#1}\\
-	\textcopyright{} \autor, \yearTF\\[1cm]
+	\textcopyright{} \autoria, \yearTF\\[1cm]
 }{%
 	\vfill
 	Este texto ha sido preparado con la plantilla \LaTeX{} para Trabajo Fin de 
@@ -646,12 +667,12 @@
 		\def\txtkey{Keywords}
 	}
 	\begin{center} %
-	   {\textsc{\tipoDoc - \centroEdu{}
+	   {\textsc{\tipoDoc{} - \centroEdu{}
 	   (UCLM)}\par} % Tipo de trabajo
 	   \vspace{1cm} %  
 	   {\textbf{\Large\tituloCorto}\par}  % Título del trabajo
 	   \vspace{0.4cm} %
-	   {\autor \\ \cityTF,{} \mesTF{} \yearTF\par} 
+	   {\autoria \\ \cityTF,{} \mesTF{} \yearTF\par} 
 	   \vspace{0.9cm} % 
 		\ifstrequal{#1}{spanish}{
 			{\textbf{\large\textsf{Resumen}}\par}}
@@ -676,12 +697,12 @@
 		\def\txtkey{Keywords}
 	}
 	\begin{center} %
-	   {\textsc{\tipoDocAlt - \centroEdu{}
+	   {\textsc{\tipoDocAlt{} - \centroEdu{}
 	   (UCLM)}\par} % Tipo de trabajo
 	   \vspace{1cm} %  
 	   {\textbf{\Large\tituloCortoAlt}\par}  % Título del trabajo
 	   \vspace{0.4cm} %
-	   {\autor \\ \cityTF,{} \mesTF{} \yearTF\par} 
+	   {\autoria \\ \cityTF,{} \mesTF{} \yearTF\par} 
 	   \vspace{0.9cm} % 
 		\ifstrequal{#1}{spanish}{
 			{\textbf{\large\textsf{Resumen}}\par}}
@@ -697,7 +718,7 @@
 	\leavevmode
 	\vspace{1,5cm}
 	\begin{flushright}
-		\textit{\autor}\\
+		\textit{\autoria}\\
 		\cityTF, \yearTF
 	\end{flushright}
 }

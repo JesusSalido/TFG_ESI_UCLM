@@ -4,7 +4,7 @@
 % Fichero: principal.tex
 % Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
 % Fecha (creación): febrero 2010 
-% Rev. : marzo 2024
+% Rev. : abril 2025
 % Descripción: Plantilla para memoria de TFG 
 % (Escuela Sup. de Informática, UCLM). Creada para el curso 
 % “LaTeX esencial para preparación de TFG, Tesis y otros documentos 
@@ -20,10 +20,6 @@
 % ejecución de un intérprete perl:
 %
 %> \$> latexmk -gg -pdf -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
-%
-% Para la automatización del trabajo con esta plantilla es recomendable el 
-% empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
-% También puede emplearse Visual Studio Code con la extensión Latex WorkShop.
 %
 % Una versión revisada de esta plantilla está disponible en Overleaf para
 % trabajar online. 
@@ -43,16 +39,15 @@
 % Se usan en el documento suprimiendo el caracter '@'
 % -------------------------
 \makeatletter 
-\@tituloPrimera{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
-\@tituloSegunda{Curso de {\LaTeX{}} esencial} % OPT.: Títulos largos.
+\@titulo{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
 \@tituloCorto{Plantilla guía de TFG} % En idioma pral.
 \@tituloCortoAlt{Guided template for TFG} % En idioma alt.
-\@autor{Jesús Salido Tercero}
+\@autoria{Jesús Salido Tercero}
 \@email{jesus.salido@uclm.es}
-\@autorline{Autor: \autor}
+\@autorline{Autor: \autoria}
 \@tutline{Tutor/a: Quien tutoriza}
-%\@cotutline{Cotutor/a: Quien cotutoriza} % No borrar, sino dejar en blanco
-\@cotutline{} % No borrar, sino dejar en blanco
+\@cotutline{Cotutor/a: Quien cotutoriza}
+%\@cotutline{} % Si no procede dejar vacío (NO BORRAR)
 \@instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
 \@centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
 \@titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % En idioma pral.
@@ -64,7 +59,7 @@
 % Si las fechas se desean en inglés hay que ponerla explícita.
 \@mesTF{julio}        	% Mes de defensa
 \@monthTF{July}        	% En inglés
-\@yearTF{2024}        	% Año de defensa
+\@yearTF{2025}        	% Año de defensa
 \@cityTF{Ciudad Real}	% Ciudad de defensa
 \@escudo{esiLogo}       % Logo centro (pdf, png o jpg)
 \makeatother 
@@ -73,6 +68,7 @@
 % Palabras clave: Son importantes para facilitar búsqueda en Internet
 \setkeywords{%
 	Escuela Superior de Informática, %
+	UCLM, %
 	TFG, %
 	\LaTeX, %
 	Overleaf, %
@@ -82,6 +78,8 @@
 % -------------------------
 % CUERPO del documento
 % -------------------------
+% Para pruebas, limita los ficheros incluidos.
+%\includeonly{} 
 \begin{document}
 
 % -------------------------
@@ -95,7 +93,8 @@
 \mainmatter
 %\onehalfspacing % Ajusta interlineado a 1.5 líneas
 
-% Ubicados en ./Caps por mayor comodidad. Puede cambiarse la ruta.
+% Ubicados en ./Caps por mayor comodidad. 
+% Pueden modificarse los nombres y rutas a conveniencia.
 % No se precisa nombre precedido por número (se hace por claridad).
 \include{./Caps/1_Introduccion}
 \include{./Caps/2_Objetivo}
