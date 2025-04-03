@@ -636,12 +636,7 @@
 	Estudios en Ingeniería Informática para la UCLM publicada por 
 	\href{https://www.esi.uclm.es/www/jsalido}{Jesús Salido} en el repositorio 
 	público Zenodo, DOI: 
-	\href{https://doi.org/10.5281/zenodo.4561708}{10.5281/zenodo.4561708}, como 
-	parte del curso 
-	\href{http://visilab.etsii.uclm.es/?page_id=1468}{\emph{<<\LaTeX{} esencial 
-	para preparación de TFG, tesis y otros documentos académicos>>}} impartido 
-	en la Escuela Superior de Informática de la Universidad de Castilla-La 
-	Mancha.
+	\href{https://doi.org/10.5281/zenodo.4561708}{10.5281/zenodo.4561708}.%, como parte del curso \href{http://visilab.etsii.uclm.es/?page_id=1468}{\emph{<<\LaTeX{} esencial 	para preparación de TFG, tesis y otros documentos académicos>>}} impartido 	en la Escuela Superior de Informática de la Universidad de Castilla-La 	Mancha.
 	\cleardoublepage
 }	
 
