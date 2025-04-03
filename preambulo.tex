@@ -38,9 +38,9 @@ La copia y distribución de esta obra está permitida en todo el mundo, sin rega
 
 
 % -------------------------
-% CALIFICACIÓN DEL TRIBUNAL  
+% CALIFICACIÓN DEL TRIBUNAL  (No necesario en versión electrónica)
 % -------------------------
-\tribunal % Página opcional para calificación 
+%\tribunal % Página opcional para calificación 
 
 
 % -------------------------
@@ -60,11 +60,11 @@ Por contribuir a hacer de cada día un reto ilusionante}
 \begin{resumenPral}[spanish]
 En una página como máximo, el resumen explica de modo conciso la problemática que trata de resolver el trabajo \emph{(<<Qué>>)}, la metodología para  abordar su solución (\emph{<<Cómo>>)} y las principales conclusiones del trabajo. En los trabajos cuyo idioma principal sea el inglés, el orden de \textsf{Resumen} y \textsf{Abstract} se invertirá. 
 
-En concreto este documento debe servir como guía para preparar, con \LaTeX, el TFG en la \href{http://webpub.esi.uclm.es/}{Escuela Superior de Informática} (ESI) de la Univ. de Castilla-La Mancha (UCLM), siguiendo la \href{https://pruebasaluuclm.sharepoint.com/sites/esicr/tfg/SitePages/Inicio.aspx}{normativa de aplicación}. Está disponible tanto en \href{https://github.com/JesusSalido/TFG_ESI_UCLM}{GitHub} como \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf}. Por tanto, se puede emplear, tanto en un equipo con \LaTeX{} (modo local) instalado, o bien empleando el servicio de edición \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf} (modo online).
+En concreto este documento debe servir como guía para preparar, con \LaTeX, el TFG en la \href{http://webpub.esi.uclm.es/}{Escuela Superior de Informática} (ESI) de la Univ. de Castilla-La Mancha (UCLM), siguiendo la \href{https://esi.uclm.es/index.php/grado-en-ingenieria-informatica/trabajos-fin-de-grado/}{normativa de aplicación}. Está disponible tanto en \href{https://github.com/JesusSalido/TFG_ESI_UCLM}{GitHub} como \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf}.
 
 Este texto se aprovecha para proporcionar información sobre la elaboración de la memoria del TFG con ayuda de \LaTeX{} empleando este documento como plantilla. Por este motivo, sigue una estructura similar a la que se espera encontrar en un TFG, mostrando ejemplos de uso de distintos elementos y comandos de maquetación de textos que se amplía en el anexo~\ref{cap:AnexoA}.
 
-\noindent\emph{IMPORTANTE: Aunque la plantilla se ajusta a las necesidades y reglamentación de la ESI-UCLM, se puede adaptar fácilmente a otras titulaciones, instituciones y otros documentos de carácter académico. Esta plantilla permite la elaboración automática del documento en idioma inglés en cualquier SO (Windows, Linux, Mac OSX, etc.).}
+\noindent\emph{IMPORTANTE: Modifica esta plantilla según tus necesidades. Aunque se ajusta a los requisitos y reglamentación de la ESI-UCLM, se puede adaptar fácilmente a otras titulaciones, instituciones y otros documentos de carácter académico. Además, esta plantilla permite la elaboración automática del documento en idioma inglés.}
 \end{resumenPral}
 
 
@@ -73,7 +73,6 @@ Este texto se aprovecha para proporcionar información sobre la elaboración de 
 \begin{resumenAlt}[english]
 \emph{English version for the abstract.}
 \end{resumenAlt}
-
 
 % Ajuste al idioma pral.
 \ifbool{ESI@spanish}{\selectlanguage{spanish}}{\selectlanguage{english}}
@@ -84,16 +83,16 @@ Este texto se aprovecha para proporcionar información sobre la elaboración de 
 \auxchapter{Agradecimientos}
 Aunque es un apartado opcional, haremos bueno el refrán \emph{<<es de bien nacidos, ser agradecidos>>} si empleamos este espacio como un medio para agradecer a todos los que, de un modo u otro, han hecho posible que el trabajo realizado \emph{llegue a buen puerto}. Esta sección es ideal para agradecer a directores, profesores, mentores, familiares, compañeros, amigos, etc. 
  
-Estos agradecimientos pueden ser tan personales como se desee e incluir anécdotas y chascarrillos, pero recuerda que \emph{no deberían ocupar más de una página}.
+Estos agradecimientos pueden ser tan personales como desees e incluir anécdotas y chascarrillos, pero recuerda que \emph{no deberían ocupar más de una página}.
 
-\firma % Nombre, lugar y año (automáticamente)
+\firma % Nombre, lugar y año (automático, no cambies)
 
 % -------------------------
 % -NOTACIÓN: Lista de símbolos con significado especial.
 % -------------------------
 \auxchapter{Notación y acrónimos}
 \section*{Notacion}
-Ejemplo de lista con notación (o nomenclatura) empleada en la memoria del TFG. Debe editarse según las necesidades personales.\footnote{Se incluye únicamente con propósito de ilustración, ya que el documento no emplea la notación aquí mostrada.}
+(Texto aclaratorio \emph{-suprime-}). Ejemplo de lista con notación (o nomenclatura) empleada en la memoria del TFG. Debes editarla según las necesidades de tu trabajo intenta que sea informativa y evita que incorpore información obvia.\footnote{Se incluye únicamente con propósito de ilustración, ya que el documento no emplea la notación aquí mostrada.}
 
 \begin{tabular}{r r p{0.8\linewidth}}
 $A, B, C, D$	& : & Variables lógicas \\
@@ -108,7 +107,7 @@ $\overline{A}$ o ${A}'$	& : & Operador NOT o negación
 
 \section*{Lista de acrónimos}
 % OJO: Esta lista debería estar ordenada alfabeticamente (hacer de modo manual).
-Ejemplo de lista \emph{ordenada alfabéticamente} con los acrónimos empleados en el texto.\footnote{Se pueden omitir aquellos acrónimos que son reconocidos en el contexto académico (p.~ej., PhD), aunque aquí se han incluido a efectos ilustrativos.}
+(Texto aclaratorio \emph{-suprime-}). Ejemplo de lista \emph{ordenada alfabéticamente} con los acrónimos empleados en el texto. Se pueden omitir aquellos acrónimos que son reconocidos en el contexto académico (p.~ej., PhD), aunque aquí se han incluido a efectos ilustrativos.
 
 \begin{tabular}{r r p{0.8\linewidth}}
 CASE& : &Computer-Aided Software Engineering \\
@@ -127,7 +126,7 @@ UML& : &Unified Modeling Language
 \end{tabular}
 
 % -------------------------
-% ÍNDICES: Si algún índice no existe, se puede eliminar.
+% ÍNDICES: Elimina los innecesarios.
 % -------------------------
 \idxGral
 \idxFiguras

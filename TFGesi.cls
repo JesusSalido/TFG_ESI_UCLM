@@ -1,9 +1,20 @@
-\ProvidesClass{TFGesi}[2025/04/01] % Fecha de creación del documento
+%%%%%%%%%%%%%%
+% Fichero: TFGesi.cls
+% Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
+% Fecha (creación): abril 2025
+% Rev. : ---
+% Descripción: Clase para memoria de TFG % (Escuela Sup. de Informática, UCLM).
+%
+% IMPORTANTE: Se recomienda no modificar sin conocimientos avanzados.
+% Modifica bajo tu responsabilidad. 
+%%%%%%%%%%%%%%
+\ProvidesClass{TFGesi}
 \NeedsTeXFormat{LaTeX2e}
 
 \RequirePackage{kvoptions}
 \RequirePackage{etoolbox}
 
+% --- Declaracinoes de opciones de la clase
 \DeclareBoolOption{draft} % Modo borrador (False)
 \DeclareComplementaryOption{final}{draft} % Modo borrador (True)
 
@@ -13,7 +24,8 @@
 \DeclareComplementaryOption{english}{spanish} % Modo borrador (True)
 \DeclareBoolOption[true]{pageonfooter} % Nº de página en el pie (False)
 
-\ProcessKeyvalOptions*
+\ProcessKeyvalOptions* % Procesa las opciones pasadas en la llamada
+% --- Declaracinoes de opciones de la clase
 
 \LoadClass[ 		    % Clase base del documento
 	11pt,				% Tamaño de letra
@@ -35,8 +47,9 @@
 %\pdfcompresslevel=1
 
 % Inputenx con UTF8 (necesario en versiones LaTeX anteriores 2018)
-%\RequirePackage[utf8]{inputenx} 
-\RequirePackage[     % Ambos idiomas son precisos para bibliografía multilingüe
+%\RequirePackage[utf8]{inputenx}
+
+\RequirePackage[ % Ambos idiomas son precisos para bibliografía multilingüe
     english,     % Se emplea porque el resumen siempre en inglés
     spanish,     % Se emplea para resumen en español
     es-tabla,    % Cambia denominacion de cuadro a tabla (en español)
@@ -48,14 +61,13 @@
 % skip= .5\baselineskip plus 2pt -> Valor por defecto
 % 
 
-\RequirePackage{amssymb,amsfonts} % Para ecuaciones
-\RequirePackage{amsmath}
-% OPT. Tipografía incluida (des/comentar según necesidad).
-%--- Si no se emplea ningún paquete de tipografía se emplea Computern 
-%Modern.
 % -------------------------
 % AJUSTE DE TIPOGRAFÍA (paquete específico para cada tipografía)
 % -------------------------
+% Símbolos matemáticos de la AMS
+\RequirePackage{amssymb,amsfonts} % Para ecuaciones
+\RequirePackage{amsmath}
+
 %--- (Opción: Latin Modern)
 %\RequirePackage{lmodern} % Latin Modern. Sucesora de Computer Modern.
 
@@ -75,12 +87,13 @@
 % Preferida en algunos centros docentes (ADE-UCLM).
 % Con esta elección es más conveniente una tipografía tipo Helvética/Arial 
 %(no Libertine)
-% OPT.: Tipografía sans serif pral. (descomentar).
 %\RequirePackage{helvet}
 %\renewcommand{\familydefault}{\sfdefault} % Familia por defecto sans serif
 %---
 
+
 \RequirePackage{textcomp,marvosym,pifont,fontawesome5} % Símbolos especiales
+
 
 \RequirePackage[T1]{fontenc}% Codificación de salida    
 \RequirePackage[
@@ -94,14 +107,18 @@
 \SetTracking{encoding={*}, shape=sc}{40}
 
 \RequirePackage{setspace}   % Permite el ajuste del interlineado
-%
+
 \RequirePackage[shortlabels]{enumitem} 	% Control de listas
 %\setlist[itemize,1]{label=\textbullet}  % Viñeta para el primer nivel de listas (cuidado no repetir viñeta si incluyes un 2º nivel)
+
 \RequirePackage{multicol}	% Texto en varias columnas
 
 \RequirePackage{float} % Forzado de pos. de floats (opción H)
+
 \RequirePackage{array,booktabs,tabularx} % Paquetes para tablas
+
 \RequirePackage{graphicx,subcaption,rotating,pdflscape} % Incl. de sub-figuras
+
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % Precedencia de extensiones
 \graphicspath{{./figs/}}% Path de búsqueda de ficheros gráficos
 
@@ -111,25 +128,21 @@
 	labelfont=bf, % Prefijo-Etiqueta en negrita
 	format=hang	  %
 ]{caption}
-% -------------------------
-% AJUSTE DE TÍTULOS (paquete caption)
-% -------------------------
 \captionsetup[table]{skip=5pt} 	% Separación de título tablas
 \captionsetup[figure]{skip=5pt} % Separación de título en figuras
-% -------------------------
 
 \RequirePackage[dvipsnames,svgnames,x11names,table]{xcolor}
-% -------------------------
-% AJUSTE DE COLORES (paquete xcolor)
-% -------------------------
 \definecolor{palered}{rgb}{0.78, 0.03, 0.08}
 \definecolor{ocre}{RGB}{243,102,25} % Ocre
-\definecolor{aquaESI}{RGB}{0,151,215} % Aqua
+%\definecolor{aquaESI}{RGB}{0,151,215} % Aqua
+\definecolor{aquaESI}{cmyk}{0.85,0.2,0.0,0.0} % Aqua
+\definecolor{marineESI}{cmyk}{1.0,0.9,0.0,0.3} % Marine
 \definecolor{turquesa}{RGB}{64,132,64} % Turquesa
 \definecolor{UCLMred}{cmyk}{0.19, 1.0, 0.74, 0.12} % Color imagen corporativa UCLM
 \definecolor{sombra}{HTML}{F0F0F0} % Sombra código
+\definecolor{grisESI}{RGB}{167,174,178} % Gris numeración código
+%\definecolor{grisESI}{cmyk}{8.0, 0.0, 0.0, 0.4} % Gris numeración código
 \definecolor{gris}{gray}{0.4} % Gris numeración código
-% -------------------------
 
 \RequirePackage{hyperref}
 \urlstyle{sf}		        % Estilo sans serif para URLs
@@ -149,12 +162,13 @@
 }
 
 \RequirePackage{pdfpages}   % Permite inclusión de páginas de un PDF
+
 \RequirePackage{tikz}       % Paquete para gráficos
-\RequirePackage{fancyhdr}	% Ajuste de cabeceras y pies
 
 % -------------------------
 % AJUSTE DE CABECERA Y PIE DE PÁGINA (paquete fancyhdr)
 % -------------------------
+\RequirePackage{fancyhdr}	% Ajuste de cabeceras y pies
 \fancyhf{} % Reset de la cabecera y pie
 \fancyhead[LO]{\sffamily\leftmark} % pág impar: [Capítulo                      pág]
 \fancyhead[RE]{\sffamily\rightmark} % pág par:  [pág.                      Sección]
@@ -189,10 +203,13 @@
 }
 % -------------------------
 
-\RequirePackage{titlesec}   % Ajustes de títulos de secciones
+
+
+
 % -------------------------
 % CONFIGURACIÓN INICIO CAPÍTULOS Y SECCIONES (paquete titlesec)
 % -------------------------
+\RequirePackage{titlesec}   % Ajustes de títulos de secciones
 \newcommand{\bigrule}{\titlerule[0.5mm]}
 
 \titleformat{\chapter}[display]% {<command>}[<shape>]
@@ -212,15 +229,18 @@
 \titlespacing*{\subsubsection}{0pt}{.5\baselineskip plus 2pt}{.2\baselineskip plus 2pt}
 % -------------------------
 
+
+
+
+% -------------------------
+% CONFIGURACIÓN ALGORITMOS Y LISTADOS DE CÓDIGO
+% -------------------------
 \RequirePackage[% Inclusión de algoritmos
 	lined,boxruled,algochapter,commentsnumbered,%
     \ifbool{ESI@spanish}{spanish}{english}% 
 ]{algorithm2e} 
 
 \RequirePackage{listings}	% Inclusión de listados de código
-% -------------------------
-% CONFIGURACIÓN LISTADOS DE CÓDIGO (paquete listings)
-% -------------------------
 \lstset{inputencoding=utf8, extendedchars=true,
 	literate=%
 	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
@@ -249,7 +269,7 @@
 	%	deletekeywords={}, 			% Quita keywords separadas por comas
 	captionpos=t,               % Ajusta la posición de títulos 
 	numbers=left,               % Posición de números de línea
-	numberstyle={\color{gris}\tiny\sffamily},          % Tamaño del número de línea
+	numberstyle={\color{grisESI}\tiny\sffamily},          % Tamaño del número de línea
 	numberfirstline=false,
 	firstnumber=1, 				%  Nº de la primera línea
 	stepnumber=1,               % Paso de línea numerada
@@ -274,6 +294,7 @@
 	backgroundcolor={\color{sombra}} % Color del fondo
 }
 
+
 % Estilo consola
 \lstdefinestyle{consola}{% Estilo para comandos tipo consola
 	basicstyle={\color{white}\scriptsize\bf\ttfamily},
@@ -281,6 +302,7 @@
 	frame=none,
 	showspaces=true
 }
+
 
 % Estilo con filete izdo.
 \lstdefinestyle{ruled}{% Estilo para listado con filete a la izda.
@@ -293,29 +315,15 @@
 
 
 
+
+
+
+
 % -------------------------
 % -------------------------
 % COMANDOS DE USUARIO
 % -------------------------
 % -------------------------
-% Nombres en spanish (babel)
-\makeatletter
-\newcommand{\setindexnames}{%
-	\ifbool{ESI@spanish}{
-		%--- No necesarios al añadir la opción es-tabla para babel.
-		%\renewcommand{\tablename}{Tabla} % Se sustituye 'Cuadro' por 'Tabla'
-		%\renewcommand{\listtablename}{Índice de tablas}
-		%---
-		\renewcommand{\lstlistingname}{Listado}
-		\renewcommand{\lstlistlistingname}{Índice de listados}
-		\SetAlgorithmName{Algoritmo}{Alg}{Índice de algoritmos}
-		% Modififica las macros \algorithmcfname y \listalgoritmcfname
-		\renewcommand{\appendixname}{Anexo}
-		\renewcommand{\bibname}{Bibliografía}
-		\renewcommand{\indexname}{Índice temático}}{}
-}
-\makeatother
-
 % -------------------------
 % DEFINICIÓN DE DATOS DEL DOCUMENTO
 \makeatletter % Estas declaraciones son precisas fuera del paquete
@@ -343,19 +351,36 @@
 \newcommand{\@escudo}[1]{\newcommand{\escudo}{#1}}
 \makeatother
 
+
+% Nombres en spanish (babel)
+\newcommand{\setindexnames}{%
+	\ifbool{ESI@spanish}{
+		%--- No necesarios al añadir la opción es-tabla para babel.
+		%\renewcommand{\tablename}{Tabla} % Se sustituye 'Cuadro' por 'Tabla'
+		%\renewcommand{\listtablename}{Índice de tablas}
+		%---
+		\renewcommand{\lstlistingname}{Listado}
+		\renewcommand{\lstlistlistingname}{Índice de listados}
+		\SetAlgorithmName{Algoritmo}{Alg}{Índice de algoritmos}
+		% Modififica las macros \algorithmcfname y \listalgoritmcfname
+		\renewcommand{\appendixname}{Anexo}
+		\renewcommand{\bibname}{Bibliografía}
+		\renewcommand{\indexname}{Índice temático}}{}
+}
+
+
+
 \newcommand{\keywordslist}{} % Variable que almacenará la lista
-\newcommand{\setkeywords}[1]{%
+\newcommand{\setkeywords}[1]{% Declara la lista de palabras clave
   \renewcommand{\keywordslist}{#1}% guarda lista
   \hypersetup{% (Metadatos del fichero PDF generado)
 	  pdftitle={\title},      % Título
 	  pdfauthor={\author},    % Autor
 	  pdfsubject={\tipoDoc},  % Tipo de de documento
-	  pdfkeywords={#1}         % Palabras clave
+	  pdfkeywords={#1}        % Palabras clave
   }
 }
 
-
-% -------------------------
 
 % -------------------------
 % INDICACIÓN DE PULSACIÓN DE TECLA
@@ -382,9 +407,9 @@
 % Estas definiciones permiten cambiar el estilo de los elementos. Si se 
 %desean otros estilos o su configuación es preciso recurrir a la 
 %documentación del paquete (no lo recomiendo).
-\renewmenumacro{\menu}[:]{menus} % OPT: estilo menus
-\renewmenumacro{\directory}[/]{pathswithblackfolder} % OPT: estilo paths
-\renewmenumacro{\keys}[+]{shadowedroundedkeys} % OPT: estilo keys
+\renewmenumacro{\menu}[:]{menus} % Estilo menus
+\renewmenumacro{\directory}[/]{pathswithblackfolder} % Estilo paths
+\renewmenumacro{\keys}[+]{shadowedroundedkeys} % Estilo keys
 %---
 
 % -------------------------
@@ -433,23 +458,42 @@
 	\setcounter{page}{\value{totpages}}
 }
 
+% -------------------------
+% Ajustes de formato en distintas partes del documento
 \apptocmd{\frontmatter}{\pagestyle{empty}}{}{}
-
 \apptocmd{\mainmatter}{\savepagecnt %
 	\ifbool{ESI@pageonfooter}{}{\cleanhdfirst}
 }{}{}
-
-\apptocmd{\appendix}{\ifbool{ESI@spanish}{\part*{\sffamily ANEXOS}}%
-	{\part*{\sffamily APPENDICES}}
+\apptocmd{\appendix}{%    
+	\phantomsection
+	\ifbool{ESI@spanish}{%
+		\part*{\sffamily ANEXOS}
+		\pdfbookmark[0]{Anexos}{anexos}
+	}%
+	{
+		\part*{\sffamily APPENDICES \phantomsection}
+		\pdfbookmark[0]{Appendices}{anexos}
+	}
 }{}{}
-
 
 \pretocmd{\bibliography}{\cleardoublepage %
 	\phantomsection  % Ojo necesario con hyperref.
 	\addcontentsline{toc}{chapter}{\bibname} % Añade la bibliografía al Índice de contenidos
 }{}{}
 
-% -------------------------------------------------------------------------
+
+
+
+
+% -------------------------
+% -------------------------
+% -------------------------
+% -------------------------
+% AJUSTES PARA INCLUIR DISTINTAS PARTES DEL DOCUMENTO (PREÁMBULO)
+% -------------------------
+% -------------------------
+% -------------------------
+% -------------------------
 % PORTADA PRAL. (1)
 \newcommand{\portadaPral}{%
 	\begin{titlepage}
@@ -464,13 +508,15 @@
 					\titulacion}}\\[0.5cm]
 	        {\large \textbf{\especialidad}}\\[1.5cm] 
 			{\LARGE \textbf{\tipoDoc}}\\[1cm]	
+			
 			{\LARGE \tituloPrimera}\\ \smallskip%			
-			\ifdefined\tituloSegunda{\LARGE \tituloSegunda}\\[3cm]
-			\else \phantom{\LARGE	Texto fantasma}\\[3cm]
+			\ifdefined\tituloSegunda{\LARGE \tituloSegunda}
+			\else \phantom{\LARGE Texto fantasma}
 			\fi
-			{\Large \autor}\vfill%
+			\vspace{3cm} 
+			\Large \autor
 		\end{center}
-		
+		\vfill%
 		\begin{flushright}
 			{\Large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
 		\end{flushright}
@@ -578,14 +624,11 @@
 	\cleardoublepage
 }	
 
-
-
 % -------------------------
 % Entorno para incluir dedicatoria
 % -------------------------
 \newenvironment{dedicatoria}{\null\vspace{\stretch{1}}\begin{flushright}}
 	{\end{flushright}\vspace{\stretch{2}}\null\cleardoublepage}
-
 
 % -------------------------
 % Entorno para incluir resumen
@@ -650,8 +693,6 @@
 	\cleardoublepage
 }
 
-
-
 \newcommand{\firma}{%
 	\leavevmode
 	\vspace{1,5cm}
@@ -660,7 +701,6 @@
 		\cityTF, \yearTF
 	\end{flushright}
 }
-
 
 \newcommand{\auxchapter}[1]{
 	\cleardoublepage

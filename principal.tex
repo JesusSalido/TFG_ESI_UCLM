@@ -1,7 +1,7 @@
 % CABECERA DESCRIPCIÓN
 % BEGIN_FOLD
 %%%%%%%%%%%%%%
-% Fichero: uclmTFGesi.tex
+% Fichero: principal.tex
 % Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
 % Fecha (creación): febrero 2010 
 % Rev. : marzo 2024
@@ -13,8 +13,9 @@
 %### Compilación 
 %
 % Esta plantilla ha sido preparada para compilarse con `pdflatex`  
-% (bibliografía con `bibtex`).
-%$ $
+% (bibliografía con `bibtex`). Se recomienda emplear una distribución
+% de LaTeX como MiKTeX o TeXLive.
+%
 % Para su compilación se aconseja utilizar `latexmk` (requiere para su 
 % ejecución de un intérprete perl:
 %
@@ -22,18 +23,17 @@
 %
 % Para la automatización del trabajo con esta plantilla es recomendable el 
 % empleo de IDE dedicados como [TeXstudio](https://www.texstudio.org/).
+% También puede emplearse Visual Studio Code con la extensión Latex WorkShop.
 %
-% Una versión revisada de esta plantilla está disponible en overleaf.
-% Puede crearse un proyecto propio para escribir un TFG directamente en 
-% overleaf, o bien descargarla como un archivo .zip para su utilización en 
-% modo local.
+% Una versión revisada de esta plantilla está disponible en Overleaf para
+% trabajar online. 
 %
 % Si deseas acceder a la versión de desarrollo puedes encontrarla en GitHub:
 %	https://github.com/JesusSalido/TFG_ESI_UCLM
 %%%%%%%%%%%%%%
 % END_FOLD
 \documentclass[final, % final o drafts (sin figuras)
-			   spanish, % Español o inglés (english) como idioma pral. 
+			   spanish, % Idioma pral. (spanish o english)
 			   pageonfooter=false % Paginación en el pie
 ]{TFGesi}
 
@@ -51,8 +51,8 @@
 \@email{jesus.salido@uclm.es}
 \@autorline{Autor: \autor}
 \@tutline{Tutor/a: Quien tutoriza}
-\@cotutline{Cotutor/a: Quien cotutoriza} % No borrar, sino dejar en blanco
-%\@cotutline{} % No borrar, sino dejar en blanco
+%\@cotutline{Cotutor/a: Quien cotutoriza} % No borrar, sino dejar en blanco
+\@cotutline{} % No borrar, sino dejar en blanco
 \@instEdu{UNIVERSIDAD DE CASTILLA-LA MANCHA}
 \@centroEdu{ESCUELA SUPERIOR DE INFORMÁTICA}
 \@titulacion{GRADO EN INGENIERÍA INFORMÁTICA} % En idioma pral.
@@ -73,18 +73,25 @@
 % Palabras clave: Son importantes para facilitar búsqueda en Internet
 \setkeywords{%
 	Escuela Superior de Informática, %
-	Trabajo Fin de Grado, %
+	TFG, %
 	\LaTeX, %
-	plantilla de TFG, %
-	UCLM %
+	Overleaf, %
+	\TeX Live %
 } % (como mucho 5)
 
 % -------------------------
 % CUERPO del documento
 % -------------------------
 \begin{document}
+
+% -------------------------
+% Portadas, créditos, resumen, agradecimiento, notación e índices. 
 \frontmatter
 \input{preambulo} % Contiene portadas y otros elementos preliminares
+% -------------------------
+
+% -------------------------
+% Capítulos
 \mainmatter
 %\onehalfspacing % Ajusta interlineado a 1.5 líneas
 
@@ -127,7 +134,10 @@
 % (FIN BIBLIOGRAFÍA)
 % -------------------------
 
-% EDITA: Anexos, ajusta a las necesidades añadiendo o quitando
+
+% -------------------------
+% ANEXOS
+% -------------------------
 \appendix
 \include{./Anexos/AnexoA} % Apéndice A (opcionales)
 \include{./Anexos/AnexoB} % Apéndice A (opcionales)
