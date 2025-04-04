@@ -20,7 +20,11 @@ Esta plantilla está organizada en ficheros y directorios del modo que se indica
   - Un fichero ``preambulo.tex`` en el que se incluye los comandos para generar:  portadas, créditos, dedicatoria, resumen, agradecimientos, notación y los índices.
   - Directorio ``/Caps`` con ficheros para los capítulos principales de la memoria.
   - Directorio ``/Anexos`` con ficheros para los anexos.
-  - Directorio ``/figs`` de figuras contenidas en el documento final.
+  - Directorio ``/figs`` donde se ubican los ficheros (``.pdf``, ``.png`` o ``.jpg``) de las figuras incluidas en el documento.
+
+>
+> __IMPORTANTE__: 
+>_Los únicos ficheros que se deben editar son aquellos con extensión ``.tex``, teniendo en cuenta que los ficheros correspondientes a capítulos y anexos se ubican por defecto en los directorios correspondientes (``Caps`` y ``Anexos``)_
 
 
 ### Compilación 
