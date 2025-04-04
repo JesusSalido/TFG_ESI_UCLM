@@ -549,7 +549,7 @@
 
 
 % -------------------------------------------------------------------------
-% PORTADA INT. (2)
+% PORTADA INTERIOR (2)
 \newcommand{\portadaInt}{%
 	\begin{titlepage}
 		\begin{center}

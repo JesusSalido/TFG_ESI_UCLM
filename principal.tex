@@ -1,5 +1,3 @@
-% CABECERA DESCRIPCIÓN
-% BEGIN_FOLD
 %%%%%%%%%%%%%%
 % Fichero: principal.tex
 % Autor: Jesús Salido Tercero (https://www.esi.uclm.es/www/jsalido)
@@ -16,27 +14,31 @@
 % (bibliografía con `bibtex`). Se recomienda emplear una distribución
 % de LaTeX como MiKTeX o TeXLive.
 %
-% Para su compilación se aconseja utilizar `latexmk` (requiere para su 
-% ejecución de un intérprete perl:
-%
-%> \$> latexmk -gg -pdf -bibtex-cond1 -quiet -outdir=build uclmTFGesi.tex
-%
 % Una versión revisada de esta plantilla está disponible en Overleaf para
 % trabajar online. 
 %
 % Si deseas acceder a la versión de desarrollo puedes encontrarla en GitHub:
 %	https://github.com/JesusSalido/TFG_ESI_UCLM
 %%%%%%%%%%%%%%
-% END_FOLD
-\documentclass[final, % final o drafts (sin figuras)
+
+\documentclass[final, % final o draft (sin figuras)
 			   spanish, % Idioma pral. (spanish o english)
 			   pageonfooter=false % Paginación en el pie
 ]{TFGesi}
 
 % -------------------------
-% EDITA: Datos del documento.
-% Cumplimenta con tus datos.
-% Se usan en el documento suprimiendo el caracter '@'
+% EDITA: Los datos del documento con la información de tu trabajo.
+%
+% IMPORTANTE: Todos los campos son obligatorios, 
+% pero \cotutline se puede dejar vacío.
+%
+% Algunos datos deben declararse en el idioma alternativo al pral.
+% del documento. Estos datos se emplean en el resumen en el idioma
+% alternativo.  
+%
+% La clase TFGesi los usa para generar el contenido personalizado.
+% Puedes usarlos en cualquier parte del documento suprimiendo 
+% el caracter '@', p.ej., \titulo
 % -------------------------
 \makeatletter 
 \@titulo{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
@@ -56,7 +58,6 @@
 \@depto{Depto. del tutor(a)}
 \@tipoDoc{TRABAJO FIN DE GRADO} % En idioma pral.
 \@tipoDocAlt{BACHELOR DISSERTATION} % En idioma alt.
-% Si las fechas se desean en inglés hay que ponerla explícita.
 \@mesTF{julio}        	% Mes de defensa
 \@monthTF{July}        	% En inglés
 \@yearTF{2025}        	% Año de defensa
@@ -66,14 +67,18 @@
 % -------------------------
 
 % Palabras clave: Son importantes para facilitar búsqueda en Internet
-\setkeywords{%
+% Se añaden como metadatos al PDF final.
+\setkeywords{% (hasta 5 o 6 máx.)
 	Escuela Superior de Informática, %
 	UCLM, %
 	TFG, %
 	\LaTeX, %
 	Overleaf, %
 	\TeX Live %
-} % (como mucho 5)
+} 
+
+
+
 
 % -------------------------
 % CUERPO del documento
@@ -105,37 +110,39 @@
 \singlespacing % Resto del documento siempre en espaciado sencillo
 % -------------------------
 
-% -------------------------
-% --- BIBLIOGRAFÍA
-% -------------------------
-\bibliography{bibliografia}   % Nombre del fichero .bib
-\bibliographystyle{plain} % Estilo de bibliografía.
 
+
+% -------------------------
+% --- BIBLIOGRAFÍA (Obligatoria)
+% -------------------------
+\bibliography{bibliografia} % Nombre del fichero .bib
+\bibliographystyle{plain} % Elige el estilo adecuado.
 % Estilos nativos incluidos con LaTeX (plain, abbrv, alpha, unsrt).
 %
-% plain: las referencias se numeran y en la bibliografía las entradas
+% plain: citación en estilo numérico. En la bibliografía las entradas
 %        aparecen en orden alfabético.
-% abbrv: igual que el anterior pero en la bibliografía los nombres se
-%        escriben sólo con la inicial.
-%        y el año de publicación. En la bibliografía los nombres 
-%        igual que en plain. 
-%        .
-% unsrt: la bibliografía no aparece por orden alfabético sino por 
-%        orden de cita en el texto.
 %
-%---     Estilos incluidos con BibTeX “no nativos”, pero populares” 
-%        para ingenierías (no requieren paquetes adicionales).
-% acm:   Numérica con los nombre de autores en mayúsculas y 
-%        referencias con ordenación alfabética.
-% ieeetr:Para los IEEE Transactions, con citación numérica 
-%        y ordenación de referencias por orden de cita.
+% abbrv: Cita numérica. En la bibliografía los nombres aparecen
+%        sólo con la inicial.
+%
+% unsrt: Cita numérica. La bibliografía por orden de cita en el texto.
+%
+% -------------------------
+%        Estilos incluidos con BibTeX no nativos, pero populares
+%        en ingeniería (no requieren paquetes adicionales).
+%
+% acm:   Cita numérica. En la bibliografía con los nombre de autores 
+%        en mayúsculas y con ordenación alfabética.
+%
+% ieeetr:IEEE Transactions, con citación numérica y ordenación por orden 
+%        de cita.
 % -------------------------
 % (FIN BIBLIOGRAFÍA)
 % -------------------------
 
 
 % -------------------------
-% ANEXOS
+% ANEXOS (si no los necesitas los puedes borrar o comentar)
 % -------------------------
 \appendix
 \include{./Anexos/AnexoA} % Apéndice A (opcionales)
