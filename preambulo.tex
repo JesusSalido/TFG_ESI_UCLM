@@ -17,7 +17,7 @@
 % -------------------------
 % CRÉDITOS
 % -------------------------
-\begin{creditos} % Editar a conveniencia
+\begin{creditos}[\titulo] % Editar a conveniencia (se pasa el título deseado)
 El autor puede elegir el tipo de licencia que desee. Este documento se distribuye con licencia CC BY-NC-SA 4.0. El texto completo de la licencia se puede obtener en \url{https://creativecommons.org/licenses/by-nc-sa/4.0/}. La copia y distribución de esta obra está permitida en todo el mundo, sin regalías y por cualquier medio, siempre que esta nota sea preservada. Se concede permiso para copiar y distribuir traducciones de este libro desde el español original a otro idioma, siempre que la traducción sea aprobada por el autor del libro y tanto el aviso de copyright como esta nota de permiso, sean preservados en todas las copias.
 
 \noindent \includegraphics[width=0.15\linewidth]{by-nc-sa}
@@ -55,8 +55,8 @@ Por contribuir a hacer de cada día un reto ilusionante}
 % -------------------------
 % RESÚMENES:
 % -------------------------
-% EDITAR: Resumen en idioma pral. (máx. 1 pág.) 
-\begin{resumenPral}[spanish]
+% EDITAR: Resumen en idioma pral. default=spanish (máx. 1 pág.) 
+\begin{resumenPral}[spanish]{\titulo} % Se pasa el idioma (opcional) y título
 En una página como máximo, el resumen explica de modo conciso la problemática que trata de resolver el trabajo \emph{(<<Qué>>)}, la metodología para  abordar su solución (\emph{<<Cómo>>)} y las principales conclusiones del trabajo. En los trabajos cuyo idioma principal sea el inglés, el orden de \textsf{Resumen} y \textsf{Abstract} se invertirá. 
 
 En concreto este documento debe servir como guía para preparar, con \LaTeX, el TFG en la \href{http://webpub.esi.uclm.es/}{Escuela Superior de Informática} (ESI) de la Univ. de Castilla-La Mancha (UCLM), siguiendo la \href{https://esi.uclm.es/index.php/grado-en-ingenieria-informatica/trabajos-fin-de-grado/}{normativa de aplicación}. Está disponible tanto en \href{https://github.com/JesusSalido/TFG_ESI_UCLM}{GitHub} como \href{https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw}{Overleaf}.
@@ -67,9 +67,10 @@ Este texto se aprovecha para proporcionar información sobre la elaboración de 
 \end{resumenPral}
 
 
-% EDITAR: Resumen en idioma alternativo (máx. 1 pág.)
+% EDITAR: Resumen en idioma alternativo default=english (máx. 1 pág.)
 %---
-\begin{resumenAlt}[english]
+\begin{resumenAlt}[english]{\tituloCortoAlt} 
+% Se pasa el idioma (opcional) y título
 \emph{English version for the abstract.}
 \end{resumenAlt}
 

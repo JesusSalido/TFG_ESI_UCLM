@@ -621,7 +621,7 @@
 % -------------------------
 % Entorno para incluir créditos
 % -------------------------
-\newenvironment{creditos}[1][\tituloCorto]{%
+\newenvironment{creditos}[1][\titulo]{% Sin parámetro utiliza título
 	\ifbool{ESI@spanish}{\selectlanguage{spanish}%
 		\pdfbookmark[1]{Créditos}{creditos}%
 	}{\selectlanguage{english}%
@@ -649,7 +649,8 @@
 % -------------------------
 % Entorno para incluir resumen
 % -------------------------
-\newenvironment{resumenPral}[1][spanish]{%
+\newenvironment{resumenPral}[2][spanish]
+{% Acepta título como opción
 	\phantomsection  % Necesario con hyperref
 	\ifstrequal{#1}{spanish}{
 		\addcontentsline{toc}{chapter}{Resumen} % Añade al TOC.
@@ -664,8 +665,8 @@
 	\begin{center} %
 	   {\textsc{\tipoDoc{} - \centroEdu{}
 	   (UCLM)}\par} % Tipo de trabajo
-	   \vspace{1cm} %  
-	   {\textbf{\Large\tituloCorto}\par}  % Título del trabajo
+	   \vspace{0.5cm} %  
+	   {\textbf{\Large {#2}}\par}  % Título del trabajo
 	   \vspace{0.4cm} %
 	   {\autoria \\ \cityTF,{} \mesTF{} \yearTF\par} 
 	   \vspace{0.9cm} % 
@@ -679,7 +680,7 @@
 	\cleardoublepage
 }
 
-\newenvironment{resumenAlt}[1][english]{%
+\newenvironment{resumenAlt}[2][english]{%
 	\phantomsection  % Necesario con hyperref
 	\ifstrequal{#1}{spanish}{
 		\addcontentsline{toc}{chapter}{Resumen} % Añade al TOC.
@@ -694,8 +695,8 @@
 	\begin{center} %
 	   {\textsc{\tipoDocAlt{} - \centroEdu{}
 	   (UCLM)}\par} % Tipo de trabajo
-	   \vspace{1cm} %  
-	   {\textbf{\Large\tituloCortoAlt}\par}  % Título del trabajo
+	   \vspace{0.5cm} %  
+	   {\textbf{\Large {#2}}\par}  % Título del trabajo
 	   \vspace{0.4cm} %
 	   {\autoria \\ \cityTF,{} \mesTF{} \yearTF\par} 
 	   \vspace{0.9cm} % 
