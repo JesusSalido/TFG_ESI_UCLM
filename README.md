@@ -1,5 +1,11 @@
 # Plantilla guía de TFG de la Escuela Superior de Informática (ESI-UCLM)
 
+> #### Novedades
+> _En esta actualización se han realizado cambios para simplificar la utilización y adaptación de la plantilla_. El formato incorpora ligeros cambios: 
+> - añade un nuevo diseño de portada principal, 
+> - aumenta el tamaño de la tipografía de 11pt a 12pt, y
+> - añade la opción (device=screen) que reduce los márgenes y elimina páginas en blanco para un texto final destinado a lectura en pantalla.
+
 Esta plantilla debe servir como guía para preparar, con LaTeX, el TFG en la [Escuela Superior de Informática](http://webpub.esi.uclm.es/) (ESI) de la Univ. de Castilla-La Mancha (UCLM) siguiendo la [normativa de aplicación](https://esi.uclm.es/index.php/grado-en-ingenieria-informatica/trabajos-fin-de-grado/). Está disponible en [GitHub](https://github.com/JesusSalido/TFG_ESI_UCLM)  y [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw). Por tanto, la puedes emplear tanto en modo local en un equipo (Windows, Linux, Mac OSX, etc.) con LaTeX instalado ([MiKTeX](https://miktex.org/), [TeX Live](https://www.tug.org/texlive/), etc.), o bien en línea mediante el servicio de edición [Overleaf](https://www.overleaf.com/latex/templates/plantilla-de-tfg-escuela-superior-de-informatica-uclm/phjgscmfqtsw).
 
 > __IMPORTANTE__: 

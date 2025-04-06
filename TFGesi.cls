@@ -23,26 +23,46 @@
 \DeclareBoolOption[true]{spanish} % Por defecto idioma español (False)
 \DeclareComplementaryOption{english}{spanish} % Modo borrador (True)
 \DeclareBoolOption[true]{pageonfooter} % Nº de página en el pie (False)
+\DeclareStringOption[normal]{device} % Dispositivo de salida (pdftex)
 
 \ProcessKeyvalOptions* % Procesa las opciones pasadas en la llamada
 % --- Declaracinoes de opciones de la clase
 
-\LoadClass[ 		    % Clase base del documento
-	11pt,				% Tamaño de letra
-	a4paper,			% Tamaño de papel
-	twoside,			% Impresión a doble cara
-	openright,			% La apertura de cap. a la dcha.
+\LoadClass[ % Clase base del documento
+	12pt,	% Tamaño de letra
+	a4paper	% Tamaño de papel
 ]{book}
 
 \setcounter{tocdepth}{1} % Suprime del índice los apdos. de nivel mayor
 \setcounter{secnumdepth}{3} % Suprime numeración de secciones de nivel mayor
 
 %--- Márgenes del documento
-\RequirePackage[top=2.5cm,    % Superior
-            bottom=2.5cm, % Inferior
-            inner=3.5cm,  % Interior 
-            outer=2cm     % Exterior
-]{geometry}
+\RequirePackage[]{geometry}
+
+\ifdefstring{\ESI@device}{normal}{
+  \geometry{
+    top=2.5cm,    % Superior
+    bottom=2.5cm, % Inferior
+    twoside,      % Impresión a doble cara
+    inner=3.5cm,  % Interior 
+    outer=2cm     % Exterior
+  }
+}{ % Cierre del bloque anterior y apertura del siguiente
+% En el modo de lectura en pantalla se ajustan los márgenes
+% y se suprimen páginas en blanco
+  \ifdefstring{\ESI@device}{screen}{
+    \geometry{
+      top=2.5cm,   
+      bottom=2.5cm,
+      twoside=false,
+      inner=2cm,   
+      outer=2cm  
+    }
+  }{} % Cierre del segundo bloque condicional
+}
+
+\let\cleardoublepage\clearpage
+
 
 %\pdfcompresslevel=1
 
@@ -503,16 +523,16 @@
         \begin{minipage}[t]{0.98\textwidth}
 		\begin{center}
 			\vspace*{1cm}
-			{\huge \textbf{\textsf{\instEdu}}}\\[1cm]
-			{\LARGE \textbf{\textsf{\titulacion}}}\\[0.5cm]
-	        {\Large \textsf{\especialidad}}\\[3cm] 
-			{\LARGE \textbf{\textsf{\tipoDoc}}}\\[1cm]	
+			{\LARGE \textbf{\textsf{\instEdu}}}\\[1cm]
+			{\Large \textbf{\textsf{\titulacion}}}\\[0.5cm]
+	        {\large \textsf{\especialidad}}\\[3cm] 
+			{\Large \textbf{\textsf{\tipoDoc}}}\\[1cm]	
 			
-			{\LARGE \textsf{\titulo}}\\[1.5cm]%			
+			{\Large \textsf{\titulo}}\\[1.5cm]%			
 						
-			{\Large \textsf{\autoria}} \\[12cm]
+			{\large \textsf{\autoria}} \\[12cm]
 		
-			{\Large \textsf{\cityTF, \mesTF{} de \yearTF}}
+			{\large \textsf{\cityTF, \mesTF{} de \yearTF}}
 		\end{center}
         \end{minipage}
     };
@@ -535,14 +555,14 @@
 	        {\large \textbf{\especialidad}}\\[1.5cm] 
 			{\LARGE \textbf{\tipoDoc}}\\[1cm]	
 			
-			{\LARGE \titulo}\\[1.5cm]%			
+			{\Large \titulo}\\[1.5cm]%			
 			
 			
-			{\Large \autoria}
+			{\large \autoria}
 		\end{center}
 		\vfill
 		\begin{flushright}
-			{\Large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
+			{\large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
 		\end{flushright}
 	\end{titlepage}
 }
@@ -564,19 +584,19 @@
 			{\large \textbf{\especialidad}}\\[1.5cm]
 			{\LARGE \textbf{\tipoDoc}}\\[1cm]
 			
-			{\LARGE \textbf{\titulo}}%		
+			{\Large \textbf{\titulo}}%		
 		\end{center}
 		\vfill
 		\begin{flushleft}
-			{\Large \autorline} \\ \bigskip%
-			{\Large \tutline} \\ \bigskip% 
-			\ifdefined\cotutline{\Large \cotutline}
-			\else \phantom{\Large Texto fantasma}
+			{\large \autorline} \\ \bigskip%
+			{\large \tutline} \\ \bigskip% 
+			\ifdefined\cotutline{\large \cotutline}
+			\else \phantom{\large Texto fantasma}
 			\fi  
 		\end{flushleft}
 		\vspace{2cm}%
 		\begin{flushright}
-			{\Large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
+			{\large \ifbool{ESI@spanish}{\mesTF}{\monthTF}, \yearTF}
 		\end{flushright}
 		\cleardoublepage
 	\end{titlepage}

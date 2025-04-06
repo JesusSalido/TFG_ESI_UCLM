@@ -21,8 +21,14 @@
 %	https://github.com/JesusSalido/TFG_ESI_UCLM
 %%%%%%%%%%%%%%
 
+% Al llamar a la clase puedes pasarle opciones que indican el idioma pral.
+% del documento (spanish o english), el tipo de dispositivo (normal, para 
+% imprimir en papel y screen para leer en pantalla), y si se desea
+% numeración de páginas en el pie (pageonfooter=true) o en la cabecera
+% (pageonfooter=false).
 \documentclass[final, % final o draft (sin figuras)
 			   spanish, % Idioma pral. (spanish o english)
+			   device=normal, % Tipo de dispositivo (normal o screen)
 			   pageonfooter=false % Paginación en el pie
 ]{TFGesi}
 
@@ -38,7 +44,7 @@
 %
 % La clase TFGesi los usa para generar el contenido personalizado.
 % Puedes usarlos en cualquier parte del documento suprimiendo 
-% el caracter '@', p.ej., \titulo
+% el carácter '@', p.ej., \titulo
 % -------------------------
 \makeatletter 
 \@titulo{Plantilla guía de TFG para la ESI-UCLM} % 1ª Línea
@@ -76,8 +82,6 @@
 	Overleaf, %
 	\TeX Live %
 } 
-
-
 
 
 % -------------------------
