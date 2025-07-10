@@ -696,7 +696,8 @@
 			{\textbf{\large\textsf{Abstract}}\par}}
 	\end{center}   
 }{\par \bigskip %
-	\noindent \textbf{\txtkey}: \keywordslist.
+	\ifdefempty{\keywordslist}{}{
+	\noindent \textbf{\txtkey}: \keywordslist.}
 	\cleardoublepage
 }
 
@@ -726,7 +727,8 @@
 			{\textbf{\large\textsf{Abstract}}\par}}
 	\end{center}   
 }{\par \bigskip %
-	\noindent \textbf{\txtkey}: \keywordslist.
+	\ifdefempty{\keywordslist}{}{
+	\noindent \textbf{\txtkey}: \keywordslist.}
 	\cleardoublepage
 }
 
